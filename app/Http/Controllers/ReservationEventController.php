@@ -14,7 +14,7 @@ class ReservationEventController extends Controller
     public function index()
     {
         $resevationevents= \App\ReservationEvent::orderBy('created_at','DESC')->get();
-        return view('Reservations.reservationevent', compact('resevationevents'));
+        return view('Reservations.reservationevent', compact('resevationevent'));
     }
 
     /**
@@ -24,8 +24,7 @@ class ReservationEventController extends Controller
      */
     public function create()
     {
-        return view('Reservations.bedroomcreate',compact('reservationbedroom'));
-
+        return view('Reservations.reseventcreate');
 
     }
 
@@ -37,7 +36,38 @@ class ReservationEventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'Nom_evenement'=>'required',
+            'Date_debut'=>'required',
+            'Date_fin'=>'required',
+            'Duree'=>'required',
+            'Nombre_participant'=>'required|min:1|numeric',
+            'Restauration'=>'required',
+            'Prenom'=>'required|min:3',
+            'Nom'=>'required|min:2',
+            'Societe'=>'required|min:3',
+            'Secteur_activite'=>'required|min:3',
+            'Email'=>'required|email',
+            'Telephone'=>'required|min:9|numeric|',
+            'Administrator_id'=>'required|min:1|numeric',
+        ]);
+        $reseve = new ReservationEvent();
+        $reseve-> Nom_evenement = $request->input('Nom_evenement');
+        $reseve-> Date_debut = $request->input('Date_debut');
+        $reseve-> Date_fin = $request->input('Date_fin');
+        $reseve-> Duree = $request->input('Duree');
+        $reseve-> Nombre_participant = $request->input('Nombre_participant');
+        $reseve-> Restauration = $request->input('Restauration');
+        $reseve-> Prenom = $request->input('Prenom');
+        $reseve-> Nom = $request->input('Nom');
+        $reseve-> Societe = $request->input('Societe');
+        $reseve-> Secteur_activite = $request->input('Secteur_activite');
+        $reseve-> Email = $request->input('Email');
+        $reseve-> Telephone= $request->input('Telephone');
+        $reseve-> Administrator_id = $request->input('Administrator_id');
+        $reseve-> save();
+
+        return redirect('reservationevent')->with(['success' => "Reservation evenement enregistré"]);
     }
 
     /**

@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ced23eec-fc5a-4dfd-8f1c-5ca5b300e1de" name="Default Changelist" comment="" />
+    <list default="true" id="ced23eec-fc5a-4dfd-8f1c-5ca5b300e1de" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Reservations/reseventcreate.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReservationEventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReservationEventController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Reservations/reservationbedroom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Reservations/reservationbedroom.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Reservations/reservationevent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Reservations/reservationevent.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +34,9 @@
     </option>
     <expand />
     <select />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -119,6 +130,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1UKj98fTJa0W7IL7r8zHOodvxO1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -126,11 +138,16 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/Reservations" />
     </key>
@@ -177,6 +194,11 @@
       <workItem from="1576172620208" duration="10803000" />
       <workItem from="1576258296381" duration="12062000" />
       <workItem from="1576317712777" duration="8130000" />
+      <workItem from="1576351701746" duration="1739000" />
+      <workItem from="1576356286973" duration="492000" />
+      <workItem from="1576365833900" duration="5816000" />
+      <workItem from="1576513802103" duration="143000" />
+      <workItem from="1576518315125" duration="1515000" />
     </task>
     <servers />
   </component>
@@ -188,17 +210,43 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="401" y="188" width="620" height="416" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1299.741@67.27.1299.741" timestamp="1576003178318" />
-    <state x="449" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1576269746101">
-      <screen x="67" y="27" width="1299" height="741" />
+    <state x="400" y="128" width="624" height="551" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1576519236719">
+      <screen x="69" y="32" width="1297" height="736" />
+    </state>
+    <state x="400" y="128" width="624" height="551" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/69.32.1297.736@69.32.1297.736" timestamp="1576519236719" />
+    <state x="450" y="158" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1576371145045">
+      <screen x="69" y="32" width="1297" height="736" />
     </state>
     <state x="449" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/67.27.1299.741@67.27.1299.741" timestamp="1576269746101" />
+    <state x="450" y="158" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/69.32.1297.736@69.32.1297.736" timestamp="1576371145045" />
+    <state width="1231" height="158" key="GridCell.Tab.0.bottom" timestamp="1576520041904">
+      <screen x="69" y="32" width="1297" height="736" />
+    </state>
+    <state width="1231" height="158" key="GridCell.Tab.0.bottom/69.32.1297.736@69.32.1297.736" timestamp="1576520041904" />
+    <state width="1231" height="158" key="GridCell.Tab.0.center" timestamp="1576520041900">
+      <screen x="69" y="32" width="1297" height="736" />
+    </state>
+    <state width="1231" height="158" key="GridCell.Tab.0.center/69.32.1297.736@69.32.1297.736" timestamp="1576520041900" />
+    <state width="1231" height="158" key="GridCell.Tab.0.left" timestamp="1576520041898">
+      <screen x="69" y="32" width="1297" height="736" />
+    </state>
+    <state width="1231" height="158" key="GridCell.Tab.0.left/69.32.1297.736@69.32.1297.736" timestamp="1576520041898" />
+    <state width="1231" height="158" key="GridCell.Tab.0.right" timestamp="1576520041902">
+      <screen x="69" y="32" width="1297" height="736" />
+    </state>
+    <state width="1231" height="158" key="GridCell.Tab.0.right/69.32.1297.736@69.32.1297.736" timestamp="1576520041902" />
     <state x="205" y="33" key="SettingsEditor" timestamp="1575125421269">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="205" y="33" key="SettingsEditor/67.27.1299.741@67.27.1299.741" timestamp="1575125421269" />
-    <state x="372" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1576317715844">
-      <screen x="67" y="27" width="1299" height="741" />
+    <state x="374" y="229" key="com.intellij.ide.util.TipDialog" timestamp="1576520657191">
+      <screen x="69" y="32" width="1297" height="736" />
     </state>
     <state x="372" y="225" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1576317715844" />
+    <state x="374" y="229" key="com.intellij.ide.util.TipDialog/69.32.1297.736@69.32.1297.736" timestamp="1576520657191" />
+    <state x="380" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1576353623420">
+      <screen x="69" y="32" width="1297" height="736" />
+    </state>
+    <state x="380" y="89" width="672" height="678" key="search.everywhere.popup/69.32.1297.736@69.32.1297.736" timestamp="1576353623420" />
   </component>
 </project>

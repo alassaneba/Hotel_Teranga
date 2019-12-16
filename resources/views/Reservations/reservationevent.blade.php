@@ -4,18 +4,19 @@
         <form >
     <table>
        <tr>
-        <th>Nom_evenement</th>
-        <th>Date_debut</th>
-        <th>Date_fin</th>
-        <th>Duree</th>
-        <th>Nombre_participant</th>
-        <th>Restauration</th>
-        <th>Prenom</th>
-        <th>Nom </th>
-        <th>Societe</th>
-        <th>Secteur_activite</th>
-        <th>Email</th>
-        <th>Telephone</th>
+           <th>Nom_evenement</th>
+           <th>Date_debut</th>
+           <th>Date_fin</th>
+           <th>Duree</th>
+           <th>Nombre_participant</th>
+           <th>Restauration</th>
+           <th>Prenom</th>
+           <th>Nom </th>
+           <th>Societe</th>
+           <th>Secteur_activite</th>
+           <th>Email</th>
+           <th>Telephone</th>
+           <th>Administrator_id</th>
       </tr>
     </table>
         </form>
@@ -34,7 +35,10 @@
             <th>{{$reservationevent->Secteur_activite}}</th>
             <th>{{$reservationevent->Email}}</th>
             <th>{{$reservationevent->Telephone}}</th>
+            <th>{{$reservationevent->Administrtor_id}}</th>
+        </tr>
+        </table>
     @endforeach
-</table>
-@endsection
     </section>
+@endsection
+
