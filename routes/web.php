@@ -21,7 +21,6 @@ Route::get('contact','ContactController@index');
 
 Route::post('resbedroomcreate','ReservationBedroomController@store')->name('ajout_reservation_bedroom');
 Route::get('resbedroomcreate','ReservationBedroomController@create')->name('reservation_bedroom');
-
 Route::post('resbedroomcreate','ReservationBedroomController@store');
 Route::get('resbedroomedit/{id}','ReservationBedroomController@edit')->name('editer_resbedroom');
 Route::patch('/resbedroomupdate/{id}','ReservationBedroomController@update')->name('update_resbedroom');
@@ -32,4 +31,9 @@ Route::get('bedroomcreate','BedroomController@create');
 Route::post('bedroomcreate','BedroomController@store');
 Route::get('bedroomedit/{id}','BedroomController@edit')->name('editer_bedroom');
 Route::patch('/bedroomupdate/{id}','BedroomController@update')->name('update_bedroom');
+
+Route::post('reseventcreate','ReservationEventController@create');
+Route::get('reseventcreate','ReservationEventController@create');
+
+
 
