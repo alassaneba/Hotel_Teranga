@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ced23eec-fc5a-4dfd-8f1c-5ca5b300e1de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BedroomController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BedroomController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/database/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,6 +185,11 @@
       <workItem from="1576172620208" duration="10803000" />
       <workItem from="1576258296381" duration="12062000" />
       <workItem from="1576317712777" duration="11597000" />
+      <workItem from="1576519343622" duration="181000" />
+      <workItem from="1576519547184" duration="394000" />
+      <workItem from="1576519959723" duration="599000" />
+      <workItem from="1576520703080" duration="616000" />
+      <workItem from="1576522070107" duration="997000" />
     </task>
     <servers />
   </component>
@@ -197,6 +201,10 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="401" y="188" width="620" height="416" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1299.741@67.27.1299.741" timestamp="1576003178318" />
+    <state x="399" y="124" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1576519502148">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="399" y="124" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/67.27.1299.741@67.27.1299.741" timestamp="1576519502148" />
     <state x="449" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1576269746101">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
@@ -205,9 +213,9 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="205" y="33" key="SettingsEditor/67.27.1299.741@67.27.1299.741" timestamp="1575125421269" />
-    <state x="372" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1576317715844">
+    <state x="372" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1576522099101">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="372" y="225" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1576317715844" />
+    <state x="372" y="225" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1576522099101" />
   </component>
 </project>
