@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Bedroom;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Str;
+
 
 class BedroomController extends Controller
 {
@@ -39,14 +42,20 @@ class BedroomController extends Controller
         $data = $request->validate([
             'Type_chambre'=>'required',
             'Description'=>'required',
-            'Image'=>'required',
-            'Prix_nuite'=>'required|numeric',
-            'ReservationBedroom_id'=>'required|min:1|numeric',
+            'Image'=>'required| image | mimes:jpeg,png,jpg,gif | max: 2048',
+            'Prix_nuite'=>'required | numeric',
+            'ReservationBedroom_id'=>'required | min:1 | numeric',
         ]);
-        $bed = new Bedroom();
+            $bed = new Bedroom();
         $bed-> Type_chambre = $request->input('Type_chambre');
         $bed-> Description = $request->input('Description');
-        $bed-> Image = $request->input('Image');
+        if($request->has('Image')){
+            $image = $request->file('Image');
+            $image_name = Str::slug($request->input('Type_chambre')).'_'.time();
+            $folder = '/uploads/images/';
+            $bed->images = $folder.$image_name.'.'.$image->getClientOriginalExtension();
+            $this->uploadImage($image, $folder, 'public', $image_name);
+       // $bed-> Image = $request->input('Image');
         $bed-> Prix_nuite = $request->input('Prix_nuite');
         $bed-> ReservationBedroom_id = $request->input('ReservationBedroom_id');
         $bed-> save();
@@ -106,4 +115,12 @@ class BedroomController extends Controller
     {
         //
     }
+
+    public function uploadImage(UploadedFile $uploadedFile, $folder = null, $disk = 'public', $filename = null){
+        $name = !is_null($filename) ? $filename : str_random('25');
+        $file = $uploadedFile->storeAs($folder, $name.'.'.$uploadedFile->getClientOriginalExtension(), $disk);
+
+        return $file;
+    }
+
 }
