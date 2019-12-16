@@ -3,12 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="ced23eec-fc5a-4dfd-8f1c-5ca5b300e1de" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/resources/views/Reservations/reseventcreate.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReservationEventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReservationEventController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Reservations/reservationbedroom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Reservations/reservationbedroom.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Reservations/reservationevent.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Reservations/reservationevent.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BedroomController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BedroomController.php" afterDir="false" />
+>>>>>>> c7f5ebcee6d71b07600431da79401aadf86a96e4
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,12 +198,16 @@
       <workItem from="1576085826189" duration="10658000" />
       <workItem from="1576172620208" duration="10803000" />
       <workItem from="1576258296381" duration="12062000" />
+<<<<<<< HEAD
       <workItem from="1576317712777" duration="8130000" />
       <workItem from="1576351701746" duration="1739000" />
       <workItem from="1576356286973" duration="492000" />
       <workItem from="1576365833900" duration="5816000" />
       <workItem from="1576513802103" duration="143000" />
       <workItem from="1576518315125" duration="1515000" />
+=======
+      <workItem from="1576317712777" duration="11597000" />
+>>>>>>> c7f5ebcee6d71b07600431da79401aadf86a96e4
     </task>
     <servers />
   </component>
