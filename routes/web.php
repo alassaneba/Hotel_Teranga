@@ -34,6 +34,9 @@ Route::patch('/bedroomupdate/{id}','BedroomController@update')->name('update_bed
 
 Route::post('reseventcreate','ReservationEventController@create');
 Route::get('reseventcreate','ReservationEventController@create');
+Route::post('reseventcreate','ReservationEventController@store');
+Route::get('reseventedit/{id}','ReservationEventController@edit')->name('editer_event');
+Route::patch('/reseventupdate/{id}','ReservationEventController@update')->name('update_event');
 
 
 

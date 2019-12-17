@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Bedroom;
@@ -49,13 +48,14 @@ class BedroomController extends Controller
             $bed = new Bedroom();
         $bed-> Type_chambre = $request->input('Type_chambre');
         $bed-> Description = $request->input('Description');
-        if($request->has('Image')){
+        if($request->has('Image')) {
             $image = $request->file('Image');
-            $image_name = Str::slug($request->input('Type_chambre')).'_'.time();
+            $image_name = Str::slug($request->input('Type_chambre')) . '_' . time();
             $folder = '/uploads/images/';
-            $bed->images = $folder.$image_name.'.'.$image->getClientOriginalExtension();
+            $bed->images = $folder . $image_name . '.' . $image->getClientOriginalExtension();
             $this->uploadImage($image, $folder, 'public', $image_name);
-       // $bed-> Image = $request->input('Image');
+            // $bed-> Image = $request->input('Image');
+        }
         $bed-> Prix_nuite = $request->input('Prix_nuite');
         $bed-> ReservationBedroom_id = $request->input('ReservationBedroom_id');
         $bed-> save();

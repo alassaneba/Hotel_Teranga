@@ -10,7 +10,7 @@ class ReservationBedroom extends Model
         return $this->belongsTo('App\Administrator');
     }
     public function Bedroom (){
-        return $this->hasMany('App\Bedroom');
+        return $this->belongsToMany('App\Bedroom');
     }
 
 }

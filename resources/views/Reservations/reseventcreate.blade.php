@@ -19,16 +19,18 @@
             </div>
             <div>
                 <select type="text" name="Duree" class="form-control" placeholder="Duree de l'evenement ">
-                    <option value="Unique_simple">Chambre Unique Simple </option>
-                    <option value="Unique_confort">Chambre Unique Confort</option>
-                    <option value="Double_simple">Chambre Double Simple</option>
+                    <option value="Matinee">Matinee</option>
+                    <option value="Apres_midi">Apres midi</option>
+                    <option value="Soiree">Soiree</option>
+                    <option value="Journee_entiere">Journee entiere</option>
                 </select>
             </div>
             <div>
                 <input type="number" name="Nombre_participant" class="form-control" placeholder="Nombre de participant">
             </div>
             <div>
-                <select type="text" name="Restauration" class="form-control" placeholder="Restauration">
+                <select type="text" name="Restauration" class="form-control">
+                   <option>--Restauration--</option>
                     <option value="NON">Non</option>
                     <option value=OUI>Oui</option>
                 </select>
@@ -50,9 +52,6 @@
             </div>
             <div>
                 <input type="text" name="Telephone" class="form-control" placeholder="Telephone">
-            </div>
-            <div>
-                <input type="text" name="Montant_payer" class="form-control" placeholder="Montant a payer">
             </div>
             <div>
                 <select type="number" name="Administrator_id" class="form-control" placeholder="Id Administrateur">

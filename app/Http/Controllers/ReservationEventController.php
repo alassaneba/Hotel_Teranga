@@ -14,7 +14,7 @@ class ReservationEventController extends Controller
     public function index()
     {
         $resevationevents= \App\ReservationEvent::orderBy('created_at','DESC')->get();
-        return view('Reservations.reservationevent', compact('resevationevent'));
+        return view('Reservations.reservationevent', compact('resevationevents'));
     }
 
     /**
@@ -51,7 +51,7 @@ class ReservationEventController extends Controller
             'Telephone'=>'required|min:9|numeric|',
             'Administrator_id'=>'required|min:1|numeric',
         ]);
-        $reseve = new ReservationEvent();
+        $reseve = new \App\ReservationEvent();
         $reseve-> Nom_evenement = $request->input('Nom_evenement');
         $reseve-> Date_debut = $request->input('Date_debut');
         $reseve-> Date_fin = $request->input('Date_fin');
@@ -89,7 +89,8 @@ class ReservationEventController extends Controller
      */
     public function edit($id)
     {
-        //
+        $reseventedit= \App\ReservationEvent::find($id);//on recupere le produit
+        return view('Reservations.reseventedit', compact('reseventedit'));
     }
 
     /**
@@ -101,7 +102,23 @@ class ReservationEventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $reservationevent= \App\ReservationEvent::find($id);
+        if($reservationevent){
+            $reservationevent-> Nom_evenement = $request->input('Nom_evenement');
+            $reservationevent-> Date_debut = $request->input('Date_debut');
+            $reservationevent-> Date_fin = $request->input('Date_fin');
+            $reservationevent-> Duree = $request->input('Duree');
+            $reservationevent-> Nombre_participant= $request->input('Nombre_participant');
+            $reservationevent-> Restauration = $request->input('Restauration');
+            $reservationevent-> Prenom = $request->input('Prenom');
+            $reservationevent-> Nom = $request->input('Nom');
+            $reservationevent-> Societe = $request->input('Societe');
+            $reservationevent-> Secteur_activite = $request->input('Secteur_activite');
+            $reservationevent-> Email = $request->input('Email');
+            $reservationevent-> Telephone = $request->input('Telephone');
+            $reservationevent-> Administrator_id = $request->input('Administrator_id');
+            $reservationevent->save(); }
+        return redirect('reservationevent')->with(['success' => "Reservation evenement modifiée"]);
     }
 
     /**

@@ -1,5 +1,8 @@
 @extends('layout')
 @section('content')
+    @if(session('success'))
+        <div class="alert alert-success">{{session('success')}}</div>
+    @endif
     <section class="table table-striped" >
         <form >
     <table>
@@ -36,6 +39,7 @@
             <th>{{$reservationevent->Email}}</th>
             <th>{{$reservationevent->Telephone}}</th>
             <th>{{$reservationevent->Administrtor_id}}</th>
+            <th> <p><a href="reseventedit/{{$reservationevent->id}}">Editer</a></p></th>
         </tr>
         </table>
     @endforeach
