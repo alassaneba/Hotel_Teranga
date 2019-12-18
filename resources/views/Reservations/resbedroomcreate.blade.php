@@ -38,6 +38,14 @@
             </select>
         </div>
         <div>
+            <select type="text" name="Civilite" class="form-control">
+                <option >Civilite</option>
+                <option value="Mr.">Mr.</option>
+                <option value="Mme.">Mme.</option>
+                <option value="Mlle.">Mlle.</option>
+            </select>
+        </div>
+        <div>
             <input type="text" name="Prenom" class="form-control" placeholder="Prenom">
         </div>
         <div>
@@ -305,7 +313,7 @@
             </select>
         </div>
         <div>
-            <button class="btn btn-primary">Enregistrer</button>
+            <button class="btn btn-primary">Reserver</button>
         </div>
     </form>
 </div>

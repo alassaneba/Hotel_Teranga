@@ -14,7 +14,7 @@ class ReservationEventController extends Controller
     public function index()
     {
         $resevationevents= \App\ReservationEvent::orderBy('created_at','DESC')->get();
-        return view('Reservations.reservationevent', compact('resevationevent'));
+        return view('Reservations.reservationevent', compact('resevationevents'));
     }
 
     /**
@@ -38,11 +38,16 @@ class ReservationEventController extends Controller
     {
         $data = $request->validate([
             'Nom_evenement'=>'required',
+            'Type_evenement'=>'required',
             'Date_debut'=>'required',
             'Date_fin'=>'required',
             'Duree'=>'required',
+            'Salles'=>'required',
+            'Disposition'=>'required',
             'Nombre_participant'=>'required|min:1|numeric',
             'Restauration'=>'required',
+            'Equipement'=>'required',
+            'Civilite'=>'required',
             'Prenom'=>'required|min:3',
             'Nom'=>'required|min:2',
             'Societe'=>'required|min:3',
@@ -51,13 +56,18 @@ class ReservationEventController extends Controller
             'Telephone'=>'required|min:9|numeric|',
             'Administrator_id'=>'required|min:1|numeric',
         ]);
-        $reseve = new ReservationEvent();
+        $reseve = new \App\ReservationEvent();
         $reseve-> Nom_evenement = $request->input('Nom_evenement');
+        $reseve-> Type_evenement = $request->input('Type_evenement');
         $reseve-> Date_debut = $request->input('Date_debut');
         $reseve-> Date_fin = $request->input('Date_fin');
         $reseve-> Duree = $request->input('Duree');
+        $reseve-> Salles = $request->input('Salles');
+        $reseve-> Disposition = $request->input('Disposition');
         $reseve-> Nombre_participant = $request->input('Nombre_participant');
         $reseve-> Restauration = $request->input('Restauration');
+        $reseve-> Equipement = $request->input('Equipement');
+        $reseve-> Civilite = $request->input('Civilite');
         $reseve-> Prenom = $request->input('Prenom');
         $reseve-> Nom = $request->input('Nom');
         $reseve-> Societe = $request->input('Societe');
@@ -89,7 +99,8 @@ class ReservationEventController extends Controller
      */
     public function edit($id)
     {
-        //
+        $reseventedit= \App\ReservationEvent::find($id);
+        return view('Reservations.reseventedit', compact('reseventedit'));
     }
 
     /**
@@ -101,7 +112,28 @@ class ReservationEventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $reservationevents= \App\ReservationEvent::find($id);
+        if($reservationevents){
+        $reservationevents-> Nom_evenement = $request->input('Nom_evenement');
+        $reservationevents-> Type_evenement = $request->input('Type_evenement');
+        $reservationevents-> Date_debut = $request->input('Date_debut');
+        $reservationevents-> Date_fin = $request->input('Date_fin');
+        $reservationevents-> Duree = $request->input('Duree');
+        $reservationevents-> Salles = $request->input('Salles');
+        $reservationevents-> Disposition = $request->input('Disposition');
+        $reservationevents-> Nombre_participant = $request->input('Nombre_participant');
+        $reservationevents-> Restauration = $request->input('Restauration');
+        $reservationevents-> Equipement = $request->input('Equipement');
+        $reservationevents-> Civilite = $request->input('Civilite');
+        $reservationevents-> Prenom = $request->input('Prenom');
+        $reservationevents-> Nom = $request->input('Nom');
+        $reservationevents-> Societe = $request->input('Societe');
+        $reservationevents-> Secteur_activite = $request->input('Secteur_activite');
+        $reservationevents-> Email = $request->input('Email');
+        $reservationevents-> Telephone= $request->input('Telephone');
+        $reservationevents-> Administrator_id = $request->input('Administrator_id');
+        $reservationevents-> save(); }
+        return redirect('reservationevent')->with(['success' => "Reservation evenement modifiée"]);
     }
 
     /**

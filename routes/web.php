@@ -19,11 +19,11 @@ Route::get('a-propos','AproposController@index');
 Route::get('services','ServicesController@index');
 Route::get('contact','ContactController@index');
 
-Route::post('resbedroomcreate','ReservationBedroomController@store')->name('ajout_reservation_bedroom');
-Route::get('resbedroomcreate','ReservationBedroomController@create')->name('reservation_bedroom');
+Route::post('resbedroomcreate','ReservationBedroomController@store')->name('ajout/reservation/bedroom');
+Route::get('resbedroomcreate','ReservationBedroomController@create')->name('reservation/bedroom');
 Route::post('resbedroomcreate','ReservationBedroomController@store');
-Route::get('resbedroomedit/{id}','ReservationBedroomController@edit')->name('editer_resbedroom');
-Route::patch('/resbedroomupdate/{id}','ReservationBedroomController@update')->name('update_resbedroom');
+Route::get('resbedroomedit/{id}','ReservationBedroomController@edit')->name('editer/resbedroom');
+Route::patch('/resbedroomupdate/{id}','ReservationBedroomController@update')->name('update/resbedroom');
 
 Route::get('bedroom','BedroomController@index');
 Route::post('bedroomcreate','BedroomController@create');
@@ -34,6 +34,9 @@ Route::patch('/bedroomupdate/{id}','BedroomController@update')->name('update_bed
 
 Route::post('reseventcreate','ReservationEventController@create');
 Route::get('reseventcreate','ReservationEventController@create');
+Route::post('reseventcreate','ReservationEventController@store');
+Route::get('reseventedit/{id}','ReservationEventController@edit')->name('editer/event');
+Route::patch('/reseventupdate/{id}','ReservationEventController@update')->name('update/event');
 
 
 

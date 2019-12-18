@@ -45,6 +45,7 @@ class ReservationBedroomController extends Controller
              'Nombre_adulte'=>'required|min:1|numeric',
              'Nombre_enfant'=>'required|nullable|numeric',
              'Type_chambre'=>'required',
+             'Civilite'=>'required',
              'Prenom'=>'required|min:3',
              'Nom'=>'required|min:2',
              'Nationalite'=>'required|min:2',
@@ -59,8 +60,9 @@ class ReservationBedroomController extends Controller
         $resbed-> Date_depart = $request->input('Date_depart');
         $resbed-> Nombre_chambre = $request->input('Nombre_chambre');
         $resbed-> Nombre_adulte = $request->input('Nombre_adulte');
-        $resbed-> Nombre_enfant= $request->input('Nombre_enfant');
-        $resbed-> Type_chambre= $request->input('Type_chambre');
+        $resbed-> Nombre_enfant = $request->input('Nombre_enfant');
+        $resbed-> Type_chambre = $request->input('Type_chambre');
+        $resbed-> Civilite = $request->input('Civilite');
         $resbed-> Prenom = $request->input('Prenom');
         $resbed-> Nom = $request->input('Nom');
         $resbed-> Nationalite = $request->input('Nationalite');
@@ -115,6 +117,7 @@ class ReservationBedroomController extends Controller
             $reservationbedroom-> Nombre_adulte= $request->input('Nombre_adulte');
             $reservationbedroom-> Nombre_enfant= $request->input('Nombre_enfant');
             $reservationbedroom-> Type_chambre= $request->input('Type_chambre');
+            $reservationbedroom-> Civilite = $request->input('Civilite');
             $reservationbedroom-> Prenom = $request->input('Prenom');
             $reservationbedroom-> Nom = $request->input('Nom');
             $reservationbedroom-> Nationalite = $request->input('Nationalite');

@@ -17,7 +17,7 @@ class CreateTypeEventsTable extends Migration
             $table->bigIncrements('id');
             $table->string('Reunion');
             $table->string('Seminaire');
-            $table->string('Soiree_ou_diner_de_gala');
+            $table->string('Soiree_ou_Diner_de_gala');
             $table->string('Cocktail');
             $table->string('Lancement_produit');
             $table->string('Formation');

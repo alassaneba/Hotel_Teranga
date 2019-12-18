@@ -13,6 +13,7 @@
           <th>Nombre_adulte</th>
           <th>Nombre_enfant</th>
           <th>Type_chambre</th>
+          <th>Civilite</th>
           <th>Prenom</th>
           <th>Nom </th>
           <th>Nationalite</th>
@@ -32,6 +33,7 @@
             <th>{{$reservations->Nombre_adulte}}</th>
             <th>{{$reservations->Nombre_enfant}}</th>
             <th>{{$reservations->Type_chambre}}</th>
+            <th>{{$reservations->Civilite}}</th>
             <th>{{$reservations->Prenom}}</th>
             <th>{{$reservations->Nom}} </th>
             <th>{{$reservations->Nationalite}} </th>

@@ -22,6 +22,7 @@ class CreateReservationBedroomsTable extends Migration
             $table->integer('Nombre_adulte');
             $table->integer('Nombre_enfant');
             $table->string('Type_chambre');
+            $table->string('Civilite');
             $table->string('Prenom');
             $table->string('Nom');
             $table->string('Nationalite');
