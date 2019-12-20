@@ -18,7 +18,7 @@
                 <tr>
                     <th>{{$bedrooms->Type_chambre}}</th>
                     <th>{{$bedrooms->Description}}</th>
-                    <th><img src="{{$bedrooms->Image}}"></th>
+                    <th ><img src="{{$bedrooms->Image}}" style="width: 75px "></th>
                     <th>{{$bedrooms->Prix_nuite}}</th>
                     <th>{{$bedrooms->ReservationBedroom_id}}</th>
                     <th> <p><a href="bedroomedit/{{$bedrooms->id}}">Editer</a></p></th>

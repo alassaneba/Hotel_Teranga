@@ -95,7 +95,8 @@ class ReservationBedroomController extends Controller
     public function edit($id)
     {
             $resbedroomedit= \App\ReservationBedroom::find($id);//on recupere le produit
-            return view('Reservations.resbedroomedit', compact('resbedroomedit'));
+        $bedrooms = \App\Bedroom::pluck('Type_chambre','id');
+            return view('Reservations.resbedroomedit', compact('resbedroomedit','bedrooms'));
 
     }
 
@@ -108,26 +109,35 @@ class ReservationBedroomController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $reservationbedroom= \App\ReservationBedroom::find($id);
-        if($reservationbedroom){
-            $reservationbedroom-> Date_arriver = $request->input('Date_arriver');
-            $reservationbedroom-> Heure_arriver = $request->input('Heure_arriver');
-            $reservationbedroom-> Date_depart = $request->input('Date_depart');
-            $reservationbedroom-> Nombre_chambre= $request->input('Nombre_chambre');
-            $reservationbedroom-> Nombre_adulte= $request->input('Nombre_adulte');
-            $reservationbedroom-> Nombre_enfant= $request->input('Nombre_enfant');
-            $reservationbedroom-> Type_chambre= $request->input('Type_chambre');
-            $reservationbedroom-> Civilite = $request->input('Civilite');
-            $reservationbedroom-> Prenom = $request->input('Prenom');
-            $reservationbedroom-> Nom = $request->input('Nom');
-            $reservationbedroom-> Nationalite = $request->input('Nationalite');
-            $reservationbedroom-> Email = $request->input('Email');
-            $reservationbedroom-> Telephone = $request->input('Telephone');
-            $reservationbedroom-> Montant_payer = $request->input('Montant_payer');
-            $reservationbedroom-> Administrator_id = $request->input('Administrator_id');
-            $reservationbedroom->save(); }
-        return redirect('reservationbedroom')->with(['success' => "Reservation chambre modifiée"]);
-    }
+        $reservationbedroom = \App\ReservationBedroom::find($id);
+        if ($reservationbedroom) {
+            $reservationbedroom->Date_arriver = $request->input('Date_arriver');
+            $reservationbedroom->Heure_arriver = $request->input('Heure_arriver');
+            $reservationbedroom->Date_depart = $request->input('Date_depart');
+            $reservationbedroom->Nombre_chambre = $request->input('Nombre_chambre');
+            $reservationbedroom->Nombre_adulte = $request->input('Nombre_adulte');
+            $reservationbedroom->Nombre_enfant = $request->input('Nombre_enfant');
+
+            if ($reservationbedroom) {
+                $reservationbedroom->update([
+                    'Type_chambre' => $request->input('Type_chambre'),
+                    'Bedroom_id' => $request->input('Bedroom_id'),
+                ]); }
+
+                //$reservationbedroom-> Type_chambre= $request->input('Type_chambre');
+                $reservationbedroom->Civilite = $request->input('Civilite');
+                $reservationbedroom->Prenom = $request->input('Prenom');
+                $reservationbedroom->Nom = $request->input('Nom');
+                $reservationbedroom->Nationalite = $request->input('Nationalite');
+                $reservationbedroom->Email = $request->input('Email');
+                $reservationbedroom->Telephone = $request->input('Telephone');
+                $reservationbedroom->Montant_payer = $request->input('Montant_payer');
+                $reservationbedroom->Administrator_id = $request->input('Administrator_id');
+                $reservationbedroom->save();
+            }
+            return redirect('reservationbedroom')->with(['success' => "Reservation chambre modifiée"]);
+        }
+
 
     /**
      * Remove the specified resource from storage.

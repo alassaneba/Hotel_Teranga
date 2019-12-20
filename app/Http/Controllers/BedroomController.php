@@ -44,21 +44,20 @@ class BedroomController extends Controller
             'Description' => 'required',
             'Image' => 'required| image | mimes:jpeg,png,jpg,gif | max: 2048',
             'Prix_nuite' => 'required | numeric',
-            'ReservationBedroom_id' => 'required | min:1 | numeric',
+            'ReservationBedroom_id' => 'required | min:1 ',
         ]);
         $bed = new Bedroom();
         $bed->Type_chambre = $request->input('Type_chambre');
         $bed->Description = $request->input('Description');
         if ($request->has('Image')) {
-            $image = $request->file('Image');
-            $image_name = Str::slug($request->input('Type_chambre')) . '_' . time();
-            $folder = '/uploads/images/';
-            $bed->images = $folder . $image_name . '.' . $image->getClientOriginalExtension();
-            $this->uploadImage($image, $folder, 'public', $image_name);
-            // $bed-> Image = $request->input('Image');
-            $bed->Prix_nuite = $request->input('Prix_nuite');
-            $bed->ReservationBedroom_id = $request->input('ReservationBedroom_id');
-            $bed->save();
+        $image = $request->file('Image');
+        $image_name = Str::slug($request->input('Type_chambre')) . '_' . time();
+        $folder = '/uploads/images/';
+        $bed-> Image = $folder . $image_name . '.' . $image->getClientOriginalExtension();
+        $this->uploadImage($image, $folder, 'public', $image_name);
+        $bed->Prix_nuite = $request->input('Prix_nuite');
+        $bed->ReservationBedroom_id = $request->input('ReservationBedroom_id');
+        $bed->save();
             return redirect('bedroom')->with(['success' => "Chambre enregistrée"]);
         }
     }

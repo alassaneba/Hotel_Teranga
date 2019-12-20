@@ -27,7 +27,7 @@
         <div>
             <input type="number" name="Nombre_enfant" class="form-control" placeholder="Nombre enfant">
         </div>
-        <div>
+         <div>
             <select type="text" name="Type_chambre" class="form-control" placeholder="Type de chambre">
                 <option value="Unique_simple">Chambre Unique Simple </option>
                 <option value="Unique_confort">Chambre Unique Confort</option>
@@ -38,6 +38,15 @@
             </select>
         </div>
         <div>
+        <select name="Bedroom_id" id="Bedroom_id" class="form-control">
+            < <option value=""></option>
+            @foreach($bedrooms as $id => $value)
+                <option value="{{$id}}" {{ $id == $reservationbedroom->Bedroom_id ? 'selected="selected"':''}}>{{$value}}</option>
+            @endforeach
+        </select>
+    </div>
+
+    <div>
             <select type="text" name="Civilite" class="form-control">
                 <option >Civilite</option>
                 <option value="Mr.">Mr.</option>
