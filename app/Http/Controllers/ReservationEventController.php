@@ -24,7 +24,8 @@ class ReservationEventController extends Controller
      */
     public function create()
     {
-        return view('Reservations.reseventcreate');
+        $typeevenememt = \App\TypeEvent::pluck('Type_evenement','id');
+        return view('Reservations.reseventcreate', compact('resbedroomcreate','typeevenememt'));
 
     }
 
@@ -46,7 +47,6 @@ class ReservationEventController extends Controller
             'Disposition'=>'required',
             'Nombre_participant'=>'required|min:1|numeric',
             'Restauration'=>'required',
-            'Equipement'=>'required',
             'Civilite'=>'required',
             'Prenom'=>'required|min:3',
             'Nom'=>'required|min:2',
@@ -66,7 +66,7 @@ class ReservationEventController extends Controller
         $reseve-> Disposition = $request->input('Disposition');
         $reseve-> Nombre_participant = $request->input('Nombre_participant');
         $reseve-> Restauration = $request->input('Restauration');
-        $reseve-> Equipement = $request->input('Equipement');
+        $reseve-> Equipement = $request->input('Equipement1').'|'. $request->input('Equipement2').'|'. $request->input('Equipement3').'|'. $request->input('Equipement4');
         $reseve-> Civilite = $request->input('Civilite');
         $reseve-> Prenom = $request->input('Prenom');
         $reseve-> Nom = $request->input('Nom');
@@ -100,7 +100,9 @@ class ReservationEventController extends Controller
     public function edit($id)
     {
         $reseventedit= \App\ReservationEvent::find($id);
-        return view('Reservations.reseventedit', compact('reseventedit'));
+        $typeevenememt = \App\TypeEvent::pluck('Type_evenement','id');
+        $reservationevents = \App\ReservationEvent::orderBy('created_at','DESC')->first();
+        return view('Reservations.reseventedit', compact('reseventedit','typeevenememt','reservationevents'));
     }
 
     /**
@@ -115,7 +117,10 @@ class ReservationEventController extends Controller
         $reservationevents= \App\ReservationEvent::find($id);
         if($reservationevents){
         $reservationevents-> Nom_evenement = $request->input('Nom_evenement');
-        $reservationevents-> Type_evenement = $request->input('Type_evenement');
+            if ($reservationevents) {
+                $reservationevents->update([
+                    'Type_evenement' => $request->input('Type_evenement'),
+                ]); }
         $reservationevents-> Date_debut = $request->input('Date_debut');
         $reservationevents-> Date_fin = $request->input('Date_fin');
         $reservationevents-> Duree = $request->input('Duree');
@@ -123,7 +128,7 @@ class ReservationEventController extends Controller
         $reservationevents-> Disposition = $request->input('Disposition');
         $reservationevents-> Nombre_participant = $request->input('Nombre_participant');
         $reservationevents-> Restauration = $request->input('Restauration');
-        $reservationevents-> Equipement = $request->input('Equipement');
+        $reservationevents-> Equipement = $request->input('Equipement1').'|'. $request->input('Equipement2').'|'. $request->input('Equipement3').'|'. $request->input('Equipement4');
         $reservationevents-> Civilite = $request->input('Civilite');
         $reservationevents-> Prenom = $request->input('Prenom');
         $reservationevents-> Nom = $request->input('Nom');

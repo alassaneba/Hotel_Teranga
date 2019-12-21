@@ -40,7 +40,7 @@
             <th>{{$reservationevent->Disposition}}</th>
             <th>{{$reservationevent->Nombre_participant}}</th>
             <th>{{$reservationevent->Restauration}}</th>
-            <th>{{$reservationevent->Equipement}}</th>
+            <th>{{str_replace("|"," ", $reservationevent->Equipement)}}</th>
             <th>{{$reservationevent->Civilite}}</th>
             <th>{{$reservationevent->Prenom}}</th>
             <th>{{$reservationevent->Nom}} </th>

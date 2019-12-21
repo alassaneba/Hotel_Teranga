@@ -8,27 +8,25 @@
     <div class="container">
         <form action="reseventcreate" method="post">
     @csrf
-            <div>
+            <div><label>Nom evenement</label>
                 <input type="text" name="Nom_evenement" class="form-control" placeholder="Nom de l'evenement">
             </div>
-            <div>
-                <select type="text" name="Type_evenement" class="form-control">
-                    <option>Type evenement</option>
-                    <option value="Reunion">Reunion</option>
-                    <option value="Seminaire">Seminaire</option>
-                    <option value="Soiree_ou_Diner_de_gala">Soiree ou Diner de gala</option>
-                    <option value="Cocktail">Cocktail</option>
-                    <option value="Lancement_produit">Lancement produit</option>
-                    <option value="Formation">Formation</option>
+            <div><label>Type evenement</label>
+                <select name="Type_evenement" id="Type_evenement" class="form-control">
+                     <option value="">Type d'evenement</option>
+                    @foreach($typeevenememt as $id => $value)
+                        <option value="{{$value}}">{{$value}}</option>
+                    @endforeach
                 </select>
             </div>
-            <div>
+            <div><label>Date debut</label>
                 <input type="date" name="Date_debut" class="form-control" placeholder="Date début">
             </div>
-            <div>
+            <div><label>Date fin</label>
                 <input type="date" name="Date_fin" class="form-control" placeholder="Date fin">
             </div>
-            <div>
+            <div><label></label>
+            <div><label>Duree</label>
                 <select type="text" name="Duree" class="form-control">
                     <option>Duree de l'evenement </option>
                     <option value="Matinee">Matinee</option>
@@ -37,7 +35,7 @@
                     <option value="Journee-entiere">Journee-entiere</option>
                 </select>
             </div>
-            <div>
+            <div><label>Salles</label>
                 <select type="text" name="Salles" class="form-control">
                     <option>Salles de l'evenement</option>
                     <option value="Terasse">Terasse</option>
@@ -45,7 +43,7 @@
                     <option value="Salle-100-places">Salle-100-places</option>
                 </select>
             </div>
-            <div>
+            <div><label>Disposition</label>
                 <select type="text" name="Disposition" class="form-control">
                     <option>Disposition de la salle</option>
                     <option value="En-U">En-U</option>
@@ -55,26 +53,25 @@
                     <option value="Cocktail">Cocktail</option>
                 </select>
             </div>
-            <div>
+            <div><label>Nombre de participant</label>
                 <input type="number" name="Nombre_participant" class="form-control" placeholder="Nombre de participant">
             </div>
-            <div>
+            <div><label>Restauration</label>
                 <select type="text" name="Restauration" class="form-control" placeholder="Restauration">
                     <option>Restauration</option>
                     <option value="NON">Non</option>
                     <option value=OUI>Oui</option>
                 </select>
             </div>
-            <div>
-                <select type="text" name="Equipement" class="form-control">
-                    <option>Equipement de l'evenement</option>
-                    <option value="Video-projecteur">Video-projecteur</option>
-                    <option value="Internet">Internet</option>
-                    <option value="Sonorisation">Sonorisation</option>
-                    <option value="Autres">Autres</option>
-                </select>
-            </div>
-            <div>
+                <div><label>Equipement</label>
+                    <ul>
+                        <li><input type="checkbox" name="Equipement1" value="Video-projecteur">Video-projecteur</li>
+                        <li><input type="checkbox" name="Equipement2" value="Internet">Internet</li>
+                        <li><input type="checkbox" name="Equipement3" value="Sonorisation">Sonorisation</li>
+                        <li><input type="checkbox" name="Equipement4" value="Autres">Autres</li>
+                    </ul>
+                </div>
+            <div><label>Civilite</label>
                 <select type="text" name="Civilite" class="form-control">
                     <option>Civilite</option>
                     <option value="Mr.">Mr.</option>
@@ -82,25 +79,25 @@
                     <option value="Mlle.">Mlle.</option>
                 </select>
             </div>
-            <div>
+            <div><label>Prenom</label>
                 <input type="text" name="Prenom" class="form-control" placeholder="Prenom">
             </div>
-            <div>
+            <div><label>Nom</label>
                 <input type="text" name="Nom" class="form-control" placeholder="Nom">
             </div>
-            <div>
+            <div><label>Societe</label>
                 <input type="text" name="Societe" class="form-control" placeholder="Societe">
             </div>
-            <div>
+            <div><label>Secteur d'activite</label>
                 <input type="text" name="Secteur_activite" class="form-control" placeholder="Secteur d'activité">
             </div>
-            <div>
+            <div><label>Email</label>
                 <input type="email" name="Email" class="form-control" placeholder="Email">
             </div>
-            <div>
+            <div><label>Telephone</label>
                 <input type="text" name="Telephone" class="form-control" placeholder="Telephone">
             </div>
-            <div>
+            <div><label>Id Administrateur</label>
                 <select type="number" name="Administrator_id" class="form-control" placeholder="Id Administrateur">
                     <option value="1">1</option>
                     <option value="2">2</option>

@@ -26,7 +26,8 @@ class ReservationBedroomController extends Controller
      */
     public function create()
     {
-        return  view('Reservations.resbedroomcreate');
+        $bedrooms = \App\Bedroom::pluck('Type_chambre','id');
+        return  view('Reservations.resbedroomcreate', compact('resbedroomcreate','bedrooms'));
     }
 
     /**
@@ -94,9 +95,10 @@ class ReservationBedroomController extends Controller
      */
     public function edit($id)
     {
-            $resbedroomedit= \App\ReservationBedroom::find($id);//on recupere le produit
-        $bedrooms = \App\Bedroom::pluck('Type_chambre','id');
-            return view('Reservations.resbedroomedit', compact('resbedroomedit','bedrooms'));
+            $resbedroomedit= \App\ReservationBedroom::find($id);
+            $bedrooms = \App\Bedroom::pluck('Type_chambre','id');
+            $reservationbedroom = \App\ReservationBedroom::orderBy('created_at','DESC')->first();
+            return view('Reservations.resbedroomedit', compact('resbedroomedit','bedrooms','reservationbedroom'));
 
     }
 
@@ -121,10 +123,7 @@ class ReservationBedroomController extends Controller
             if ($reservationbedroom) {
                 $reservationbedroom->update([
                     'Type_chambre' => $request->input('Type_chambre'),
-                    'Bedroom_id' => $request->input('Bedroom_id'),
                 ]); }
-
-                //$reservationbedroom-> Type_chambre= $request->input('Type_chambre');
                 $reservationbedroom->Civilite = $request->input('Civilite');
                 $reservationbedroom->Prenom = $request->input('Prenom');
                 $reservationbedroom->Nom = $request->input('Nom');

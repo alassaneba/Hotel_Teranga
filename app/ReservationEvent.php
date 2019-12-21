@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ReservationEvent extends Model
 {
+    protected $guarded = [];
     public function Administrator (){
         return $this->belongsTo('App\Administrator');
     }

@@ -29,13 +29,11 @@
                 <input type="number" name="Nombre_enfant" class="form-control" placeholder="Nombre enfant" value="{{$resbedroomedit->Nombre_enfant}}">
             </div>
             <div>
-                <select type="text" name="Type_chambre" class="form-control" placeholder="Type de chambre" value="{{$resbedroomedit->Type_chambre}}">
-                    <option value="Unique_simple">Chambre Unique Simple </option>
-                    <option value="Unique_confort">Chambre Unique Confort</option>
-                    <option value="Double_simple">Chambre Double Simple</option>
-                    <option value="Double_confort">Chambre Double Confort</option>
-                    <option value="Deluxe_simple">Chambre Deluxe Simple</option>
-                    <option value="Deluxe_royal">Chambre Deluxe Royal</option>
+                <select name="Type_chambre" id="Type_chambre" class="form-control" value="{{$resbedroomedit->Type_chambre}}">
+                    < <option value="">Type de chambre</option>
+                    @foreach($bedrooms as $id => $value)
+                        <option value="{{$value}}" {{ $value == $reservationbedroom->Type_chambre ? 'selected="selected"':''}}>{{$value}}</option>
+                    @endforeach
                 </select>
             </div>
             <div>
