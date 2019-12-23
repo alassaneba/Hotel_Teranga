@@ -22,6 +22,11 @@
                     <th>{{$bedrooms->Prix_nuite}}</th>
                     <th>{{$bedrooms->ReservationBedroom_id}}</th>
                     <th> <p><a href="bedroomedit/{{$bedrooms->id}}">Editer</a></p></th>
+                    <th><form action="bedroomedit/{{$bedrooms->id}}" method="post">
+                        @csrf
+                        @method('delete')
+                        <input type="submit" class="btn btn-danger" name="delete" value="Supprimer">
+                    </form></th>
                 </tr>
             </table>
         @endforeach

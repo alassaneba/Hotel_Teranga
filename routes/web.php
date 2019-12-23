@@ -24,6 +24,7 @@ Route::get('resbedroomcreate','ReservationBedroomController@create')->name('rese
 Route::post('resbedroomcreate','ReservationBedroomController@store');
 Route::get('resbedroomedit/{id}','ReservationBedroomController@edit')->name('editer/resbedroom');
 Route::patch('/resbedroomupdate/{id}','ReservationBedroomController@update')->name('update/resbedroom');
+Route::delete('resbedroomedit/{id}', 'ReservationBedroomController@destroy');
 
 Route::get('bedroom','BedroomController@index');
 Route::post('bedroomcreate','BedroomController@create');
@@ -31,12 +32,15 @@ Route::get('bedroomcreate','BedroomController@create');
 Route::post('bedroomcreate','BedroomController@store');
 Route::get('bedroomedit/{id}','BedroomController@edit')->name('editer_bedroom');
 Route::patch('/bedroomupdate/{id}','BedroomController@update')->name('update_bedroom');
+Route::delete('bedroomedit/{id}', 'BedroomController@destroy');
+
 
 Route::post('reseventcreate','ReservationEventController@create');
 Route::get('reseventcreate','ReservationEventController@create');
 Route::post('reseventcreate','ReservationEventController@store');
 Route::get('reseventedit/{id}','ReservationEventController@edit')->name('editer/event');
 Route::patch('/reseventupdate/{id}','ReservationEventController@update')->name('update/event');
+Route::delete('reseventedit/{id}', 'ReservationEventController@destroy');
 
 
 

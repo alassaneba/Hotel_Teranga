@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Bedroom;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 
@@ -96,9 +97,19 @@ class BedroomController extends Controller
     {
         $bedroom= \App\Bedroom::find($id);
         if($bedroom){
-            $bedroom-> Type_chambre = $request->input('Type_chambre');
-            $bedroom-> Description = $request->input('Description');
-            $bedroom-> Image = $request->input('Image');
+            $bedroom->Type_chambre = $request->input('Type_chambre');
+            $bedroom->Description = $request->input('Description');
+                if($request->has('Image')){
+                    //On enregistre l'image dans une variable
+                    $image = $request->file('Image');
+                    if(file_exists(public_path().$bedroom->images))//On verifie si le fichier existe
+                        Storage::delete(asset($bedroom->images));//On le supprime alors
+                    //Nous enregistrerons nos fichiers dans /uploads/images dans public
+                    $folder = '/uploads/images/';
+                    $image_name = Str::slug($request->input('name')).'_'.time();
+                    $bedroom->Image = $folder.$image_name.'.'.$image->getClientOriginalExtension();
+                    //Maintenant nous pouvons enregistrer l'image dans le dossier en utilisant la méthode uploadImage();
+                    $this->uploadImage($image, $folder, 'public', $image_name); }
             $bedroom-> Prix_nuite= $request->input('Prix_nuite');
             $bedroom-> ReservationBedroom_id = $request->input('ReservationBedroom_id');
             $bedroom-> save(); }
@@ -113,8 +124,12 @@ class BedroomController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+        $bedroom = Bedroom::find($id);
+        if($bedroom)
+            $bedroom->delete();
+        return redirect('/bedroom');
+
+}
 
     public function uploadImage(UploadedFile $uploadedFile, $folder = null, $disk = 'public', $filename = null){
         $name = !is_null($filename) ? $filename : str_random('25');

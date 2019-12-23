@@ -146,6 +146,9 @@ class ReservationBedroomController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $reservationbedroom = ReservationBedroom::find($id);
+        if($reservationbedroom)
+            $reservationbedroom->delete();
+        return redirect('/reservationbedroom');
     }
 }

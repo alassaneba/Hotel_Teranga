@@ -50,6 +50,11 @@
             <th>{{$reservationevent->Telephone}}</th>
             <th>{{$reservationevent->Administrtor_id}}</th>
             <th> <p><a href="reseventedit/{{$reservationevent->id}}">Editer</a></p></th>
+            <th><form action="reseventedit/{{$reservationevent->id}}" method="post">
+                    @csrf
+                    @method('delete')
+                    <input type="submit" class="btn btn-danger" name="delete" value="Supprimer">
+                </form></th>
         </tr>
         </table>
     @endforeach

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ReservationEvent;
 use Illuminate\Http\Request;
 
 class ReservationEventController extends Controller
@@ -159,6 +160,9 @@ class ReservationEventController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $reservationevents = ReservationEvent::find($id);
+        if($reservationevents)
+            $reservationevents->delete();
+        return redirect('/reservationevent');
     }
 }
