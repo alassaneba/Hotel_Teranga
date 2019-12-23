@@ -11,9 +11,9 @@
             <div><label>Nom evenement</label>
                 <input type="text" name="Nom_evenement" class="form-control" placeholder="Nom de l'evenement">
             </div>
-            <div><label>Type evenement</label>
+            <div><label>Type d'evenement</label>
                 <select name="Type_evenement" id="Type_evenement" class="form-control">
-                     <option value="">Type d'evenement</option>
+                     <option value=""></option>
                     @foreach($typeevenememt as $id => $value)
                         <option value="{{$value}}">{{$value}}</option>
                     @endforeach
@@ -26,31 +26,29 @@
                 <input type="date" name="Date_fin" class="form-control" placeholder="Date fin">
             </div>
             <div><label></label>
-            <div><label>Duree</label>
+            <div><label>Duree de l'evenement</label>
                 <select type="text" name="Duree" class="form-control">
-                    <option>Duree de l'evenement </option>
+                    <option></option>
                     <option value="Matinee">Matinee</option>
                     <option value="Apres-midi">Apres-midi</option>
                     <option value="Soiree">Soiree</option>
                     <option value="Journee-entiere">Journee-entiere</option>
                 </select>
             </div>
-            <div><label>Salles</label>
-                <select type="text" name="Salles" class="form-control">
-                    <option>Salles de l'evenement</option>
-                    <option value="Terasse">Terasse</option>
-                    <option value="Salon-45-places">Salon-45-places</option>
-                    <option value="Salle-100-places">Salle-100-places</option>
+            <div><label>Salle de l'evenement</label>
+                <select name="Salles" id="Salles" class="form-control">
+                    <option value=""></option>
+                    @foreach($salles as $id => $value)
+                        <option value="{{$value}}">{{$value}}</option>
+                    @endforeach
                 </select>
             </div>
-            <div><label>Disposition</label>
-                <select type="text" name="Disposition" class="form-control">
-                    <option>Disposition de la salle</option>
-                    <option value="En-U">En-U</option>
-                    <option value="Reunion">Reunion</option>
-                    <option value="Theatre">Theatre</option>
-                    <option value="Classe">Classe</option>
-                    <option value="Cocktail">Cocktail</option>
+            <div><label>Disposition de la salle</label>
+                <select name="Disposition" id="Disposition" class="form-control">
+                    <option value=""></option>
+                    @foreach($disposition as $id => $value)
+                        <option value="{{$value}}">{{$value}}</option>
+                    @endforeach
                 </select>
             </div>
             <div><label>Nombre de participant</label>
@@ -58,7 +56,7 @@
             </div>
             <div><label>Restauration</label>
                 <select type="text" name="Restauration" class="form-control" placeholder="Restauration">
-                    <option>Restauration</option>
+                    <option></option>
                     <option value="NON">Non</option>
                     <option value=OUI>Oui</option>
                 </select>

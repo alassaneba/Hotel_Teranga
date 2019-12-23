@@ -15,11 +15,7 @@ class CreateDisposalRoomsTable extends Migration
     {
         Schema::create('disposal_rooms', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('En_U');
-            $table->string('Reunion');
-            $table->string('Theatre');
-            $table->string('Classe');
-            $table->string('Cocktail');
+            $table->string('Disposition');
             $table->unsignedBigInteger('ReservationEvent_id');
             $table->timestamps();
 

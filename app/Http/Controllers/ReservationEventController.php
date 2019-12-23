@@ -25,7 +25,9 @@ class ReservationEventController extends Controller
     public function create()
     {
         $typeevenememt = \App\TypeEvent::pluck('Type_evenement','id');
-        return view('Reservations.reseventcreate', compact('resbedroomcreate','typeevenememt'));
+        $salles = \App\Room::pluck('Salles','id');
+        $disposition = \App\DisposalRoom::pluck('Disposition','id');
+        return view('Reservations.reseventcreate', compact('resbedroomcreate','typeevenememt', 'salles', 'disposition'));
 
     }
 
@@ -101,8 +103,10 @@ class ReservationEventController extends Controller
     {
         $reseventedit= \App\ReservationEvent::find($id);
         $typeevenememt = \App\TypeEvent::pluck('Type_evenement','id');
+        $salles = \App\Room::pluck('Salles','id');
+        $disposition = \App\DisposalRoom::pluck('Disposition','id');
         $reservationevents = \App\ReservationEvent::orderBy('created_at','DESC')->first();
-        return view('Reservations.reseventedit', compact('reseventedit','typeevenememt','reservationevents'));
+        return view('Reservations.reseventedit', compact('reseventedit','typeevenememt','reservationevents','salles', 'disposition'));
     }
 
     /**
@@ -124,8 +128,14 @@ class ReservationEventController extends Controller
         $reservationevents-> Date_debut = $request->input('Date_debut');
         $reservationevents-> Date_fin = $request->input('Date_fin');
         $reservationevents-> Duree = $request->input('Duree');
-        $reservationevents-> Salles = $request->input('Salles');
-        $reservationevents-> Disposition = $request->input('Disposition');
+            if ($reservationevents) {
+                $reservationevents->update([
+                    'Salles' => $request->input('Salles'),
+                ]); }
+            if ($reservationevents) {
+                $reservationevents->update([
+                    'Disposition' => $request->input('Disposition'),
+                ]); }
         $reservationevents-> Nombre_participant = $request->input('Nombre_participant');
         $reservationevents-> Restauration = $request->input('Restauration');
         $reservationevents-> Equipement = $request->input('Equipement1').'|'. $request->input('Equipement2').'|'. $request->input('Equipement3').'|'. $request->input('Equipement4');

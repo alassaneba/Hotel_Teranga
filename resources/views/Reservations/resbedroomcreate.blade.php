@@ -9,48 +9,48 @@
     <div class="container">
     <form action="resbedroomcreate" method="post">
         @csrf
-        <div>
-            <input type="date" name="Date_arriver" class="form-control" placeholder="Date d'arriver">
+        <div><label>Date d'arriver</label>
+            <input type="date" name="Date_arriver" class="form-control">
         </div>
-        <div>
-            <input type="time" name="Heure_arriver" class="form-control" placeholder="Heure d'arriver">
+        <div><label>Heure d'arriver</label>
+            <input type="time" name="Heure_arriver" class="form-control">
         </div>
-        <div>
-            <input type="date" name="Date_depart" class="form-control" placeholder="Date d'arriver">
+        <div><label>Date d'arriver</label>
+            <input type="date" name="Date_depart" class="form-control">
         </div>
-        <div>
-            <input type="number" name="Nombre_chambre" class="form-control" placeholder="Nombre de chambre">
+        <div><label>Nombre de chambre</label>
+            <input type="number" name="Nombre_chambre" class="form-control">
         </div>
-        <div>
-            <input type="number" name="Nombre_adulte" class="form-control" placeholder="Nombre adulte">
+        <div><label>Nombre adulte</label>
+            <input type="number" name="Nombre_adulte" class="form-control">
         </div>
-        <div>
-            <input type="number" name="Nombre_enfant" class="form-control" placeholder="Nombre enfant">
+        <div><label>Nombre enfant</label>
+            <input type="number" name="Nombre_enfant" class="form-control">
         </div>
-        <div>
+        <div><label>Type de chambre</label>
         <select name="Type_chambre" id="Type_chambre" class="form-control">
-            < <option value="">Type de chambre</option>
+            < <option value=""></option>
             @foreach($bedrooms as $id => $value)
                 <option value="{{$value}}">{{$value}}</option>
             @endforeach
         </select>
     </div>
-    <div>
+    <div><label>Civilite</label>
             <select type="text" name="Civilite" class="form-control">
-                <option >Civilite</option>
+                <option></option>
                 <option value="Mr.">Mr.</option>
                 <option value="Mme.">Mme.</option>
                 <option value="Mlle.">Mlle.</option>
             </select>
         </div>
-        <div>
+        <div><label>Prenom</label>
             <input type="text" name="Prenom" class="form-control" placeholder="Prenom">
         </div>
-        <div>
+        <div><label>Nom</label>
             <input type="text" name="Nom" class="form-control" placeholder="Nom">
         </div>
-        <div>
-            <select type="text" name="Nationalite" class="form-control" placeholder="Nationalite">
+        <div><label>Nationalite</label>
+            <select type="text" name="Nationalite" class="form-control">
                 <option value="AF">Afghanistan</option>
                 <option value="ZA">Afrique du Sud</option>
                 <option value="AL">Albanie</option>
@@ -293,18 +293,17 @@
                 <option value="VI">Îles Vierges (U.S.)</option>
             </select>
         </div>
-
-        <div>
+        <div><label>Email</label>
             <input type="email" name="Email" class="form-control" placeholder="Email">
         </div>
-        <div>
+        <div><label>Telephone</label>
             <input type="text" name="Telephone" class="form-control" placeholder="Telephone">
         </div>
-        <div>
-            <input type="text" name="Montant_payer" class="form-control" placeholder="Montant a payer">
+        <div><label>Montant a payer</label>
+            <input type="text" name="Montant_payer" class="form-control">
         </div>
-        <div>
-            <select type="number" name="Administrator_id" class="form-control" placeholder="Id Administrateur">
+        <div><label>Id Administrateur</label>
+            <select type="number" name="Administrator_id" class="form-control">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

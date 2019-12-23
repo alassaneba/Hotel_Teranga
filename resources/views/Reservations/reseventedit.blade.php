@@ -12,9 +12,9 @@
             <div><label>Nom evenement</label>
                 <input type="text" name="Nom_evenement" class="form-control" placeholder="Nom de l'evenement" value="{{$reseventedit->Nom_evenement}}">
             </div>
-            <div><label>Type evenement</label>
+            <div><label>Type d'evenement</label>
                 <select name="Type_evenement" id="Type_evenement" value="{{$reseventedit->Type_evenement}}" class="form-control">
-                 <option>Type d'evenement</option>
+                 <option></option>
                     @foreach($typeevenememt as $id => $value)
                     <option value="{{$value}}">{{$value}}</option>
                     @endforeach
@@ -35,22 +35,20 @@
                     <option value="Journee-entiere">Journee-entiere</option>
                 </select>
             </div>
-            <div><label>Salles</label>
-                <select type="text" name="Salles" class="form-control" value="{{$reseventedit->Salles}}">
-                    <option>Salles de l'evenement</option>
-                    <option value="Terasse">Terasse</option>
-                    <option value="Salon-45-places">Salon-45-places</option>
-                    <option value="Salle-100-places">Salle-100-places</option>
+            <div><label>Salles de l'evenement</label>
+                <select name="Salles" id="Salles" value="{{$reseventedit->Salles}}" class="form-control">
+                    <option></option>
+                    @foreach($salles as $id => $value)
+                        <option value="{{$value}}">{{$value}}</option>
+                    @endforeach
                 </select>
             </div>
             <div><label>Disposition de la salle</label>
-                <select type="text" name="Disposition" class="form-control" value="{{$reseventedit->Disposition}}">
-                    <option>Disposition de la salle</option>
-                    <option value="En-U">En-U</option>
-                    <option value="Reunion">Reunion</option>
-                    <option value="Theatre">Theatre</option>
-                    <option value="Classe">Classe</option>
-                    <option value="Cocktail">Cocktail</option>
+                <select name="Disposition" id="Disposition" value="{{$reseventedit->Disposition}}" class="form-control">
+                    <option></option>
+                    @foreach($disposition as $id => $value)
+                        <option value="{{$value}}">{{$value}}</option>
+                    @endforeach
                 </select>
             </div>
             <div><label>Nombre de participant</label>
@@ -58,7 +56,7 @@
             </div>
             <div><label>Restauration</label>
                 <select type="text" name="Restauration" class="form-control" placeholder="Restauration" value="{{$reseventedit->Restauration}}">
-                    <option>Restauration</option>
+                    <option></option>
                     <option value="NON">Non</option>
                     <option value=OUI>Oui</option>
                 </select>
