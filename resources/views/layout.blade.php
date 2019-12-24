@@ -1,14 +1,31 @@
-<<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hotel Teranga</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="{{asset('app-assets/css/open-iconic-bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('app-assets/css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('app-assets/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('app-assets/css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('app-assets/css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{asset('app-assets/css/aos.css')}}">
+    <link rel="stylesheet" href="{{asset('app-assets/css/ionicons.min.css')}}">
+    <link rel="stylesheet" href="{{asset('app-assets/css/bootstrap-datepicker.css')}}">
+    <link rel="stylesheet" href="{{asset('app-assets/css/jquery.timepicker.css')}}">
+    <link rel="stylesheet" href="{{asset('app-assets/css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{asset('app-assets/css/icomoon.css')}}">
+    <link rel="stylesheet" href="{{asset('app-assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('app-assets/resources/demos/style.css')}}">
 </head>
 
 <body>
+
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand" href="index.html">Hotel<span>Teranga</span></a>
@@ -19,31 +36,102 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active"><a href="index.html" class="nav-link">Accueil</a></li>
-                <li class="nav-item"><a href="reservation.html" class="nav-link">Reservation</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Reservation chambre</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Reservation evenement</a></li>
+                <li class="nav-item"><a href="a-propos.html" class="nav-link">A propos</a></li>
                 <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="a propos.html" class="nav-link">A propos</a></li>
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </div>
 </nav>
 <!-- END nav -->
-
-<section class="hero-wrap d-flex js-fullheight" style="background:url(images/renai.jpg);height: 639px;background-position: top;background-size: cover;">
-    <div class="overlay"></div>
-    <div class="forth js-fullheight d-flex align-items-center">
-        <div class="text text-center">
-            <span class="subheading">Bienvenu chez Hotel Teranga</span>
-            <h1>Un sejour agreable vous est offert chez nous !</h1>
-            <h2 class="mb-5">Nous sommes une chaine d'hotel present au Senegal</h2>
-            <p><a href="contact.html#infocontact" class="btn-custom py-3 pr-2">Contactez-Nous</a></p>
+@yield('content')
+<!-- Start footer -->
+<footer class="ftco-footer ftco-bg-dark ftco-section">
+    <div class="container">
+        <div class="row mb-5 d-flex">
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">A PROPOS</h2>
+                    <p>Nous somme une chaine d'hotel 5 étoiles présent au Sénégal: Dakar, Thies, Saint-louis et Cap skiring. </p>
+                    <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+                        <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4 ml-md-4">
+                    <h2 class="ftco-heading-2">SERVICES</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="#cuc">Chercher une chambre</a></li>
+                        <li><a href="services.html">Salle de Conference</a></li>
+                        <li><a href="services.html">Salon de beauté</a></li>
+                        <li><a href="services.html">Pressing</a></li>
+                        <li><a href="services.html">Restaurant</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">LIENS</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="#cuc">Reservation Hebergement</a></li>
+                        <li><a href="#ccr">Catégories recommandées</a></li>
+                        <li><a href="#tcvv">Tendances chambres vip en vogue</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">VOS QUESTIONS ?</h2>
+                    <div class="block-23 mb-3">
+                        <ul>
+                            <li><span class="icon icon-map-marker"></span><span class="text">122 Cite millionnaire, Grand Yoff, Dakar, SENEGAL</span></li>
+                            <li><a href="#"><span class="icon icon-phone"></span><span class="text">+221 77 594 59 24</span></a></li>
+                            <li><a href="#"><span class="icon icon-envelope"></span><span class="text">azouone@gmail.com</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> TOUS DROITS RESERVES | Ce site web est cree avec <i class="icon-heart" aria-hidden="true"></i> par Al Assane BA avec <a href="https://galimatech.com" target="_blank">Galima Tech</a></p>
+            </div>
         </div>
     </div>
-    <div class="third about-img js-fullheight">
-    </div>
-</section>
-@yield('content')
+</footer>
 
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+
+<script src="{{asset('app-assets/js/jquery.min.js')}}"></script>
+<script src="{{asset('app-assets/js/jquery-migrate-3.0.1.min.js')}}"></script>
+<script src="{{asset('app-assets/js/popper.min.js')}}"></script>
+<script src="{{asset('app-assets/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('app-assets/js/jquery.easing.1.3.js')}}"></script>
+<script src="{{asset('app-assets/js/jquery.waypoints.min.js')}}"></script>
+<script src="{{asset('app-assets/js/jquery.stellar.min.js')}}"></script>
+<script src="{{asset('app-assets/js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('app-assets/js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{asset('app-assets/js/aos.js')}}"></script>
+<script src="{{asset('app-assets/js/jquery.animateNumber.min.js')}}"></script>
+<script src="{{asset('app-assets/js/bootstrap-datepicker.js')}}"></script>
+<script src="{{asset('app-assets/js/jquery.timepicker.min.js')}}"></script>
+<script src="{{asset('app-assets/js/scrollax.min.js')}}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="{{asset('app-assets/js/google-map.js')}}"></script>
+<script src="{{asset('app-assets/js/main.js')}}"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>$( function() {$( "#datepicker" ).datepicker();} );</script>
 
 </body>
 
