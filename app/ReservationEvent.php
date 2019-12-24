@@ -16,9 +16,6 @@ class ReservationEvent extends Model
     public function Room (){
         return $this->hasMany('App\Room');
     }
-    public function MaterialRoom (){
-        return $this->hasMany('App\MaterialRoom');
-    }
     public function DisposalRoom (){
         return $this->hasMany('App\DisposalRoom');
     }

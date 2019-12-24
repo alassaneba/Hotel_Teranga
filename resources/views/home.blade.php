@@ -8,22 +8,15 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="{{asset('app-assets/css/open-iconic-bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/animate.css')}}">
-
     <link rel="stylesheet" href="{{asset('app-assets/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/magnific-popup.css')}}">
-
     <link rel="stylesheet" href="{{asset('app-assets/css/aos.css')}}">
-
     <link rel="stylesheet" href="{{asset('app-assets/css/ionicons.min.css')}}">
-
     <link rel="stylesheet" href="{{asset('app-assets/css/bootstrap-datepicker.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/jquery.timepicker.css')}}">
-
-
     <link rel="stylesheet" href="{{asset('app-assets/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/style.css')}}">
@@ -138,25 +131,36 @@
 <section class="ftco-section ftco-services">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
+            <div class="col-md-5 col-lg-3 d-flex align-self-stretch ftco-animate">
                 <div class="media block-6 services">
                     <div class="icon d-flex justify-content-center align-items-center mb-4">
-                        <span> <image src="{{asset('app-assets/images/conf1.png')}}">  </span>
+                        <span><img src="{{asset('app-assets/images/Sleep.png')}}"></span>
                     </div>
                     <div class="media-body">
-                        <h3 class="heading"><a href="services.html">Salle de conference</a></h3>
-                        <p>Nous disposons des salles de conferences modernes adaptees a vos besoins.</p>
+                        <h3 class="heading"><a href="services.html">Hebergement</a></h3>
+                        <p>Nous disposons des chambres propres modernes adaptees a vos besoins.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
                 <div class="media block-6 services">
                     <div class="icon d-flex justify-content-center align-items-center mb-4">
-                        <span class="flaticon-cosmetics"></span>
+                        <span> <image src="{{asset('app-assets/images/conf1.png')}}">  </span>
                     </div>
                     <div class="media-body">
-                        <h3 class="heading"><a href="services.html">Salon de beaute</a></h3>
-                        <p> Nos maitres coiffeurs, maquilleurs et masseurs experimentes seront habiles pour tous vos besoins.</p>
+                        <h3 class="heading"><a href="services.html">Evenementiel</a></h3>
+                        <p>Nous disposons des salles modernes et des espaces adaptes a vos besoins.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 services">
+                    <div class="icon d-flex justify-content-center align-items-center mb-4">
+                        <span><image src="{{asset('app-assets/images/resto1.png')}}"></span>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="heading"><a href="services.html">Restauration</a></h3>
+                        <p> Un menu avec une alimentation saine et varies pour vous donner le gout de nos plats appetissants.</p>
                     </div>
                 </div>
             </div>
@@ -168,17 +172,6 @@
                     <div class="media-body">
                         <h3 class="heading"><a href="services.html">Pressing</a></h3>
                         <p>Un service de lavage professionnelle rapide equiper de machine moderne pour vous servir.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-                <div class="media block-6 services">
-                    <div class="icon d-flex justify-content-center align-items-center mb-4">
-                        <span><image src="{{asset('app-assets/images/resto1.png')}}"></span>
-                    </div>
-                    <div class="media-body">
-                        <h3 class="heading"><a href="services.html">Restaurant</a></h3>
-                        <p> Un menu avec une alimentation saine et varies pour vous donner le gout de nos plats appetissants.</p>
                     </div>
                 </div>
             </div>
@@ -375,11 +368,29 @@
                 <div class="pr-md-3 pr-lg-5 pl-md-5 mr-md-5 mb-5">
                     <div class="services-wrap d-flex">
                         <div class="icon d-flex justify-content-center align-items-center">
+                            <span><image src="{{asset('app-assets/images/Sleep.png')}}"></span>
+                        </div>
+                        <div class="media-body pl-4">
+                            <h3 class="heading">Hebergement</h3>
+                            <p>Nous disposons des chambres propres modernes adaptees a vos besoins.</p>
+                        </div>
+                    </div>
+                    <div class="services-wrap d-flex">
+                        <div class="icon d-flex justify-content-center align-items-center">
+                            <span><image src="{{asset('app-assets/images/conf1.png')}}"></span>
+                        </div>
+                        <div class="media-body pl-4">
+                            <h3 class="heading">Evenementiel</h3>
+                            <p>Nous disposons des salles modernes et des espaces adaptes a vos besoins.</p>
+                        </div>
+                    </div>
+                    <div class="services-wrap d-flex">
+                        <div class="icon d-flex justify-content-center align-items-center">
                             <span><image src="{{asset('app-assets/images/resto1.png')}}"></span>
                         </div>
                         <div class="media-body pl-4">
-                            <h3 class="heading">RESTAURANT</h3>
-                            <p>Un menu avec une alimentation saine et varies pour vous donner le gout de nos plats appetissants.</p>
+                            <h3 class="heading">Restauration</h3>
+                            <p> Un menu avec une alimentation saine et varies pour vous donner le gout de nos plats appetissants.</p>
                         </div>
                     </div>
                     <div class="services-wrap d-flex">
@@ -387,26 +398,8 @@
                             <span class="flaticon-fashion"></span>
                         </div>
                         <div class="media-body pl-4">
-                            <h3 class="heading">PRESSING</h3>
+                            <h3 class="heading">Pressing</h3>
                             <p>Un service de lavage professionnelle rapide equiper de machine moderne pour vous servir.</p>
-                        </div>
-                    </div>
-                    <div class="services-wrap d-flex">
-                        <div class="icon d-flex justify-content-center align-items-center">
-                            <span class="flaticon-cosmetics"></span>
-                        </div>
-                        <div class="media-body pl-4">
-                            <h3 class="heading">SALON DE BEAUTE</h3>
-                            <p>Nos maitres coiffeurs, maquilleurs et masseurs experimentes seront habiles pour tous vos besoins.</p>
-                        </div>
-                    </div>
-                    <div class="services-wrap d-flex">
-                        <div class="icon d-flex justify-content-center align-items-center">
-                            <span ><image src="{{asset('app-assets/images/conf1.png')}}"></span>
-                        </div>
-                        <div class="media-body pl-4">
-                            <h3 class="heading">SALLE DE CONFERENCE</h3>
-                            <p>Nous disposons des salles de conferences modernes adaptees a vos besoins.</p>
                         </div>
                     </div>
                 </div>
@@ -561,11 +554,10 @@
                 <div class="ftco-footer-widget mb-4 ml-md-4">
                     <h2 class="ftco-heading-2">SERVICES</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#cuc">Chercher une chambre</a></li>
-                        <li><a href="services.html">Salle de Conference</a></li>
-                        <li><a href="services.html">Salon de beauté</a></li>
+                        <li><a href="#cuc">Reserver une chambre</a></li>
+                        <li><a href="services.html">Reserver un evenement</a></li>
+                        <li><a href="services.html">Restauration</a></li>
                         <li><a href="services.html">Pressing</a></li>
-                        <li><a href="services.html">Restaurant</a></li>
                     </ul>
                 </div>
             </div>
@@ -573,7 +565,6 @@
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">LIENS</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#cuc">Reservation Hebergement</a></li>
                         <li><a href="#ccr">Catégories recommandées</a></li>
                         <li><a href="#tcvv">Tendances chambres vip en vogue</a></li>
                         <li><a href="#">Terms &amp; Conditions</a></li>

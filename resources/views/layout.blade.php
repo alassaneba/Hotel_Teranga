@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{asset('app-assets/css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/resources/demos/style.css')}}">
+    <link rel="stylesheet" href="{{asset('app-assets/css/lay.css')}}">
 </head>
 
 <body>
@@ -45,8 +46,11 @@
         </div>
     </div>
 </nav>
+<br><br><br>
 <!-- END nav -->
+<div class="container">
 @yield('content')
+</div>
 <!-- Start footer -->
 <footer class="ftco-footer ftco-bg-dark ftco-section">
     <div class="container">

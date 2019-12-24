@@ -5,10 +5,11 @@
             <div class="alert alert-danger">{{$error}}</div>
         @endforeach
     @endif
-    <div class="container">
-        <form action="reseventcreate" method="post">
+    <br>
+    <div class="container border">
+        <form action="reseventcreate" method="post" >
     @csrf
-            <div><label>Nom evenement</label>
+            <div><label>Nom de l'evenement</label>
                 <input type="text" name="Nom_evenement" class="form-control" placeholder="Nom de l'evenement">
             </div>
             <div><label>Type d'evenement</label>
@@ -71,7 +72,7 @@
                 </div>
             <div><label>Civilite</label>
                 <select type="text" name="Civilite" class="form-control">
-                    <option>Civilite</option>
+                    <option></option>
                     <option value="Mr.">Mr.</option>
                     <option value="Mme.">Mme.</option>
                     <option value="Mlle.">Mlle.</option>
@@ -97,6 +98,7 @@
             </div>
             <div><label>Id Administrateur</label>
                 <select type="number" name="Administrator_id" class="form-control" placeholder="Id Administrateur">
+                    <option></option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
