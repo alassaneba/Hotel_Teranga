@@ -6,7 +6,7 @@
         @endforeach
     @endif
 
-    <div class="container">
+    <div class="container border">
         <form action="bedroomcreate" method="post" enctype="multipart/form-data">
     @csrf
             <div><label>Type de chambre</label>

@@ -29,7 +29,7 @@ class CreateReservationBedroomsTable extends Migration
             $table->string('Email');
             $table->integer('Telephone');
             $table->integer('Montant_payer');
-            $table->unsignedBigInteger('Administrator_id');
+            $table->unsignedBigInteger('User_id');
             $table->timestamps();
 
         });

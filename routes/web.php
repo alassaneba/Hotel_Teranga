@@ -44,3 +44,7 @@ Route::delete('reseventedit/{id}', 'ReservationEventController@destroy');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

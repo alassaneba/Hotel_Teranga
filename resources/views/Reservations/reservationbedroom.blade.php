@@ -41,7 +41,7 @@
             <th>{{$reservations->Telephone}}</th>
             <th>{{$reservations->Montant_payer}}</th>
             <th>{{$reservations->Administrator_id}}</th>
-            <th> <p><a href="resbedroomedit/{{$reservations->id}}">Editer</a></p></th>
+            <th> <p class="btn btn-outline-secondary"><a href="resbedroomedit/{{$reservations->id}}">Editer</a></p></th>
             <th><form action="resbedroomedit/{{$reservations->id}}" method="post">
                     @csrf
                     @method('delete')

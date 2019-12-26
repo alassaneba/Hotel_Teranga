@@ -32,7 +32,7 @@ class CreateReservationEventsTable extends Migration
             $table->string('Secteur_activite');
             $table->string('Email');
             $table->integer('Telephone');
-            $table->unsignedBigInteger('Administrator_id');
+            $table->unsignedBigInteger('User_id');
             $table->timestamps();
 
 

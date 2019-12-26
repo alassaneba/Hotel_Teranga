@@ -5,7 +5,7 @@
             <div class="alert alert-danger">{{$error}}</div>
         @endforeach
     @endif
-    <div class="container">
+    <div class="container border">
         <form action="/bedroomupdate/{{$bedroomedit->id}}"  method="post" enctype="multipart/form-data">
             @csrf
             @method('patch')

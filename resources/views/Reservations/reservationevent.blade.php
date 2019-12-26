@@ -49,7 +49,7 @@
             <th>{{$reservationevent->Email}}</th>
             <th>{{$reservationevent->Telephone}}</th>
             <th>{{$reservationevent->Administrtor_id}}</th>
-            <th> <p><a href="reseventedit/{{$reservationevent->id}}">Editer</a></p></th>
+            <th> <p class="btn btn-outline-secondary"><a href="reseventedit/{{$reservationevent->id}}">Editer</a></p></th>
             <th><form action="reseventedit/{{$reservationevent->id}}" method="post">
                     @csrf
                     @method('delete')
