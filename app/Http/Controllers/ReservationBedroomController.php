@@ -95,6 +95,7 @@ class ReservationBedroomController extends Controller
      */
     public function edit($id)
     {
+        $this->authorize('admin');
             $resbedroomedit= \App\ReservationBedroom::find($id);
             $bedrooms = \App\Bedroom::pluck('Type_chambre','id');
             $reservationbedroom = \App\ReservationBedroom::orderBy('created_at','DESC')->first();

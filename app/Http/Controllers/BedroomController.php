@@ -82,6 +82,7 @@ class BedroomController extends Controller
      */
     public function edit($id)
     {
+        $this->authorize('admin');
         $bedroomedit= \App\Bedroom::find($id);
         return view('Bedrooms.bedroomedit', compact('bedroomedit'));
     }

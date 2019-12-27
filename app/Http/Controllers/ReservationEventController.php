@@ -103,6 +103,7 @@ class ReservationEventController extends Controller
      */
     public function edit($id)
     {
+        $this->authorize('admin');
         $reseventedit= \App\ReservationEvent::find($id);
         $typeevenememt = \App\TypeEvent::pluck('Type_evenement','id');
         $salles = \App\Room::pluck('Salles','id');
