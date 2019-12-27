@@ -25,6 +25,7 @@ class CreateReservationEventsTable extends Migration
             $table->integer('Nombre_participant');
             $table->string('Restauration');
             $table->string('Equipement');
+            $table->string('Autres_informations');
             $table->string('Civilite');
             $table->string('Prenom');
             $table->string('Nom');

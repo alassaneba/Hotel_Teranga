@@ -53,7 +53,7 @@ class ReservationBedroomController extends Controller
              'Email'=>'required|email',
              'Telephone'=>'required|min:9|numeric|',
              'Montant_payer'=>'required|min:4|numeric',
-             'Administrator_id'=>'required|min:1|numeric',
+             'User_id'=>'required|min:1|numeric',
         ]);
         $resbed = new ReservationBedroom();
         $resbed-> Date_arriver = $request->input('Date_arriver');
@@ -70,7 +70,7 @@ class ReservationBedroomController extends Controller
         $resbed-> Email = $request->input('Email');
         $resbed-> Telephone= $request->input('Telephone');
         $resbed-> Montant_payer= $request->input('Montant_payer');
-        $resbed-> Administrator_id = $request->input('Administrator_id');
+        $resbed-> User_id = $request->input('Administrator_id');
         $resbed-> save();
 
         return redirect('reservationbedroom')->with(['success' => "Reservation chambre enregistrée"]);
@@ -131,7 +131,7 @@ class ReservationBedroomController extends Controller
                 $reservationbedroom->Email = $request->input('Email');
                 $reservationbedroom->Telephone = $request->input('Telephone');
                 $reservationbedroom->Montant_payer = $request->input('Montant_payer');
-                $reservationbedroom->Administrator_id = $request->input('Administrator_id');
+                $reservationbedroom->User_id = $request->input('Administrator_id');
                 $reservationbedroom->save();
             }
             return redirect('reservationbedroom')->with(['success' => "Reservation chambre modifiée"]);

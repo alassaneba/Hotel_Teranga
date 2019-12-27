@@ -17,6 +17,7 @@
            <th>Nombre_participant</th>
            <th>Restauration</th>
            <th>Equipement</th>
+           <th>Autres_informations</th>
            <th>Civilite</th>
            <th>Prenom</th>
            <th>Nom </th>
@@ -24,7 +25,7 @@
            <th>Secteur_activite</th>
            <th>Email</th>
            <th>Telephone</th>
-           <th>Administrator_id</th>
+           <th>User_id</th>
       </tr>
     </table>
         </form>
@@ -41,6 +42,7 @@
             <th>{{$reservationevent->Nombre_participant}}</th>
             <th>{{$reservationevent->Restauration}}</th>
             <th>{{str_replace("|"," ", $reservationevent->Equipement)}}</th>
+            <th>{{$reservationevent->Autres_informations}}</th>
             <th>{{$reservationevent->Civilite}}</th>
             <th>{{$reservationevent->Prenom}}</th>
             <th>{{$reservationevent->Nom}} </th>
@@ -48,7 +50,7 @@
             <th>{{$reservationevent->Secteur_activite}}</th>
             <th>{{$reservationevent->Email}}</th>
             <th>{{$reservationevent->Telephone}}</th>
-            <th>{{$reservationevent->Administrtor_id}}</th>
+            <th>{{$reservationevent->User}}</th>
             <th> <p class="btn btn-outline-secondary"><a href="reseventedit/{{$reservationevent->id}}">Editer</a></p></th>
             <th><form action="reseventedit/{{$reservationevent->id}}" method="post">
                     @csrf

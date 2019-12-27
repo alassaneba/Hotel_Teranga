@@ -6,7 +6,7 @@
         @endforeach
     @endif
 
-    <div class="container">
+    <div class="container border">
     <form action="resbedroomcreate" method="post">
         @csrf
         <div><label>Date d'arriver</label>
@@ -302,8 +302,8 @@
         <div><label>Montant a payer</label>
             <input type="text" name="Montant_payer" class="form-control">
         </div>
-        <div><label>Id Administrateur</label>
-            <select type="number" name="Administrator_id" class="form-control">
+        <div><label>Id User</label>
+            <select type="number" name="User_id" class="form-control">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

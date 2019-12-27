@@ -57,7 +57,7 @@ class ReservationEventController extends Controller
             'Secteur_activite'=>'required|min:3',
             'Email'=>'required|email',
             'Telephone'=>'required|min:9|numeric|',
-            'Administrator_id'=>'required|min:1|numeric',
+            'User_id'=>'required|min:1|numeric',
         ]);
         $reseve = new \App\ReservationEvent();
         $reseve-> Nom_evenement = $request->input('Nom_evenement');
@@ -70,6 +70,7 @@ class ReservationEventController extends Controller
         $reseve-> Nombre_participant = $request->input('Nombre_participant');
         $reseve-> Restauration = $request->input('Restauration');
         $reseve-> Equipement = $request->input('Equipement1').'|'. $request->input('Equipement2').'|'. $request->input('Equipement3').'|'. $request->input('Equipement4');
+        $reseve-> Autres_informations = $request->input('Autres_informations');
         $reseve-> Civilite = $request->input('Civilite');
         $reseve-> Prenom = $request->input('Prenom');
         $reseve-> Nom = $request->input('Nom');
@@ -77,7 +78,7 @@ class ReservationEventController extends Controller
         $reseve-> Secteur_activite = $request->input('Secteur_activite');
         $reseve-> Email = $request->input('Email');
         $reseve-> Telephone= $request->input('Telephone');
-        $reseve-> Administrator_id = $request->input('Administrator_id');
+        $reseve-> User_id = $request->input('Administrator_id');
         $reseve-> save();
 
         return redirect('reservationevent')->with(['success' => "Reservation evenement enregistré"]);
@@ -140,6 +141,7 @@ class ReservationEventController extends Controller
         $reservationevents-> Nombre_participant = $request->input('Nombre_participant');
         $reservationevents-> Restauration = $request->input('Restauration');
         $reservationevents-> Equipement = $request->input('Equipement1').'|'. $request->input('Equipement2').'|'. $request->input('Equipement3').'|'. $request->input('Equipement4');
+        $reservationevents-> Autres_informations = $request->input('Autres_informations');
         $reservationevents-> Civilite = $request->input('Civilite');
         $reservationevents-> Prenom = $request->input('Prenom');
         $reservationevents-> Nom = $request->input('Nom');
@@ -147,7 +149,7 @@ class ReservationEventController extends Controller
         $reservationevents-> Secteur_activite = $request->input('Secteur_activite');
         $reservationevents-> Email = $request->input('Email');
         $reservationevents-> Telephone= $request->input('Telephone');
-        $reservationevents-> Administrator_id = $request->input('Administrator_id');
+        $reservationevents-> User_id = $request->input('Administrator_id');
         $reservationevents-> save(); }
         return redirect('reservationevent')->with(['success' => "Reservation evenement modifiée"]);
     }

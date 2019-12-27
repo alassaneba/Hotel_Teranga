@@ -20,7 +20,7 @@
           <th>Email</th>
           <th>Telephone</th>
           <th>Montant-payer</th>
-          <th>Administrator_id</th>
+          <th>User_id</th>
     </tr>
 </table>
 @foreach($reservationbedroom as $reservations)
@@ -40,7 +40,7 @@
             <th>{{$reservations->Email}}</th>
             <th>{{$reservations->Telephone}}</th>
             <th>{{$reservations->Montant_payer}}</th>
-            <th>{{$reservations->Administrator_id}}</th>
+            <th>{{$reservations->User_id}}</th>
             <th> <p class="btn btn-outline-secondary"><a href="resbedroomedit/{{$reservations->id}}">Editer</a></p></th>
             <th><form action="resbedroomedit/{{$reservations->id}}" method="post">
                     @csrf

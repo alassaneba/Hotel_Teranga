@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class ReservationEvent extends Model
 {
     protected $guarded = [];
-    public function Administrator (){
-        return $this->belongsTo('App\Administrator');
+    public function User (){
+        return $this->belongsTo('App\User');
     }
     public function TypeEvent (){
         return $this->hasMany('App\TypeEvent');

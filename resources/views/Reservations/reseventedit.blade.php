@@ -69,6 +69,9 @@
                     <li><input type="checkbox" name="Equipement4" value="Autres">Autres</li>
                 </ul>
             </div>
+            <div><label>Autres informations supplementaires</label>
+                <input type="textarea" name="Autres_informations" class="form-control" placeholder="Autres informations supplementaires" value="{{$reseventedit->Autres_informations}}">
+            </div>
             <div><label>Civilite</label>
                 <select type="text" name="Civilite" class="form-control" value="{{$reseventedit->Civilite}}">
                     <option>Civilite</option>
@@ -96,7 +99,7 @@
                 <input type="text" name="Telephone" class="form-control" placeholder="Telephone" value="{{$reseventedit->Telephone}}">
             </div>
             <div><label>Id Administrateur</label>
-                <select type="number" name="Administrator_id" class="form-control" placeholder="Id Administrateur" value="{{$reseventedit->Administrator_id}}">
+                <select type="number" name="User_id" class="form-control" placeholder="Id User" value="{{$reseventedit->User_id}}">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>

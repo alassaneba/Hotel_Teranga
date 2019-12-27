@@ -5,7 +5,6 @@
             <div class="alert alert-danger">{{$error}}</div>
         @endforeach
     @endif
-    <br>
     <div class="container border">
         <form action="reseventcreate" method="post" >
     @csrf
@@ -70,6 +69,9 @@
                         <li><input type="checkbox" name="Equipement4" value="Autres">Autres</li>
                     </ul>
                 </div>
+                <div><label>Autres informations supplementaires</label>
+                    <input type="textarea" name="Autres_informations" class="form-control" placeholder="Autres informations supplementaires">
+                </div>
             <div><label>Civilite</label>
                 <select type="text" name="Civilite" class="form-control">
                     <option></option>
@@ -97,7 +99,7 @@
                 <input type="text" name="Telephone" class="form-control" placeholder="Telephone">
             </div>
             <div><label>Id Administrateur</label>
-                <select type="number" name="Administrator_id" class="form-control" placeholder="Id Administrateur">
+                <select type="number" name="User_id" class="form-control" placeholder="Id User">
                     <option></option>
                     <option value="1">1</option>
                     <option value="2">2</option>

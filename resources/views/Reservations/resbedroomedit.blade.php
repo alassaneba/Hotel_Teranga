@@ -305,7 +305,7 @@
                 <input type="text" name="Montant_payer" class="form-control" placeholder="Montant a payer" value="{{$resbedroomedit->Montant_payer}}">
             </div>
             <div>
-                <select type="number" name="Administrator_id" class="form-control" placeholder="Id Administrateur" value="{{$resbedroomedit->Administrator_id}}">
+                <select type="number" name="User_id" class="form-control" placeholder="Id User" value="{{$resbedroomedit->User_id}}">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
