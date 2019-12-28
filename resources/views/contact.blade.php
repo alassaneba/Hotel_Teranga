@@ -34,7 +34,7 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href=home" class="nav-link">Accueil</a></li>
+                <li class="nav-item"><a href="home" class="nav-link">Accueil</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Reservation</a>
@@ -94,21 +94,22 @@
         </div>
         <div class="row block-9">
             <div class="col-md-6 pr-md-5">
-                <form action="#">
+                <form action="contact" method="post">
+                    @csrf
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Nom">
+                        <input type="text" name="Nom" class="form-control" placeholder="Nom">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Prenom">
+                        <input type="text" name="Prenom" class="form-control" placeholder="Prenom">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Email">
+                        <input type="text" name="Email" class="form-control" placeholder="Email">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Object">
+                        <input type="text" name="Objet" class="form-control" placeholder="Objet">
                     </div>
                     <div class="form-group">
-                        <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                        <textarea name="Message" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Envoyer Message" class="btn btn-primary py-3 px-5">

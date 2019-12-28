@@ -86,7 +86,7 @@
             <span class="subheading">Bienvenu chez Hotel Teranga</span>
             <h1>Un sejour agreable vous est offert chez nous !</h1>
             <h2 class="mb-5">Nous sommes une chaine d'hotel present au Senegal</h2>
-            <p><a href="contact.html" class="btn-custom py-3 pr-2">Contactez-Nous</a></p>
+            <p><a href="contact" class="btn-custom py-3 pr-2">Contactez-Nous</a></p>
         </div>
     </div>
     <div class="third about-img js-fullheight">
@@ -100,57 +100,55 @@
                 <h3 class="mb-4 mb-lg-0 align-text-center">Chercher une chambre</h3>
             </div>
             <div class="col-lg-10">
-                <form action="#" class="consult-form">
+                <form action="{{route('')}}" class="consult-form">
                     <div class="d-lg-flex align-items-md-end">
                         <div class="form-group mb-3 mb-lg-0 mr-4">
                             <div class="form-field">
                                 <div class="select-wrap text-center">
                                     Date d'arriver
-                                    <input type="date" id="da" class="btn btn-light py-3 px-4">
+                                    <input type="date" name="Date_arriver" id="da" class="btn btn-light py-3 px-4">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group mb-3 mb-lg-0 mr-4">
-                            <!-- <label for="#">Bust</label> -->
                             <div class="form-field">
                                 <div class="select-wrap text-center">
                                     Date depart
-                                    <input type="date" id="dd" class="btn btn-light py-3 px-4">
+                                    <input type="date" name="Date_depart" id="dd" class="btn btn-light py-3 px-4">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group mb-3 mb-lg-0 mr-4">
-                            <!-- <label for="#">Weist</label> -->
                             <div class="form-field">
                                 <div class="select-wrap text-center">
                                     Chambre
-                                    <select id="selection" class="btn btn-light py-3 px-4">
-                                        <option>Chambre unique</option>
-                                        <option>Chambre double lit</option>
-                                        <option>Chambre de luxe</option>
+                                    <select id="selection" name="Type_chambre" class="btn btn-light py-3 px-4">
+                                        <option>Unique_simple</option>
+                                        <option>Unique_confort</option>
+                                        <option>Double_simple</option>
+                                        <option>Double_confort</option>
+                                        <option>Deluxe_simple</option>
+                                        <option>Deluxe_royal</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group mb-3 mb-lg-0 mr-4">
-                            <!-- <label for="#">Chambre</label> -->
                             <div class="form-field">
                                 <div class="select-wrap text-center">
                                     <form> Adulte
-                                        <input type="number" name="Adult" id="ad" min="1" class="btn btn-light py-3 px-4"> </form>
+                                        <input type="number" name="Nombre_adulte" id="ad" min="1" class="btn btn-light py-3 px-4"> </form>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group mb-3 mb-lg-0 mr-4">
-                            <!-- <label for="#">Adult</label> -->
                             <div class="form-field">
                                 <div class="select-wrap text-center">
                                     Enfant
-                                    <input type="number" name="Adult" id="ad" min="0" class="btn btn-light py-3 px-4">
+                                    <input type="number" name="Nombre_enfant" id="ad" min="0" class="btn btn-light py-3 px-4">
                                 </div>
                             </div>
                         </div>
-                        <!-- <label for="#">Enfant</label> -->
                         <div class="form-group">
                             <input type="submit" value="Recherche" class="btn btn-primary py-3 px-4">
                         </div>
@@ -160,6 +158,31 @@
         </div>
     </div>
 </section>
+<div>
+    @foreach($trips as $trip)
+        <div class="single-blog-post d-flex align-items-center mb-50 wow fadeInUp" data-wow-delay="100ms">
+            <!-- Post Thumbnail -->
+            <div class="post-thumbnail">
+                <a href="#"><img src="{{$trip->car->car_image ? asset($trip->car->car_image) :
+                                        asset('uploads/images/default.png')}}" alt="" style="width:292px;height:292px;" ></a>
+            </div>
+            <!-- Post Content -->
+            <div class="post-content">
+                <!-- Post Title -->
+                <a href="#" class="post-title">Depart : {{$trip->lieu_depart}}</a>
+                <a href="#" class="post-title">Destination : {{$trip->lieu_arrivee}}</a>
+                <p>Date et Heure de depart :{{$trip->date_depart}} a {{$trip->heure_depart}}</p>
+                <p>Prix trajet / Passager {{$trip->price}} F</p>
+                <p>Vehicule : {{$trip->car->name}} </p>
+                <p>Nombre de places : {{$trip->car->nbre_place_passager}} </p>
+                <a href="{{route('profil_trip_user',['id'=>$trip->id])}}"
+                   class="btn continue-btn">Voir details<i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                <a href="{{route('show_car_user',['id'=>$trip->car->id])}}"
+                   class="btn continue-btn">Voir vehicule<i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    @endforeach
+</div>
 
 <section class="ftco-section ftco-services">
     <div class="container">

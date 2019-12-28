@@ -70,7 +70,7 @@
                     </ul>
                 </div>
                 <div><label>Autres informations supplementaires</label>
-                    <input type="textarea" name="Autres_informations" class="form-control" placeholder="Autres informations supplementaires">
+                    <textarea name="Autres_informations" id="" cols="30" rows="4" class="form-control" placeholder="Autres informations supplementaires"></textarea>
                 </div>
             <div><label>Civilite</label>
                 <select type="text" name="Civilite" class="form-control">

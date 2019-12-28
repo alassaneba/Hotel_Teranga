@@ -20,7 +20,7 @@
                 </select>
             </div>
             <div><label>Description de la chambre</label>
-                <input type="textera" name="Description" class="form-control" placeholder="Description">
+                <textarea name="Description" id="" cols="30" rows="7" class="form-control" placeholder="Description de la chambre"></textarea>
             </div>
             <div><label>Image de la chambre</label>
                 <input type="file" name="Image" class="form-control" placeholder="Image">

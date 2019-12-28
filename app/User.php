@@ -43,6 +43,9 @@ class User extends Authenticatable
     public function ReservationEvent (){
         return $this->hasMany('App\ReservationEvent');
     }
+    public function Contact () {
+        return $this->hasMany('App\Contact');
+    }
     /**Cette méthode va determiner si le user connecté a un role admin*/
     public function isAdmin(){
         return strtolower(@$this->role) === 'admin'? true : false;
