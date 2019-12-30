@@ -42,7 +42,7 @@ Route::get('reseventedit/{id}','ReservationEventController@edit')->name('editer/
 Route::patch('/reseventupdate/{id}','ReservationEventController@update')->name('update/event');
 Route::delete('reseventedit/{id}', 'ReservationEventController@destroy');
 
-Route::post('contact','ContactController@store');
+Route::post('Resultbedroom','ResultbedroomController@Resultbedroom')->name('resultat/recherche');
 
 
 

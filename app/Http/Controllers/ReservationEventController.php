@@ -78,7 +78,7 @@ class ReservationEventController extends Controller
         $reseve-> Secteur_activite = $request->input('Secteur_activite');
         $reseve-> Email = $request->input('Email');
         $reseve-> Telephone= $request->input('Telephone');
-        $reseve-> User_id = $request->input('Administrator_id');
+        $reseve-> User_id = $request->input('User_id');
         $reseve-> save();
 
         return redirect('reservationevent')->with(['success' => "Reservation evenement enregistré"]);
@@ -150,7 +150,7 @@ class ReservationEventController extends Controller
         $reservationevents-> Secteur_activite = $request->input('Secteur_activite');
         $reservationevents-> Email = $request->input('Email');
         $reservationevents-> Telephone= $request->input('Telephone');
-        $reservationevents-> User_id = $request->input('Administrator_id');
+        $reservationevents-> User_id = $request->input('User_id');
         $reservationevents-> save(); }
         return redirect('reservationevent')->with(['success' => "Reservation evenement modifiée"]);
     }

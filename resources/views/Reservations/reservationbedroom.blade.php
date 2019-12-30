@@ -3,7 +3,7 @@
     @if(session('success'))
         <div class="alert alert-success">{{session('success')}}</div>
     @endif
-    <section class="table table-striped">
+    <section class="table table-striped border">
 <table>
     <tr>
           <th>Date_arriver</th>

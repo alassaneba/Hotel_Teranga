@@ -27,7 +27,7 @@
 <body style="padding-top: 50px">
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-        <a class="navbar-brand" href="index.html">Hotel<span>Teranga</span></a>
+        <a class="navbar-brand" href="html">Hotel<span>Teranga</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
         </button>
@@ -36,9 +36,9 @@
                 <li class="nav-item active"><a href="index.html" class="nav-link">Accueil</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Reservation chambre</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Reservation evenement</a></li>
-                <li class="nav-item"><a href="a-propos.html" class="nav-link">A propos</a></li>
-                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="a-propos" class="nav-link">A propos</a></li>
+                <li class="nav-item"><a href="services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </div>
