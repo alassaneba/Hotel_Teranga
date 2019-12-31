@@ -49,7 +49,7 @@ class ContactController extends Controller
         $contact->Objet = $request->input('Objet');
         $contact->Message = $request->input('Message');
         $contact->save();
-        return redirect('home')->with(['success' => "Message envoyée"]);
+        return redirect('contact')->with(['success' => "Message envoyée"]);
     }
 
     /**

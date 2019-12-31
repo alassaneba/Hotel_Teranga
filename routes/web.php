@@ -18,6 +18,7 @@ Route::get('reservationevent','ReservationEventController@index');
 Route::get('a-propos','AproposController@index');
 Route::get('services','ServicesController@index');
 Route::get('contact','ContactController@index');
+Route::post('contact','ContactController@store');
 
 Route::post('resbedroomcreate','ReservationBedroomController@store')->name('ajout/reservation/bedroom');
 Route::get('resbedroomcreate','ReservationBedroomController@create')->name('reservation/bedroom');
@@ -44,6 +45,11 @@ Route::delete('reseventedit/{id}', 'ReservationEventController@destroy');
 
 Route::post('Resultbedroom','ResultbedroomController@Resultbedroom')->name('resultat/recherche');
 
+Route::post('reservationchambre','ReservationBedroomController@clreservationchambre');
+Route::get('reservationchambre','ReservationBedroomController@clreservationchambre');
+
+Route::post('reservationchambre','ReservationBedroomController@updatefrontoffice');
+//Route::get('reservationchambre','ReservationBedroomController@updatefrontoffice');
 
 
 

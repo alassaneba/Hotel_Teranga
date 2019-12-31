@@ -8,6 +8,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="{{asset('app-assets/css/open-iconic-bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/animate.css')}}">
@@ -25,24 +26,31 @@
     <link rel="stylesheet" href="{{asset('app-assets/css/lay.css')}}">
 </head>
 <body style="padding-top: 50px">
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <div class="container">
-        <a class="navbar-brand" href="html">Hotel<span>Teranga</span></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="oi oi-menu"></span> Menu
-        </button>
-        <div class="collapse navbar-collapse" id="ftco-nav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a href="index.html" class="nav-link">Accueil</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Reservation chambre</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Reservation evenement</a></li>
-                <li class="nav-item"><a href="a-propos" class="nav-link">A propos</a></li>
-                <li class="nav-item"><a href="services" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+          <a class="navbar-brand" href="home">Hotel<span>Teranga</span></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="oi oi-menu"></span> Menu
+          </button>
+
+          <div class="collapse navbar-collapse" id="ftco-nav">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item"><a href="home" class="nav-link">Accueil</a></li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Reservation</a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="#">Chambre</a>
+                          <a class="dropdown-item" href="#">Evenement</a>
+                      </div>
+                  </li>
+                  <li class="nav-item"><a href="a-propos" class="nav-link">A propos</a></li>
+                  <li class="nav-item"><a href="services" class="nav-link">Services</a></li>
+                  <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
 <!-- END nav -->
 <div class="container" style="padding-top: 20px">
 @yield('content')
@@ -66,11 +74,10 @@
                 <div class="ftco-footer-widget mb-4 ml-md-4">
                     <h2 class="ftco-heading-2">SERVICES</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#cuc">Chercher une chambre</a></li>
-                        <li><a href="services.html">Salle de Conference</a></li>
-                        <li><a href="services.html">Salon de beauté</a></li>
+                        <li><a href="#cuc">Reserver une chambre</a></li>
+                        <li><a href="services.html">Reserver un evenement</a></li>
+                        <li><a href="services.html">Restauration</a></li>
                         <li><a href="services.html">Pressing</a></li>
-                        <li><a href="services.html">Restaurant</a></li>
                     </ul>
                 </div>
             </div>
@@ -78,7 +85,6 @@
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">LIENS</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#cuc">Reservation Hebergement</a></li>
                         <li><a href="#ccr">Catégories recommandées</a></li>
                         <li><a href="#tcvv">Tendances chambres vip en vogue</a></li>
                         <li><a href="#">Terms &amp; Conditions</a></li>
@@ -101,16 +107,24 @@
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
-                <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> TOUS DROITS RESERVES | Ce site web est cree avec <i class="icon-heart" aria-hidden="true"></i> par Al Assane BA avec <a href="https://galimatech.com" target="_blank">Galima Tech</a></p>
+
+                <p>
+
+                    Copyright &copy;<script>
+                        document.write(new Date().getFullYear());
+
+                    </script> TOUS DROITS RESERVES | Ce site web est cree avec <i class="icon-heart" aria-hidden="true"></i> par Al Assane BA avec <a href="https://galimatech.com" target="_blank">Galima Tech</a>
+
+                </p>
             </div>
         </div>
     </div>
 </footer>
-
 <!-- loader -->
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
         <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
         <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+
 
 <script src="{{asset('app-assets/js/jquery.min.js')}}"></script>
 <script src="{{asset('app-assets/js/jquery-migrate-3.0.1.min.js')}}"></script>
@@ -129,9 +143,6 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 <script src="{{asset('app-assets/js/google-map.js')}}"></script>
 <script src="{{asset('app-assets/js/main.js')}}"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>$( function() {$( "#datepicker" ).datepicker();} );</script>
 
 </body>
 

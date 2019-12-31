@@ -9,18 +9,18 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{asset('app-assets/css/open-iconic-bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('app-assets/css/animate.css')}}">
-    <link rel="stylesheet" href="{{asset('app-assets/css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{asset('app-assets/css/owl.theme.default.min.css')}}">
-    <link rel="stylesheet" href="{{asset('app-assets/css/magnific-popup.css')}}">
-    <link rel="stylesheet" href="{{asset('app-assets/css/aos.css')}}">
-    <link rel="stylesheet" href="{{asset('app-assets/css/ionicons.min.css')}}">
-    <link rel="stylesheet" href="{{asset('app-assets/css/bootstrap-datepicker.css')}}">
-    <link rel="stylesheet" href="{{asset('app-assets/css/jquery.timepicker.css')}}">
-    <link rel="stylesheet" href="{{asset('app-assets/css/flaticon.css')}}">
-    <link rel="stylesheet" href="{{asset('app-assets/css/icomoon.css')}}">
-    <link rel="stylesheet" href="{{asset('app-assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('app-assets/css/open-iconic-bootstrap.min.css')}}"> v
+    <link rel="stylesheet" href="{{asset('app-assets/css/animate.css')}}">v
+    <link rel="stylesheet" href="{{asset('app-assets/css/owl.carousel.min.css')}}">v
+    <link rel="stylesheet" href="{{asset('app-assets/css/owl.theme.default.min.css')}}">v
+    <link rel="stylesheet" href="{{asset('app-assets/css/magnific-popup.css')}}">v
+    <link rel="stylesheet" href="{{asset('app-assets/css/aos.css')}}">v
+    <link rel="stylesheet" href="{{asset('app-assets/css/ionicons.min.css')}}">v
+    <link rel="stylesheet" href="{{asset('app-assets/css/bootstrap-datepicker.css')}}">v
+    <link rel="stylesheet" href="{{asset('app-assets/css/jquery.timepicker.css')}}">v
+    <link rel="stylesheet" href="{{asset('app-assets/css/flaticon.css')}}">v
+    <link rel="stylesheet" href="{{asset('app-assets/css/icomoon.css')}}">v
+    <link rel="stylesheet" href="{{asset('app-assets/css/style.css')}}">v
 </head>
 
 <body>
@@ -63,7 +63,9 @@
         </div>
     </div>
 </section>
-
+@if(session('success'))
+    <div class="alert alert-success">{{session('success')}}</div>
+@endif
 <section class="ftco-section contact-section">
     <div class="container">
         <div class="row d-flex mb-5 contact-info">
@@ -216,4 +218,3 @@
 </body>
 
 </html>
-

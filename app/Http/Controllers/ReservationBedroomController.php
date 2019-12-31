@@ -53,7 +53,7 @@ class ReservationBedroomController extends Controller
              'Email'=>'required|email',
              'Telephone'=>'required|min:9|numeric|',
              'Montant_payer'=>'required|min:4|numeric',
-             'User_id'=>'required|min:1|numeric',
+             'User_id'=>'min:1|numeric',
         ]);
         $resbed = new ReservationBedroom();
         $resbed-> Date_arriver = $request->input('Date_arriver');
@@ -152,4 +152,49 @@ class ReservationBedroomController extends Controller
             $reservationbedroom->delete();
         return redirect('/reservationbedroom');
     }
+    public function clreservationchambre(){
+      $bedrooms = \App\Bedroom::pluck('Type_chambre','id');
+      $reservationbedroom = \App\ReservationBedroom::orderBy('created_at','DESC')->first();
+      return view('reservationchambre', compact('reservationchambre','bedrooms','reservationbedroom'));
+    }
+
+        public function updatefrontoffice(Request $request)
+        {
+             $data = $request->validate([
+                 'Date_arriver'=>'required',
+                 'Heure_arriver'=>'required',
+                 'Date_depart'=>'required',
+                 'Nombre_chambre'=>'required|numeric',
+                 'Nombre_adulte'=>'required|min:1|numeric',
+                 'Nombre_enfant'=>'required|nullable|numeric',
+                 'Type_chambre'=>'required',
+                 'Civilite'=>'required',
+                 'Prenom'=>'required|min:3',
+                 'Nom'=>'required|min:2',
+                 'Nationalite'=>'required|min:2',
+                 'Email'=>'required|email',
+                 'Telephone'=>'required|min:9|numeric|',
+                 'Montant_payer'=>'required|min:4|numeric',
+                 'User_id'=>'min:1|numeric',
+            ]);
+            $resbed = new ReservationBedroom();
+            $resbed-> Date_arriver = $request->input('Date_arriver');
+            $resbed-> Heure_arriver = $request->input('Heure_arriver');
+            $resbed-> Date_depart = $request->input('Date_depart');
+            $resbed-> Nombre_chambre = $request->input('Nombre_chambre');
+            $resbed-> Nombre_adulte = $request->input('Nombre_adulte');
+            $resbed-> Nombre_enfant = $request->input('Nombre_enfant');
+            $resbed-> Type_chambre = $request->input('Type_chambre');
+            $resbed-> Civilite = $request->input('Civilite');
+            $resbed-> Prenom = $request->input('Prenom');
+            $resbed-> Nom = $request->input('Nom');
+            $resbed-> Nationalite = $request->input('Nationalite');
+            $resbed-> Email = $request->input('Email');
+            $resbed-> Telephone= $request->input('Telephone');
+            $resbed-> Montant_payer= $request->input('Montant_payer');
+            $resbed-> User_id = $request->input('User_id');
+            $resbed-> save();
+
+              return redirect()->back()->with(['success' => "Reservation chambre enregistrée"]);
+        }
 }
