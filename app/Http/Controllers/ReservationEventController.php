@@ -168,4 +168,56 @@ class ReservationEventController extends Controller
             $reservationevents->delete();
         return redirect('/reservationevent');
     }
+    public function clreservationevenement(){
+        $typeevenememt = \App\TypeEvent::pluck('Type_evenement','id');
+        $salles = \App\Room::pluck('Salles','id');
+        $disposition = \App\DisposalRoom::pluck('Disposition','id');
+        $reservationevents = \App\ReservationEvent::orderBy('created_at','DESC')->first();
+        return view('reservationevenement', compact('reservationevenement','typeevenememt','reservationevents','salles', 'disposition'));
+    }
+    public function updatefrontoffice(Request $request){
+        $data = $request->validate([
+            'Nom_evenement'=>'required',
+            'Type_evenement'=>'required',
+            'Date_debut'=>'required',
+            'Date_fin'=>'required',
+            'Duree'=>'required',
+            'Salles'=>'required',
+            'Disposition'=>'required',
+            'Nombre_participant'=>'required|min:1|numeric',
+            'Restauration'=>'required',
+            'Civilite'=>'required',
+            'Prenom'=>'required|min:3',
+            'Nom'=>'required|min:2',
+            'Societe'=>'required|min:3',
+            'Secteur_activite'=>'required|min:3',
+            'Email'=>'required|email',
+            'Telephone'=>'required|min:9|numeric|',
+            'User_id'=>'min:1|numeric',
+        ]);
+        $reseve = new \App\ReservationEvent();
+        $reseve-> Nom_evenement = $request->input('Nom_evenement');
+        $reseve-> Type_evenement = $request->input('Type_evenement');
+        $reseve-> Date_debut = $request->input('Date_debut');
+        $reseve-> Date_fin = $request->input('Date_fin');
+        $reseve-> Duree = $request->input('Duree');
+        $reseve-> Salles = $request->input('Salles');
+        $reseve-> Disposition = $request->input('Disposition');
+        $reseve-> Nombre_participant = $request->input('Nombre_participant');
+        $reseve-> Restauration = $request->input('Restauration');
+        $reseve-> Equipement = $request->input('Equipement1').'|'. $request->input('Equipement2').'|'. $request->input('Equipement3').'|'. $request->input('Equipement4');
+        $reseve-> Autres_informations = $request->input('Autres_informations');
+        $reseve-> Civilite = $request->input('Civilite');
+        $reseve-> Prenom = $request->input('Prenom');
+        $reseve-> Nom = $request->input('Nom');
+        $reseve-> Societe = $request->input('Societe');
+        $reseve-> Secteur_activite = $request->input('Secteur_activite');
+        $reseve-> Email = $request->input('Email');
+        $reseve-> Telephone= $request->input('Telephone');
+        $reseve-> User_id = $request->input('User_id');
+        $reseve-> save();
+
+        return redirect()->back()->with(['success' => "Votre reservation d'evenement est enregistré"]);
+    }
 }
+

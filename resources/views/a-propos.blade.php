@@ -39,8 +39,8 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Reservation</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Chambre</a>
-                        <a class="dropdown-item" href="#">Evenement</a>
+                        <a class="dropdown-item" href="reservationchambre">Chambre</a>
+                        <a class="dropdown-item" href="reservationevenement">Evenement</a>
                     </div>
                 </li>
                 <li class="nav-item active"><a href="a-propos" class="nav-link">A propos</a></li>

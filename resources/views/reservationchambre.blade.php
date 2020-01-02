@@ -1,10 +1,23 @@
 @extends('layout')
 @section('content')
-    @if($succes->())
-        @foreach($errors->all() as $error)
-            <div class="alert alert-danger">{{$error}}</div>
-        @endforeach
+    @if(session('success'))
+        <div class="alert alert-success">{{session('success')}}</div>
     @endif
+    <section class="hero-wrap hero-wrap-2" style="background-image:url({{asset('app-assets/images/renai.jpg')}});">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row slider-text justify-content-center align-items-center">
+                <div class="col-md-7 col-sm-12 text-center ftco-animate">
+                    <h1 class="mb-3 mt-5 bread">Reservation de chambre</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class=" container border">
+        <spam><p>Pour faire une reservation de chambre veuillez renseignez tous les champs</p></spam>
+    </div>
+
     <div class="container border">
     <form action="reservationchambre" method="post">
         @csrf

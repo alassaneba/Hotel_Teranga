@@ -195,6 +195,6 @@ class ReservationBedroomController extends Controller
             $resbed-> User_id = $request->input('User_id');
             $resbed-> save();
 
-              return redirect()->back()->with(['success' => "Reservation chambre enregistrée"]);
+              return redirect()->back()->with(['success' => "Votre reservation de chambre est enregistrée"]);
         }
 }

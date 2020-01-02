@@ -43,13 +43,14 @@ Route::get('reseventedit/{id}','ReservationEventController@edit')->name('editer/
 Route::patch('/reseventupdate/{id}','ReservationEventController@update')->name('update/event');
 Route::delete('reseventedit/{id}', 'ReservationEventController@destroy');
 
+Route::get('reservationchambre','ReservationBedroomController@clreservationchambre');
+Route::post('reservationchambre','ReservationBedroomController@updatefrontoffice');
+
+Route::get('reservationevenement','ReservationEventController@clreservationevenement');
+Route::post('reservationevenement','ReservationEventController@updatefrontoffice');
+
 Route::post('Resultbedroom','ResultbedroomController@Resultbedroom')->name('resultat/recherche');
 
-Route::post('reservationchambre','ReservationBedroomController@clreservationchambre');
-Route::get('reservationchambre','ReservationBedroomController@clreservationchambre');
-
-Route::post('reservationchambre','ReservationBedroomController@updatefrontoffice');
-//Route::get('reservationchambre','ReservationBedroomController@updatefrontoffice');
 
 
 

@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="{{asset('app-assets/resources/demos/style.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/lay.css')}}">
 </head>
-<body style="padding-top: 50px">
+<body>
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
           <a class="navbar-brand" href="home">Hotel<span>Teranga</span></a>
@@ -40,8 +40,8 @@
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Reservation</a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="#">Chambre</a>
-                          <a class="dropdown-item" href="#">Evenement</a>
+                          <a class="dropdown-item" href="reservationchambre">Chambre</a>
+                          <a class="dropdown-item" href="reservationevenement">Evenement</a>
                       </div>
                   </li>
                   <li class="nav-item"><a href="a-propos" class="nav-link">A propos</a></li>
@@ -52,9 +52,9 @@
       </div>
   </nav>
 <!-- END nav -->
-<div class="container" style="padding-top: 20px">
+
 @yield('content')
-</div>
+
 <!-- Start footer -->
 <footer class="ftco-footer ftco-bg-dark ftco-section">
     <div class="container">
@@ -74,10 +74,10 @@
                 <div class="ftco-footer-widget mb-4 ml-md-4">
                     <h2 class="ftco-heading-2">SERVICES</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#cuc">Reserver une chambre</a></li>
-                        <li><a href="services.html">Reserver un evenement</a></li>
-                        <li><a href="services.html">Restauration</a></li>
-                        <li><a href="services.html">Pressing</a></li>
+                        <li><a href="reservationchambre">Reserver une chambre</a></li>
+                        <li><a href="reservationevenement">Reserver un evenement</a></li>
+                        <li><a href="services">Restauration</a></li>
+                        <li><a href="services">Pressing</a></li>
                     </ul>
                 </div>
             </div>
