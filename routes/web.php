@@ -49,7 +49,8 @@ Route::post('reservationchambre','ReservationBedroomController@updatefrontoffice
 Route::get('reservationevenement','ReservationEventController@clreservationevenement');
 Route::post('reservationevenement','ReservationEventController@updatefrontoffice');
 
-Route::post('Resultbedroom','ResultbedroomController@Resultbedroom')->name('resultat/recherche');
+Route::get('recherche','BedroomController@recherche')->name('recherche');
+Route::get('Resultbedroom','BedroomController@Resultbedroom')->name('Resultbedroom');
 
 
 Route::get('/home', 'HomeController@index')->name('home');

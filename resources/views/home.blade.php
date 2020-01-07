@@ -100,7 +100,7 @@
                 <h3 class="mb-4 mb-lg-0 align-text-center">Chercher une chambre</h3>
             </div>
             <div class="col-lg-10">
-                <form action="#" class="consult-form">
+                <form action="{{route('recherche')}}" method="get" class="consult-form">
                     <div class="d-lg-flex align-items-md-end">
                         <div class="form-group mb-3 mb-lg-0 mr-4">
                             <div class="form-field">
@@ -123,12 +123,12 @@
                                 <div class="select-wrap text-center">
                                     Chambre
                                     <select id="selection" name="Type_chambre" class="btn btn-light py-3 px-4">
-                                        <option>Unique_simple</option>
-                                        <option>Unique_confort</option>
-                                        <option>Double_simple</option>
-                                        <option>Double_confort</option>
-                                        <option>Deluxe_simple</option>
-                                        <option>Deluxe_royal</option>
+                                        <option value="Unique_simple">Unique_simple</option>
+                                        <option value="Unique_confort">Unique_confort</option>
+                                        <option value="Double_simple">Double_simple</option>
+                                        <option value="Double_confort">Double_confort</option>
+                                        <option value="Deluxe_simple">Deluxe_simple</option>
+                                        <option value="Deluxe_royal">Deluxe_royal</option>
                                     </select>
                                 </div>
                             </div>
@@ -667,7 +667,3 @@
 </body>
 
 </html>
-
-
-
-

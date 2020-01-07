@@ -6,12 +6,12 @@
         <div class="container-fluid">
 
             <!-- Breadcrumbs-->
-            <ol class="breadcrumb">
+          <!--  <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="#">Tableau de bord</a>
                 </li>
                 <li class="breadcrumb-item active">Sommaire</li>
-            </ol>
+            </ol>-->
 
             <!-- Icon Cards-->
             <div class="row">
@@ -84,12 +84,12 @@
         <!-- /.container-fluid -->
 
         <!-- Sticky Footer -->
-        <footer class="sticky-footer">
+      <!--  <footer class="sticky-footer">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
                     <span>Copyright © Hotel Teranga 2020</span>
                 </div>
             </div>
-        </footer>
+        </footer> -->
     </div>
 @endsection

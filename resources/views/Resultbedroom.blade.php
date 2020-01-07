@@ -1,23 +1,32 @@
-@foreach($trips as $trip)
-                    <div class="single-blog-post d-flex align-items-center mb-50 wow fadeInUp" data-wow-delay="100ms">
-                        <!-- Post Thumbnail -->
-                        <div class="post-thumbnail">
-                            <a href="#"><img src="{{$trip->car->car_image ? asset($trip->car->car_image) :
-                                        asset('uploads/images/default.png')}}" alt="" style="width:292px;height:292px;" ></a>
+@extends('layout')
+@section('content')
+<section id="tcvv" class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-7 heading-section ftco-animate text-center">
+                <span class="subheading">Resultat</span>
+                <h2 class="mb-4">Chambre disponible</h2>
+                <p>Voici la chambre correspondant a votre recherche</p>
+            </div>
+        </div>
+        @foreach($chambres as $chambre)
+            <div class="col-md-7 ftco-animate">
+                <div class="blog-entry" data-aos-delay="200">
+                    <a href="blog-single.html" class="block-20" style="background-image: url('{{$chambre->Image}}');">
+                    </a>
+                    <div class="text py-4">
+                        <div class="meta mb-3">
+                            <div><a>Prix/nuite = {{$chambre->Prix_nuite}} Fr cfa</a></div>
+                            <div><a>Chambre {{$chambre->Type_chambre}}</a></div>
                         </div>
-                        <!-- Post Content -->
-                        <div class="post-content">
-                            <!-- Post Title -->
-                            <a href="#" class="post-title">Depart : {{$trip->lieu_depart}}</a>
-                            <a href="#" class="post-title">Destination : {{$trip->lieu_arrivee}}</a>
-                            <p>Date et Heure de depart :{{$trip->date_depart}} a {{$trip->heure_depart}}</p>
-                            <p>Prix trajet / Passager {{$trip->price}} F</p>
-                            <p>Vehicule : {{$trip->car->name}} </p>
-                            <p>Nombre de places : {{$trip->car->nbre_place_passager}} </p>
-                            <a href="{{route('profil_trip_user',['id'=>$trip->id])}}"
-                                    class="btn continue-btn">Voir details<i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                                    <a href="{{route('show_car_user',['id'=>$trip->car->id])}}"
-                                    class="btn continue-btn">Voir vehicule<i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                        <div class="desc">
+                            <h3 class="heading"><a>Description de la chambre: {{$chambre->Description}}</a></h3>
                         </div>
                     </div>
-                    @endforeach
+                </div>
+            </div>
+        @endforeach
+        </div>
+    </div>
+</section>
+@endsection

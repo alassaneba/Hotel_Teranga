@@ -138,5 +138,10 @@ class BedroomController extends Controller
 
         return $file;
     }
+    public function recherche(Request $request){
+      $type_chambre = $request->input('Type_chambre');
+      $chambres = \App\Bedroom::where('Type_chambre','like',$type_chambre)->get();
+      return view('Resultbedroom',compact('chambres'));
+    }
 
 }
