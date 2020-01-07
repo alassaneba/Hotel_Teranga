@@ -57,7 +57,7 @@ class ReservationEventController extends Controller
             'Secteur_activite'=>'required|min:3',
             'Email'=>'required|email',
             'Telephone'=>'required|min:9|numeric|',
-            'User_id'=>'required|min:1|numeric',
+            'User_id'=>'min:1|numeric',
         ]);
         $reseve = new \App\ReservationEvent();
         $reseve-> Nom_evenement = $request->input('Nom_evenement');
@@ -220,4 +220,3 @@ class ReservationEventController extends Controller
         return redirect()->back()->with(['success' => "Votre reservation d'evenement est enregistré"]);
     }
 }
-

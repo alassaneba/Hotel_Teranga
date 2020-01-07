@@ -24,16 +24,16 @@ class CreateReservationEventsTable extends Migration
             $table->string('Disposition');
             $table->integer('Nombre_participant');
             $table->string('Restauration');
-            $table->string('Equipement');
-            $table->longText('Autres_informations');
+            $table->string('Equipement')->nullable('true');
+            $table->longText('Autres_informations')->nullable('true');
             $table->string('Civilite');
             $table->string('Prenom');
             $table->string('Nom');
-            $table->string('Societe');
-            $table->string('Secteur_activite');
+            $table->string('Societe')->nullable('true');
+            $table->string('Secteur_activite')->nullable('true');
             $table->string('Email');
             $table->integer('Telephone');
-            $table->unsignedBigInteger('User_id');
+            $table->unsignedBigInteger('User_id')->nullable('true');
             $table->timestamps();
 
 
