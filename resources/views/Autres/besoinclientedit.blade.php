@@ -52,11 +52,11 @@
                     <option value="Annuler" {{$besoinclientedit->Statut==="Annuler"?'selected="selected"':''}}>Annuler</option>
                 </select>
             </div>
-            <div><label>User_id</label>
+            <div><label>Responsable</label>
               <select type="text" name="User_id" class="form-control">
-                  <option value="1" {{$besoinclientedit->Statut==="Admin"?'selected="selected"':''}}>Admin</option>
-                  <option value="2" {{$besoinclientedit->Statut==="Moderator1"?'selected="selected"':''}}>Moderator1</option>
-                  <option value="3" {{$besoinclientedit->Statut==="Moderator2"?'selected="selected"':''}}>Moderator2</option>
+                  <option value="1" {{$besoinclientedit->User_id==="Admin"?'selected="selected"':''}}>Admin</option>
+                  <option value="2" {{$besoinclientedit->User_id==="Moderator1"?'selected="selected"':''}}>Moderator1</option>
+                  <option value="3" {{$besoinclientedit->User_id==="Moderator2"?'selected="selected"':''}}>Moderator2</option>
               </select>
             </div>
             <div>

@@ -29,10 +29,11 @@
         <form action="/bedroomupdate/{{$bedroomedit->id}}"  method="post" enctype="multipart/form-data">
             @csrf
             @method('patch')
+            {{$bedroomedit->Type_chambre}}
             <div><label>Type de chambre</label>
                 <select type="text" name="Type_chambre" class="form-control" placeholder="Type de chambre">
-                    @foreach($bedroomedit as $bedid => $Type_chambre)
-                        <option value="{{$bedid}}" {{$bedroomedit->Type_chambre===$bedid?'selected="selected"':''}}>{{$Type_chambre}}</option>
+                    @foreach($Type_chambre as $bedid => $Type_chambre)
+                         <option value="{{$Type_chambre}}" {{ $Type_chambre == $bedroomedit->Type_chambre ? 'selected':''}}>{{$Type_chambre}}</option>
                     @endforeach
                 </select>
             </div>
@@ -52,7 +53,6 @@
             </div>
             <div><label>Statut</label>
                 <select type="text" name="Statut" class="form-control" value="{{$bedroomedit->Statut}}">
-                    <option></option>
                     <option value="Disponible" {{$bedroomedit->Statut==="Disponible"?'selected="selected"':''}}>Disponible</option>
                     <option value="Indisponible" {{$bedroomedit->Statut==="Indisponible"?'selected="selected"':''}}>Indisponible</option>
                 </select>

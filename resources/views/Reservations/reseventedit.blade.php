@@ -47,12 +47,12 @@
                 <input type="date" name="Date_fin" class="form-control" placeholder="Date fin" value="{{$reseventedit->Date_fin}}">
             </div>
             <div><label>Duree</label>
-                <select type="text" name="Duree" class="form-control" value="{{$reseventedit->Duree}}">
+                <select type="text" name="Duree" class="form-control">
                     <option>Duree de l'evenement </option>
-                    <option value="Matinee">Matinee</option>
-                    <option value="Apres-midi">Apres-midi</option>
-                    <option value="Soiree">Soiree</option>
-                    <option value="Journee-entiere">Journee-entiere</option>
+                    <option value="Matinee" {{$reseventedit->Duree==="Matinee"?'selected="selected"':''}}>Matinee</option>
+                    <option value="Apres-midi" {{$reseventedit->Duree==="Apres-midi"?'selected="selected"':''}}>Apres-midi</option>
+                    <option value="Soiree" {{$reseventedit->Duree==="Soiree"?'selected="selected"':''}}>Soiree</option>
+                    <option value="Journee-entiere" {{$reseventedit->Duree==="Journee-entiere"?'selected="selected"':''}}>Journee-entiere</option>
                 </select>
             </div>
             <div><label>Salles de l'evenement</label>
@@ -75,10 +75,10 @@
                 <input type="number" name="Nombre_participant" class="form-control" placeholder="Nombre de participant" value="{{$reseventedit->Nombre_participant}}">
             </div>
             <div><label>Restauration</label>
-                <select type="text" name="Restauration" class="form-control" placeholder="Restauration" value="{{$reseventedit->Restauration}}">
+                <select type="text" name="Restauration" class="form-control" placeholder="Restauration">
                     <option></option>
-                    <option value="NON">Non</option>
-                    <option value=OUI>Oui</option>
+                    <option value="NON" {{$reseventedit->Restauration==="Non"?'selected="selected"':''}}>Non</option>
+                    <option value="OUI" {{$reseventedit->Restauration==="Oui"?'selected="selected"':''}}>Oui</option>
                 </select>
             </div>
             <div class="checkbox" value="{{$reseventedit->Equipement}}"><label>Equipement</label>
@@ -90,14 +90,14 @@
                 </ul>
             </div>
             <div><label>Autres informations supplementaires</label>
-                <textarea name="Autres_informations" id="" cols="30" rows="4" class="form-control" placeholder="Autres informations supplementaires" value="{{$reseventedit->Autres_informations}}"></textarea>
+                <textarea name="Autres_informations" id="" cols="30" rows="4" class="form-control" placeholder="Autres informations supplementaires">{{$reseventedit->Autres_informations}}</textarea>
             </div>
             <div><label>Civilite</label>
                 <select type="text" name="Civilite" class="form-control" value="{{$reseventedit->Civilite}}">
                     <option></option>
-                    <option value="Mr.">Mr.</option>
-                    <option value="Mme.">Mme.</option>
-                    <option value="Mlle.">Mlle.</option>
+                    <option value="Mr." {{$reseventedit->Civilite==="Mr."?'selected="selected"':''}}>Mr.</option>
+                    <option value="Mme." {{$reseventedit->Civilite==="Mme."?'selected="selected"':''}}>Mme.</option>
+                    <option value="Mlle." {{$reseventedit->Civilite==="Mlle."?'selected="selected"':''}}>Mlle.</option>
                 </select>
             </div>
             <div><label>Prenom</label>
@@ -122,18 +122,18 @@
                 <input type="number" name="Montant_payer" class="form-control" value="{{$reseventedit->Montant_payer}}">
             </div>
             <div><label>Statut</label>
-                <select type="text" name="Statut" class="form-control" value="{{$reseventedit->Statut}}">
-                    <option value="En attente"><span class="badge badge-warning">En attente</span></option>
-                    <option value="Confirmer"><span class="badge badge-info">Confirmer</span></option>
-                    <option value="Disponible"><span class="badge badge-success">Valider</span></option>
-                    <option value="Indisponible"><span class="badge badge-danger">Annuler</span></option>
+                <select type="text" name="Statut" class="form-control">
+                  <option value="En attente" {{$reseventedit->Statut==="En attente"?'selected="selected"':''}}>En attente</option>
+                  <option value="Confirmer" {{$reseventedit->Statut==="Confirmer"?'selected="selected"':''}}>Confirmer</option>
+                  <option value="Valider" {{$reseventedit->Statut==="Valider"?'selected="selected"':''}}>Valider</option>
+                  <option value="Annuler" {{$reseventedit->Statut==="Annuler"?'selected="selected"':''}}>Annuler</option>
                 </select>
             </div>
-            <div><label>Id Administrateur</label>
+            <div><label>Responsable</label>
                 <select type="number" name="User_id" class="form-control" placeholder="Id User" value="{{$reseventedit->User_id}}">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
+                  <option value="1" {{$reseventedit->User_id==="Admin"?'selected="selected"':''}}>Admin</option>
+                  <option value="2" {{$reseventedit->User_id==="Moderator1"?'selected="selected"':''}}>Moderator1</option>
+                  <option value="3" {{$reseventedit->User_id==="Moderator2"?'selected="selected"':''}}>Moderator2</option>
                 </select>
             </div>
             <div>

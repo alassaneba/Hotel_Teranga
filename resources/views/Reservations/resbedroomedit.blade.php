@@ -59,11 +59,11 @@
                 <input type="text" name="Numero_chambre" class="form-control" value="{{$resbedroomedit->Numero_chambre}}">
             </div>
             <div><label>Civilite</label>
-                <select type="text" name="Civilite" class="form-control" value="{{$resbedroomedit->Civilite}}">
+                <select type="text" name="Civilite" class="form-control">
                     <option ></option>
-                    <option value="Mr.">Mr.</option>
-                    <option value="Mme.">Mme.</option>
-                    <option value="Mlle.">Mlle.</option>
+                    <option value="Mr." {{$resbedroomedit->Civilite==="Mr."?'selected="selected"':''}}>Mr.</option>
+                    <option value="Mme." {{$resbedroomedit->Civilite==="Mme."?'selected="selected"':''}}>Mme.</option>
+                    <option value="Mlle." {{$resbedroomedit->Civilite==="Mlle."?'selected="selected"':''}}>Mlle.</option>
                 </select>
             </div>
             <div><label>Prenom</label>
@@ -326,19 +326,20 @@
                 <input type="text" name="Montant_payer" class="form-control" placeholder="Montant a payer" value="{{$resbedroomedit->Montant_payer}}">
             </div>
             <div><label>Statut</label>
-                <select type="text" name="Statut" class="form-control" value="{{$resbedroomedit->Statut}}">
-                    <option value="En attente"><span class="badge badge-warning">En attente</span></option>
-                    <option value="Confirmer"><span class="badge badge-info">Confirmer</span></option>
-                    <option value="Disponible"><span class="badge badge-success">Valider</span></option>
-                    <option value="Indisponible"><span class="badge badge-danger">Annuler</span></option>
+                <select type="text" name="Statut" class="form-control">
+                  <option value="En attente" {{$resbedroomedit->Statut==="En attente"?'selected="selected"':''}}>En attente</option>
+                  <option value="Confirmer" {{$resbedroomedit->Statut==="Confirmer"?'selected="selected"':''}}>Confirmer</option>
+                  <option value="Valider" {{$resbedroomedit->Statut==="Valider"?'selected="selected"':''}}>Valider</option>
+                  <option value="Annuler" {{$resbedroomedit->Statut==="Annuler"?'selected="selected"':''}}>Annuler</option>
+              </select>
                 </select>
             </div>
-            <div><label>Id User</label>
-                <select type="number" name="User_id" class="form-control" placeholder="Id User" value="{{$resbedroomedit->User_id}}">
+            <div><label>Responsable</label>
+                <select type="number" name="User_id" class="form-control" placeholder="Id User">
                     <option></option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
+                    <option value="1" {{$resbedroomedit->User_id==="1"?'selected="selected"':''}}>1</option>
+                    <option value="2" {{$resbedroomedit->User_id==="2"?'selected="selected"':''}}>2</option>
+                    <option value="3" {{$resbedroomedit->User_id==="3"?'selected="selected"':''}}>3</option>
                 </select>
             </div>
             <div>

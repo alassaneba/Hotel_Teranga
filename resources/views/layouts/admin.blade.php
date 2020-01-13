@@ -240,7 +240,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
               <li class="nav-item">
-                <a href="bedroomcreate" class="nav-link">
+                <a href="/bedroomcreate" class="nav-link">
                   <i class="far fa-calendar-alt"></i>
                   <p>Creation Type de Chambre</p>
                 </a>
