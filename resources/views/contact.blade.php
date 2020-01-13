@@ -70,7 +70,7 @@
     <div class="container">
         <div class="row d-flex mb-5 contact-info">
             <div class="col-md-12 mb-4">
-                <h2 class="heading">Informations de contact</h2>
+                <h2 id="pcfc" class="heading">Informations de contact</h2>
             </div>
             <div class="w-100"></div>
             <div class="col-md-3 d-flex">
@@ -94,6 +94,7 @@
                 </div>
             </div>
         </div>
+        <label>Pour envoyer un message veuillez remplir les champs puis cliquer sur envoyer</label>
         <div class="row block-9">
             <div class="col-md-6 pr-md-5">
                 <form action="contact" method="post">
@@ -113,11 +114,10 @@
                     <div class="form-group">
                         <textarea name="Message" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group text-center">
                         <input type="submit" value="Envoyer Message" class="btn btn-primary py-3 px-5">
                     </div>
                 </form>
-
             </div>
 
             <div class="col-md-6 d-flex">

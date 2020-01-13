@@ -14,7 +14,7 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="admin">Tableau de bord</a></li>
-            <li class="breadcrumb-item active">Type de Chambre</li>
+            <li class="breadcrumb-item active">Contact/Message</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -24,7 +24,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Tableau des types de chambre</h3>
+                <h3 class="card-title">Tableau des messages et temoignages</h3>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -42,33 +42,39 @@
                   <thead>
                     <tr>
                      <th>ID</th>
-                     <th>Type chambre</th>
-                     <th>Description</th>
-                     <th>Image</th>
-                     <th>Prix/nuite</th>
+                     <th>Nom</th>
+                     <th>Prenom</th>
+                     <th>Email</th>
+                     <th>Objet</th>
+                     <th>Contact / Message</th>
+                     <th>Nature</th>
                      <th>Statut</th>
+                     <th>User</th>
                      <th>Editer</th>
                      <th>Supprimer</th>
                     </tr>
                   </thead>
-        @foreach($bedroom as $bedrooms)
-            <tbody>
-                <tr>
-                    <td>{{$bedrooms->id}}</td>
-                    <td>{{$bedrooms->Type_chambre}}</td>
-                    <td>{{$bedrooms->Description}}</td>
-                    <td><img src="{{$bedrooms->Image}}" style="width: 75px "></td>
-                    <td>{{$bedrooms->Prix_nuite}}</td>
-                    <td>{{$bedrooms->Statut}}</td>
-                    <td> <p class="btn btn-outline-secondary"><a href="bedroomedit/{{$bedrooms->id}}">Editer</a></p></td>
-                    <td><form action="bedroomedit/{{$bedrooms->id}}" method="post">
-                        @csrf
-                        @method('delete')
-                        <input type="submit" class="btn btn-danger" name="delete" value="Supprimer">
-                    </form></td>
-                </tr>
-              </tbody>
-              @endforeach
+                  @foreach($contact as $contacts)
+                      <tbody>
+                          <tr>
+                              <td>{{$contacts->id}}</td>
+                              <td>{{$contacts->Nom}}</td>
+                              <td>{{$contacts->Prenom}}</td>
+                              <td>{{$contacts->Email}}</td>
+                              <td>{{$contacts->Objet}}</td>
+                              <td>{{$contacts->Message}}</td>
+                              <td>{{$contacts->Nature}}</td>
+                              <td>{{$contacts->Statut}}</td>
+                              <td>{{$contacts->User_id}}</td>
+                              <td> <p class="btn btn-outline-secondary"><a href="contactedit/{{$contacts->id}}">Editer</a></p></td>
+                              <td><form action="contactedit/{{$contacts->id}}" method="post">
+                                  @csrf
+                                  @method('delete')
+                                  <input type="submit" class="btn btn-danger" name="delete" value="Supprimer">
+                              </form></td>
+                          </tr>
+                        </tbody>
+                    @endforeach
             </table>
           </div>
           <!-- /.card-body -->

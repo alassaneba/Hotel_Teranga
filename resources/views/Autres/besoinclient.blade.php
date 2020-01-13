@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-    @if(session('success'))
-        <div class="alert alert-success">{{session('success')}}</div>
-    @endif
+@if(session('success'))
+    <div class="alert alert-success">{{session('success')}}</div>
+@endif
 <section>
   <div class="content-header">
     <div class="container-fluid">
@@ -14,17 +14,17 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="admin">Tableau de bord</a></li>
-            <li class="breadcrumb-item active">Type de Chambre</li>
+            <li class="breadcrumb-item active">Besoins des Clients</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
   </div>
-  <div class="row">
+    <div class="row">
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Tableau des types de chambre</h3>
+                <h3 class="card-title">Tableau des besoins clients</h3>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -42,26 +42,30 @@
                   <thead>
                     <tr>
                      <th>ID</th>
-                     <th>Type chambre</th>
-                     <th>Description</th>
-                     <th>Image</th>
-                     <th>Prix/nuite</th>
+                     <th>Nom Complet</th>
+                     <th>Numero Chambre</th>
+                     <th>Description Besoin</th>
+                     <th>Prix a Payer</th>
+                     <th>Agent Conserner</th>
                      <th>Statut</th>
+                     <th>User</th>
                      <th>Editer</th>
                      <th>Supprimer</th>
                     </tr>
                   </thead>
-        @foreach($bedroom as $bedrooms)
+        @foreach($besoinclient as $besoinclients)
             <tbody>
                 <tr>
-                    <td>{{$bedrooms->id}}</td>
-                    <td>{{$bedrooms->Type_chambre}}</td>
-                    <td>{{$bedrooms->Description}}</td>
-                    <td><img src="{{$bedrooms->Image}}" style="width: 75px "></td>
-                    <td>{{$bedrooms->Prix_nuite}}</td>
-                    <td>{{$bedrooms->Statut}}</td>
-                    <td> <p class="btn btn-outline-secondary"><a href="bedroomedit/{{$bedrooms->id}}">Editer</a></p></td>
-                    <td><form action="bedroomedit/{{$bedrooms->id}}" method="post">
+                    <td>{{$besoinclients->id}}</td>
+                    <td>{{$besoinclients->Nom_complet}}</td>
+                    <td>{{$besoinclients->Numero_chambre}}</td>
+                    <td>{{$besoinclients->Description_besoin}}</td>
+                    <td>{{$besoinclients->Montant_payer}}</td>
+                    <td>{{$besoinclients->Agent_conserner}}</td>
+                    <td>{{$besoinclients->Statut}}</td>
+                    <td>{{$besoinclients->User_id}}</td>
+                    <td> <p class="btn btn-outline-secondary"><a href="besoinclientedit/{{$besoinclients->id}}">Editer</a></p></td>
+                    <td><form action="besoinclientedit/{{$besoinclients->id}}" method="post">
                         @csrf
                         @method('delete')
                         <input type="submit" class="btn btn-danger" name="delete" value="Supprimer">

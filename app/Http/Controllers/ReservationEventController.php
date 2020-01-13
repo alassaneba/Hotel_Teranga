@@ -78,6 +78,8 @@ class ReservationEventController extends Controller
         $reseve-> Secteur_activite = $request->input('Secteur_activite');
         $reseve-> Email = $request->input('Email');
         $reseve-> Telephone= $request->input('Telephone');
+        $reseve-> Montant_payer= $request->input('Montant_payer');
+        $reseve-> Statut= $request->input('Statut');
         $reseve-> User_id = $request->input('User_id');
         $reseve-> save();
 
@@ -150,6 +152,8 @@ class ReservationEventController extends Controller
         $reservationevents-> Secteur_activite = $request->input('Secteur_activite');
         $reservationevents-> Email = $request->input('Email');
         $reservationevents-> Telephone= $request->input('Telephone');
+        $reservationevents-> Montant_payer= $request->input('Montant_payer');
+        $reservationevents-> Statut= $request->input('Statut');
         $reservationevents-> User_id = $request->input('User_id');
         $reservationevents-> save(); }
         return redirect('reservationevent')->with(['success' => "Reservation evenement modifiée"]);
@@ -214,6 +218,8 @@ class ReservationEventController extends Controller
         $reseve-> Secteur_activite = $request->input('Secteur_activite');
         $reseve-> Email = $request->input('Email');
         $reseve-> Telephone= $request->input('Telephone');
+        $reseve-> Montant_payer= $request->input('Montant_payer');
+        $reseve-> Statut= $request->input('Statut');
         $reseve-> User_id = $request->input('User_id');
         $reseve-> save();
 

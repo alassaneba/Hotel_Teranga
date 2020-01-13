@@ -18,9 +18,13 @@
                         <div class="meta mb-3">
                             <div><a>Prix/nuite = {{$chambre->Prix_nuite}} Fr cfa</a></div>
                             <div><a>Chambre {{$chambre->Type_chambre}}</a></div>
+                            <div><a>Etat: {{$chambre->Statut}}</a></div>
                         </div>
                         <div class="desc">
                             <h3 class="heading"><a>Description de la chambre: {{$chambre->Description}}</a></h3>
+                        </div>
+                        <div class="center">
+                            <a href="reservationchambre"><span class="btn btn-primary py-2 px-5">Reserver la chambre</span></a>
                         </div>
                     </div>
                 </div>

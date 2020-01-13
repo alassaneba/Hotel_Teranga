@@ -1,13 +1,32 @@
-@extends('layout')
+@extends('layouts.admin')
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)
             <div class="alert alert-danger">{{$error}}</div>
         @endforeach
     @endif
-
-    <div class="container border">
-    <form action="reseventcreate" method="post" >
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+          <div class="col-sm-6">
+              <h1 class="m-0 text-dark">Hotel Teranga</h1>
+              </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="admin">Tableau de bord</a></li>
+              <li class="breadcrumb-item active">Reservation Evenement</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+</div>
+<div class="container border">
+  <div class="card-header">
+    <h3 class="card-title-center">Formulaire de reservation d'evenement</h3>
+    <div class="card-tools">
+    </div>
+  </div>
+  <form action="reseventcreate" method="post" >
     @csrf
         <div><label>Nom de l'evenement</label>
             <input type="text" name="Nom_evenement" class="form-control" placeholder="Nom de l'evenement">
@@ -98,12 +117,23 @@
         <div><label>Telephone</label>
             <input type="text" name="Telephone" class="form-control" placeholder="Telephone">
         </div>
-        <div><label>Id Administrateur</label>
-            <select type="number" name="User_id" class="form-control" placeholder="Id User">
+        <div><label>Montant payer</label>
+            <input type="number" name="Montant_payer" class="form-control">
+        </div>
+        <div><label>Statut</label>
+            <select type="text" name="Statut" class="form-control">
+                <option value="En attente"><span class="badge badge-warning">En attente</span></option>
+                <option value="Confirmer"><span class="badge badge-info">Confirmer</span></option>
+                <option value="Disponible"><span class="badge badge-success">Valider</span></option>
+                <option value="Indisponible"><span class="badge badge-danger">Annuler</span></option>
+            </select>
+        </div>
+        <div><label>Id User</label>
+            <select type="number" name="User_id" class="form-control">
                 <option></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+                <option value="1">admin</option>
+                <option value="2">moderator 1</option>
+                <option value="3">moderator 2</option>
             </select>
         </div>
         <div>

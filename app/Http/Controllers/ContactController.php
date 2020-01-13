@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class ContactController extends Controller
 {
@@ -14,7 +17,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('contact');
+      $contact = \App\Contact::orderBy('created_at','DESC')->get();
+        return view('contact', compact('contact'));
     }
 
     /**
@@ -24,7 +28,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+          return  view('Contacts/contactcreate');
     }
 
     /**
@@ -42,12 +46,15 @@ class ContactController extends Controller
             'Objet' => 'required',
             'Message' => 'required',
         ]);
-        $contact = new Contact();
+        $contact = new \App\Contact();
         $contact->Nom = $request->input('Nom');
         $contact->Prenom = $request->input('Prenom');
         $contact->Email = $request->input('Email');
         $contact->Objet = $request->input('Objet');
         $contact->Message = $request->input('Message');
+        $contact->Nature = $request->input('Nature');
+        $contact->Statut = $request->input('Statut');
+        $contact->User_id = $request->input('User_id');
         $contact->save();
         return redirect('contact')->with(['success' => "Message envoyée"]);
     }
@@ -71,7 +78,9 @@ class ContactController extends Controller
      */
     public function edit($id)
     {
-        //
+        $this->authorize('admin');
+        $contactedit= \App\Contact::find($id);
+        return view('Contacts/contactedit', compact('contactedit'));
     }
 
     /**
@@ -83,7 +92,18 @@ class ContactController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $contact= \App\Contact::find($id);
+        if($contact){
+          $contact->Nom = $request->input('Nom');
+          $contact->Prenom = $request->input('Prenom');
+          $contact->Email = $request->input('Email');
+          $contact->Objet = $request->input('Objet');
+          $contact->Message = $request->input('Message');
+          $contact->Nature = $request->input('Nature');
+          $contact->Statut = $request->input('Statut');
+          $contact->User_id = $request->input('User_id');
+          $contact-> save(); }
+            return redirect('contactmessage')->with(['success' => "Message ou Temoignage modifié"]);
     }
 
     /**
@@ -94,6 +114,14 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $contact= \App\Contact::find($id);
+      if($contact)
+          $contact->delete();
+      return redirect('/contactmessage');
+
+    }
+    public function Message (){
+        $contact = \App\Contact::orderBy('created_at','DESC')->get();
+      return view('Contacts/contactmessage', compact('contact'));
     }
 }

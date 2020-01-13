@@ -1,65 +1,111 @@
-@extends('layout')
+@extends('layouts.admin')
+
 @section('content')
-    @if(session('success'))
-        <div class="alert alert-success">{{session('success')}}</div>
+    @if($errors->any())
+        @foreach($errors->all() as $error)
+            <div class="alert alert-danger">{{$error}}</div>
+        @endforeach
     @endif
-    <section class="table table-striped" >
-        <form >
-    <table>
-       <tr>
-           <th>Nom_evenement</th>
-           <th>Type_evenement</th>
-           <th>Date_debut</th>
-           <th>Date_fin</th>
-           <th>Duree</th>
-           <th>Salles</th>
-           <th>Disposition</th>
-           <th>Nombre_participant</th>
-           <th>Restauration</th>
-           <th>Equipement</th>
-           <th>Autres_informations</th>
-           <th>Civilite</th>
-           <th>Prenom</th>
-           <th>Nom </th>
-           <th>Societe</th>
-           <th>Secteur_activite</th>
-           <th>Email</th>
-           <th>Telephone</th>
-           <th>User_id</th>
-      </tr>
-    </table>
-        </form>
+<div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Hotel Teranga</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="admin">Tableau de bord</a></li>
+              <li class="breadcrumb-item active">Reservation Evenement</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+</div>
+<section class="table table-striped" >
+  <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Tableau des reservations d'evenement</h3>
+
+              <div class="card-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                  <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                  <div class="input-group-append">
+                    <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0" style="height: 375px;">
+              <table class="table table-head-fixed">
+                <thead>
+                 <tr>
+                   <th>ID</th>
+                   <th>Nom evenement</th>
+                   <th>Type evenement</th>
+                   <th>Date debut</th>
+                   <th>Date fin</th>
+                   <th>Duree</th>
+                   <th>Salles</th>
+                   <th>Disposition</th>
+                   <th>Nombre participant</th>
+                   <th>Restauration</th>
+                   <th>Equipement</th>
+                   <th>Autres informations</th>
+                   <th>Civilite</th>
+                   <th>Prenom</th>
+                   <th>Nom </th>
+                   <th>Societe</th>
+                   <th>Secteur activite</th>
+                   <th>Email</th>
+                   <th>Telephone</th>
+                   <th>Montant_payer</th>
+                   <th>Statut</th>
+                   <th>Editer</th>
+                   <th>Supprimer</th>
+               </tr>
+              </thead>
     @foreach($resevationevents as $reservationevent)
-        <table>
+    <tbody>
         <tr>
-            <th>{{$reservationevent->Nom_evenement}}</th>
-            <th>{{$reservationevent->Type_evenement}}</th>
-            <th>{{$reservationevent->Date_debut}}</th>
-            <th>{{$reservationevent->Date_fin}}</th>
-            <th>{{$reservationevent->Duree}}</th>
-            <th>{{$reservationevent->Salles}}</th>
-            <th>{{$reservationevent->Disposition}}</th>
-            <th>{{$reservationevent->Nombre_participant}}</th>
-            <th>{{$reservationevent->Restauration}}</th>
-            <th>{{str_replace("|"," ", $reservationevent->Equipement)}}</th>
-            <th>{{$reservationevent->Autres_informations}}</th>
-            <th>{{$reservationevent->Civilite}}</th>
-            <th>{{$reservationevent->Prenom}}</th>
-            <th>{{$reservationevent->Nom}} </th>
-            <th>{{$reservationevent->Societe}}</th>
-            <th>{{$reservationevent->Secteur_activite}}</th>
-            <th>{{$reservationevent->Email}}</th>
-            <th>{{$reservationevent->Telephone}}</th>
-            <th>{{$reservationevent->User}}</th>
-            <th> <p class="btn btn-outline-secondary"><a href="reseventedit/{{$reservationevent->id}}">Editer</a></p></th>
-            <th><form action="reseventedit/{{$reservationevent->id}}" method="post">
+            <td>{{$reservationevent->id}}</td>
+            <td>{{$reservationevent->Nom_evenement}}</td>
+            <td>{{$reservationevent->Type_evenement}}</td>
+            <td>{{$reservationevent->Date_debut}}</td>
+            <td>{{$reservationevent->Date_fin}}</td>
+            <td>{{$reservationevent->Duree}}</td>
+            <td>{{$reservationevent->Salles}}</td>
+            <td>{{$reservationevent->Disposition}}</td>
+            <td>{{$reservationevent->Nombre_participant}}</td>
+            <td>{{$reservationevent->Restauration}}</td>
+            <td>{{str_replace("|"," ", $reservationevent->Equipement)}}</td>
+            <td>{{$reservationevent->Autres_informations}}</td>
+            <td>{{$reservationevent->Civilite}}</td>
+            <td>{{$reservationevent->Prenom}}</td>
+            <td>{{$reservationevent->Nom}} </td>
+            <td>{{$reservationevent->Societe}}</td>
+            <td>{{$reservationevent->Secteur_activite}}</td>
+            <td>{{$reservationevent->Email}}</td>
+            <td>{{$reservationevent->Telephone}}</td>
+            <td>{{$reservationevent->Montant_payer}}</td>
+            <td>{{$reservationevent->Statut}}</td>
+            <td>{{$reservationevent->User}}</td>
+            <td> <p class="btn btn-outline-secondary"><a href="reseventedit/{{$reservationevent->id}}">Editer</a></p></td>
+            <td><form action="reseventedit/{{$reservationevent->id}}" method="post">
                     @csrf
                     @method('delete')
                     <input type="submit" class="btn btn-danger" name="delete" value="Supprimer">
-                </form></th>
+                </form></td>
         </tr>
-        </table>
-    @endforeach
-    </section>
+      </tbody>
+        @endforeach
+    </table>
+     </div>
+    </div>
+   </div>
+  </div>
+</section>
 @endsection
-

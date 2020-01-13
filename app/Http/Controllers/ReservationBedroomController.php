@@ -63,6 +63,7 @@ class ReservationBedroomController extends Controller
         $resbed-> Nombre_adulte = $request->input('Nombre_adulte');
         $resbed-> Nombre_enfant = $request->input('Nombre_enfant');
         $resbed-> Type_chambre = $request->input('Type_chambre');
+        $resbed-> Numero_chambre = $request->input('Numero_chambre');
         $resbed-> Civilite = $request->input('Civilite');
         $resbed-> Prenom = $request->input('Prenom');
         $resbed-> Nom = $request->input('Nom');
@@ -70,6 +71,7 @@ class ReservationBedroomController extends Controller
         $resbed-> Email = $request->input('Email');
         $resbed-> Telephone= $request->input('Telephone');
         $resbed-> Montant_payer= $request->input('Montant_payer');
+        $resbed-> Statut = $request->input('Statut');
         $resbed-> User_id = $request->input('User_id');
         $resbed-> save();
 
@@ -125,6 +127,7 @@ class ReservationBedroomController extends Controller
                 $reservationbedroom->update([
                     'Type_chambre' => $request->input('Type_chambre'),
                 ]); }
+                $reservationbedroom->Numero_chambre = $request->input('Numero_chambre');
                 $reservationbedroom->Civilite = $request->input('Civilite');
                 $reservationbedroom->Prenom = $request->input('Prenom');
                 $reservationbedroom->Nom = $request->input('Nom');
@@ -132,6 +135,7 @@ class ReservationBedroomController extends Controller
                 $reservationbedroom->Email = $request->input('Email');
                 $reservationbedroom->Telephone = $request->input('Telephone');
                 $reservationbedroom->Montant_payer = $request->input('Montant_payer');
+                $reservationbedroom->Statut = $request->input('Statut');
                 $reservationbedroom->User_id = $request->input('User_id');
                 $reservationbedroom->save();
             }
@@ -185,6 +189,7 @@ class ReservationBedroomController extends Controller
             $resbed-> Nombre_adulte = $request->input('Nombre_adulte');
             $resbed-> Nombre_enfant = $request->input('Nombre_enfant');
             $resbed-> Type_chambre = $request->input('Type_chambre');
+            $resbed-> Numero_chambre = $request->input('Numero_chambre');
             $resbed-> Civilite = $request->input('Civilite');
             $resbed-> Prenom = $request->input('Prenom');
             $resbed-> Nom = $request->input('Nom');
@@ -192,6 +197,7 @@ class ReservationBedroomController extends Controller
             $resbed-> Email = $request->input('Email');
             $resbed-> Telephone= $request->input('Telephone');
             $resbed-> Montant_payer= $request->input('Montant_payer');
+            $resbed-> Statut= $request->input('Statut');
             $resbed-> User_id = $request->input('User_id');
             $resbed-> save();
 

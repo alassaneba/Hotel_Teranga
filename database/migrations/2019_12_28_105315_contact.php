@@ -20,6 +20,9 @@ class Contact extends Migration
             $table->string('Email');
             $table->string('Objet');
             $table->longText('Message');
+            $table->string('Nature')->nullable('true');
+            $table->string('Statut')->nullable('true');
+            $table->unsignedBigInteger('User_id')->nullable('true');
             $table->timestamps();
         });
     }

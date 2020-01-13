@@ -57,7 +57,7 @@
     <div class="container">
         <div class="row slider-text justify-content-center align-items-center">
             <div class="col-md-7 col-sm-12 text-center ftco-animate">
-                <h1 class="mb-3 mt-5 bread">A propos de Hotel Teranga</h1>
+                <h1 class="mb-3 mt-5 bread">A propos de Nous</h1>
                 <!-- <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>About Me</span></p> -->
             </div>
         </div>
@@ -241,6 +241,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="text-center">
+        <a href="contact#pcfc"><span class="btn btn-primary py-2 px-5 col-md-4 text-center">Envoyer un Temoignage</span></a>
     </div>
 </section>
 

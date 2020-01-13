@@ -1,22 +1,39 @@
-@extends('layout')
+@extends('layouts.admin')
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)
             <div class="alert alert-danger">{{$error}}</div>
         @endforeach
     @endif
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Hotel Teranga</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="admin">Tableau de bord</a></li>
+              <li class="breadcrumb-item active">Type de Chambre</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
     <div class="container border">
+      <div class="card-header">
+        <h3 class="card-title-center">Formulaire de modification type de chambre</h3>
+        <div class="card-tools">
+        </div>
+      </div>
         <form action="/bedroomupdate/{{$bedroomedit->id}}"  method="post" enctype="multipart/form-data">
             @csrf
             @method('patch')
             <div><label>Type de chambre</label>
-                <select type="text" name="Type_chambre" class="form-control" placeholder="Type de chambre" value="{{$bedroomedit->Type_chambre}}">
-                    <option value="Unique_simple">Unique Simple </option>
-                    <option value="Unique_confort">Unique Confort</option>
-                    <option value="Double_simple">Double Simple</option>
-                    <option value="Double_confort">Double Confort</option>
-                    <option value="Deluxe_simple">Deluxe Simple</option>
-                    <option value="Deluxe_royal">Deluxe Royal</option>
+                <select type="text" name="Type_chambre" class="form-control" placeholder="Type de chambre">
+                    @foreach($bedroomedit as $bedid => $Type_chambre)
+                        <option value="{{$bedid}}" {{$bedroomedit->Type_chambre===$bedid?'selected="selected"':''}}>{{$Type_chambre}}</option>
+                    @endforeach
                 </select>
             </div>
             <div><label>Description de la chambre</label>
@@ -24,7 +41,7 @@
             </div>
             <div><label>Image de la chambre</label>
                 <div class="row">
-                    <div class="col-6 text-right"><img src="{{asset($bedroomedit->images)}}" alt="{{$bedroomedit->name}}" width="100" ></div><div class="col-6"><h3>Chargez une autre image pour remplacer celle-ci</h3></div>
+                    <div class="col-6 text-right"><img src="{{asset($bedroomedit->images)}}" alt="{{$bedroomedit->Image}}" width="100" ></div><div class="col-6"><h3>Chargez une autre image pour remplacer celle-ci</h3></div>
                 </div>
                 <div>
                     <input type="file" name="Image" class="form-control">
@@ -32,6 +49,13 @@
             </div>
             <div><label>Prix/nuite</label>
                 <input type="number" name="Prix_nuite" class="form-control" placeholder="Prix/nuite" value="{{$bedroomedit->Prix_nuite}}">
+            </div>
+            <div><label>Statut</label>
+                <select type="text" name="Statut" class="form-control" value="{{$bedroomedit->Statut}}">
+                    <option></option>
+                    <option value="Disponible" {{$bedroomedit->Statut==="Disponible"?'selected="selected"':''}}>Disponible</option>
+                    <option value="Indisponible" {{$bedroomedit->Statut==="Indisponible"?'selected="selected"':''}}>Indisponible</option>
+                </select>
             </div>
             <div><label>ReservationBedroom_id</label>
                 <input type="number" name="ReservationBedroom_id" class="form-control" placeholder="ReservationBedroom_id" value="{{$bedroomedit->ReservationBedroom_id}}">

@@ -1,54 +1,103 @@
-@extends('layout')
+@extends('layouts.admin')
+
 @section('content')
     @if(session('success'))
         <div class="alert alert-success">{{session('success')}}</div>
     @endif
-    <section class="table table-striped border">
-<table>
-    <tr>
-          <th>Date_arriver</th>
-          <th>Heure_arriver</th>
-          <th>Date_depart</th>
-          <th>Nombre_chambre</th>
-          <th>Nombre_adulte</th>
-          <th>Nombre_enfant</th>
-          <th>Type_chambre</th>
-          <th>Civilite</th>
-          <th>Prenom</th>
-          <th>Nom </th>
-          <th>Nationalite</th>
-          <th>Email</th>
-          <th>Telephone</th>
-          <th>Montant-payer</th>
-          <th>User_id</th>
-    </tr>
-</table>
-@foreach($reservationbedroom as $reservations)
-    <table >
-        <tr>
-            <th>{{$reservations->Date_arriver}}</th>
-            <th>{{$reservations->Heure_arriver}}</th>
-            <th>{{$reservations->Date_depart}}</th>
-            <th>{{$reservations->Nombre_chambre}}</th>
-            <th>{{$reservations->Nombre_adulte}}</th>
-            <th>{{$reservations->Nombre_enfant}}</th>
-            <th>{{$reservations->Type_chambre}}</th>
-            <th>{{$reservations->Civilite}}</th>
-            <th>{{$reservations->Prenom}}</th>
-            <th>{{$reservations->Nom}} </th>
-            <th>{{$reservations->Nationalite}} </th>
-            <th>{{$reservations->Email}}</th>
-            <th>{{$reservations->Telephone}}</th>
-            <th>{{$reservations->Montant_payer}}</th>
-            <th>{{$reservations->User_id}}</th>
-            <th> <p class="btn btn-outline-secondary"><a href="resbedroomedit/{{$reservations->id}}">Editer</a></p></th>
-            <th><form action="resbedroomedit/{{$reservations->id}}" method="post">
-                    @csrf
-                    @method('delete')
-                    <input type="submit" class="btn btn-danger" name="delete" value="Supprimer">
-                </form></th>
-        </tr>
-        </table>
-    @endforeach
+    <section>
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0 text-dark">Hotel Teranga</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="admin">Tableau de bord</a></li>
+                <li class="breadcrumb-item active">Reservation Chambre</li>
+              </ol>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+    <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Tableau des reservations de chambre</h3>
+
+                <div class="card-tools">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0" style="height: 375px;">
+                <table class="table table-head-fixed">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Date arriver</th>
+                      <th>Heure arriver</th>
+                      <th>Date depart</th>
+                      <th>Nombre chambre</th>
+                      <th>Nombre adulte</th>
+                      <th>Nombre enfant</th>
+                      <th>Type chambre</th>
+                      <th>Numero chambre</th>
+                      <th>Civilite</th>
+                      <th>Prenom</th>
+                      <th>Nom </th>
+                      <th>Nationalite</th>
+                      <th>Email</th>
+                      <th>Telephone</th>
+                      <th>Montant a payer</th>
+                      <th>Statut</th>
+                      <th>User_id</th>
+                      <th>Editer</th>
+                      <th>Supprimer</th>
+                    </tr>
+                  </thead>
+                  @foreach($reservationbedroom as $reservations)
+                  <tbody>
+                    <tr>
+                      <td>{{$reservations->id}}</td>
+                      <td>{{$reservations->Date_arriver}}</td>
+                      <td>{{$reservations->Heure_arriver}}</td>
+                      <td>{{$reservations->Date_depart}}</td>
+                      <td>{{$reservations->Nombre_chambre}}</td>
+                      <td>{{$reservations->Nombre_adulte}}</td>
+                      <td>{{$reservations->Nombre_enfant}}</td>
+                      <td>{{$reservations->Type_chambre}}</td>
+                      <td>{{$reservations->Numero_chambre}}</td>
+                      <td>{{$reservations->Civilite}}</td>
+                      <td>{{$reservations->Prenom}}</td>
+                      <td>{{$reservations->Nom}} </td>
+                      <td>{{$reservations->Nationalite}} </td>
+                      <td>{{$reservations->Email}}</td>
+                      <td>{{$reservations->Telephone}}</td>
+                      <td>{{$reservations->Montant_payer}}</td>
+                      <td>{{$reservations->Statut}}</td>
+                      <td>{{$reservations->User_id}}</td>
+                      <td> <p class="btn btn-outline-secondary"><a href="resbedroomedit/{{$reservations->id}}">Editer</a></p></td>
+                      <td><form action="resbedroomedit/{{$reservations->id}}" method="post">
+                      @csrf
+                      @method('delete')
+                      <input type="submit" class="btn btn-danger" name="delete" value="Supprimer">
+                      </form></td>
+                    </tr>
+                  </tbody>
+                  @endforeach
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+          </div>
+        </div>
 </section>
 @endsection

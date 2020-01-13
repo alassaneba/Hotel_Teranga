@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
-use App\Bedroom;
-use App\ReservationBedroom;
-use App\ReservationEvent;
-use App\Contact;
-use App\BesoinClient;
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 
-class BackofficeController extends Controller
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,12 +15,7 @@ class BackofficeController extends Controller
      */
     public function index()
     {
-        $bedroom_count = Bedroom::all()->count();
-        $resbedroom_count = ReservationBedroom::all()->count();
-        $resevent_count = ReservationEvent::all()->count();
-        $contact_count = Contact::all()->count();
-        $besoinclient_count = BesoinClient::all()->count();
-        return view('admin',compact('bedroom_count', 'resbedroom_count', 'resevent_count', 'contact_count', 'besoinclient_count'));
+        //
     }
 
     /**
@@ -49,10 +42,10 @@ class BackofficeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
         //
     }
@@ -60,10 +53,10 @@ class BackofficeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
         //
     }
@@ -72,10 +65,10 @@ class BackofficeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -83,10 +76,10 @@ class BackofficeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
         //
     }

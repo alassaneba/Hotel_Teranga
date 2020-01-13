@@ -57,6 +57,7 @@ class BedroomController extends Controller
         $bed-> Image = $folder . $image_name . '.' . $image->getClientOriginalExtension();
         $this->uploadImage($image, $folder, 'public', $image_name);
         $bed->Prix_nuite = $request->input('Prix_nuite');
+        $bed->Statut = $request->input('Statut');
         $bed->ReservationBedroom_id = $request->input('ReservationBedroom_id');
         $bed->save();
             return redirect('bedroom')->with(['success' => "Chambre enregistrée"]);
@@ -84,6 +85,7 @@ class BedroomController extends Controller
     {
         $this->authorize('admin');
         $bedroomedit= \App\Bedroom::find($id);
+        $bedroomedit = \App\Bedroom::pluck('Type_chambre','id');
         return view('Bedrooms.bedroomedit', compact('bedroomedit'));
     }
 
@@ -112,9 +114,10 @@ class BedroomController extends Controller
                     //Maintenant nous pouvons enregistrer l'image dans le dossier en utilisant la méthode uploadImage();
                     $this->uploadImage($image, $folder, 'public', $image_name); }
             $bedroom-> Prix_nuite= $request->input('Prix_nuite');
+            $bedroom-> Statut= $request->input('Statut');
             $bedroom-> ReservationBedroom_id = $request->input('ReservationBedroom_id');
             $bedroom-> save(); }
-        return redirect('bedroom')->with(['success' => "Chambre modifiée"]);;
+        return redirect('bedroom')->with(['success' => "Chambre modifiée"]);
     }
 
     /**

@@ -50,13 +50,8 @@
                 @can('admin')<li class="nav-item"><a href="/admin/">Back Office</a></li>@endcan
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Connecter') }}</a>
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('Se connecter') }}</a>
                     </li>
-                    @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Inscrire') }}</a>
-                        </li>
-                    @endif
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -168,7 +163,7 @@
                         <span><img src="{{asset('app-assets/images/Sleep.png')}}"></span>
                     </div>
                     <div class="media-body">
-                        <h3 class="heading"><a href="services.html">Hebergement</a></h3>
+                        <h3 class="heading"><a href="reservationchambre">Hebergement</a></h3>
                         <p>Nous disposons des chambres propres modernes adaptees a vos besoins.</p>
                     </div>
                 </div>
@@ -179,7 +174,7 @@
                         <span> <image src="{{asset('app-assets/images/conf1.png')}}"></span>
                     </div>
                     <div class="media-body">
-                        <h3 class="heading"><a href="services.html">Evenementiel</a></h3>
+                        <h3 class="heading"><a href="reservationevenement">Evenementiel</a></h3>
                         <p>Nous disposons des salles modernes et des espaces adaptes a vos besoins.</p>
                     </div>
                 </div>
@@ -190,7 +185,7 @@
                         <span><image src="{{asset('app-assets/images/resto1.png')}}"></span>
                     </div>
                     <div class="media-body">
-                        <h3 class="heading"><a href="services.html">Restauration</a></h3>
+                        <h3 class="heading"><a href="services">Restauration</a></h3>
                         <p> Un menu avec une alimentation saine et varies pour vous donner le gout de nos plats appetissants.</p>
                     </div>
                 </div>
@@ -201,7 +196,7 @@
                         <span class="flaticon-fashion"></span>
                     </div>
                     <div class="media-body">
-                        <h3 class="heading"><a href="services.html">Pressing</a></h3>
+                        <h3 class="heading"><a href="services">Pressing</a></h3>
                         <p>Un service de lavage professionnelle rapide equiper de machine moderne pour vous servir.</p>
                     </div>
                 </div>
@@ -223,59 +218,11 @@
     <div class="container-fluid px-md-0">
         <div class="row no-gutters">
             <div class="col-md-4">
-                <div class="model img d-flex align-items-end" style="background-image: url({{asset('app-assets/images/deluxe1.jpg')}});">
-                    <div class="desc w-100 px-4">
-                        <div class="info w-100 mb-4">
-                            <ul>
-                                <li><span>Prix TTC:</span><span>15.000 FR/Nuité</span></li>
-                                <li><span>Bureau:</span><span>oui</span></li>
-                                <li><span>Chaine Télé cablé:</span><span>oui</span></li>
-                                <li><span>Balcon:</span><span>oui</span></li>
-                                <li><span>Salle de bain:</span><span>oui</span></li>
-                            </ul>
-                        </div>
-                        <div class="text w-100 mb-3">
-                            <h2><a href="model-single.html">Chambre<br>Deluxe 1</a></h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="model img d-flex align-items-end" style="background-image: url({{asset('app-assets/images/double1.jpg')}});">
-                    <div class="desc w-100 px-4">
-                        <div class="info w-100 mb-4">
-                            <ul>
-                                <li><span>Prix TTC:</span><span>10.000 FR/Nuité</span></li>
-                                <li><span>Chaine Télé cablé:</span><span>oui</span></li>
-                            </ul>
-                        </div>
-                        <div class="text w-100 mb-3">
-                            <h2><a href="model-single.html">Chambre<br>Double lit 1</a></h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
                 <div class="model img d-flex align-items-end" style="background-image: url({{asset('app-assets/images/unique1.jpg')}});">
                     <div class="desc w-100 px-4">
                         <div class="info w-100 mb-4">
                             <ul>
-                                <li><span>Prix TTC:</span><span>6.000 FR/Nuité</span></li>
-                                <li><span>Bureau:</span><span>oui</span></li>
-                            </ul>
-                        </div>
-                        <div class="text w-100 mb-3">
-                            <h2><a href="model-single.html">Chambre <br>Unique1</a></h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="model img d-flex align-items-end" style="background-image: url({{asset('app-assets/images/deluxe2.jpg')}});">
-                    <div class="desc w-100 px-4">
-                        <div class="info w-100 mb-4">
-                            <ul>
-                                <li><span>Prix TTC:</span><span>15.000 FR/Nuité</span></li>
+                                <li><span>Prix TTC:</span><span>10.000 FR/Nuité</span></li>
                                 <li><span>Bureau:</span><span>oui</span></li>
                                 <li><span>Chaine Télé cablé:</span><span>oui</span></li>
                                 <li><span>Balcon:</span><span>oui</span></li>
@@ -283,7 +230,7 @@
                             </ul>
                         </div>
                         <div class="text w-100 mb-3">
-                            <h2><a href="model-single.html">Chambre <br>De luxe 2</a></h2>
+                            <h2><a href="reservationchambre">Chambre<br>Unique simple</a></h2>
                         </div>
                     </div>
                 </div>
@@ -293,23 +240,37 @@
                     <div class="desc w-100 px-4">
                         <div class="info w-100 mb-4">
                             <ul>
-                                <li><span>Prix TTC:</span><span>14.000 FR/Nuité</span></li>
-                                <li><span>Bureau:</span><span>oui</span></li>
+                                <li><span>Prix TTC:</span><span>20.000 FR/Nuité</span></li>
                                 <li><span>Chaine Télé cablé:</span><span>oui</span></li>
                             </ul>
                         </div>
                         <div class="text w-100 mb-3">
-                            <h2><a href="model-single.html">Chambres <br>Double lit 2</a></h2>
+                            <h2><a href="reservationchambre">Chambre<br>Double simple</a></h2>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="model img d-flex align-items-end" style="background-image: url({{asset('app-assets/images/unique2.jpg')}});">
+                <div class="model img d-flex align-items-end" style="background-image: url({{asset('app-assets/images/deluxe3.jpg')}});">
                     <div class="desc w-100 px-4">
                         <div class="info w-100 mb-4">
                             <ul>
-                                <li><span>Prix TTC:</span><span>10.000 FR/Nuité</span></li>
+                                <li><span>Prix TTC:</span><span>30.000 FR/Nuité</span></li>
+                                <li><span>Bureau:</span><span>oui</span></li>
+                            </ul>
+                        </div>
+                        <div class="text w-100 mb-3">
+                            <h2><a href="reservationchambre">Chambre <br>Deluxe Simple</a></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="model img d-flex align-items-end" style="background-image: url({{asset('app-assets/images/unique4.jpg')}});">
+                    <div class="desc w-100 px-4">
+                        <div class="info w-100 mb-4">
+                            <ul>
+                                <li><span>Prix TTC:</span><span>15.000 FR/Nuité</span></li>
                                 <li><span>Bureau:</span><span>oui</span></li>
                                 <li><span>Chaine Télé cablé:</span><span>oui</span></li>
                                 <li><span>Balcon:</span><span>oui</span></li>
@@ -317,7 +278,41 @@
                             </ul>
                         </div>
                         <div class="text w-100 mb-3">
-                            <h2><a href="model-single.html">Chambre <br>Unique 2</a></h2>
+                            <h2><a href="model-single.html">Chambre <br>Unique confort</a></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="model img d-flex align-items-end" style="background-image: url({{asset('app-assets/images/double3.jpg')}});">
+                    <div class="desc w-100 px-4">
+                        <div class="info w-100 mb-4">
+                            <ul>
+                                <li><span>Prix TTC:</span><span>25.000 FR/Nuité</span></li>
+                                <li><span>Bureau:</span><span>oui</span></li>
+                                <li><span>Chaine Télé cablé:</span><span>oui</span></li>
+                            </ul>
+                        </div>
+                        <div class="text w-100 mb-3">
+                            <h2><a href="reservationchambre">Chambre <br>Double confort</a></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="model img d-flex align-items-end" style="background-image: url({{asset('app-assets/images/deluxe4.jpg')}});">
+                    <div class="desc w-100 px-4">
+                        <div class="info w-100 mb-4">
+                            <ul>
+                                <li><span>Prix TTC:</span><span>35.000 FR/Nuité</span></li>
+                                <li><span>Bureau:</span><span>oui</span></li>
+                                <li><span>Chaine Télé cablé:</span><span>oui</span></li>
+                                <li><span>Balcon:</span><span>oui</span></li>
+                                <li><span>Salle de bain:</span><span>oui</span></li>
+                            </ul>
+                        </div>
+                        <div class="text w-100 mb-3">
+                            <h2><a href="reservationchambre">Chambre <br>Deluxe royal</a></h2>
                         </div>
                     </div>
                 </div>
@@ -330,54 +325,100 @@
     <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
             <div class="col-md-7 heading-section ftco-animate text-center">
-                <span class="subheading">Tendances</span>
-                <h2 class="mb-4">Chambre vip en vogue</h2>
-                <p>Voici les chambres les plus populaires au pres de nos clients vip.</p>
+                <span class="subheading">Evenementiel</span>
+                <h2 class="mb-4">Salles et Espaces</h2>
+                <p>Nous disposons des salles modernes et des espaces adaptes a vos besoins.</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4 ftco-animate">
                 <div class="blog-entry">
-                    <a href="blog-single.html" class="block-20" style="background-image: url('{{asset('app-assets/images/unique3.jpg')}}');">
+                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/resto1.jpg')}}');">
                     </a>
                     <div class="text py-4">
                         <div class="meta mb-3">
-                            <div><a href="#">Prix TTC= 8.000 FR/Nuité</a></div>
-                            <div><a href="#"> Chambre unique 3</a></div>
+                            <div><a href="#">Prix TTC= 15.000 FR/Nuité</a></div>
+                            <div><a href="#"> Chambre Unique confort</a></div>
 
                         </div>
                         <div class="desc">
-                            <h3 class="heading"><a href="#">Une chambre avec toutes les commodites de chambre unique 2</a></h3>
+                            <h3 class="heading"><a href="#">Une chambre tres agreable utile pour le voyageur busness seule, au style classique europeen avec une vue sur la mer panoramique.</a></h3>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 ftco-animate">
                 <div class="blog-entry" data-aos-delay="100">
-                    <a href="blog-single.html" class="block-20" style="background-image: url('{{asset('app-assets/images/double3.jpg')}}');">
+                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/resto2.jpg')}}');">
                     </a>
                     <div class="text py-4">
                         <div class="meta mb-3">
-                            <div><a href="#">Prix TTC= 15.000 FR/Nuité</a></div>
-                            <div><a href="#"> Chambre double lit 3</a></div>
+                            <div><a href="#">Prix TTC= 25.000 FR/Nuité</a></div>
+                            <div><a href="#"> Chambre Double confort</a></div>
                         </div>
                         <div class="desc">
-                            <h3 class="heading"><a href="#">Une chambre avec toutes les commodites de chambre double lit 2</a></h3>
+                            <h3 class="heading"><a href="#">une chambre tres agreable utile pour le voyageur seule avec une vue panoramique sur la mer.</a></h3>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 ftco-animate">
                 <div class="blog-entry" data-aos-delay="200">
-                    <a href="blog-single.html" class="block-20" style="background-image: url('{{asset('app-assets/images/deluxe3.jpg')}}');">
+                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/resto3.jpg')}}');">
                     </a>
                     <div class="text py-4">
                         <div class="meta mb-3">
-                            <div><a href="#">Prix TTC= 18.000 FR/Nuité</a></div>
-                            <div><a href="#"> Chambre de luxe 3</a></div>
+                            <div><a href="#">Prix TTC= 35.000 FR/Nuité</a></div>
+                            <div><a href="#"> Chambre Deluxe royal</a></div>
                         </div>
                         <div class="desc">
-                            <h3 class="heading"><a href="#">Une chambre avec toutes les commodites de chambre de luxe 2</a></h3>
+                            <h3 class="heading"><a href="#">une chambre de luxe vip tres agreable utile pour les hommes d'affaire, artiste, haut fonctionnaire, en couple ou non au style moderne americain </a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 ftco-animate">
+                <div class="blog-entry">
+                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/sara.jpg')}}');">
+                    </a>
+                    <div class="text py-4">
+                        <div class="meta mb-3">
+                            <div><a href="#">Prix TTC= 15.000 FR/Nuité</a></div>
+                            <div><a href="#"> Chambre Unique confort</a></div>
+
+                        </div>
+                        <div class="desc">
+                            <h3 class="heading"><a href="#">Une chambre tres agreable utile pour le voyageur busness seule, au style classique europeen avec une vue sur la mer panoramique.</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 ftco-animate">
+                <div class="blog-entry" data-aos-delay="100">
+                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/sara.jpg')}}');">
+                    </a>
+                    <div class="text py-4">
+                        <div class="meta mb-3">
+                            <div><a href="#">Prix TTC= 25.000 FR/Nuité</a></div>
+                            <div><a href="#"> Chambre Double confort</a></div>
+                        </div>
+                        <div class="desc">
+                            <h3 class="heading"><a href="#">une chambre tres agreable utile pour le voyageur seule avec une vue panoramique sur la mer.</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 ftco-animate">
+                <div class="blog-entry" data-aos-delay="200">
+                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/sara.jpg')}}');">
+                    </a>
+                    <div class="text py-4">
+                        <div class="meta mb-3">
+                            <div><a href="#">Prix TTC= 35.000 FR/Nuité</a></div>
+                            <div><a href="#"> Chambre Deluxe royal</a></div>
+                        </div>
+                        <div class="desc">
+                            <h3 class="heading"><a href="#">une chambre de luxe vip tres agreable utile pour les hommes d'affaire, artiste, haut fonctionnaire, en couple ou non au style moderne americain </a></h3>
                         </div>
                     </div>
                 </div>
@@ -586,10 +627,10 @@
                 <div class="ftco-footer-widget mb-4 ml-md-4">
                     <h2 class="ftco-heading-2">SERVICES</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#cuc">Reserver une chambre</a></li>
-                        <li><a href="services.html">Reserver un evenement</a></li>
-                        <li><a href="services.html">Restauration</a></li>
-                        <li><a href="services.html">Pressing</a></li>
+                        <li><a href="reservationchambre">Reserver une chambre</a></li>
+                        <li><a href="reservationevenement">Reserver un evenement</a></li>
+                        <li><a href="services">Restauration</a></li>
+                        <li><a href="services">Pressing</a></li>
                     </ul>
                 </div>
             </div>
@@ -598,7 +639,7 @@
                     <h2 class="ftco-heading-2">LIENS</h2>
                     <ul class="list-unstyled">
                         <li><a href="#ccr">Catégories recommandées</a></li>
-                        <li><a href="#tcvv">Tendances chambres vip en vogue</a></li>
+                        <li><a href="#tcvv">Evenementiel</a></li>
                         <li><a href="#">Terms &amp; Conditions</a></li>
                         <li><a href="#">FAQ</a></li>
                     </ul>

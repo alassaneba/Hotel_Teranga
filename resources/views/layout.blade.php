@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{asset('app-assets/css/lay.css')}}">
 </head>
 <body>
+  <div>
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
           <a class="navbar-brand" href="home">Hotel<span>Teranga</span></a>
@@ -52,9 +53,12 @@
       </div>
   </nav>
 <!-- END nav -->
+</div>
+<div style="min-height:70vh;">
 
 @yield('content')
 
+</div>
 <!-- Start footer -->
 <footer class="ftco-footer ftco-bg-dark ftco-section">
     <div class="container">

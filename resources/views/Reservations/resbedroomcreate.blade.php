@@ -1,12 +1,32 @@
-@extends('layout')
+@extends('layouts.admin')
+
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)
             <div class="alert alert-danger">{{$error}}</div>
         @endforeach
     @endif
-
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Hotel Teranga</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="admin">Tableau de bord</a></li>
+              <li class="breadcrumb-item active">Reservation Chambre</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
     <div class="container border">
+      <div class="card-header">
+        <h3 class="card-title-center">Formulaire de reservation de chambre</h3>
+        <div class="card-tools">
+        </div>
+      </div>
     <form action="resbedroomcreate" method="post">
         @csrf
         <div><label>Date d'arriver</label>
@@ -15,7 +35,7 @@
         <div><label>Heure d'arriver</label>
             <input type="time" name="Heure_arriver" class="form-control">
         </div>
-        <div><label>Date d'arriver</label>
+        <div><label>Date depart</label>
             <input type="date" name="Date_depart" class="form-control">
         </div>
         <div><label>Nombre de chambre</label>
@@ -29,11 +49,13 @@
         </div>
         <div><label>Type de chambre</label>
         <select name="Type_chambre" id="Type_chambre" class="form-control">
-            < <option value=""></option>
             @foreach($bedrooms as $id => $value)
                 <option value="{{$value}}">{{$value}}</option>
             @endforeach
         </select>
+    </div>
+    <div><label>Numero chambre</label>
+        <input type="text" name="Numero_chambre" class="form-control">
     </div>
     <div><label>Civilite</label>
             <select type="text" name="Civilite" class="form-control">
@@ -302,8 +324,17 @@
         <div><label>Montant a payer</label>
             <input type="text" name="Montant_payer" class="form-control">
         </div>
+        <div><label>Statut</label>
+            <select type="text" name="Statut" class="form-control">
+                <option value="En attente"><span class="badge badge-warning">En attente</span></option>
+                <option value="Confirmer"><span class="badge badge-info">Confirmer</span></option>
+                <option value="Valider"><span class="badge badge-success">Valider</span></option>
+                <option value="Annuler"><span class="badge badge-danger">Annuler</span></option>
+            </select>
+        </div>
         <div><label>Id User</label>
             <select type="number" name="User_id" class="form-control">
+                <option></option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

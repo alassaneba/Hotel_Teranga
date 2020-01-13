@@ -46,6 +46,9 @@ class User extends Authenticatable
     public function Contact () {
         return $this->hasMany('App\Contact');
     }
+    public function BesoinClient () {
+        return $this->hasMany('App\BesoinClient');
+    }
     /**Cette méthode va determiner si le user connecté a un role admin*/
     public function isAdmin(){
         return strtolower(@$this->role) === 'admin'? true : false;

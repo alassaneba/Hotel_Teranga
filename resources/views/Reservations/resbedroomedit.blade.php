@@ -1,56 +1,78 @@
-@extends('layout')
+@extends('layouts.admin')
+
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)
             <div class="alert alert-danger">{{$error}}</div>
         @endforeach
     @endif
-
-    <div class="container">
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Hotel Teranga</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="admin">Tableau de bord</a></li>
+              <li class="breadcrumb-item active">Reservation Chambre</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <div class="container border">
+      <div class="card-header">
+        <h3 class="card-title-center">Formulaire de modification de chambre</h3>
+        <div class="card-tools">
+        </div>
+      </div>
         <form action="/resbedroomupdate/{{$resbedroomedit->id}}"  method="post">
             @csrf
             @method('patch')
-            <div>
+            <div><label>Date d'arriver</label>
                 <input type="date" name="Date_arriver" class="form-control" placeholder="Date d'arriver" value="{{$resbedroomedit->Date_arriver}}">
             </div>
-            <div>
+            <div><label>Heure d'arriver</label>
                 <input type="time" name="Heure_arriver" class="form-control" placeholder="Heure d'arriver" value="{{$resbedroomedit->Heure_arriver}}">
             </div>
-            <div>
+            <div><label>Date d'arriver</label>
                 <input type="date" name="Date_depart" class="form-control" placeholder="Date depart" value="{{$resbedroomedit->Date_depart}}">
             </div>
-            <div>
+            <div><label>Nombre de chambre</label>
                 <input type="number" name="Nombre_chambre" class="form-control" placeholder="Nombre de chambre" value="{{$resbedroomedit->Nombre_chambre}}">
             </div>
-            <div>
+            <div><label>Nombre adulte</label>
                 <input type="number" name="Nombre_adulte" class="form-control" placeholder="Nombre adulte" value="{{$resbedroomedit->Nombre_adulte}}">
             </div>
-            <div>
+            <div><label>Nombre enfant</label>
                 <input type="number" name="Nombre_enfant" class="form-control" placeholder="Nombre enfant" value="{{$resbedroomedit->Nombre_enfant}}">
             </div>
-            <div>
+            <div><label>Type de chambre</label>
                 <select name="Type_chambre" id="Type_chambre" class="form-control" value="{{$resbedroomedit->Type_chambre}}">
-                    < <option value="">Type de chambre</option>
                     @foreach($bedrooms as $id => $value)
                         <option value="{{$value}}" {{ $value == $reservationbedroom->Type_chambre ? 'selected="selected"':''}}>{{$value}}</option>
                     @endforeach
                 </select>
             </div>
-            <div>
+            <div><label>Numero chambre</label>
+                <input type="text" name="Numero_chambre" class="form-control" value="{{$resbedroomedit->Numero_chambre}}">
+            </div>
+            <div><label>Civilite</label>
                 <select type="text" name="Civilite" class="form-control" value="{{$resbedroomedit->Civilite}}">
-                    <option >Civilite</option>
+                    <option ></option>
                     <option value="Mr.">Mr.</option>
                     <option value="Mme.">Mme.</option>
                     <option value="Mlle.">Mlle.</option>
                 </select>
             </div>
-            <div>
+            <div><label>Prenom</label>
                 <input type="text" name="Prenom" class="form-control" placeholder="Prenom" value="{{$resbedroomedit->Prenom}}">
             </div>
-            <div>
+            <div><label>Nom</label>
                 <input type="text" name="Nom" class="form-control" placeholder="Nom" value="{{$resbedroomedit->Nom}}">
             </div>
-            <div>
+            <div><label>Nationalite</label>
                 <select type="text" name="Nationalite" class="form-control" placeholder="Nationalite" value="{{$resbedroomedit->Nationalite}}">
                     <option value="AF">Afghanistan</option>
                     <option value="ZA">Afrique du Sud</option>
@@ -294,18 +316,26 @@
                     <option value="VI">Îles Vierges (U.S.)</option>
                 </select>
             </div>
-
-            <div>
+            <div><label>Email</label>
                 <input type="email" name="Email" class="form-control" placeholder="Email" value="{{$resbedroomedit->Email}}">
             </div>
-            <div>
+            <div><label>Telephone</label>
                 <input type="text" name="Telephone" class="form-control" placeholder="Telephone" value="{{$resbedroomedit->Telephone}}">
             </div>
-            <div>
+            <div><label>Montant a payer</label>
                 <input type="text" name="Montant_payer" class="form-control" placeholder="Montant a payer" value="{{$resbedroomedit->Montant_payer}}">
             </div>
-            <div>
+            <div><label>Statut</label>
+                <select type="text" name="Statut" class="form-control" value="{{$resbedroomedit->Statut}}">
+                    <option value="En attente"><span class="badge badge-warning">En attente</span></option>
+                    <option value="Confirmer"><span class="badge badge-info">Confirmer</span></option>
+                    <option value="Disponible"><span class="badge badge-success">Valider</span></option>
+                    <option value="Indisponible"><span class="badge badge-danger">Annuler</span></option>
+                </select>
+            </div>
+            <div><label>Id User</label>
                 <select type="number" name="User_id" class="form-control" placeholder="Id User" value="{{$resbedroomedit->User_id}}">
+                    <option></option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -318,4 +348,3 @@
     </div>
 
 @endsection
-

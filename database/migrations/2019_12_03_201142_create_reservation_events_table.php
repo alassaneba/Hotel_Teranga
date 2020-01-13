@@ -33,6 +33,8 @@ class CreateReservationEventsTable extends Migration
             $table->string('Secteur_activite')->nullable('true');
             $table->string('Email');
             $table->integer('Telephone');
+            $table->integer('Montant_payer')->nullable('true');
+            $table->string('Statut')->nullable('true');
             $table->unsignedBigInteger('User_id')->nullable('true');
             $table->timestamps();
 
