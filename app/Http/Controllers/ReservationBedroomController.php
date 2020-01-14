@@ -27,7 +27,7 @@ class ReservationBedroomController extends Controller
     public function create()
     {
         $bedrooms = \App\Bedroom::pluck('Type_chambre','id');
-        return  view('/Reservations/resbedroomcreate', compact('resbedroomcreate','bedrooms'));
+        return  view('/Reservations/resbedroomcreate', compact('bedrooms'));
     }
 
     /**

@@ -333,92 +333,91 @@
         <div class="row">
             <div class="col-md-4 ftco-animate">
                 <div class="blog-entry">
-                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/resto1.jpg')}}');">
+                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/salle45.jpg')}}');">
                     </a>
                     <div class="text py-4">
                         <div class="meta mb-3">
-                            <div><a href="#">Prix TTC= 15.000 FR/Nuité</a></div>
-                            <div><a href="#"> Chambre Unique confort</a></div>
+                            <div><a href="#">Prix variable</a></div>
+                            <div><a href="#"> selon les modalites</a></div>
 
                         </div>
                         <div class="desc">
-                            <h3 class="heading"><a href="#">Une chambre tres agreable utile pour le voyageur busness seule, au style classique europeen avec une vue sur la mer panoramique.</a></h3>
+                            <h3 class="heading"><a href="#">Une salle de 45 places tres aerai utile pour vos rencontre, formation, reunion, groupe de travail restraint.</a></h3>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 ftco-animate">
                 <div class="blog-entry" data-aos-delay="100">
-                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/resto2.jpg')}}');">
+                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/salle100.jpeg')}}');">
                     </a>
                     <div class="text py-4">
                         <div class="meta mb-3">
-                            <div><a href="#">Prix TTC= 25.000 FR/Nuité</a></div>
-                            <div><a href="#"> Chambre Double confort</a></div>
+                          <div><a href="#">Prix variable</a></div>
+                          <div><a href="#"> selon les modalites</a></div>
                         </div>
                         <div class="desc">
-                            <h3 class="heading"><a href="#">une chambre tres agreable utile pour le voyageur seule avec une vue panoramique sur la mer.</a></h3>
+                            <h3 class="heading"><a href="#">Une salle de 100 places tres aerai utile pour vos point de presse, conference, reunion, seminaire.</a></h3>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 ftco-animate">
                 <div class="blog-entry" data-aos-delay="200">
-                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/resto3.jpg')}}');">
+                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/Terasse.jpg')}}');">
                     </a>
                     <div class="text py-4">
                         <div class="meta mb-3">
-                            <div><a href="#">Prix TTC= 35.000 FR/Nuité</a></div>
-                            <div><a href="#"> Chambre Deluxe royal</a></div>
+                          <div><a href="#">Prix variable</a></div>
+                          <div><a href="#"> selon les modalites</a></div>
                         </div>
                         <div class="desc">
-                            <h3 class="heading"><a href="#">une chambre de luxe vip tres agreable utile pour les hommes d'affaire, artiste, haut fonctionnaire, en couple ou non au style moderne americain </a></h3>
+                            <h3 class="heading"><a href="#">Une terasse de plus de 150-200 places a l'aire libre utile pour vos soiree, diner de gala, cocktail, lancement de produit</a></h3>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 ftco-animate">
                 <div class="blog-entry">
-                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/sara.jpg')}}');">
+                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/resto1.jpg')}}');">
                     </a>
                     <div class="text py-4">
                         <div class="meta mb-3">
-                            <div><a href="#">Prix TTC= 15.000 FR/Nuité</a></div>
-                            <div><a href="#"> Chambre Unique confort</a></div>
-
+                          <div><a href="#">Prix variable</a></div>
+                          <div><a href="#"> selon les modalites</a></div>
                         </div>
                         <div class="desc">
-                            <h3 class="heading"><a href="#">Une chambre tres agreable utile pour le voyageur busness seule, au style classique europeen avec une vue sur la mer panoramique.</a></h3>
+                            <h3 class="heading"><a href="#">Un restaurant avec au menu une alimentation saine et varies pour vous donner le gout de nos plats africain appetissants.</a></h3>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 ftco-animate">
                 <div class="blog-entry" data-aos-delay="100">
-                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/sara.jpg')}}');">
+                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/pressing.jpg')}}');">
                     </a>
                     <div class="text py-4">
                         <div class="meta mb-3">
-                            <div><a href="#">Prix TTC= 25.000 FR/Nuité</a></div>
-                            <div><a href="#"> Chambre Double confort</a></div>
+                          <div><a href="#">Prix variable</a></div>
+                          <div><a href="#"> selon les modalites</a></div>
                         </div>
                         <div class="desc">
-                            <h3 class="heading"><a href="#">une chambre tres agreable utile pour le voyageur seule avec une vue panoramique sur la mer.</a></h3>
+                            <h3 class="heading"><a href="#">Un service de lavage professionnelle rapide equiper de machine moderne pour vous servir.</a></h3>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 ftco-animate">
                 <div class="blog-entry" data-aos-delay="200">
-                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/sara.jpg')}}');">
+                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/Equipe.jpg')}}');">
                     </a>
                     <div class="text py-4">
                         <div class="meta mb-3">
-                            <div><a href="#">Prix TTC= 35.000 FR/Nuité</a></div>
-                            <div><a href="#"> Chambre Deluxe royal</a></div>
+                          <div><a href="#">Notre mission</a></div>
+                          <div><a href="#"> vous satisfaire</a></div>
                         </div>
                         <div class="desc">
-                            <h3 class="heading"><a href="#">une chambre de luxe vip tres agreable utile pour les hommes d'affaire, artiste, haut fonctionnaire, en couple ou non au style moderne americain </a></h3>
+                            <h3 class="heading"><a href="#">Une equipe d'homme de metier serviable pour vous satisfaire nuit et jours a votre service 24h/24 - 7j/7 durant toute l'annee.</a></h3>
                         </div>
                     </div>
                 </div>
