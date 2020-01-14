@@ -28,7 +28,7 @@ class ReservationEventController extends Controller
         $typeevenememt = \App\TypeEvent::pluck('Type_evenement','id');
         $salles = \App\Room::pluck('Salles','id');
         $disposition = \App\DisposalRoom::pluck('Disposition','id');
-        return view('/Reservations/reseventcreate', compact('reseventcreate','typeevenememt', 'salles', 'disposition'));
+        return view('/Reservations/reseventcreate', compact('typeevenememt', 'salles', 'disposition'));
 
     }
 
@@ -177,7 +177,7 @@ class ReservationEventController extends Controller
         $salles = \App\Room::pluck('Salles','id');
         $disposition = \App\DisposalRoom::pluck('Disposition','id');
         $reservationevents = \App\ReservationEvent::orderBy('created_at','DESC')->first();
-        return view('/reservationevenement', compact('reservationevenement','typeevenememt','reservationevents','salles', 'disposition'));
+        return view('/reservationevenement', compact('typeevenememt','reservationevents','salles', 'disposition'));
     }
     public function updatefrontoffice(Request $request){
         $data = $request->validate([

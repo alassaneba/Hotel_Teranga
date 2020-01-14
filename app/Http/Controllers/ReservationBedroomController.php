@@ -159,7 +159,7 @@ class ReservationBedroomController extends Controller
     public function clreservationchambre(){
       $bedrooms = \App\Bedroom::pluck('Type_chambre','id');
       $reservationbedroom = \App\ReservationBedroom::orderBy('created_at','DESC')->first();
-      return view('/reservationchambre', compact('reservationchambre','bedrooms','reservationbedroom'));
+      return view('/reservationchambre', compact('bedrooms','reservationbedroom'));
     }
 
         public function updatefrontoffice(Request $request)
