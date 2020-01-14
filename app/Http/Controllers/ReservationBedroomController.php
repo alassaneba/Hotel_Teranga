@@ -15,7 +15,7 @@ class ReservationBedroomController extends Controller
     public function index()
     {
         $reservationbedroom = \App\ReservationBedroom::orderBy('created_at','DESC')->get();
-        return view('Reservations.reservationbedroom', compact('reservationbedroom'));
+        return view('/Reservations/reservationbedroom', compact('reservationbedroom'));
     }
 
 
@@ -27,7 +27,7 @@ class ReservationBedroomController extends Controller
     public function create()
     {
         $bedrooms = \App\Bedroom::pluck('Type_chambre','id');
-        return  view('Reservations.resbedroomcreate', compact('resbedroomcreate','bedrooms'));
+        return  view('/Reservations/resbedroomcreate', compact('resbedroomcreate','bedrooms'));
     }
 
     /**
@@ -75,7 +75,7 @@ class ReservationBedroomController extends Controller
         $resbed-> User_id = $request->input('User_id');
         $resbed-> save();
 
-        return redirect('reservationbedroom')->with(['success' => "Reservation chambre enregistrée"]);
+        return redirect('/reservationbedroom')->with(['success' => "Reservation chambre enregistrée"]);
     }
 
     /**
@@ -101,7 +101,7 @@ class ReservationBedroomController extends Controller
             $resbedroomedit= \App\ReservationBedroom::find($id);
             $bedrooms = \App\Bedroom::pluck('Type_chambre','id');
             $reservationbedroom = \App\ReservationBedroom::orderBy('created_at','DESC')->first();
-            return view('Reservations.resbedroomedit', compact('resbedroomedit','bedrooms','reservationbedroom'));
+            return view('/Reservations/resbedroomedit', compact('resbedroomedit','bedrooms','reservationbedroom'));
 
     }
 
@@ -139,7 +139,7 @@ class ReservationBedroomController extends Controller
                 $reservationbedroom->User_id = $request->input('User_id');
                 $reservationbedroom->save();
             }
-            return redirect('reservationbedroom')->with(['success' => "Reservation chambre modifiée"]);
+            return redirect('/reservationbedroom')->with(['success' => "Reservation chambre modifiée"]);
         }
 
 
@@ -159,7 +159,7 @@ class ReservationBedroomController extends Controller
     public function clreservationchambre(){
       $bedrooms = \App\Bedroom::pluck('Type_chambre','id');
       $reservationbedroom = \App\ReservationBedroom::orderBy('created_at','DESC')->first();
-      return view('reservationchambre', compact('reservationchambre','bedrooms','reservationbedroom'));
+      return view('/reservationchambre', compact('reservationchambre','bedrooms','reservationbedroom'));
     }
 
         public function updatefrontoffice(Request $request)
