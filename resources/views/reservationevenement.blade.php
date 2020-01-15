@@ -1,19 +1,20 @@
 @extends('layout')
 @section('content')
-    @if(session('success'))
-        <div class="alert alert-success">{{session('success')}}</div>
-    @endif
 
     <section class="hero-wrap hero-wrap-2" style="background-image:url({{asset('app-assets/images/renai.jpg')}});">
         <div class="overlay"></div>
         <div class="container">
             <div class="row slider-text justify-content-center align-items-center">
-                <div class="col-md-7 col-sm-12 text-center ftco-animate">
+                <div class="col-md-0 col-sm-0 d-flex text-center ftco-animate">
                     <h1 class="mb-3 mt-5 bread">Reservation d'evenement</h1>
                 </div>
             </div>
         </div>
     </section>
+
+    @if(session('success'))
+        <div class="alert alert-success">{{session('success')}}</div>
+    @endif
 
     <div class=" container border">
         <spam><p>Pour faire une reservation d'evenement veuillez renseignez tous les champs</p></spam>

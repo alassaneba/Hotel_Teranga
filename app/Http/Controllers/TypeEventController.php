@@ -1,17 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Bedroom;
-use App\ReservationBedroom;
-use App\ReservationEvent;
-use App\Contact;
-use App\BesoinClient;
-use App\DisposalRoom;
-use App\Room;
+
 use App\TypeEvent;
 use Illuminate\Http\Request;
 
-class BackofficeController extends Controller
+class TypeEventController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,15 +14,8 @@ class BackofficeController extends Controller
      */
     public function index()
     {
-        $bedroom_count = Bedroom::all()->count();
-        $resbedroom_count = ReservationBedroom::all()->count();
-        $resevent_count = ReservationEvent::all()->count();
-        $contact_count = Contact::all()->count();
-        $besoinclient_count = BesoinClient::all()->count();
-        $disposal_count = DisposalRoom::all()->count();
-        $room_count = Room::all()->count();
-        $typeevent_count = TypeEvent::all()->count();
-        return view('admin',compact('bedroom_count', 'resbedroom_count', 'resevent_count', 'contact_count', 'besoinclient_count','disposal_count','room_count','typeevent_count'));
+      $typeevent = \App\TypeEvent::orderBy('created_at','DESC')->get();
+      return view('Types/typeevent', compact('typeevent'));
     }
 
     /**
@@ -38,7 +25,7 @@ class BackofficeController extends Controller
      */
     public function create()
     {
-        //
+          return view('Types/typeeventcreate');
     }
 
     /**
@@ -49,7 +36,15 @@ class BackofficeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $data = $request->validate([
+          'Type_evenement' => 'required',
+          'ReservationEvent_id' => 'required | min:1 ',
+      ]);
+      $type = new TypeEvent();
+      $type->Type_evenement = $request->input('Type_evenement');
+      $type->ReservationEvent_id = $request->input('ReservationEvent_id');
+      $type->save();
+      return redirect('typeevent')->with(['success' => "Type d'evenement enregistrée"]);
     }
 
     /**
@@ -94,6 +89,9 @@ class BackofficeController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $typeevent = TypeEvent::find($id);
+      if($typeevent)
+      $typeevent->delete();
+      return redirect('/typeevent');
     }
 }

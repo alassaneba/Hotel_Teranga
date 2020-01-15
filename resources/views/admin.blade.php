@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-sm-4 mb-3">
-                    <div class="card text-white bg-danger o-hidden h-100">
+                    <div class="card text-black bg-danger o-hidden h-100">
                         <div class="card-body">
                             <div class="card-body-icon">
                                 <i class="far fa-envelope"></i>
@@ -85,6 +85,48 @@
                         </div>
                         <a class="card-footer text-white clearfix small z-1" href="bedroom">
                             <span class="float-left">Liste des types de chambre</span>
+                            <span class="float-right"><i class="fas fa-angle-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-4 mb-3">
+                    <div class="card text-white bg-pink o-hidden h-100">
+                        <div class="card-body">
+                            <div class="card-body-icon">
+                                <i class="nav-icon fas fa-th"></i>
+                            </div>
+                            <div class="mr-5">{{$disposal_count}} Disposition Salles</div>
+                        </div>
+                        <a class="card-footer text-white clearfix small z-1" href="/disposal">
+                            <span class="float-left">Liste disposition salles</span>
+                            <span class="float-right"><i class="fas fa-angle-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-4 mb-3">
+                    <div class="card text-white bg-olive o-hidden h-100">
+                        <div class="card-body">
+                            <div class="card-body-icon">
+                                <i class="fas fa-fw fa-list"></i>
+                            </div>
+                            <div class="mr-5">{{$room_count}} Espaces et Salles</div>
+                        </div>
+                        <a class="card-footer text-white clearfix small z-1" href="/room">
+                            <span class="float-left">Liste des espaces et salles</span>
+                            <span class="float-right"><i class="fas fa-angle-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-4 mb-3">
+                    <div class="card text-white bg-navy o-hidden h-100">
+                        <div class="card-body">
+                            <div class="card-body-icon">
+                                <i class="fas fa-fw fa-list"></i>
+                            </div>
+                            <div class="mr-5">{{$typeevent_count}} Type Evenement</div>
+                        </div>
+                        <a class="card-footer text-white clearfix small z-1" href="/typeevent">
+                            <span class="float-left">Liste des types d'evenement</span>
                             <span class="float-right"><i class="fas fa-angle-right"></i></span>
                         </a>
                     </div>

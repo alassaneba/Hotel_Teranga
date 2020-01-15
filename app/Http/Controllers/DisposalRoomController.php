@@ -1,17 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Bedroom;
-use App\ReservationBedroom;
-use App\ReservationEvent;
-use App\Contact;
-use App\BesoinClient;
-use App\DisposalRoom;
-use App\Room;
-use App\TypeEvent;
-use Illuminate\Http\Request;
 
-class BackofficeController extends Controller
+use App\DisposalRoom;
+use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+
+class DisposalRoomController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,15 +17,8 @@ class BackofficeController extends Controller
      */
     public function index()
     {
-        $bedroom_count = Bedroom::all()->count();
-        $resbedroom_count = ReservationBedroom::all()->count();
-        $resevent_count = ReservationEvent::all()->count();
-        $contact_count = Contact::all()->count();
-        $besoinclient_count = BesoinClient::all()->count();
-        $disposal_count = DisposalRoom::all()->count();
-        $room_count = Room::all()->count();
-        $typeevent_count = TypeEvent::all()->count();
-        return view('admin',compact('bedroom_count', 'resbedroom_count', 'resevent_count', 'contact_count', 'besoinclient_count','disposal_count','room_count','typeevent_count'));
+      $disposal = \App\DisposalRoom::orderBy('created_at','DESC')->get();
+      return view('Disposals/disposal', compact('disposal'));
     }
 
     /**
@@ -38,7 +28,7 @@ class BackofficeController extends Controller
      */
     public function create()
     {
-        //
+        return view('Disposals/disposalcreate');
     }
 
     /**
@@ -49,7 +39,16 @@ class BackofficeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $data = $request->validate([
+          'Disposition' => 'required',
+          'ReservationEvent_id' => 'required | min:1 ',
+      ]);
+      $dispo = new DisposalRoom();
+      $dispo->Disposition = $request->input('Disposition');
+      $dispo->ReservationEvent_id = $request->input('ReservationEvent_id');
+      $dispo->save();
+      return redirect('disposal')->with(['success' => "Dispositin salle enregistrée"]);
+
     }
 
     /**
@@ -84,7 +83,9 @@ class BackofficeController extends Controller
     public function update(Request $request, $id)
     {
         //
-    }
+
+        }
+
 
     /**
      * Remove the specified resource from storage.
@@ -94,6 +95,9 @@ class BackofficeController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $disposal = DisposalRoom::find($id);
+      if($disposal)
+      $disposal->delete();
+      return redirect('/disposal');
     }
 }

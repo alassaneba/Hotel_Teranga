@@ -1,19 +1,19 @@
 @extends('layout')
 @section('content')
-    @if(session('success'))
-        <div class="alert alert-success">{{session('success')}}</div>
-    @endif
+
     <section class="hero-wrap hero-wrap-2" style="background-image:url({{asset('app-assets/images/renai.jpg')}});">
         <div class="overlay"></div>
         <div class="container">
             <div class="row slider-text justify-content-center align-items-center">
-                <div class="col-md-7 col-sm-12 text-center ftco-animate">
+                <div class="col-md-0 col-sm-0 d-flex text-center ftco-animate">
                     <h1 class="mb-3 mt-5 bread">Reservation de chambre</h1>
                 </div>
             </div>
         </div>
     </section>
-
+    @if(session('success'))
+        <div class="alert alert-success">{{session('success')}}</div>
+    @endif
     <div class=" container border">
         <spam><p>Pour faire une reservation de chambre veuillez renseignez tous les champs</p></spam>
     </div>
@@ -27,7 +27,7 @@
         <div><label>Heure d'arriver</label>
             <input type="time" name="Heure_arriver" class="form-control">
         </div>
-        <div><label>Date d'arriver</label>
+        <div><label>Date depart</label>
             <input type="date" name="Date_depart" class="form-control">
         </div>
         <div><label>Nombre de chambre</label>
@@ -41,7 +41,7 @@
         </div>
         <div><label>Type de chambre</label>
         <select name="Type_chambre" id="Type_chambre" class="form-control">
-            < <option value=""></option>
+                <option></option>
             @foreach($bedrooms as $id => $value)
                 <option value="{{$value}}">{{$value}}</option>
             @endforeach

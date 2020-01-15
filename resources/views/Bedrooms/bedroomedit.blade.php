@@ -29,7 +29,6 @@
         <form action="/bedroomupdate/{{$bedroomedit->id}}"  method="post" enctype="multipart/form-data">
             @csrf
             @method('patch')
-            {{$bedroomedit->Type_chambre}}
             <div><label>Type de chambre</label>
                 <select type="text" name="Type_chambre" class="form-control" placeholder="Type de chambre">
                     @foreach($Type_chambre as $bedid => $Type_chambre)

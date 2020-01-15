@@ -55,13 +55,13 @@ class BedroomController extends Controller
         $image_name = Str::slug($request->input('Type_chambre')) . '_' . time();
         $folder = '/uploads/images/';
         $bed-> Image = $folder . $image_name . '.' . $image->getClientOriginalExtension();
-        $this->uploadImage($image, $folder, 'public', $image_name);
+        $this->uploadImage($image, $folder, 'public', $image_name);}
         $bed->Prix_nuite = $request->input('Prix_nuite');
         $bed->Statut = $request->input('Statut');
         $bed->ReservationBedroom_id = $request->input('ReservationBedroom_id');
         $bed->save();
             return redirect('bedroom')->with(['success' => "Chambre enregistrée"]);
-        }
+
     }
 
     /**
@@ -86,6 +86,7 @@ class BedroomController extends Controller
         $this->authorize('admin');
         $bedroomedit= \App\Bedroom::find($id);
         $Type_chambre = \App\Bedroom::pluck('Type_chambre','id');
+
         return view('Bedrooms.bedroomedit', compact('bedroomedit','Type_chambre'));
     }
 

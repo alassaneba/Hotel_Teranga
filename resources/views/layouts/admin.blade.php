@@ -33,7 +33,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a href="/admin" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+        <a href="/home" class="nav-link">Vue site web</a>
       </li>
     </ul>
 
@@ -96,7 +96,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class=""><label class="brand-text weight-light">Hotel Teranga / Responsable</label>
+        <div class=""><label class="brand-text weight-light breadcrumb">HotelTeranga / Responsable</label>
           <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
               {{ Auth::user()->name }} <span class="caret"></span>
           </a>
@@ -247,15 +247,87 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Simple Link
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
+          <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <!-- Add icons to the links using the .nav-icon class
+                   with font-awesome or any other icon font library -->
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link bg-pink">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>
+                    Disposition Salles
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="/disposal" class="nav-link">
+                      <i class="fas fa-fw fa-list"></i>
+                      <p>Liste Type Dispositon</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/disposalcreate" class="nav-link">
+                      <i class="far fa-calendar-alt"></i>
+                      <p>Creation Type Disposition</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                  <!-- Add icons to the links using the .nav-icon class
+                       with font-awesome or any other icon font library -->
+                  <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link bg-olive">
+                      <i class="fas fa-fw fa-list"></i>
+                      <p>
+                        Espaces et Salles
+                        <i class="right fas fa-angle-left"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="/room" class="nav-link">
+                          <i class="fas fa-fw fa-list"></i>
+                          <p>Liste Espace et Salle</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="/roomcreate" class="nav-link">
+                          <i class="far fa-calendar-alt"></i>
+                          <p>Creation Espace et Salle</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                      <!-- Add icons to the links using the .nav-icon class
+                           with font-awesome or any other icon font library -->
+                      <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link bg-navy">
+                          <i class="fas fa-fw fa-list"></i>
+                          <p>
+                            Type Evenement
+                            <i class="right fas fa-angle-left"></i>
+                          </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                          <li class="nav-item">
+                            <a href="/typeevent" class="nav-link">
+                              <i class="fas fa-fw fa-list"></i>
+                              <p>Liste Type Evenement</p>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="/typeeventcreate" class="nav-link">
+                              <i class="far fa-calendar-alt"></i>
+                              <p>Creation Type Evenement</p>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

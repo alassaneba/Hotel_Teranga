@@ -71,6 +71,27 @@ Route::get('reseventedit/{id}','ReservationEventController@edit')->middleware('a
 Route::patch('/reseventupdate/{id}','ReservationEventController@update')->middleware('auth');
 Route::delete('reseventedit/{id}', 'ReservationEventController@destroy')->middleware('auth');
 
+Route::get('disposal','DisposalRoomController@index')->middleware('auth');
+
+Route::post('disposalcreate','DisposalRoomController@create')->middleware('auth');
+Route::get('disposalcreate','DisposalRoomController@create')->middleware('auth');
+Route::post('disposalcreate','DisposalRoomController@store')->middleware('auth');
+Route::delete('disposaledit/{id}', 'DisposalRoomController@destroy')->middleware('auth');
+
+Route::get('room','RoomController@index')->middleware('auth');
+
+Route::post('roomcreate','RoomController@create')->middleware('auth');
+Route::get('roomcreate','RoomController@create')->middleware('auth');
+Route::post('roomcreate','RoomController@store')->middleware('auth');
+Route::delete('roomedit/{id}', 'RoomController@destroy')->middleware('auth');
+
+Route::get('typeevent','TypeEventController@index')->middleware('auth');
+
+Route::post('typeeventcreate','TypeEventController@create')->middleware('auth');
+Route::get('typeeventcreate','TypeEventController@create')->middleware('auth');
+Route::post('typeeventcreate','TypeEventController@store')->middleware('auth');
+Route::delete('typeeventedit/{id}', 'TypeEventController@destroy')->middleware('auth');
+
 Auth::routes();
 Route::get('/admin', 'BackofficeController@index');
 Route::resource('/admin/users', 'Admin\UsersController');
