@@ -110,7 +110,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link bg-green">
-              <i class="fas fa-fw fa-list"></i>
+              <i class="fas fa-fw fa-bed"></i>
               <p>
                 Reservation Chambre
                 <i class="right fas fa-angle-left"></i>
@@ -197,7 +197,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link bg-orange">
-              <i class="far fa-calendar-alt"></i>
+              <i class="far fa-user"></i>
               <p>
                 Besoins des Clients
                 <i class="right fas fa-angle-left"></i>

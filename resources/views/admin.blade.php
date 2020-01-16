@@ -23,7 +23,7 @@
         <div class="card text-white bg-success o-hidden h-100">
             <div class="card-body">
                 <div class="card-body-icon">
-                  <i class="fas fa-fw fa-list"></i>
+                  <i class="fas fa-fw fa-bed"></i>
                 </div>
                 <div class="mr-5">{{$resbedroom_count}} Reservation Chambre</div>
             </div>
@@ -65,7 +65,7 @@
                   <div class="card text-white bg-orange o-hidden h-100">
                       <div class="card-body">
                           <div class="card-body-icon">
-                            <i class="fas fa-fw fa-list"></i>
+                            <i class="far fa-user"></i>
                           </div>
                           <div class="mr-5">{{$besoinclient_count}} Besoins Clients</div>
                       </div>
