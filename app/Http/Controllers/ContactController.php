@@ -117,7 +117,7 @@ class ContactController extends Controller
         $contact= \App\Contact::find($id);
       if($contact)
           $contact->delete();
-      return redirect('/contactmessage');
+      return redirect('/contactmessage')->with(['success' => "Message Supprimé"]);
 
     }
     public function Message (){

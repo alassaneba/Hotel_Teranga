@@ -51,7 +51,7 @@
                 <tr>
                     <td>{{$rooms->id}}</td>
                     <td>{{$rooms->Salles}}</td>
-                    <td><form action="roomedit/{{$rooms->id}}" method="post">
+                    <td><form action="roomedit/{{$rooms->id}}" method="post" onsubmit="return confirm('Voulez-vous supprimer ?')">
                         @csrf
                         @method('delete')
                         <input type="submit" class="btn btn-danger" name="delete" value="Supprimer">

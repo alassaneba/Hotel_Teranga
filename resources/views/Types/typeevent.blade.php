@@ -51,7 +51,7 @@
                 <tr>
                     <td>{{$typeevents->id}}</td>
                     <td>{{$typeevents->Type_evenement}}</td>
-                    <td><form action="typeeventedit/{{$typeevents->id}}" method="post">
+                    <td><form action="typeeventedit/{{$typeevents->id}}" method="post" onsubmit="return confirm('Voulez-vous supprimer ?')">
                         @csrf
                         @method('delete')
                         <input type="submit" class="btn btn-danger" name="delete" value="Supprimer">

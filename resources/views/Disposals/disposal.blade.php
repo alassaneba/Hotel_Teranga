@@ -51,7 +51,7 @@
                 <tr>
                     <td>{{$disposals->id}}</td>
                     <td>{{$disposals->Disposition}}</td>
-                    <td><form action="disposaledit/{{$disposals->id}}" method="post">
+                    <td><form action="disposaledit/{{$disposals->id}}" method="post" onsubmit="return confirm('Voulez-vous supprimer ?')">
                         @csrf
                         @method('delete')
                         <input type="submit" class="btn btn-danger" name="delete" value="Supprimer">

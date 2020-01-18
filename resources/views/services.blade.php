@@ -137,10 +137,10 @@
                 <div class="ftco-footer-widget mb-4 ml-md-4">
                     <h2 class="ftco-heading-2">SERVICES</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#cuc">Reserver une chambre</a></li>
-                        <li><a href="services.html">Reserver un evenement</a></li>
-                        <li><a href="services.html">Restauration</a></li>
-                        <li><a href="services.html">Pressing</a></li>
+                        <li><a href="/reservationchambre">Reserver une chambre</a></li>
+                        <li><a href="/reservationevenement">Reserver un evenement</a></li>
+                        <li><a href="/services">Restauration</a></li>
+                        <li><a href="/services">Pressing</a></li>
                     </ul>
                 </div>
             </div>
@@ -148,8 +148,8 @@
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">LIENS</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#ccr">Catégories recommandées</a></li>
-                        <li><a href="#tcvv">Tendances chambres vip en vogue</a></li>
+                        <li><a href="/home#ccr">Catégories recommandées</a></li>
+                        <li><a href="/home#tcvv">Evenementiel</a></li>
                         <li><a href="#">Terms &amp; Conditions</a></li>
                         <li><a href="#">FAQ</a></li>
                     </ul>

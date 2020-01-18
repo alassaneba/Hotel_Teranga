@@ -118,6 +118,6 @@ class BesoinClientController extends Controller
       $besoinclient = BesoinClient::find($id);
    if($besoinclient)
        $besoinclient->delete();
-   return redirect('besoinclient')->with(['success' => "Demande besoin client Supprimé"]);;
+   return redirect('besoinclient')->with(['success' => "Demande besoin client Supprimé"]);
     }
 }

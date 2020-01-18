@@ -98,6 +98,6 @@ class DisposalRoomController extends Controller
       $disposal = DisposalRoom::find($id);
       if($disposal)
       $disposal->delete();
-      return redirect('/disposal');
+      return redirect('/disposal')->with(['success' => "Disposition salle Supprimé"]);
     }
 }

@@ -33,7 +33,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a href="/admin" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/home" class="nav-link">Vue site web</a>
+        <a href="/home" class="nav-link">Site Web</a>
       </li>
     </ul>
 

@@ -67,7 +67,7 @@
                               <td>{{$contacts->Statut}}</td>
                               <td>{{$contacts->User_id}}</td>
                               <td> <p class="btn btn-outline-secondary"><a href="contactedit/{{$contacts->id}}">Editer</a></p></td>
-                              <td><form action="contactedit/{{$contacts->id}}" method="post">
+                              <td><form action="contactedit/{{$contacts->id}}" method="post" onsubmit="return confirm('Voulez-vous supprimer ?')">
                                   @csrf
                                   @method('delete')
                                   <input type="submit" class="btn btn-danger" name="delete" value="Supprimer">

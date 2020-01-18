@@ -92,6 +92,6 @@ class RoomController extends Controller
       $room = Room::find($id);
       if($room)
       $room->delete();
-      return redirect('/room');
+      return redirect('/room')->with(['success' => "Espace ou Salle Supprimé"]);
     }
 }

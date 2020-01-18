@@ -132,7 +132,7 @@ class BedroomController extends Controller
         $bedroom = Bedroom::find($id);
         if($bedroom)
             $bedroom->delete();
-        return redirect('/bedroom');
+        return redirect('/bedroom')->with(['success' => "Chambre Supprimée"]);
 
 }
 

@@ -10,7 +10,7 @@
             </div>
         </div>
         @foreach($chambres as $chambre)
-            <div class="col-md-7 ftco-animate">
+            <div class="col-md-6 ftco-animate">
                 <div class="blog-entry" data-aos-delay="200">
                     <a href="blog-single.html" class="block-20" style="background-image: url('{{$chambre->Image}}');">
                     </a>
@@ -21,7 +21,7 @@
                             <div><a>Etat: {{$chambre->Statut}}</a></div>
                         </div>
                         <div class="desc">
-                            <h3 class="heading"><a>Description de la chambre: {{$chambre->Description}}</a></h3>
+                            <h3 class="heading"><a>Description:<br>{{$chambre->Description}}</a></h3>
                         </div>
                         <div class="center">
                             <a href="reservationchambre"><span class="btn btn-primary py-2 px-5">Reserver la chambre</span></a>

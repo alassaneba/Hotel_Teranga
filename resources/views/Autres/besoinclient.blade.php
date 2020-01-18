@@ -65,7 +65,7 @@
                     <td>{{$besoinclients->Statut}}</td>
                     <td>{{$besoinclients->User_id}}</td>
                     <td> <p class="btn btn-outline-secondary"><a href="besoinclientedit/{{$besoinclients->id}}">Editer</a></p></td>
-                    <td><form action="besoinclientedit/{{$besoinclients->id}}" method="post">
+                    <td><form action="besoinclientedit/{{$besoinclients->id}}" method="post" onsubmit="return confirm('Voulez-vous supprimer ?')">
                         @csrf
                         @method('delete')
                         <input type="submit" class="btn btn-danger" name="delete" value="Supprimer">

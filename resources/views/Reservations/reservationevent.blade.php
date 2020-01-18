@@ -94,7 +94,7 @@
             <td>{{$reservationevent->Statut}}</td>
             <td>{{$reservationevent->User}}</td>
             <td> <p class="btn btn-outline-secondary"><a href="reseventedit/{{$reservationevent->id}}">Editer</a></p></td>
-            <td><form action="reseventedit/{{$reservationevent->id}}" method="post">
+            <td><form action="reseventedit/{{$reservationevent->id}}" method="post" onsubmit="return confirm('Voulez-vous supprimer ?')">
                     @csrf
                     @method('delete')
                     <input type="submit" class="btn btn-danger" name="delete" value="Supprimer">

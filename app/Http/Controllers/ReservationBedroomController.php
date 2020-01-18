@@ -154,7 +154,7 @@ class ReservationBedroomController extends Controller
         $reservationbedroom = ReservationBedroom::find($id);
         if($reservationbedroom)
             $reservationbedroom->delete();
-        return redirect('/reservationbedroom');
+        return redirect('/reservationbedroom')->with(['success' => "Reservation chambre Supprimé"]);
     }
     public function clreservationchambre(){
       $bedrooms = \App\Bedroom::pluck('Type_chambre','id');

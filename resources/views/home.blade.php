@@ -118,12 +118,10 @@
                                 <div class="select-wrap text-center">
                                     Chambre
                                     <select id="selection" name="Type_chambre" class="btn btn-light py-3 px-4">
-                                        <option value="Unique_simple">Unique_simple</option>
-                                        <option value="Unique_confort">Unique_confort</option>
-                                        <option value="Double_simple">Double_simple</option>
-                                        <option value="Double_confort">Double_confort</option>
-                                        <option value="Deluxe_simple">Deluxe_simple</option>
-                                        <option value="Deluxe_royal">Deluxe_royal</option>
+                                      <option></option>
+                                  @foreach($bedrooms as $id => $value)
+                                      <option value="{{$value}}">{{$value}}</option>
+                                  @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -333,7 +331,7 @@
         <div class="row">
             <div class="col-md-4 ftco-animate">
                 <div class="blog-entry">
-                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/salle45.jpg')}}');">
+                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/Salle45.jpg')}}');">
                     </a>
                     <div class="text py-4">
                         <div class="meta mb-3">

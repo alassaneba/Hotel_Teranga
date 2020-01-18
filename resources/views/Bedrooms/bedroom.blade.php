@@ -61,7 +61,7 @@
                     <td>{{$bedrooms->Prix_nuite}}</td>
                     <td>{{$bedrooms->Statut}}</td>
                     <td> <p class="btn btn-outline-secondary"><a href="bedroomedit/{{$bedrooms->id}}">Editer</a></p></td>
-                    <td><form action="bedroomedit/{{$bedrooms->id}}" method="post">
+                    <td><form action="bedroomedit/{{$bedrooms->id}}" method="post" onsubmit="return confirm('Voulez-vous supprimer ?')">
                         @csrf
                         @method('delete')
                         <input type="submit" class="btn btn-danger" name="delete" value="Supprimer">

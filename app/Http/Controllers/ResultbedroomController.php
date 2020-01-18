@@ -81,16 +81,16 @@ class ResultbedroomController extends Controller
     {
         //
     }
-    public function Resultbedroom(Request $request){
-        $lieu_depart =  $request->input('lieu_depart');
-        $lieu_arrivee =  $request->input('lieu_arrivee');
-        $date_depart =  $request->input('date_depart');
-        $heure_depart =  $request->input('heure_depart');
-        $bedroom =  \App\Bedroom::orWhere("Description", "like", "%$lieu_depart%")
-                            ->orWhere("Type_chambre", "like", "%$lieu_arrivee%")
-                            ->orWhere("Image", "like", "%$date_depart%")
-                            ->orWhere("Prix_nuite", "like", "%$date_depart%")
-                            ->get();
-        return view('Resultbedroom', compact('bedroom'));
+  //  public function Resultbedroom(Request $request){
+    //    $lieu_depart =  $request->input('lieu_depart');
+      //  $lieu_arrivee =  $request->input('lieu_arrivee');
+    //    $date_depart =  $request->input('date_depart');
+    //    $heure_depart =  $request->input('heure_depart');
+    //    $bedroom =  \App\Bedroom::orWhere("Description", "like", "%$lieu_depart%")
+    //                        ->orWhere("Type_chambre", "like", "%$lieu_arrivee%")
+    //                        ->orWhere("Image", "like", "%$date_depart%")
+    //                        ->orWhere("Prix_nuite", "like", "%$date_depart%")
+    //                        ->get();
+    //    return view('Resultbedroom', compact('bedroom'));
     }
 }

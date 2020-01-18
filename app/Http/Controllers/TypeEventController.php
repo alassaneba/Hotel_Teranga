@@ -92,6 +92,6 @@ class TypeEventController extends Controller
       $typeevent = TypeEvent::find($id);
       if($typeevent)
       $typeevent->delete();
-      return redirect('/typeevent');
+      return redirect('/typeevent')->with(['success' => "Type d'evenement Supprimé"]);
     }
 }

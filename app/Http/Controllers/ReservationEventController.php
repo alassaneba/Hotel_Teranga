@@ -170,7 +170,7 @@ class ReservationEventController extends Controller
         $reservationevents = ReservationEvent::find($id);
         if($reservationevents)
             $reservationevents->delete();
-        return redirect('/reservationevent');
+        return redirect('/reservationevent')->with(['success' => "Reservation d'evenement Supprimée"]);
     }
     public function clreservationevenement(){
         $typeevenememt = \App\TypeEvent::pluck('Type_evenement','id');
