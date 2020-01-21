@@ -16,12 +16,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{asset('app-assets/css/icomoon.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('admin-assets/dist/css/adminlte.min.css')}}">
+  <!-- todolist -->
+  <link rel="stylesheet" href="{{asset('admin-assets/dist/css/todolist.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini" >
 <div class="wrapper">
-
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
@@ -359,14 +360,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Main Footer -->
  <footer class="main-footer mb-0 ml-0" style="width:95% ;" >
   <div class="row">
-      <div class="col-md-11 text-right">
+      <div class="col-md-10 text-right">
 
           <p>
 
               Copyright &copy;<script>
                   document.write(new Date().getFullYear());
 
-              </script> TOUS DROITS RESERVES | Ce site web est cree avec <i class="icon-heart" aria-hidden="true"></i> par Al Assane BA avec <a href="https://galimatech.com" target="_blank">Galima Tech</a>
+              </script> TOUS DROITS RESERVES| Site web crée avec <i class="icon-heart" aria-hidden="true"></i> par Al Assane BA chez <a href="https://galimatech.com" target="_blank">Galima Tech</a>
 
           </p>
       </div>
@@ -377,11 +378,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- REQUIRED SCRIPTS -->
 
-<!-- jQuery -->
+
 <script src="{{asset('admin-assets/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{asset('admin-assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('admin-assets/dist/js/adminlte.min.js')}}"></script>
+<!-- todo list -->
+<script  src="{{asset('admin-assets/dist/js/todolist.js')}}"></script>
 </body>
 </html>

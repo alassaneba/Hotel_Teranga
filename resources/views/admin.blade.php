@@ -134,5 +134,15 @@
             </div>
         </div>
         <!-- /.container-fluid -->
-    </div>
+      </div>
+      <section class="app-insert">
+        <div class="headr">
+          <h2>Tache a faire</h2>
+          <input type="text" name="task" onsubmit="function()" placeholder="Titre...">
+        </div>
+      </section>
+      <section class="app-list">
+        <ul>
+        </ul>
+      </section>
 @endsection
