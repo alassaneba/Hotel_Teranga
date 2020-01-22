@@ -17,19 +17,38 @@
     <div class=" container border">
         <spam><p>Pour faire une reservation de chambre veuillez renseignez tous les champs</p></spam>
     </div>
+    <script type="text/javascript">
+    function temps(date)
+    {
+    var d = new Date(date[2], date[1] - 1, date[0]);
+    return d.getUTCDate();
+    }
+    function calculer()
+    {
 
+    var date1=document.forms['form1'].elements['date1'].value
+    var date2=document.forms['form1'].elements['date2'].value
+
+    var debut = temps(date1.split("/"));
+    var fin = temps(date2.split("/"));
+    var nb = (fin - debut) / (1000 * 60 * 60 * 24); // + " jours";
+    document.forms['form1'].elements['jour'].value=nb;
+    }
+    </script>
     <div class="container border">
-    <form action="reservationchambre" method="post">
+    <form action="reservationchambre" method="post" name="form1">
         @csrf
         <div><label>Date d'arriver</label>
-            <input type="date" name="Date_arriver" class="form-control">
+            <input type="date" name="date1" class="form-control">
         </div>
         <div><label>Heure d'arriver</label>
             <input type="time" name="Heure_arriver" class="form-control">
         </div>
         <div><label>Date depart</label>
-            <input type="date" name="Date_depart" class="form-control">
+            <input type="date" name="date2" class="form-control">
         </div>
+        nombre jour : : <input type="text" name="jour" value="0" readonly /><br /><br />
+<input type="button" onclick="return calculer()" value="calculer nb jour" />
         <div><label>Nombre de chambre</label>
             <input type="number" name="Nombre_chambre" class="form-control">
         </div>

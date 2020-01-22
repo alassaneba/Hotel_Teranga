@@ -134,7 +134,6 @@
             </div>
         </div>
         <!-- /.container-fluid -->
-      </div>
       <section class="app-insert">
         <div class="headr">
           <h2>Tache a faire</h2>

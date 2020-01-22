@@ -699,7 +699,6 @@
     $( function() {
         $( "#datepicker" ).datepicker();
     } );
-
 </script>
 
 </body>
