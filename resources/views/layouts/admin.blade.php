@@ -103,7 +103,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </a>
         </div>
       </div>
-
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -335,13 +334,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
     <!-- /.sidebar -->
   </aside>
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-
-    <!-- /.content-header -->
-
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
@@ -357,28 +351,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <a id="back-to-top" href="#" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
    <i class="fas fa-chevron-up"></i>
 </a>
-  <!-- Main Footer -->
- <footer class="main-footer mb-0 ml-0" style="width:95% ;" >
-  <div class="row">
-      <div class="col-md-10 text-right">
-
-          <p>
-
-              Copyright &copy;<script>
-                  document.write(new Date().getFullYear());
-
-              </script> TOUS DROITS RESERVES| Site web crée avec <i class="icon-heart" aria-hidden="true"></i> par Al Assane BA chez <a href="https://galimatech.com" target="_blank">Galima Tech</a>
-
-          </p>
-      </div>
-  </div>
-  </footer>
 </div>
 <!-- ./wrapper -->
-
+<footer class="main-footer mb-0 ml-0" style="width:95%; margin-bottom: 0px;" >
+ <div class="row">
+     <div class="col-md-10 text-right">
+         <p>  Copyright &copy;<script>document.write(new Date().getFullYear());</script> TOUS DROITS RESERVES| Site web crée avec <i class="icon-heart" aria-hidden="true"></i> par Al Assane BA chez <a href="https://galimatech.com" target="_blank">Galima Tech</a></p>
+     </div>
+ </div>
+ </footer>
+<!-- Main Footer -->
 <!-- REQUIRED SCRIPTS -->
-
-
 <script src="{{asset('admin-assets/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{asset('admin-assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

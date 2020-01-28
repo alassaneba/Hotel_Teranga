@@ -22,6 +22,7 @@ Route::get('services','ServicesController@index');
 Route::get('contact','ContactController@index');
 Route::post('contact','ContactController@store');
 Route::get('recherche','BedroomController@recherche')->name('recherche');
+Route::post('bedroomajax', 'BedroomController@bedroomajax')->name('bedroomajax');
 
 Route::get('contactmessage','ContactController@Message')->middleware('auth');
 
@@ -31,8 +32,6 @@ Route::post('contactcreate','ContactController@store')->middleware('auth');
 Route::get('contactedit/{id}','ContactController@edit')->middleware('auth');
 Route::patch('/contactmessageupdate/{id}','ContactController@update')->middleware('auth');
 Route::delete('contactedit/{id}','ContactController@destroy')->middleware('auth');
-
-
 
 
 Route::get('besoinclient','BesoinClientController@index')->middleware('auth');

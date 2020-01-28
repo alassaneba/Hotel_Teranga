@@ -29,18 +29,10 @@
         <form action="bedroomcreate" method="post" enctype="multipart/form-data">
     @csrf
             <div><label>Type de chambre</label>
-                <select type="text" name="Type_chambre" class="form-control">
-                    <option></option>
-                    <option value="Unique_simple">Unique Simple </option>
-                    <option value="Unique_confort">Unique Confort</option>
-                    <option value="Double_simple">Double Simple</option>
-                    <option value="Double_confort">Double Confort</option>
-                    <option value="Deluxe_simple">Deluxe Simple</option>
-                    <option value="Deluxe_royal">Deluxe Royal</option>
-                </select>
+                <input type="text" name="Type_chambre" class="form-control">
             </div>
             <div><label>Description de la chambre</label>
-                <textarea name="Description" id="" cols="30" rows="7" class="form-control" placeholder="Description de la chambre"></textarea>
+                <textarea name="Description" id="Description" cols="30" rows="7" class="form-control" placeholder="Description de la chambre"></textarea>
             </div>
             <div><label>Image de la chambre</label>
                 <input type="file" name="Image" class="form-control" placeholder="Image">

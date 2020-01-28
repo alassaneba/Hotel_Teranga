@@ -147,5 +147,15 @@ class BedroomController extends Controller
       $chambres = \App\Bedroom::where('Type_chambre','like',$type_chambre)->get();
       return view('Resultbedroom',compact('chambres'));
     }
+    public function bedroomajax(Request $request){
+      $type_chambre = $request->input('Type_chambre');
+      $chambre = \App\Bedroom::where('Type_chambre',$type_chambre)->first();
+      if($request->ajax()){
+                return response()->json([
+                      'prix' => $chambre->Prix_nuite,
+                      'description' => $chambre->Description
+                  ]);
+            }
 
+    }
 }
