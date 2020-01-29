@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{asset('app-assets/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/style.css')}}">
-    
+
     <link rel="stylesheet" href="{{asset('app-assets/css/lay.css')}}">
 </head>
 <body>
@@ -142,9 +142,7 @@
 <script src="{{asset('app-assets/js/aos.js')}}"></script>
 <script src="{{asset('app-assets/js/jquery.animateNumber.min.js')}}"></script>
 <script src="{{asset('app-assets/js/bootstrap-datepicker.js')}}"></script>
-
 <script src="{{asset('app-assets/js/scrollax.min.js')}}"></script>
-
 <script src="{{asset('app-assets/js/main.js')}}"></script>
 @yield('js')
 </body>
