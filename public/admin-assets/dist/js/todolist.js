@@ -1,10 +1,10 @@
 /*
   ------------------------------
-	
+
 	Simple To-do
  	Developed by Caue Queiroz
 
- 	Goals: 
+ 	Goals:
  	Create a todo list that can be able to:
  	- Add new tasks
  	- List added tasks
@@ -45,7 +45,7 @@
 			var new_task = document.createElement('li');
 				new_task.setAttribute('class', 'task');
 				new_task.innerHTML = task + '<a href="javascript:;" class="remove-task">supprimer</a>';
-				
+
 			var $list = document.querySelector('.app-list ul');
 				$list.appendChild(new_task);
 		},

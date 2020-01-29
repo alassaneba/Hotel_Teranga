@@ -1,6 +1,5 @@
 @extends('layout')
 @section('content')
-
     <section class="hero-wrap hero-wrap-2" style="background-image:url({{asset('app-assets/images/renai.jpg')}});">
         <div class="overlay"></div>
         <div class="container">
@@ -17,7 +16,6 @@
     <div class=" container border">
         <spam><p>Pour faire une reservation de chambre veuillez renseignez tous les champs</p></spam>
     </div>
-
     <div class="container border">
     <form action="reservationchambre" method="post" name="form1">
         @csrf
@@ -61,14 +59,9 @@
             @endforeach
          </select>
         </div>
-        <script defer>
-
-
-</script>
-        <div>
-        Description :<br> <textarea type="hidden" id="Description" value="Description" class="form-control" readonly /></textarea>
+        <div><label>Description</label>
+         <textarea type="hidden" id="Description" value="Description" class="form-control" readonly /></textarea>
         </div>
-
        <div><label>Civilite</label>
             <select type="text" name="Civilite" class="form-control">
                 <option></option>
@@ -361,7 +354,7 @@
 
                   var nbjour= $("#jour").val();
                   var Nombre_chambre= $("#Nombre_chambre").val();
-                  var prix=data.prix*nbjour*Nombre_chambre
+                  var prix=data.prix*nbjour*Nombre_chambre;
                   $("#Montant_payer").val(prix);
                   $("#Description").val(data.description);
                 },

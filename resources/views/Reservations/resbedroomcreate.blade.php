@@ -1,5 +1,4 @@
 @extends('layouts.admin')
-
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)
@@ -27,19 +26,33 @@
         <div class="card-tools">
         </div>
       </div>
-    <form action="resbedroomcreate" method="post">
+    <form action="resbedroomcreate" method="post" name="form1">
         @csrf
         <div><label>Date d'arriver</label>
-            <input type="date" name="Date_arriver" class="form-control">
+            <input type="date" name="Date_arriver" id="Date_arriver"class="form-control">
         </div>
         <div><label>Heure d'arriver</label>
             <input type="time" name="Heure_arriver" class="form-control">
         </div>
         <div><label>Date depart</label>
-            <input type="date" name="Date_depart" class="form-control">
-        </div>
+            <input type="date" name="Date_depart" id="Date_depart" class="form-control" onchange="return calculer()">
+        </div><label>Nombre de jour</label>
+         <input type="text" name="jour" id="jour" value="0" class="form-control" readonly />
+
+        <script type="text/javascript">
+        function calculer()
+        {
+        var Date_arriver=document.forms['form1'].elements['Date_arriver'].value
+        var Date_depart=document.forms['form1'].elements['Date_depart'].value
+
+        var debut = Date.parse(Date_arriver);
+        var fin = Date.parse(Date_depart);
+        var nbjour = (fin - debut) / (1000 * 60 * 60 * 24); // + " jours";
+        document.forms['form1'].elements['jour'].value=nbjour;
+        }
+        </script>
         <div><label>Nombre de chambre</label>
-            <input type="number" name="Nombre_chambre" class="form-control">
+            <input type="number" name="Nombre_chambre" id="Nombre_chambre" class="form-control">
         </div>
         <div><label>Nombre adulte</label>
             <input type="number" name="Nombre_adulte" class="form-control">
@@ -48,12 +61,16 @@
             <input type="number" name="Nombre_enfant" class="form-control">
         </div>
         <div><label>Type de chambre</label>
-        <select name="Type_chambre" id="Type_chambre" class="form-control">
+         <select name="Type_chambre" id="Type_chambre"  class="form-control">
+                <option></option>
             @foreach($bedrooms as $id => $value)
                 <option value="{{$value}}">{{$value}}</option>
             @endforeach
-        </select>
-    </div>
+         </select>
+        </div>
+        <div><label>Description</label>
+         <textarea type="hidden" id="Description" value="Description" class="form-control" readonly /></textarea>
+        </div>
     <div><label>Numero chambre</label>
         <input type="text" name="Numero_chambre" class="form-control">
     </div>
@@ -322,7 +339,7 @@
             <input type="text" name="Telephone" class="form-control" placeholder="Telephone">
         </div>
         <div><label>Montant a payer</label>
-            <input type="text" name="Montant_payer" class="form-control">
+         <input type="text" id="Montant_payer" name="Montant_payer" value="0" class="form-control" readonly />
         </div>
         <div><label>Statut</label>
             <select type="text" name="Statut" class="form-control">
@@ -345,4 +362,33 @@
         </div>
     </form>
 </div>
+@endsection
+@section('js')
+<script type="text/javascript">
+$(function() {
+$("#Type_chambre").change(
+  function(){
+    let typeChambre=$(this).val();
+    $.ajax({
+              method: "POST",
+              url: "{{route('bedroomajax') }}",
+              data: { Type_chambre: typeChambre,"_token": "{{ csrf_token() }}", },
+              success:function(data)
+              {
+                console.log(data)
+
+                var nbjour= $("#jour").val();
+                var Nombre_chambre= $("#Nombre_chambre").val();
+                var prix=data.prix*nbjour*Nombre_chambre;
+                $("#Montant_payer").val(prix);
+                $("#Description").val(data.description);
+              },
+              error:function(ex,errorMsg,err)
+              {
+                console.log(errorMsg)
+              }
+            })
+})
+});
+</script>
 @endsection
