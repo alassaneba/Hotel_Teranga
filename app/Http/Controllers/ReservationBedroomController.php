@@ -162,7 +162,7 @@ class ReservationBedroomController extends Controller
       return view('/reservationchambre', compact('bedrooms','reservationbedroom'));
     }
 
-        public function updatefrontoffice(Request $request)
+    public function updatefrontoffice(Request $request)
         {
              $data = $request->validate([
                  'Date_arriver'=>'required',
@@ -201,6 +201,6 @@ class ReservationBedroomController extends Controller
             $resbed-> User_id = $request->input('User_id');
             $resbed-> save();
 
-              return redirect()->back()->with(['success' => "Votre reservation de chambre est enregistrée"]);
+              return redirect()->back()->with(['success' => "Votre reservation de chambre est enregistrée. Nous vous contacterons sous peu pour la confirmation."]);
         }
 }

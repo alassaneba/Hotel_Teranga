@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Bedroom;
+use App\Room;
 class HomeController extends Controller
 {
     /**
@@ -23,8 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $bedrooms = \App\Bedroom::pluck('Type_chambre','id');
-        return view('home',compact('bedrooms'));
+        $bedrooms = \App\Bedroom::all();
+        $rooms = \App\Room::all();
+        return view('home',compact('bedrooms','rooms'));
     }
 
 }

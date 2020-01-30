@@ -118,8 +118,8 @@
                                     Chambre
                                     <select id="selection" name="Type_chambre" class="btn btn-light py-3 px-4">
                                       <option></option>
-                                  @foreach($bedrooms as $id => $value)
-                                      <option value="{{$value}}">{{$value}}</option>
+                                  @foreach($bedrooms as $value)
+                                      <option value="{{$value->Type_chambre}}">{{$value->Type_chambre}}</option>
                                   @endforeach
                                     </select>
                                 </div>
@@ -213,109 +213,26 @@
         </div>
     </div>
     <div class="container-fluid px-md-0">
-        <div class="row no-gutters">
-            <div class="col-md-4">
-                <div class="model img d-flex align-items-end" style="background-image: url({{asset('app-assets/images/unique1.jpg')}});">
-                    <div class="desc w-100 px-4">
-                        <div class="info w-100 mb-4">
-                            <ul>
-                                <li><span>Prix TTC:</span><span>10.000 FR/Nuité</span></li>
-                                <li><span>Bureau:</span><span>oui</span></li>
-                                <li><span>Chaine Télé cablé:</span><span>oui</span></li>
-                                <li><span>Balcon:</span><span>oui</span></li>
-                                <li><span>Salle de bain:</span><span>oui</span></li>
-                            </ul>
-                        </div>
-                        <div class="text w-100 mb-3">
-                            <h2><a href="reservationchambre">Chambre<br>Unique simple</a></h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="model img d-flex align-items-end" style="background-image: url({{asset('app-assets/images/double2.jpg')}});">
-                    <div class="desc w-100 px-4">
-                        <div class="info w-100 mb-4">
-                            <ul>
-                                <li><span>Prix TTC:</span><span>20.000 FR/Nuité</span></li>
-                                <li><span>Chaine Télé cablé:</span><span>oui</span></li>
-                            </ul>
-                        </div>
-                        <div class="text w-100 mb-3">
-                            <h2><a href="reservationchambre">Chambre<br>Double simple</a></h2>
+            <div class="row no-gutters">
+            @foreach($bedrooms as $bedroom)
+                <div class="col-md-4">
+                    <div class="model img d-flex align-items-end" style="background-image: url('{{$bedroom->Image}}');">
+                        <div class="desc w-100 px-4">
+                            <div class="info w-100 mb-4">
+                                <ul>
+                                    <li><span>Prix TTC:</span><span>{{$bedroom->Prix_nuite}} FR/Nuité</span></li>
+                                    <li><span>Bureau:</span><span>oui</span></li>
+                                </ul>
+                            </div>
+                            <div class="text w-100 mb-3">
+                                <h2><a href="reservationchambre">Chambre<br>{{$bedroom->Type_chambre}}</a></h2>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="model img d-flex align-items-end" style="background-image: url({{asset('app-assets/images/deluxe3.jpg')}});">
-                    <div class="desc w-100 px-4">
-                        <div class="info w-100 mb-4">
-                            <ul>
-                                <li><span>Prix TTC:</span><span>30.000 FR/Nuité</span></li>
-                                <li><span>Bureau:</span><span>oui</span></li>
-                            </ul>
-                        </div>
-                        <div class="text w-100 mb-3">
-                            <h2><a href="reservationchambre">Chambre <br>Deluxe Simple</a></h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="model img d-flex align-items-end" style="background-image: url({{asset('app-assets/images/unique4.jpg')}});">
-                    <div class="desc w-100 px-4">
-                        <div class="info w-100 mb-4">
-                            <ul>
-                                <li><span>Prix TTC:</span><span>15.000 FR/Nuité</span></li>
-                                <li><span>Bureau:</span><span>oui</span></li>
-                                <li><span>Chaine Télé cablé:</span><span>oui</span></li>
-                                <li><span>Balcon:</span><span>oui</span></li>
-                                <li><span>Salle de bain:</span><span>oui</span></li>
-                            </ul>
-                        </div>
-                        <div class="text w-100 mb-3">
-                            <h2><a href="model-single.html">Chambre <br>Unique confort</a></h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="model img d-flex align-items-end" style="background-image: url({{asset('app-assets/images/double3.jpg')}});">
-                    <div class="desc w-100 px-4">
-                        <div class="info w-100 mb-4">
-                            <ul>
-                                <li><span>Prix TTC:</span><span>25.000 FR/Nuité</span></li>
-                                <li><span>Bureau:</span><span>oui</span></li>
-                                <li><span>Chaine Télé cablé:</span><span>oui</span></li>
-                            </ul>
-                        </div>
-                        <div class="text w-100 mb-3">
-                            <h2><a href="reservationchambre">Chambre <br>Double confort</a></h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="model img d-flex align-items-end" style="background-image: url({{asset('app-assets/images/deluxe4.jpg')}});">
-                    <div class="desc w-100 px-4">
-                        <div class="info w-100 mb-4">
-                            <ul>
-                                <li><span>Prix TTC:</span><span>35.000 FR/Nuité</span></li>
-                                <li><span>Bureau:</span><span>oui</span></li>
-                                <li><span>Chaine Télé cablé:</span><span>oui</span></li>
-                                <li><span>Balcon:</span><span>oui</span></li>
-                                <li><span>Salle de bain:</span><span>oui</span></li>
-                            </ul>
-                        </div>
-                        <div class="text w-100 mb-3">
-                            <h2><a href="reservationchambre">Chambre <br>Deluxe royal</a></h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+              @endforeach
+              </div>
+          </div>
 </section>
 
 <section id="tcvv" class="ftco-section">
@@ -328,82 +245,23 @@
             </div>
         </div>
         <div class="row">
+            @foreach($rooms as $room)
             <div class="col-md-4 ftco-animate">
                 <div class="blog-entry">
-                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/Salle45.jpg')}}');">
+                    <a href="#" class="block-20" style="background-image: url('{{$room->Image}}');">
                     </a>
                     <div class="text py-4">
                         <div class="meta mb-3">
                             <div><a href="#">Prix variable</a></div>
                             <div><a href="#"> selon les modalites</a></div>
-
                         </div>
                         <div class="desc">
-                            <h3 class="heading"><a href="#">Une salle de 45 places tres aerai utile pour vos rencontre, formation, reunion, groupe de travail restraint.</a></h3>
+                            <h3 class="heading"><a href="#">{{$room->Description}}</a></h3>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 ftco-animate">
-                <div class="blog-entry" data-aos-delay="100">
-                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/salle100.jpeg')}}');">
-                    </a>
-                    <div class="text py-4">
-                        <div class="meta mb-3">
-                          <div><a href="#">Prix variable</a></div>
-                          <div><a href="#"> selon les modalites</a></div>
-                        </div>
-                        <div class="desc">
-                            <h3 class="heading"><a href="#">Une salle de 100 places tres aerai utile pour vos point de presse, conference, reunion, seminaire.</a></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 ftco-animate">
-                <div class="blog-entry" data-aos-delay="200">
-                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/Terasse.jpg')}}');">
-                    </a>
-                    <div class="text py-4">
-                        <div class="meta mb-3">
-                          <div><a href="#">Prix variable</a></div>
-                          <div><a href="#"> selon les modalites</a></div>
-                        </div>
-                        <div class="desc">
-                            <h3 class="heading"><a href="#">Une terasse de plus de 150-200 places a l'aire libre utile pour vos soiree, diner de gala, cocktail, lancement de produit</a></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 ftco-animate">
-                <div class="blog-entry">
-                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/resto1.jpg')}}');">
-                    </a>
-                    <div class="text py-4">
-                        <div class="meta mb-3">
-                          <div><a href="#">Prix variable</a></div>
-                          <div><a href="#"> selon les modalites</a></div>
-                        </div>
-                        <div class="desc">
-                            <h3 class="heading"><a href="#">Un restaurant avec au menu une alimentation saine et varies pour vous donner le gout de nos plats africain appetissants.</a></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 ftco-animate">
-                <div class="blog-entry" data-aos-delay="100">
-                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/pressing.jpg')}}');">
-                    </a>
-                    <div class="text py-4">
-                        <div class="meta mb-3">
-                          <div><a href="#">Prix variable</a></div>
-                          <div><a href="#"> selon les modalites</a></div>
-                        </div>
-                        <div class="desc">
-                            <h3 class="heading"><a href="#">Un service de lavage professionnelle rapide equiper de machine moderne pour vous servir.</a></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
+              @endforeach
             <div class="col-md-4 ftco-animate">
                 <div class="blog-entry" data-aos-delay="200">
                     <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/Equipe.jpg')}}');">
@@ -656,15 +514,7 @@
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
-
-                <p>
-
-                    Copyright &copy;<script>
-                        document.write(new Date().getFullYear());
-
-                    </script> TOUS DROITS RESERVES | Ce site web est cree avec <i class="icon-heart" aria-hidden="true"></i> par Al Assane BA avec <a href="https://galimatech.com" target="_blank">Galima Tech</a>
-
-                </p>
+             <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> TOUS DROITS RESERVES | Ce site web est cree avec <i class="icon-heart" aria-hidden="true"></i> par Al Assane BA avec <a href="https://galimatech.com" target="_blank">Galima Tech</a></p>
             </div>
         </div>
     </div>

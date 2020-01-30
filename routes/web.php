@@ -82,6 +82,8 @@ Route::get('room','RoomController@index')->middleware('auth');
 Route::post('roomcreate','RoomController@create')->middleware('auth');
 Route::get('roomcreate','RoomController@create')->middleware('auth');
 Route::post('roomcreate','RoomController@store')->middleware('auth');
+Route::get('roomedit/{id}','RoomController@edit')->middleware('auth');
+Route::patch('/roomupdate/{id}','RoomController@update')->middleware('auth');
 Route::delete('roomedit/{id}', 'RoomController@destroy')->middleware('auth');
 
 Route::get('typeevent','TypeEventController@index')->middleware('auth');

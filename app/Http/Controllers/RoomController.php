@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Room;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class RoomController extends Controller
 {
@@ -38,13 +41,23 @@ class RoomController extends Controller
     {
       $data = $request->validate([
           'Salles' => 'required',
+          'Description' => 'required',
+          'Image' => 'required| image | mimes:jpeg,png,jpg,gif | max: 2048',
           'ReservationEvent_id' => 'required | min:1 ',
       ]);
       $roo = new Room();
       $roo->Salles = $request->input('Salles');
+      $roo->Description = $request->input('Description');
+      if ($request->has('Image')) {
+      $image = $request->file('Image');
+      $image_name = Str::slug($request->input('Salles')) . '_' . time();
+      $folder = '/uploads/images/';
+      $roo-> Image = $folder . $image_name . '.' . $image->getClientOriginalExtension();
+      $this->uploadImage($image, $folder, 'public', $image_name);}
+      $roo->Statut = $request->input('Statut');
       $roo->ReservationEvent_id = $request->input('ReservationEvent_id');
       $roo->save();
-      return redirect('/room')->with(['success' => "Salle enregistrée"]);
+      return redirect('/room')->with(['success' => "Salles ou Espaces enregistrée"]);
     }
 
     /**
@@ -66,7 +79,11 @@ class RoomController extends Controller
      */
     public function edit($id)
     {
-        //
+      $this->authorize('admin');
+      $roomedit= \App\Room::find($id);
+      $Salles = \App\Room::pluck('Salles','id');
+
+      return view('Rooms/roomedit', compact('roomedit','Salles'));
     }
 
     /**
@@ -78,7 +95,25 @@ class RoomController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $room= \App\Room::find($id);
+      if($room){
+          $room->Salles = $request->input('Salles');
+          $room->Description = $request->input('Description');
+              if($request->has('Image')){
+                  //On enregistre l'image dans une variable
+                  $image = $request->file('Image');
+                  if(file_exists(public_path().$room->images))//On verifie si le fichier existe
+                      Storage::delete(asset($room->images));//On le supprime alors
+                  //Nous enregistrerons nos fichiers dans /uploads/images dans public
+                  $folder = '/uploads/images/';
+                  $image_name = Str::slug($request->input('name')).'_'.time();
+                  $room->Image = $folder.$image_name.'.'.$image->getClientOriginalExtension();
+                  //Maintenant nous pouvons enregistrer l'image dans le dossier en utilisant la méthode uploadImage();
+                  $this->uploadImage($image, $folder, 'public', $image_name); }
+          $room-> Statut = $request->input('Statut');
+          $room-> ReservationEvent_id = $request->input('ReservationEvent_id');
+          $bedroom-> save(); }
+      return redirect('room')->with(['success' => "Salles ou Espaces modifiés"]);
     }
 
     /**
@@ -93,5 +128,12 @@ class RoomController extends Controller
       if($room)
       $room->delete();
       return redirect('/room')->with(['success' => "Espace ou Salle Supprimé"]);
+    }
+
+    public function uploadImage(UploadedFile $uploadedFile, $folder = null, $disk = 'public', $filename = null){
+        $name = !is_null($filename) ? $filename : str_random('25');
+        $file = $uploadedFile->storeAs($folder, $name.'.'.$uploadedFile->getClientOriginalExtension(), $disk);
+
+        return $file;
     }
 }

@@ -22,21 +22,33 @@
     </div>
     <div class="container border">
       <div class="card-header">
-        <h3 class="card-title-center">Formulaire de creation espaces et salles</h3>
+        <h3 class="card-title-center">Formulaire de creation Espaces et Salles</h3>
         <div class="card-tools">
         </div>
       </div>
-      <form action="roomcreate" method="post" enctype="multipart/form-data">
-  @csrf
-  <div><label>Salle</label>
-      <input type="text" name="Salles" class="form-control" placeholder="Nom de la salle">
-  </div>
-  <div><label>ReservationEvent_id</label>
-      <input type="number" name="ReservationEvent_id" class="form-control" placeholder="ReservationEvent_id">
-  </div>
-  <div>
-      <button class="btn btn-primary">Enregistrer</button>
-  </div>
-</form>
-</div>
+        <form action="roomcreate" method="post" enctype="multipart/form-data">
+    @csrf
+            <div><label>Espaces ou Salles</label>
+                <input type="text" name="Salles" class="form-control">
+            </div>
+            <div><label>Description</label>
+                <textarea name="Description" id="Description" cols="30" rows="7" class="form-control" placeholder="Description"></textarea>
+            </div>
+            <div><label>Image</label>
+                <input type="file" name="Image" class="form-control" placeholder="Image">
+            </div>
+            <div><label>Statut</label>
+                <select type="text" name="Statut" class="form-control">
+                    <option value="Disponible"><span class="badge badge-success">Disponible</span></option>
+                    <option value="Indisponible"><span class="badge badge-danger">Indisponible</span></option>
+                </select>
+            </div>
+            <div><label>ReservationEvent_id</label>
+                <input type="number" name="ReservationEvent_id" class="form-control" placeholder="ReservationEvent_id">
+            </div>
+            <div>
+                <button class="btn btn-primary">Enregistrer</button>
+            </div>
+        </form>
+    </div>
 @endsection

@@ -16,6 +16,9 @@ class CreateRoomsTable extends Migration
         Schema::create('rooms', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('Salles');
+            $table->text('Description');
+            $table->string('Image');
+            $table->string('Statut');
             $table->unsignedBigInteger('ReservationEvent_id');
             $table->timestamps();
 

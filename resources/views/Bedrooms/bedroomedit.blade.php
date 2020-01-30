@@ -30,11 +30,7 @@
             @csrf
             @method('patch')
             <div><label>Type de chambre</label>
-                <select type="text" name="Type_chambre" class="form-control" placeholder="Type de chambre">
-                    @foreach($Type_chambre as $bedid => $Type_chambre)
-                         <option value="{{$Type_chambre}}" {{ $Type_chambre == $bedroomedit->Type_chambre ? 'selected':''}}>{{$Type_chambre}}</option>
-                    @endforeach
-                </select>
+              <input type="text" name="Type_chambre" class="form-control" placeholder="Type de chambre" value="{{$bedroomedit->Type_chambre}}">
             </div>
             <div><label>Description de la chambre</label>
                 <input type="text" name="Description" class="form-control" placeholder="Description" value="{{$bedroomedit->Description}}">
