@@ -8,7 +8,6 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="{{asset('app-assets/css/open-iconic-bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/animate.css')}}">
@@ -22,8 +21,8 @@
     <link rel="stylesheet" href="{{asset('app-assets/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/style.css')}}">
-
     <link rel="stylesheet" href="{{asset('app-assets/css/lay.css')}}">
+    @yield('css')
 </head>
 <body>
   <div>

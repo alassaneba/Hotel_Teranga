@@ -221,7 +221,7 @@
                             <div class="info w-100 mb-4">
                                 <ul>
                                     <li><span>Prix TTC:</span><span>{{$bedroom->Prix_nuite}} FR/Nuité</span></li>
-                                    <li><span>Bureau:</span><span>oui</span></li>
+                                    <li><span>Etat:</span><span>{{$bedroom->Statut}}</span></li>
                                 </ul>
                             </div>
                             <div class="text w-100 mb-3">
@@ -248,15 +248,14 @@
             @foreach($rooms as $room)
             <div class="col-md-4 ftco-animate">
                 <div class="blog-entry">
-                    <a href="#" class="block-20" style="background-image: url('{{$room->Image}}');">
-                    </a>
+                    <a href="#" class="block-20" style="background-image: url('{{$room->Image}}');"></a>
                     <div class="text py-4">
                         <div class="meta mb-3">
-                            <div><a href="#">Prix variable</a></div>
-                            <div><a href="#"> selon les modalites</a></div>
+                            <div><a>Prix variable</a></div>
+                            <div><a> selon les modalites</a></div>
                         </div>
                         <div class="desc">
-                            <h3 class="heading"><a href="#">{{$room->Description}}</a></h3>
+                            <h3 class="heading"><a>{{$room->Description}}</a></h3>
                         </div>
                     </div>
                 </div>

@@ -41,7 +41,7 @@
                   <thead>
                     <tr>
                      <th>ID</th>
-                     <th>Espaces ou Salles</th>
+                     <th>Espaces/Salles</th>
                      <th>Description</th>
                      <th>Image</th>
                      <th>Statut</th>
@@ -56,7 +56,6 @@
                     <td>{{$rooms->Salles}}</td>
                     <td>{{$rooms->Description}}</td>
                     <td><img src="{{$rooms->Image}}" style="width: 75px "></td>
-                    <td>{{$rooms->Prix}}</td>
                     <td>{{$rooms->Statut}}</td>
                     <td> <p class="btn btn-outline-secondary"><a href="roomedit/{{$rooms->id}}">Editer</a></p></td>
                     <td><form action="roomedit/{{$rooms->id}}" method="post" onsubmit="return confirm('Voulez-vous supprimer ?')">

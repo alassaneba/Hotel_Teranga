@@ -143,9 +143,10 @@ class BedroomController extends Controller
         return $file;
     }
     public function recherche(Request $request){
+      $bedrooms = \App\Bedroom::all();
       $type_chambre = $request->input('Type_chambre');
       $chambres = \App\Bedroom::where('Type_chambre','like',$type_chambre)->get();
-      return view('Resultbedroom',compact('chambres'));
+      return view('Resultbedroom',compact('chambres','bedrooms'));
     }
     public function bedroomajax(Request $request){
       $type_chambre = $request->input('Type_chambre');
