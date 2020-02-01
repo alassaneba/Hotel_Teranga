@@ -38,19 +38,6 @@
             <input type="date" name="Date_depart" id="Date_depart" class="form-control" onchange="return calculer()">
         </div><label>Nombre de jour</label>
          <input type="text" name="jour" id="jour" value="0" class="form-control" readonly />
-
-        <script type="text/javascript">
-        function calculer()
-        {
-        var Date_arriver=document.forms['form1'].elements['Date_arriver'].value
-        var Date_depart=document.forms['form1'].elements['Date_depart'].value
-
-        var debut = Date.parse(Date_arriver);
-        var fin = Date.parse(Date_depart);
-        var nbjour = (fin - debut) / (1000 * 60 * 60 * 24); // + " jours";
-        document.forms['form1'].elements['jour'].value=nbjour;
-        }
-        </script>
         <div><label>Nombre de chambre</label>
             <input type="number" name="Nombre_chambre" id="Nombre_chambre" class="form-control">
         </div>
@@ -364,6 +351,18 @@
 </div>
 @endsection
 @section('js')
+<script type="text/javascript">
+function calculer()
+{
+var Date_arriver=document.forms['form1'].elements['Date_arriver'].value
+var Date_depart=document.forms['form1'].elements['Date_depart'].value
+
+var debut = Date.parse(Date_arriver);
+var fin = Date.parse(Date_depart);
+var nbjour = (fin - debut) / (1000 * 60 * 60 * 24); // + " jours";
+document.forms['form1'].elements['jour'].value=nbjour;
+}
+</script>
 <script type="text/javascript">
 $(function() {
 $("#Type_chambre").change(
