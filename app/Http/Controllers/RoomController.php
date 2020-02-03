@@ -112,7 +112,7 @@ class RoomController extends Controller
                   $this->uploadImage($image, $folder, 'public', $image_name); }
           $room-> Statut = $request->input('Statut');
           $room-> ReservationEvent_id = $request->input('ReservationEvent_id');
-          $bedroom-> save(); }
+          $room-> save(); }
       return redirect('room')->with(['success' => "Salles ou Espaces modifiés"]);
     }
 

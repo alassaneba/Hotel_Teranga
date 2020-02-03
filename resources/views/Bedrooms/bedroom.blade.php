@@ -41,7 +41,6 @@
                 <table class="table table-head-fixed">
                   <thead>
                     <tr>
-                     <th>ID</th>
                      <th>Type chambre</th>
                      <th>Description</th>
                      <th>Image</th>
@@ -54,9 +53,8 @@
         @foreach($bedroom as $bedrooms)
             <tbody>
                 <tr>
-                    <td>{{$bedrooms->id}}</td>
                     <td>{{$bedrooms->Type_chambre}}</td>
-                    <td>{{$bedrooms->Description}}</td>
+                    <td><textarea cols="45" rows="3" class="form-control" readonly>{{$bedrooms->Description}}</textarea></td>
                     <td><img src="{{$bedrooms->Image}}" style="width: 75px "></td>
                     <td>{{$bedrooms->Prix_nuite}}</td>
                     <td>{{$bedrooms->Statut}}</td>

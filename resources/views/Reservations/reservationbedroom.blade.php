@@ -41,7 +41,6 @@
                 <table class="table table-head-fixed">
                   <thead>
                     <tr>
-                      <th>ID</th>
                       <th>Date arriver</th>
                       <th>Heure arriver</th>
                       <th>Date depart</th>
@@ -66,7 +65,6 @@
                   @foreach($reservationbedroom as $reservations)
                   <tbody>
                     <tr>
-                      <td>{{$reservations->id}}</td>
                       <td>{{$reservations->Date_arriver}}</td>
                       <td>{{$reservations->Heure_arriver}}</td>
                       <td>{{$reservations->Date_depart}}</td>

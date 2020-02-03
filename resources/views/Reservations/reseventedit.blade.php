@@ -137,7 +137,7 @@
                 </select>
             </div>
             <div>
-                <button class="btn btn-primary">Reserver</button>
+                <button class="btn btn-primary">Modifier</button>
             </div>
         </form>
     </div>

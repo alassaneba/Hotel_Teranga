@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Bedroom;
 use App\Room;
+use App\Temoignage;
 class HomeController extends Controller
 {
     /**
@@ -26,7 +27,8 @@ class HomeController extends Controller
     {
         $bedrooms = \App\Bedroom::all();
         $rooms = \App\Room::all();
-        return view('home',compact('bedrooms','rooms'));
+        $temoignages = \App\Temoignage::all();
+        return view('home',compact('bedrooms','rooms','temoignages'));
     }
 
 }

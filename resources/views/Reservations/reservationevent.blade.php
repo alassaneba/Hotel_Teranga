@@ -43,7 +43,6 @@
               <table class="table table-head-fixed">
                 <thead>
                  <tr>
-                   <th>ID</th>
                    <th>Nom evenement</th>
                    <th>Type evenement</th>
                    <th>Date debut</th>
@@ -71,7 +70,6 @@
     @foreach($resevationevents as $reservationevent)
     <tbody>
         <tr>
-            <td>{{$reservationevent->id}}</td>
             <td>{{$reservationevent->Nom_evenement}}</td>
             <td>{{$reservationevent->Type_evenement}}</td>
             <td>{{$reservationevent->Date_debut}}</td>
@@ -82,7 +80,7 @@
             <td>{{$reservationevent->Nombre_participant}}</td>
             <td>{{$reservationevent->Restauration}}</td>
             <td>{{str_replace("|"," ", $reservationevent->Equipement)}}</td>
-            <td>{{$reservationevent->Autres_informations}}</td>
+            <td><textarea cols="30" rows="2" class="form-control" readonly>{{$reservationevent->Autres_informations}}</textarea></td>
             <td>{{$reservationevent->Civilite}}</td>
             <td>{{$reservationevent->Prenom}}</td>
             <td>{{$reservationevent->Nom}} </td>

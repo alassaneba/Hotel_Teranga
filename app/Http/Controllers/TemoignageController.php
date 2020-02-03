@@ -50,7 +50,7 @@ class TemoignageController extends Controller
       $temoignage->Message = $request->input('Message');
       $temoignage->User_id = $request->input('User_id');
       $temoignage->save();
-      return redirect('a-propos')->with(['success' => "Temoignage envoyée"]);
+       return redirect()->back()->with(['success' => "Temoignage envoyée"]);
     }
 
     /**

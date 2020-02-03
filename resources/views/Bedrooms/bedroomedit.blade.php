@@ -33,7 +33,7 @@
               <input type="text" name="Type_chambre" class="form-control" placeholder="Type de chambre" value="{{$bedroomedit->Type_chambre}}">
             </div>
             <div><label>Description de la chambre</label>
-                <input type="text" name="Description" class="form-control" placeholder="Description" value="{{$bedroomedit->Description}}">
+                <textarea type="text" name="Description" class="form-control" placeholder="Description">{{$bedroomedit->Description}}</textarea>
             </div>
             <div><label>Image de la chambre</label>
                 <div class="row">
@@ -56,7 +56,7 @@
                 <input type="number" name="ReservationBedroom_id" class="form-control" placeholder="ReservationBedroom_id" value="{{$bedroomedit->ReservationBedroom_id}}">
             </div>
             <div>
-                <button class="btn btn-primary">Enregistrer</button>
+                <button class="btn btn-primary">Modifier</button>
             </div>
         </form>
     </div>

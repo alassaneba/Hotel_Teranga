@@ -380,6 +380,7 @@
   $(function() {
   $("#Type_chambre").change(
     function(){
+      $('#infos').modal('show');
       let typeChambre=$(this).val();
       $.ajax({
                 method: "POST",
@@ -394,6 +395,7 @@
                   var prix=data.prix*nbjour*Nombre_chambre;
                   $("#Montant_payer").val(prix);
                   $("#Description").val(data.description);
+                      $('.modal').modal('hide');
                 },
                 error:function(ex,errorMsg,err)
                 {
@@ -403,16 +405,5 @@
 })
 });
 </script>
-<script>
-$(function(){
- $('#Type_chambre').change(function() {
-   $('.modal').modal('show')
-    })
- $('#Description').change(function() {
-   $('.modal').span('hide')
-    })
- })
 
-
-</script>
   @endsection

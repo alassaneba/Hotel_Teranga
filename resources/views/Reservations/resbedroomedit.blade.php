@@ -337,13 +337,13 @@
             <div><label>Responsable</label>
                 <select type="number" name="User_id" class="form-control" placeholder="Id User">
                     <option></option>
-                    <option value="1" {{$resbedroomedit->User_id==="1"?'selected="selected"':''}}>1</option>
-                    <option value="2" {{$resbedroomedit->User_id==="2"?'selected="selected"':''}}>2</option>
-                    <option value="3" {{$resbedroomedit->User_id==="3"?'selected="selected"':''}}>3</option>
+                    <option value="1" {{$resbedroomedit->User_id==="1"?'selected="selected"':''}}>Admin</option>
+                    <option value="2" {{$resbedroomedit->User_id==="2"?'selected="selected"':''}}>Moderator 1</option>
+                    <option value="3" {{$resbedroomedit->User_id==="3"?'selected="selected"':''}}>Moderator 2</option>
                 </select>
             </div>
             <div>
-                <button class="btn btn-primary">Reserver</button>
+                <button class="btn btn-primary">Modifier</button>
             </div>
         </form>
     </div>

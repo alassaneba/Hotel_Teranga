@@ -44,12 +44,6 @@
             <div><label>Message</label>
                 <textarea name="Message" cols="30" rows="7" class="form-control" value="{{$contactedit->Message}}"></textarea>
             </div>
-            <div><label>Nature</label>
-                <select type="text" name="Nature" class="form-control" value="{{$contactedit->Nature}}">
-                    <option value="Message"><span class="badge badge-warning">Message</span></option>
-                    <option value="Temoignage"><span class="badge badge-info">Temoignage</span></option>
-                </select>
-            </div>
             <div><label>Statut</label>
                 <select type="text" name="Statut" class="form-control" value="{{$contactedit->Statut}}">
                     <option value="En attente"><span class="badge badge-warning">En attente</span></option>

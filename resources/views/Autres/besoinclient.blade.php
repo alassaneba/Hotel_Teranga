@@ -41,7 +41,6 @@
                 <table class="table table-head-fixed">
                   <thead>
                     <tr>
-                     <th>ID</th>
                      <th>Nom Complet</th>
                      <th>Numero Chambre</th>
                      <th>Description Besoin</th>
@@ -56,10 +55,9 @@
         @foreach($besoinclient as $besoinclients)
             <tbody>
                 <tr>
-                    <td>{{$besoinclients->id}}</td>
                     <td>{{$besoinclients->Nom_complet}}</td>
                     <td>{{$besoinclients->Numero_chambre}}</td>
-                    <td>{{$besoinclients->Description_besoin}}</td>
+                    <td><textarea cols="45" rows="3" class="form-control" readonly>{{$besoinclients->Description_besoin}}</textarea></td>
                     <td>{{$besoinclients->Montant_payer}}</td>
                     <td>{{$besoinclients->Agent_conserner}}</td>
                     <td>{{$besoinclients->Statut}}</td>

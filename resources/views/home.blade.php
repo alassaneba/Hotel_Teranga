@@ -151,7 +151,7 @@
     </div>
 </section>
 
-<section class="ftco-section ftco-services">
+<section class="ftco-section ftco-services justify-content-center align-items-center">
     <div class="container">
         <div class="row">
             <div class="col-md-5 col-lg-3 d-flex align-self-stretch ftco-animate">
@@ -160,8 +160,8 @@
                         <span><img src="{{asset('app-assets/images/Sleep.png')}}"></span>
                     </div>
                     <div class="media-body">
-                        <h3 class="heading"><a href="reservationchambre">Hebergement</a></h3>
-                        <p>Nous disposons des chambres propres modernes adaptees a vos besoins.</p>
+                        <h3 class="heading text-center"><a href="reservationchambre">Hebergement</a></h3>
+                        <p style="text-align:justify;">Nous disposons des chambres propres modernes adaptees a vos besoins.</p>
                     </div>
                 </div>
             </div>
@@ -171,8 +171,8 @@
                         <span> <image src="{{asset('app-assets/images/conf1.png')}}"></span>
                     </div>
                     <div class="media-body">
-                        <h3 class="heading"><a href="reservationevenement">Evenementiel</a></h3>
-                        <p>Nous disposons des salles modernes et des espaces adaptes a vos besoins.</p>
+                        <h3 class="heading text-center"><a href="reservationevenement">Evenementiel</a></h3>
+                        <p style="text-align:justify;">Nous disposons des salles modernes et des espaces adaptes a vos besoins.</p>
                     </div>
                 </div>
             </div>
@@ -182,8 +182,8 @@
                         <span><image src="{{asset('app-assets/images/resto1.png')}}"></span>
                     </div>
                     <div class="media-body">
-                        <h3 class="heading"><a href="services">Restauration</a></h3>
-                        <p> Un menu avec une alimentation saine et varies pour vous donner le gout de nos plats appetissants.</p>
+                        <h3 class="heading text-center"><a href="services">Restauration</a></h3>
+                        <p style="text-align:justify;"> Un menu avec une alimentation saine et varies pour vous donner le gout de nos plats appetissants.</p>
                     </div>
                 </div>
             </div>
@@ -193,8 +193,8 @@
                         <span class="flaticon-fashion"></span>
                     </div>
                     <div class="media-body">
-                        <h3 class="heading"><a href="services">Pressing</a></h3>
-                        <p>Un service de lavage professionnelle rapide equiper de machine moderne pour vous servir.</p>
+                        <h3 class="heading text-center"><a href="services">Pressing</a></h3>
+                        <p style="text-align:justify;">Un service de lavage rapide professionnelle equiper de machine moderne pour vous servir.</p>
                     </div>
                 </div>
             </div>
@@ -251,8 +251,8 @@
                     <a href="#" class="block-20" style="background-image: url('{{$room->Image}}');"></a>
                     <div class="text py-4">
                         <div class="meta mb-3">
-                            <div><a>Prix variable</a></div>
-                            <div><a> selon les modalites</a></div>
+                            <div><a>{{$room->Salles}}</a></div>
+                            <div><a>Etat: {{$room->Statut}}</a></div>
                         </div>
                         <div class="desc">
                             <h3 class="heading"><a>{{$room->Description}}</a></h3>
@@ -290,14 +290,14 @@
                     <span class="subheading">Hotel Teranga</span>
                     <h2 class="mb-4">Notre mission vous satisfaire</h2>
                 </div>
-                <div class="pr-md-3 pr-lg-5 pl-md-5 mr-md-5 mb-5">
-                    <div class="services-wrap d-flex">
+                <div class="container pr-md-3 pr-lg-5 pl-md-5 mr-md-5 mb-5">
+                    <div class="services-wrap d-flex justify-content-center align-content-center">
                         <div class="icon d-flex justify-content-center align-items-center">
                             <span><image src="{{asset('app-assets/images/Sleep.png')}}"></span>
                         </div>
                         <div class="media-body pl-4">
                             <h3 class="heading">Hebergement</h3>
-                            <p>Nous disposons des chambres propres modernes adaptees a vos besoins.</p>
+                            <p style="text-align:justify;">Nous disposons des chambres propres modernes adaptees a vos besoins.</p>
                         </div>
                     </div>
                     <div class="services-wrap d-flex">
@@ -306,7 +306,7 @@
                         </div>
                         <div class="media-body pl-4">
                             <h3 class="heading">Evenementiel</h3>
-                            <p>Nous disposons des salles modernes et des espaces adaptes a vos besoins.</p>
+                            <p style="text-align:justify;">Nous disposons des salles modernes et des espaces adaptes a vos besoins.</p>
                         </div>
                     </div>
                     <div class="services-wrap d-flex">
@@ -315,7 +315,7 @@
                         </div>
                         <div class="media-body pl-4">
                             <h3 class="heading">Restauration</h3>
-                            <p> Un menu avec une alimentation saine et varies pour vous donner le gout de nos plats appetissants.</p>
+                            <p style="text-align:justify;"> Un menu avec une alimentation saine et varies pour vous donner le gout de nos plats appetissants.</p>
                         </div>
                     </div>
                     <div class="services-wrap d-flex">
@@ -324,7 +324,7 @@
                         </div>
                         <div class="media-body pl-4">
                             <h3 class="heading">Pressing</h3>
-                            <p>Un service de lavage professionnelle rapide equiper de machine moderne pour vous servir.</p>
+                            <p style="text-align:justify;">Un service de lavage professionnelle rapide equiper de machine moderne pour vous servir.</p>
                         </div>
                     </div>
                 </div>
@@ -386,76 +386,22 @@
         <div class="row ftco-animate">
             <div class="col-md-12">
                 <div class="carousel-testimony owl-carousel">
+                  @foreach($temoignages as $temoignage)
                     <div class="item">
                         <div class="testimony-wrap p-4 pb-5 text-center">
-                            <div class="user-img mb-5">
+                            <div>
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
                             </div>
                             <div class="text">
-                                <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                <p class="name">Garreth Smith</p>
-                                <span class="position">Agent</span>
+                                <p class="mb-5 pl-4 line">{{$temoignage->Message}}</p>
+                                <p class="name">{{$temoignage->Nom_complet}}</p>
+                                <span class="position">{{$temoignage->Profession}}</span>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="testimony-wrap p-4 pb-5 text-center">
-                            <div class="user-img mb-5" style="background-image: url({{asset('app-assets/images/person_2.jpg')}})">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                            </div>
-                            <div class="text">
-                                <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                <p class="name">Garreth Smith</p>
-                                <span class="position">Model</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap p-4 pb-5 text-center">
-                            <div class="user-img mb-5" style="background-image: url({{asset('app-assets/images/person_3.jpg')}})">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                            </div>
-                            <div class="text">
-                                <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                <p class="name">Garreth Smith</p>
-                                <span class="position">Model</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap p-4 pb-5 text-center">
-                            <div class="user-img mb-5" style="background-image: url({{asset('app-assets/images/person_1.jpg')}})">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                            </div>
-                            <div class="text">
-                                <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                <p class="name">Garreth Smith</p>
-                                <span class="position">Agent</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap p-4 pb-5 text-center">
-                            <div class="user-img mb-5" style="background-image: url({{asset('app-assets/images/person_1.jpg')}})">
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                            </div>
-                            <div class="text">
-                                <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                <p class="name">Garreth Smith</p>
-                                <span class="position">Businessman</span>
-                            </div>
-                        </div>
-                    </div>
+                      @endforeach
                 </div>
             </div>
         </div>
@@ -473,7 +419,7 @@
         </button>
       </div>
       <div class="modal-body row">
-        <form class="col" action="/temoignagecreate">
+        <form class="col" action="/temoignagecreate" method="post">
             @csrf
           <div class="form-group">
             <label class="form-control-label">Nom complet</label>
@@ -497,7 +443,6 @@
     </div>
   </div>
 </div>
-
 </section>
 
 <footer class="ftco-footer ftco-bg-dark ftco-section">

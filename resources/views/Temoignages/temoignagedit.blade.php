@@ -29,7 +29,7 @@
         <form action="/temoignageupdate/{{$temoignagedit->id}}" method="post">
     @csrf
     @method('patch')
-            <div><label>Nom_complet</label>
+            <div><label>Nom complet</label>
                <input type="text" name="Nom_complet" class="form-control" value="{{$temoignagedit->Nom_complet}}">
             </div>
             <div><label>Email</label>
@@ -39,7 +39,7 @@
                <input type="text" name="Profession" class="form-control" value="{{$temoignagedit->Profession}}">
             </div>
             <div><label>Message</label>
-                <textarea name="Message" cols="30" rows="7" class="form-control" value="{{$temoignagedit->Message}}"></textarea>
+                <textarea name="Message" cols="30" rows="7" class="form-control" value="{{$temoignagedit->Message}}">{{$temoignagedit->Message}}</textarea>
             </div>
             <div><label>Responsable</label>
               <select type="number" name="User_id" class="form-control" value="{{$temoignagedit->User_id}}">
@@ -49,7 +49,7 @@
               </select>
             </div>
             <div>
-                <button class="btn btn-primary">Enregistrer</button>
+                <button class="btn btn-primary">Modifier</button>
             </div>
         </form>
     </div>

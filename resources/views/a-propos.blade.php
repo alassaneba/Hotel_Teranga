@@ -156,88 +156,34 @@
     </div>
 </section>
 
-<section style="margin-top: 0em !important; padding-top: 0;" class="ftco-section testimony-section">
+<section class="ftco-section testimony-section">
     <div class="container">
         <div class="row justify-content-center mb-5">
             <div class="col-md-7 heading-section ftco-animate text-center">
                 <span class="subheading">Temoignages</span>
                 <h2 class="mb-4">Quelques mots de nos clients</h2>
-                <p> Voici les dernieres avis laisser sur nos livres par nos clients apres leur sejours chez nous.</p>
+                <p> Voici les derniers avis laisser sur nos livres par nos clients apres leur sejours chez nous.</p>
             </div>
         </div>
         <div class="row ftco-animate">
             <div class="col-md-12">
                 <div class="carousel-testimony owl-carousel">
+                  @foreach($temoignages as $temoignage)
                     <div class="item">
                         <div class="testimony-wrap p-4 pb-5 text-center">
-                            <div class="user-img mb-5" style="background-image: url({{asset('app-assets/images/person_1.jpg')}})">
-                          <span class="quote d-flex align-items-center justify-content-center">
-                            <i class="icon-quote-left"></i>
-                          </span>
+                            <div>
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
                             </div>
                             <div class="text">
-                                <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                <p class="name">Garreth Smith</p>
-                                <span class="position">Agent</span>
+                                <p class="mb-5 pl-4 line">{{$temoignage->Message}}</p>
+                                <p class="name">{{$temoignage->Nom_complet}}</p>
+                                <span class="position">{{$temoignage->Profession}}</span>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="testimony-wrap p-4 pb-5 text-center">
-                            <div class="user-img mb-5" style="background-image: url({{asset('app-assets/images/person_2.jpg')}})">
-                          <span class="quote d-flex align-items-center justify-content-center">
-                            <i class="icon-quote-left"></i>
-                          </span>
-                            </div>
-                            <div class="text">
-                                <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                <p class="name">Garreth Smith</p>
-                                <span class="position">Model</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap p-4 pb-5 text-center">
-                            <div class="user-img mb-5" style="background-image: url({{asset('app-assets/images/person_3.jpg')}})">
-                          <span class="quote d-flex align-items-center justify-content-center">
-                            <i class="icon-quote-left"></i>
-                          </span>
-                            </div>
-                            <div class="text">
-                                <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                <p class="name">Garreth Smith</p>
-                                <span class="position">Model</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap p-4 pb-5 text-center">
-                            <div class="user-img mb-5" style="background-image: url({{asset('app-assets/images/person_1.jpg')}})">
-                          <span class="quote d-flex align-items-center justify-content-center">
-                            <i class="icon-quote-left"></i>
-                          </span>
-                            </div>
-                            <div class="text">
-                                <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                <p class="name">Garreth Smith</p>
-                                <span class="position">Agent</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap p-4 pb-5 text-center">
-                            <div class="user-img mb-5" style="background-image: url({{asset('app-assets/images/person_1.jpg')}})">
-                          <span class="quote d-flex align-items-center justify-content-center">
-                            <i class="icon-quote-left"></i>
-                          </span>
-                            </div>
-                            <div class="text">
-                                <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                <p class="name">Garreth Smith</p>
-                                <span class="position">Businessman</span>
-                            </div>
-                        </div>
-                    </div>
+                      @endforeach
                 </div>
             </div>
         </div>
@@ -255,25 +201,22 @@
         </button>
       </div>
       <div class="modal-body row">
-        <form class="col" action="temoignagecreate" enctype="multipart/form-data">
+        <form class="col" action="/temoignagecreate">
+            @csrf
           <div class="form-group">
-            <label for="nom" class="form-control-label">Photo (optionel)</label>
-            <input type="file" class="form-control" name ="Photo">
-          </div>
-          <div class="form-group">
-            <label for="nom" class="form-control-label">Nom complet</label>
+            <label class="form-control-label">Nom complet</label>
             <input type="text" class="form-control" name ="Nom_complet">
           </div>
           <div class="form-group">
-            <label for="email" class="form-control-label">Email</label>
+            <label  class="form-control-label">Email</label>
             <input type="email" class="form-control" name="Email">
           </div>
           <div class="form-group">
-            <label for="nom" class="form-control-label">Profession (optionel)</label>
+            <label class="form-control-label">Profession (optionel)</label>
             <input type="text" class="form-control" name ="Profession">
           </div>
           <div class="form-group">
-            <label for="nom" class="form-control-label">Temoignage</label>
+            <label  class="form-control-label">Temoignage</label>
             <textarea name="Message" cols="30" rows="3" class="form-control" placeholder="Votre temoignage"></textarea>
           </div>
           <button type="submit" class="btn btn-primary pull-right">Envoyer</button>

@@ -41,7 +41,6 @@
                 <table class="table table-head-fixed">
                   <thead>
                     <tr>
-                     <th>ID</th>
                      <th>Nom_complet</th>
                      <th>Email</th>
                      <th>Profession</th>
@@ -54,11 +53,10 @@
                   @foreach($temoignage as $temoignages)
                       <tbody>
                           <tr>
-                              <td>{{$temoignages->id}}</td>
                               <td>{{$temoignages->Nom_complet}}</td>
                               <td>{{$temoignages->Email}}</td>
                               <td>{{$temoignages->Profession}}</td>
-                              <td>{{$temoignages->Message}}</td>
+                              <td><textarea cols="60" rows="3" class="form-control" readonly>{{$temoignages->Message}}</textarea></td>
                               <td>{{$temoignages->User_id}}</td>
                               <td> <p class="btn btn-outline-secondary"><a href="temoignagedit/{{$temoignages->id}}">Editer</a></p></td>
                               <td><form action="temoignagedit/{{$temoignages->id}}" method="post" onsubmit="return confirm('Voulez-vous supprimer ?')">

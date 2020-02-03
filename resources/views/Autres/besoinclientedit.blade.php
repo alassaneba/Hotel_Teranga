@@ -60,7 +60,7 @@
               </select>
             </div>
             <div>
-                <button class="btn btn-primary">Enregistrer</button>
+                <button class="btn btn-primary">Modifier</button>
             </div>
         </form>
     </div>

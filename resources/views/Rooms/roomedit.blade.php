@@ -33,7 +33,7 @@
               <input type="text" name="Salles" class="form-control" placeholder="Espaces ou Salles" value="{{$roomedit->Salles}}">
             </div>
             <div><label>Description</label>
-                <input type="text" name="Description" class="form-control" placeholder="Description" value="{{$roomedit->Description}}">
+                <textarea type="text" name="Description" class="form-control" placeholder="Description">{{$roomedit->Description}}</textarea>
             </div>
             <div><label>Image</label>
                 <div class="row">

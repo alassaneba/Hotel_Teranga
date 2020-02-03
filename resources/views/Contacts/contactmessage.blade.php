@@ -41,13 +41,11 @@
                 <table class="table table-head-fixed">
                   <thead>
                     <tr>
-                     <th>ID</th>
                      <th>Nom</th>
                      <th>Prenom</th>
                      <th>Email</th>
                      <th>Objet</th>
-                     <th>Contact / Message</th>
-                     <th>Nature</th>
+                     <th>Message</th>
                      <th>Statut</th>
                      <th>User</th>
                      <th>Editer</th>
@@ -57,13 +55,11 @@
                   @foreach($contact as $contacts)
                       <tbody>
                           <tr>
-                              <td>{{$contacts->id}}</td>
                               <td>{{$contacts->Nom}}</td>
                               <td>{{$contacts->Prenom}}</td>
                               <td>{{$contacts->Email}}</td>
                               <td>{{$contacts->Objet}}</td>
                               <td>{{$contacts->Message}}</td>
-                              <td>{{$contacts->Nature}}</td>
                               <td>{{$contacts->Statut}}</td>
                               <td>{{$contacts->User_id}}</td>
                               <td> <p class="btn btn-outline-secondary"><a href="contactedit/{{$contacts->id}}">Editer</a></p></td>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Temoignage;
 
 class AproposController extends Controller
 {
@@ -13,7 +14,9 @@ class AproposController extends Controller
      */
     public function index()
     {
-        return view('a-propos');
+      $temoignages = \App\Temoignage::all();
+      return view('a-propos',compact('temoignages'));
+        
     }
 
     /**

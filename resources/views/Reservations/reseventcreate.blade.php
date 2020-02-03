@@ -131,9 +131,9 @@
         <div><label>Id User</label>
             <select type="number" name="User_id" class="form-control">
                 <option></option>
-                <option value="1">admin</option>
-                <option value="2">moderator 1</option>
-                <option value="3">moderator 2</option>
+                <option value="1">Admin</option>
+                <option value="2">Moderator 1</option>
+                <option value="3">Moderator 2</option>
             </select>
         </div>
         <div>

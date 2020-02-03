@@ -52,7 +52,6 @@ class ContactController extends Controller
         $contact->Email = $request->input('Email');
         $contact->Objet = $request->input('Objet');
         $contact->Message = $request->input('Message');
-        $contact->Nature = $request->input('Nature');
         $contact->Statut = $request->input('Statut');
         $contact->User_id = $request->input('User_id');
         $contact->save();
@@ -99,7 +98,6 @@ class ContactController extends Controller
           $contact->Email = $request->input('Email');
           $contact->Objet = $request->input('Objet');
           $contact->Message = $request->input('Message');
-          $contact->Nature = $request->input('Nature');
           $contact->Statut = $request->input('Statut');
           $contact->User_id = $request->input('User_id');
           $contact-> save(); }
