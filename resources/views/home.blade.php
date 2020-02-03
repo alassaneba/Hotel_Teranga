@@ -388,7 +388,7 @@
                 <div class="carousel-testimony owl-carousel">
                     <div class="item">
                         <div class="testimony-wrap p-4 pb-5 text-center">
-                            <div class="user-img mb-5" style="background-image: url({{asset('app-assets/images/person_1.jpg')}})">
+                            <div class="user-img mb-5">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -460,6 +460,44 @@
             </div>
         </div>
     </div>
+    <div id="html" class="text-center">
+        <a><span  data-toggle="modal" data-target="#formulaire" class="btn btn-primary py-2 px-5 col-md-4 text-center">Envoyer un Temoignage</span></a>
+    </div>
+    <div class="modal fade" id="formulaire">
+    <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Veuillez remplir le formulaire:</h4>
+        <button type="button" class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body row">
+        <form class="col" action="/temoignagecreate">
+            @csrf
+          <div class="form-group">
+            <label class="form-control-label">Nom complet</label>
+            <input type="text" class="form-control" name ="Nom_complet">
+          </div>
+          <div class="form-group">
+            <label  class="form-control-label">Email</label>
+            <input type="email" class="form-control" name="Email">
+          </div>
+          <div class="form-group">
+            <label class="form-control-label">Profession (optionel)</label>
+            <input type="text" class="form-control" name ="Profession">
+          </div>
+          <div class="form-group">
+            <label  class="form-control-label">Temoignage</label>
+            <textarea name="Message" cols="30" rows="3" class="form-control" placeholder="Votre temoignage"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary pull-right">Envoyer</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 </section>
 
 <footer class="ftco-footer ftco-bg-dark ftco-section">
@@ -540,9 +578,14 @@
 <script src="{{asset('app-assets/js/scrollax.min.js')}}"></script>
 <script src="{{asset('app-assets/js/main.js')}}"></script>
 <script src="{{asset('app-assets/js/google-map.js')}}"></script>
+<!--
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.0/umd/popper.min.js"></script>
+
 
 
 </body>

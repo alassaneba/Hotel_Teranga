@@ -242,9 +242,46 @@
             </div>
         </div>
     </div>
-    <div class="text-center">
-        <a href="contact#pcfc"><span class="btn btn-primary py-2 px-5 col-md-4 text-center">Envoyer un Temoignage</span></a>
+    <div id="html" class="text-center">
+        <a><span  data-toggle="modal" data-target="#formulaire" class="btn btn-primary py-2 px-5 col-md-4 text-center">Envoyer un Temoignage</span></a>
     </div>
+    <div class="modal fade" id="formulaire">
+    <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Veuillez remplir le formulaire:</h4>
+        <button type="button" class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body row">
+        <form class="col" action="temoignagecreate" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="nom" class="form-control-label">Photo (optionel)</label>
+            <input type="file" class="form-control" name ="Photo">
+          </div>
+          <div class="form-group">
+            <label for="nom" class="form-control-label">Nom complet</label>
+            <input type="text" class="form-control" name ="Nom_complet">
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-control-label">Email</label>
+            <input type="email" class="form-control" name="Email">
+          </div>
+          <div class="form-group">
+            <label for="nom" class="form-control-label">Profession (optionel)</label>
+            <input type="text" class="form-control" name ="Profession">
+          </div>
+          <div class="form-group">
+            <label for="nom" class="form-control-label">Temoignage</label>
+            <textarea name="Message" cols="30" rows="3" class="form-control" placeholder="Votre temoignage"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary pull-right">Envoyer</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 </section>
 
 <footer class="ftco-footer ftco-bg-dark ftco-section">
@@ -334,6 +371,28 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 <script src="{{asset('app-assets/js/google-map.js')}}"></script>
 <script src="{{asset('app-assets/js/main.js')}}"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.0/umd/popper.min.js"></script>
+<script>
+$(function(){
+$('form').submit(function(e) {
+  e.preventDefault()
+  var $form = $(this)
+  $.post($form.attr('action'), $form.serialize())
+  .done(function(data) {
+    $('#html').html(data)
+    $('#formulaire').modal('hide')
+  })
+  .fail(function() {
+    alert('ça ne marche pas...')
+  })
+})
+$('.modal').on('shown.bs.modal', function(){
+  $('input:first').focus()
+})
+})
+</script>
 
 </body>
 

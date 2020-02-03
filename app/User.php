@@ -49,6 +49,9 @@ class User extends Authenticatable
     public function BesoinClient () {
         return $this->hasMany('App\BesoinClient');
     }
+    public function Temoignage () {
+        return $this->hasMany('App\Temoignage');
+    }
     /**Cette méthode va determiner si le user connecté a un role admin*/
     public function isAdmin(){
         return strtolower(@$this->role) === 'admin'? true : false;

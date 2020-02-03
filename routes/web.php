@@ -33,6 +33,15 @@ Route::get('contactedit/{id}','ContactController@edit')->middleware('auth');
 Route::patch('/contactmessageupdate/{id}','ContactController@update')->middleware('auth');
 Route::delete('contactedit/{id}','ContactController@destroy')->middleware('auth');
 
+Route::get('temoignage','TemoignageController@index')->middleware('auth');
+
+Route::get('temoignagecreate','TemoignageController@create')->middleware('auth');
+Route::post('temoignagecreate','TemoignageController@create')->middleware('auth');
+Route::post('temoignagecreate','TemoignageController@store')->middleware('auth');
+Route::get('temoignagedit/{id}','TemoignageController@edit')->middleware('auth');
+Route::patch('/temoignageupdate/{id}','TemoignageController@update')->middleware('auth');
+Route::delete('temoignagedit/{id}','TemoignageController@destroy')->middleware('auth');
+
 
 Route::get('besoinclient','BesoinClientController@index')->middleware('auth');
 

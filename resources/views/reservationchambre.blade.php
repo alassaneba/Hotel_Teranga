@@ -1,5 +1,38 @@
 @extends('layout')
 @section('content')
+<style>
+.loader {
+  border: 10px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 10px solid #cd866c;
+  border-bottom: 10px solid #cd866c;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+<style>
+.modal {
+  display: none;
+  position: fixed;
+  padding-top: 100px; }
+</style>
+
     <section class="hero-wrap hero-wrap-2" style="background-image:url({{asset('app-assets/images/renai.jpg')}});">
         <div class="overlay"></div>
         <div class="container">
@@ -29,8 +62,6 @@
             <input type="date" name="Date_depart" id="Date_depart" class="form-control" onchange="return calculer()">
         </div><label>Nombre de jour</label>
          <input type="text" name="jour" id="jour" value="0" class="form-control" readonly />
-
-
         <div><label>Nombre de chambre</label>
             <input type="number" name="Nombre_chambre" id="Nombre_chambre" class="form-control">
         </div>
@@ -41,16 +72,24 @@
             <input type="number" name="Nombre_enfant" class="form-control">
         </div>
         <div><label>Type de chambre</label>
-         <select name="Type_chambre" id="Type_chambre"  class="form-control">
+         <select name="Type_chambre" id="Type_chambre" class="form-control">
                 <option></option>
             @foreach($bedrooms as $id => $value)
                 <option value="{{$value}}">{{$value}}</option>
             @endforeach
-         </select>
-        </div>
+          </select>
+         </div>
         <div><label>Description</label>
-         <textarea type="hidden" id="Description" value="Description" class="form-control" readonly /></textarea>
+         <textarea type="text" id="Description" value="Description" class="form-control" readonly /></textarea>
         </div>
+        <div class="modal" id="infos">
+           <div class="modal-dialog modal-sm">
+           <div class="modal-content">
+             <button type="button" class="close closemodal" data-dismiss="modal"><span>&times;</span></button>
+               <div class="loader"></div>
+           </div>
+         </div>
+       </div>
        <div><label>Civilite</label>
             <select type="text" name="Civilite" class="form-control">
                 <option></option>
@@ -363,5 +402,17 @@
               })
 })
 });
+</script>
+<script>
+$(function(){
+ $('#Type_chambre').change(function() {
+   $('.modal').modal('show')
+    })
+ $('#Description').change(function() {
+   $('.modal').span('hide')
+    })
+ })
+
+
 </script>
   @endsection

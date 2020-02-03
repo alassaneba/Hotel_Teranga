@@ -103,7 +103,7 @@ class ContactController extends Controller
           $contact->Statut = $request->input('Statut');
           $contact->User_id = $request->input('User_id');
           $contact-> save(); }
-            return redirect('contactmessage')->with(['success' => "Message ou Temoignage modifié"]);
+            return redirect('contactmessage')->with(['success' => "Message modifié"]);
     }
 
     /**

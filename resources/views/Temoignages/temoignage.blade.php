@@ -14,7 +14,7 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="admin">Tableau de bord</a></li>
-            <li class="breadcrumb-item active">Contact/Message</li>
+            <li class="breadcrumb-item active">Temoignages</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -24,7 +24,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Tableau des Messages</h3>
+                <h3 class="card-title">Tableau des Temoignages</h3>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -42,32 +42,26 @@
                   <thead>
                     <tr>
                      <th>ID</th>
-                     <th>Nom</th>
-                     <th>Prenom</th>
+                     <th>Nom_complet</th>
                      <th>Email</th>
-                     <th>Objet</th>
-                     <th>Contact / Message</th>
-                     <th>Nature</th>
-                     <th>Statut</th>
+                     <th>Profession</th>
+                     <th>Message</th>
                      <th>User</th>
                      <th>Editer</th>
                      <th>Supprimer</th>
                     </tr>
                   </thead>
-                  @foreach($contact as $contacts)
+                  @foreach($temoignage as $temoignages)
                       <tbody>
                           <tr>
-                              <td>{{$contacts->id}}</td>
-                              <td>{{$contacts->Nom}}</td>
-                              <td>{{$contacts->Prenom}}</td>
-                              <td>{{$contacts->Email}}</td>
-                              <td>{{$contacts->Objet}}</td>
-                              <td>{{$contacts->Message}}</td>
-                              <td>{{$contacts->Nature}}</td>
-                              <td>{{$contacts->Statut}}</td>
-                              <td>{{$contacts->User_id}}</td>
-                              <td> <p class="btn btn-outline-secondary"><a href="contactedit/{{$contacts->id}}">Editer</a></p></td>
-                              <td><form action="contactedit/{{$contacts->id}}" method="post" onsubmit="return confirm('Voulez-vous supprimer ?')">
+                              <td>{{$temoignages->id}}</td>
+                              <td>{{$temoignages->Nom_complet}}</td>
+                              <td>{{$temoignages->Email}}</td>
+                              <td>{{$temoignages->Profession}}</td>
+                              <td>{{$temoignages->Message}}</td>
+                              <td>{{$temoignages->User_id}}</td>
+                              <td> <p class="btn btn-outline-secondary"><a href="temoignagedit/{{$temoignages->id}}">Editer</a></p></td>
+                              <td><form action="temoignagedit/{{$temoignages->id}}" method="post" onsubmit="return confirm('Voulez-vous supprimer ?')">
                                   @csrf
                                   @method('delete')
                                   <input type="submit" class="btn btn-danger" name="delete" value="Supprimer">
