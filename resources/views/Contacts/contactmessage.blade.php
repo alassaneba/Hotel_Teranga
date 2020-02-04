@@ -41,8 +41,7 @@
                 <table class="table table-head-fixed">
                   <thead>
                     <tr>
-                     <th>Nom</th>
-                     <th>Prenom</th>
+                     <th>Nom complet</th>
                      <th>Email</th>
                      <th>Objet</th>
                      <th>Message</th>
@@ -55,8 +54,7 @@
                   @foreach($contact as $contacts)
                       <tbody>
                           <tr>
-                              <td>{{$contacts->Nom}}</td>
-                              <td>{{$contacts->Prenom}}</td>
+                              <td>{{$contacts->Nom_complet}}</td>
                               <td>{{$contacts->Email}}</td>
                               <td>{{$contacts->Objet}}</td>
                               <td>{{$contacts->Message}}</td>

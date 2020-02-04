@@ -40,22 +40,20 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'Nom' => 'required',
-            'Prenom' => 'required',
+            'Nom_complet' => 'required',
             'Email' => 'required',
             'Objet' => 'required',
             'Message' => 'required',
         ]);
         $contact = new \App\Contact();
-        $contact->Nom = $request->input('Nom');
-        $contact->Prenom = $request->input('Prenom');
+        $contact->Nom_complet = $request->input('Nom_complet');
         $contact->Email = $request->input('Email');
         $contact->Objet = $request->input('Objet');
         $contact->Message = $request->input('Message');
         $contact->Statut = $request->input('Statut');
         $contact->User_id = $request->input('User_id');
         $contact->save();
-        return redirect('contact')->with(['success' => "Message envoyée"]);
+        return redirect('contact')->with(['success' => "Votre message nous est bien parvenu, merci !"]);
     }
 
     /**
@@ -93,8 +91,7 @@ class ContactController extends Controller
     {
         $contact= \App\Contact::find($id);
         if($contact){
-          $contact->Nom = $request->input('Nom');
-          $contact->Prenom = $request->input('Prenom');
+          $contact->Nom_complet = $request->input('Nom_complet');
           $contact->Email = $request->input('Email');
           $contact->Objet = $request->input('Objet');
           $contact->Message = $request->input('Message');

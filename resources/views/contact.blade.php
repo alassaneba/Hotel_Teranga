@@ -94,16 +94,13 @@
                 </div>
             </div>
         </div>
-        <label>Pour envoyer un message veuillez remplir les champs puis cliquer sur envoyer</label>
+        <label>Pour envoyer un message veuillez remplir tous les champs.</label>
         <div class="row block-9">
             <div class="col-md-6 pr-md-5">
                 <form action="contact" method="post">
                     @csrf
                     <div class="form-group">
-                        <input type="text" name="Nom" class="form-control" placeholder="Nom">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="Prenom" class="form-control" placeholder="Prenom">
+                        <input type="text" name="Nom_complet" class="form-control" placeholder="Nom complet">
                     </div>
                     <div class="form-group">
                         <input type="text" name="Email" class="form-control" placeholder="Email">

@@ -15,8 +15,7 @@ class Contact extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('Nom');
-            $table->string('Prenom');
+            $table->string('Nom_complet');
             $table->string('Email');
             $table->string('Objet');
             $table->longText('Message');

@@ -28,11 +28,8 @@
       </div>
         <form action="contactcreate" method="post">
     @csrf
-            <div><label>Nom</label>
-               <input type="text" name="Nom" class="form-control">
-            </div>
-            <div><label>Prenom</label>
-               <input type="text" name="Prenom" class="form-control">
+            <div><label>Nom complet</label>
+               <input type="text" name="Nom_complet" class="form-control">
             </div>
             <div><label>Email</label>
                <input type="text" name="Email" class="form-control">

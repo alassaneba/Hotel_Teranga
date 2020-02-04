@@ -29,11 +29,8 @@
         <form action="/contactmessageupdate/{{$contactedit->id}}" method="post">
     @csrf
     @method('patch')
-            <div><label>Nom</label>
-               <input type="text" name="Nom" class="form-control" value="{{$contactedit->Nom}}">
-            </div>
-            <div><label>Prenom</label>
-               <input type="text" name="Prenom" class="form-control" value="{{$contactedit->Prenom}}">
+            <div><label>Nom complet</label>
+               <input type="text" name="Nom_complet" class="form-control" value="{{$contactedit->Nom_complet}}">
             </div>
             <div><label>Email</label>
                <input type="text" name="Email" class="form-control" value="{{$contactedit->Email}}">

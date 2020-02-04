@@ -85,7 +85,6 @@
         <div class="modal" id="infos">
            <div class="modal-dialog modal-sm">
            <div class="modal-content">
-             <button type="button" class="close closemodal" data-dismiss="modal"><span>&times;</span></button>
                <div class="loader"></div>
            </div>
          </div>
