@@ -59,7 +59,6 @@
             <div class="col-md-7 col-sm-12 text-center ftco-animate">
                 <h1 class="mb-3 mt-5 bread">Contactez nous</h1>
             </div>
-
         </div>
     </div>
 </section>
@@ -94,7 +93,7 @@
                 </div>
             </div>
         </div>
-        <label>Pour envoyer un message veuillez remplir les champs puis cliquer sur envoyer</label>
+        <label>Pour envoyer un message veuillez remplir tous les champs.</label>
         <div class="row block-9">
             <div class="col-md-6 pr-md-5">
                 <form action="contact" method="post">
@@ -209,10 +208,7 @@
 <script src="{{asset('app-assets/js/aos.js')}}"></script>
 <script src="{{asset('app-assets/js/jquery.animateNumber.min.js')}}"></script>
 <script src="{{asset('app-assets/js/bootstrap-datepicker.js')}}"></script>
-<script src="{{asset('app-assets/js/jquery.timepicker.min.js')}}"></script>
 <script src="{{asset('app-assets/js/scrollax.min.js')}}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-<script src="{{asset('app-assets/js/google-map.js')}}"></script>
 <script src="{{asset('app-assets/js/main.js')}}"></script>
 
 </body>

@@ -11,19 +11,13 @@
 
     <link rel="stylesheet" href="{{asset('app-assets/css/open-iconic-bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/animate.css')}}">
-
     <link rel="stylesheet" href="{{asset('app-assets/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/magnific-popup.css')}}">
-
     <link rel="stylesheet" href="{{asset('app-assets/css/aos.css')}}">
-
     <link rel="stylesheet" href="{{asset('app-assets/css/ionicons.min.css')}}">
-
     <link rel="stylesheet" href="{{asset('app-assets/css/bootstrap-datepicker.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/jquery.timepicker.css')}}">
-
-
     <link rel="stylesheet" href="{{asset('app-assets/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/style.css')}}">
@@ -234,10 +228,7 @@
 <script src="{{asset('app-assets/js/aos.js')}}"></script>
 <script src="{{asset('app-assets/js/jquery.animateNumber.min.js')}}"></script>
 <script src="{{asset('app-assets/js/bootstrap-datepicker.js')}}"></script>
-<script src="{{asset('app-assets/js/jquery.timepicker.min.js')}}"></script>
 <script src="{{asset('app-assets/js/scrollax.min.js')}}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-<script src="{{asset('app-assets/js/google-map.js')}}"></script>
 <script src="{{asset('app-assets/js/main.js')}}"></script>
 
 </body>
