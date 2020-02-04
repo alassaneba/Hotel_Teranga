@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{asset('app-assets/css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/style.css')}}">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="{{asset('app-assets/resources/demos/style.css')}}">
+
 </head>
 
 <body>
@@ -129,7 +129,7 @@
                             <div class="form-field">
                                 <div class="select-wrap text-center">
                                     <form> Adulte
-                                        <input type="number" name="Nombre_adulte" id="ad" min="1" class="btn btn-light py-3 px-4"> </form>
+                                        <input type="number" name="Nombre_adulte" id="nbradult" min="1" class="btn btn-light py-3 px-4"> </form>
                                 </div>
                             </div>
                         </div>
@@ -137,7 +137,7 @@
                             <div class="form-field">
                                 <div class="select-wrap text-center">
                                     Enfant
-                                    <input type="number" name="Nombre_enfant" id="ad" min="0" class="btn btn-light py-3 px-4">
+                                    <input type="number" name="Nombre_enfant" id="nbrenfant" min="0" class="btn btn-light py-3 px-4">
                                 </div>
                             </div>
                         </div>
@@ -151,12 +151,12 @@
     </div>
 </section>
 
-<section class="ftco-section ftco-services justify-content-center align-items-center">
+<section class="ftco-section ftco-services">
     <div class="container">
         <div class="row">
-            <div class="col-md-5 col-lg-3 d-flex align-self-stretch ftco-animate">
-                <div class="media block-6 services">
-                    <div class="icon d-flex justify-content-center align-items-center mb-4">
+            <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+                <div class="media block-2 services">
+                    <div class="icon d-flex align-self-stretch justify-content-center align-items-center mb-4">
                         <span><img src="{{asset('app-assets/images/Sleep.png')}}"></span>
                     </div>
                     <div class="media-body">
@@ -166,7 +166,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-                <div class="media block-6 services">
+                <div class="media block-2 services">
                     <div class="icon d-flex justify-content-center align-items-center mb-4">
                         <span> <image src="{{asset('app-assets/images/conf1.png')}}"></span>
                     </div>
@@ -177,7 +177,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-                <div class="media block-6 services">
+                <div class="media block-2 services">
                     <div class="icon d-flex justify-content-center align-items-center mb-4">
                         <span><image src="{{asset('app-assets/images/resto1.png')}}"></span>
                     </div>
@@ -188,7 +188,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-                <div class="media block-6 services">
+                <div class="media block-2 services">
                     <div class="icon d-flex justify-content-center align-items-center mb-4">
                         <span class="flaticon-fashion"></span>
                     </div>
@@ -518,15 +518,8 @@
 <script src="{{asset('app-assets/js/aos.js')}}"></script>
 <script src="{{asset('app-assets/js/jquery.animateNumber.min.js')}}"></script>
 <script src="{{asset('app-assets/js/bootstrap-datepicker.js')}}"></script>
-<script src="{{asset('app-assets/js/jquery.timepicker.min.js')}}"></script>
 <script src="{{asset('app-assets/js/scrollax.min.js')}}"></script>
 <script src="{{asset('app-assets/js/main.js')}}"></script>
-<script src="{{asset('app-assets/js/google-map.js')}}"></script>
-<!--
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
--->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.0/umd/popper.min.js"></script>
 
