@@ -39,7 +39,7 @@
                <input type="text" name="Objet" class="form-control" value="{{$contactedit->Objet}}">
             </div>
             <div><label>Message</label>
-                <textarea name="Message" cols="30" rows="7" class="form-control" value="{{$contactedit->Message}}"></textarea>
+                <textarea name="Message" cols="30" rows="7" class="form-control">{{$contactedit->Message}}</textarea>
             </div>
             <div><label>Statut</label>
                 <select type="text" name="Statut" class="form-control" value="{{$contactedit->Statut}}">

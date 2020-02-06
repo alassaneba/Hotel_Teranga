@@ -8,7 +8,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,700&display=swap" rel="stylesheet">
-      <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"  rel="stylesheet">
+    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"  rel="stylesheet">
     <link rel="stylesheet" href="{{asset('app-assets/css/open-iconic-bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/owl.carousel.min.css')}}">
@@ -155,50 +155,19 @@
 <section class="ftco-section ftco-services">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-                <div class="media block-2 services">
-                    <div class="icon d-flex align-self-stretch justify-content-center align-items-center mb-4">
-                        <span><img src="{{asset('app-assets/images/Sleep.png')}}"></span>
-                    </div>
-                    <div class="media-body">
-                        <h3 class="heading text-center"><a href="{{route('reservation/chambre')}}">Hebergement</a></h3>
-                        <p style="text-align:justify;">Nous disposons des chambres propres modernes adaptees a vos besoins.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-                <div class="media block-2 services">
-                    <div class="icon d-flex justify-content-center align-items-center mb-4">
-                        <span> <image src="{{asset('app-assets/images/conf1.png')}}"></span>
-                    </div>
-                    <div class="media-body">
-                        <h3 class="heading text-center"><a href="{{route('reservation/evenement')}}">Evenementiel</a></h3>
-                        <p style="text-align:justify;">Nous disposons des salles modernes et des espaces adaptes a vos besoins.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-                <div class="media block-2 services">
-                    <div class="icon d-flex justify-content-center align-items-center mb-4">
-                        <span><image src="{{asset('app-assets/images/resto1.png')}}"></span>
-                    </div>
-                    <div class="media-body">
-                        <h3 class="heading text-center"><a href="{{route('services')}}">Restauration</a></h3>
-                        <p style="text-align:justify;"> Un menu avec une alimentation saine et varies pour vous donner le gout de nos plats appetissants.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-                <div class="media block-2 services">
-                    <div class="icon d-flex justify-content-center align-items-center mb-4">
-                        <span class="flaticon-fashion"></span>
-                    </div>
-                    <div class="media-body">
-                        <h3 class="heading text-center"><a href="{{route('services')}}">Pressing</a></h3>
-                        <p style="text-align:justify;">Un service de lavage rapide professionnelle equiper de machine moderne pour vous servir.</p>
-                    </div>
-                </div>
-            </div>
+          @foreach($services as $service)
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+              <div class="media block-6 services " >
+                <p class="text-center" >
+                    <span class="icon d-flex justify-content-center align-items-center mb-4 " style="margin:auto;"><img src="{{$service->Image}}"></span>
+                </p>
+                  <div class="media-body" >
+                      <h3 class="heading text-center"><a href="{{route('reservation/chambre')}}">{{$service->Service}}</a></h3>
+                      <p style="text-align:justify;">{{$service->Description}}</p>
+                  </div>
+              </div>
+          </div>
+             @endforeach
         </div>
     </div>
 </section>
@@ -292,42 +261,17 @@
                     <h2 class="mb-4 text-center">Notre mission vous satisfaire</h2>
                 </div>
                 <div class="container pr-md-3 pr-lg-5 pl-md-5 mr-md-5 mb-5">
+                    @foreach($services as $service)
                     <div class="services-wrap d-flex justify-content-center align-content-center">
                         <div class="icon d-flex justify-content-center align-items-center">
-                            <span><image src="{{asset('app-assets/images/Sleep.png')}}"></span>
+                            <span><image src="{{$service->Image}}"></span>
                         </div>
                         <div class="media-body pl-4">
-                            <h3 class="heading">Hebergement</h3>
-                            <p style="text-align:justify;">Nous disposons des chambres propres modernes adaptees a vos besoins.</p>
+                            <h3 class="heading">{{$service->Service}}</h3>
+                            <p style="text-align:justify;">{{$service->Description}}</p>
                         </div>
                     </div>
-                    <div class="services-wrap d-flex">
-                        <div class="icon d-flex justify-content-center align-items-center">
-                            <span><image src="{{asset('app-assets/images/conf1.png')}}"></span>
-                        </div>
-                        <div class="media-body pl-4">
-                            <h3 class="heading">Evenementiel</h3>
-                            <p style="text-align:justify;">Nous disposons des salles modernes et des espaces adaptes a vos besoins.</p>
-                        </div>
-                    </div>
-                    <div class="services-wrap d-flex">
-                        <div class="icon d-flex justify-content-center align-items-center">
-                            <span><image src="{{asset('app-assets/images/resto1.png')}}"></span>
-                        </div>
-                        <div class="media-body pl-4">
-                            <h3 class="heading">Restauration</h3>
-                            <p style="text-align:justify;"> Un menu avec une alimentation saine et varies pour vous donner le gout de nos plats appetissants.</p>
-                        </div>
-                    </div>
-                    <div class="services-wrap d-flex">
-                        <div class="icon d-flex justify-content-center align-items-center">
-                            <span class="flaticon-fashion"></span>
-                        </div>
-                        <div class="media-body pl-4">
-                            <h3 class="heading">Pressing</h3>
-                            <p style="text-align:justify;">Un service de lavage professionnelle rapide equiper de machine moderne pour vous servir.</p>
-                        </div>
-                    </div>
+                       @endforeach
                 </div>
             </div>
         </div>

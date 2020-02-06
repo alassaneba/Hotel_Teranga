@@ -52,14 +52,21 @@ class User extends Authenticatable
     public function Temoignage () {
         return $this->hasMany('App\Temoignage');
     }
+    public function Services () {
+        return $this->hasMany('App\Services');
+    }
+    public function isSuperadmin(){
+        return strtolower(@$this->role) === 'Superadmin'? true : false;
+    }
     /**Cette méthode va determiner si le user connecté a un role admin*/
     public function isAdmin(){
-        return strtolower(@$this->role) === 'admin'? true : false;
+        return strtolower(@$this->role) === 'Admin'? true : false;
     }
 
     /**Cett méthode va determiner si le user connecté a un role moderator*/
     public function isModerator(){
-        return strtolower(@$this->role) === 'moderator'? true : false;
+        return strtolower(@$this->role) === 'Moderator'? true : false;
     }
+
 
 }

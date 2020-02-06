@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/','HomeController@index');
+Route::get('/', 'HomeController@accueil')->name('accueil');
+Route::get('/home','HomeController@index')->name('home');
+
 Route::get('reservationchambre','ReservationBedroomController@clreservationchambre')->name('reservation/chambre');
 Route::post('reservationchambre','ReservationBedroomController@updatefrontoffice');
 Route::get('reservationevenement','ReservationEventController@clreservationevenement')->name('reservation/evenement');
@@ -32,6 +33,15 @@ Route::post('contactcreate','ContactController@store')->middleware('auth');
 Route::get('contactedit/{id}','ContactController@edit')->middleware('auth');
 Route::patch('/contactmessageupdate/{id}','ContactController@update')->middleware('auth');
 Route::delete('contactedit/{id}','ContactController@destroy')->middleware('auth');
+
+Route::get('hotelservices','ServicesController@Hotelservices')->name('hotel/services')->middleware('auth');
+
+Route::post('servicescreate','ServicesController@create')->middleware('auth');
+Route::get('servicescreate','ServicesController@create')->name('creation/hotel/services')->middleware('auth');
+Route::post('servicescreate','ServicesController@store')->middleware('auth');
+Route::get('servicesedit/{id}','ServicesController@edit')->middleware('auth');
+Route::patch('/hotelservicesupdate/{id}','ServicesController@update')->middleware('auth');
+Route::delete('servicesedit/{id}','ServicesController@destroy')->middleware('auth');
 
 Route::get('temoignage','TemoignageController@index')->name('temoignage')->middleware('auth');
 

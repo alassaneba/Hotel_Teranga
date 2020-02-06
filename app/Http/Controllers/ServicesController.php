@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Services;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class ServicesController extends Controller
 {
@@ -12,8 +16,8 @@ class ServicesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('services');
+    {    $services = \App\Services::all();
+        return view('services',compact('services'));
     }
 
     /**
@@ -23,7 +27,7 @@ class ServicesController extends Controller
      */
     public function create()
     {
-        //
+        return  view('Services/servicescreate');
     }
 
     /**
@@ -34,7 +38,24 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $data = $request->validate([
+          'Service' => 'required',
+          'Description' => 'required',
+          'Image' => 'required| image | mimes:jpeg,png,jpg,gif | max: 2048',
+          'User_id' => 'required | min:1 ',
+      ]);
+      $service = new Services();
+      $service->Service = $request->input('Service');
+      $service->Description = $request->input('Description');
+      if ($request->has('Image')) {
+      $image = $request->file('Image');
+      $image_name = Str::slug($request->input('Service')) . '_' . time();
+      $folder = '/uploads/images/';
+      $service-> Image = $folder . $image_name . '.' . $image->getClientOriginalExtension();
+      $this->uploadImage($image, $folder, 'public', $image_name);}
+      $service->User_id = $request->input('User_id');
+      $service->save();
+          return redirect('/hotelservices')->with(['success' => "Service enregistrée"]);
     }
 
     /**
@@ -56,7 +77,11 @@ class ServicesController extends Controller
      */
     public function edit($id)
     {
-        //
+      $this->authorize('admin');
+      $servicesedit= \App\Services::find($id);
+      $Service = \App\Services::pluck('Service','id');
+
+      return view('Services/servicesedit', compact('servicesedit','Service'));
     }
 
     /**
@@ -68,7 +93,24 @@ class ServicesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $service= \App\Services::find($id);
+      if($service){
+          $service->Service = $request->input('Service');
+          $service->Description = $request->input('Description');
+              if($request->has('Image')){
+                  //On enregistre l'image dans une variable
+                  $image = $request->file('Image');
+                  if(file_exists(public_path().$service->images))//On verifie si le fichier existe
+                      Storage::delete(asset($service->images));//On le supprime alors
+                  //Nous enregistrerons nos fichiers dans /uploads/images dans public
+                  $folder = '/uploads/images/';
+                  $image_name = Str::slug($request->input('name')).'_'.time();
+                  $service->Image = $folder.$image_name.'.'.$image->getClientOriginalExtension();
+                  //Maintenant nous pouvons enregistrer l'image dans le dossier en utilisant la méthode uploadImage();
+                  $this->uploadImage($image, $folder, 'public', $image_name); }
+          $service->User_id = $request->input('User_id');
+          $service-> save(); }
+      return redirect('/hotelservices')->with(['success' => "Service modifié"]);
     }
 
     /**
@@ -79,6 +121,20 @@ class ServicesController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $this->authorize('Admin');
+      $service = Services::find($id);
+      if($service)
+          $service->delete();
+      return redirect('/hotelservices')->with(['success' => "Chambre Supprimée"]);
     }
+    public function uploadImage(UploadedFile $uploadedFile, $folder = null, $disk = 'public', $filename = null){
+        $name = !is_null($filename) ? $filename : str_random('25');
+        $file = $uploadedFile->storeAs($folder, $name.'.'.$uploadedFile->getClientOriginalExtension(), $disk);
+
+        return $file;
+}
+public function Hotelservices (){
+    $service = \App\Services::orderBy('created_at','DESC')->get();
+  return view('Services/hotelservices', compact('service'));
+}
 }
