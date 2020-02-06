@@ -13,7 +13,7 @@
               </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="admin">Tableau de bord</a></li>
+              <li class="breadcrumb-item"><a href="{{route('admin')}}">Tableau de bord</a></li>
               <li class="breadcrumb-item active">Reservation Evenement</li>
             </ol>
           </div><!-- /.col -->
@@ -26,7 +26,7 @@
     <div class="card-tools">
     </div>
   </div>
-  <form action="reseventcreate" method="post" >
+  <form action="{{route('creation/reservation/event')}}" method="post" >
     @csrf
         <div><label>Nom de l'evenement</label>
             <input type="text" name="Nom_evenement" class="form-control" placeholder="Nom de l'evenement">

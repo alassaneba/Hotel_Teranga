@@ -13,7 +13,7 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="admin">Tableau de bord</a></li>
+            <li class="breadcrumb-item"><a href="{{route('admin')}}">Tableau de bord</a></li>
             <li class="breadcrumb-item active">Contact/Message</li>
           </ol>
         </div><!-- /.col -->
@@ -41,7 +41,7 @@
                 <table class="table table-head-fixed">
                   <thead>
                     <tr>
-                     <th>Nom complet</th>
+                     <th>Nom_complet</th>
                      <th>Email</th>
                      <th>Objet</th>
                      <th>Message</th>
@@ -57,7 +57,7 @@
                               <td>{{$contacts->Nom_complet}}</td>
                               <td>{{$contacts->Email}}</td>
                               <td>{{$contacts->Objet}}</td>
-                              <td>{{$contacts->Message}}</td>
+                              <td><textarea cols="45" rows="3" class="form-control" readonly>{{$contacts->Message}}</textarea></td>
                               <td>{{$contacts->Statut}}</td>
                               <td>{{$contacts->User_id}}</td>
                               <td> <p class="btn btn-outline-secondary"><a href="contactedit/{{$contacts->id}}">Editer</a></p></td>

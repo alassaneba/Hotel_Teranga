@@ -21,7 +21,7 @@
     </div>
 
     <div class="container border">
-    <form action="reservationevenement" method="post" >
+    <form action="{{route('reservation/evenement')}}" method="post" >
         @csrf
         <div><label>Nom de l'evenement</label>
                 <input type="text" name="Nom_evenement" class="form-control" placeholder="Nom de l'evenement">

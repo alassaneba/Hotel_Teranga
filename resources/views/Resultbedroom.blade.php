@@ -27,7 +27,7 @@
                             <h3 class="heading"><a>Description:<br>{{$chambre->Description}}</a></h3>
                         </div>
                         <div class="text-center">
-                            <a href="reservationchambre"><span class="btn btn-primary py-2 px-5">Reserver la chambre</span></a>
+                            <a href="{{route('reservation/chambre')}}"><span class="btn btn-primary py-2 px-5">Reserver la chambre</span></a>
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                              <h3 class="heading"><a>Description:<br>Une connecxion internet haut debit, une piscine un bard lunch et un restaurant a votre disposition.</a></h3>
                          </div>
                          <div class="text-center">
-                             <a href="/home"><span class="btn btn-primary py-2 px-5">Retourner au page d'acceuil</span></a>
+                             <a href="{{route('home')}}"><span class="btn btn-primary py-2 px-5">Retourner au page d'acceuil</span></a>
                          </div>
             </div>
         @endforeach

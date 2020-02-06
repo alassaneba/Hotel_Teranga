@@ -13,7 +13,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="admin">Tableau de bord</a></li>
+              <li class="breadcrumb-item"><a href="{{route('admin')}}">Tableau de bord</a></li>
               <li class="breadcrumb-item active">Disposition Salles</li>
             </ol>
           </div><!-- /.col -->
@@ -26,7 +26,7 @@
         <div class="card-tools">
         </div>
       </div>
-      <form action="disposalcreate" method="post" enctype="multipart/form-data">
+      <form action="{{route('creation/disposition/salle')}}" method="post" enctype="multipart/form-data">
   @csrf
   <div><label>Disposition de Salle</label>
       <input type="text" name="Disposition" class="form-control" placeholder="Disposition de salle">

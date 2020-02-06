@@ -13,7 +13,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="admin">Tableau de bord</a></li>
+              <li class="breadcrumb-item"><a href="{{route('admin')}}">Tableau de bord</a></li>
               <li class="breadcrumb-item active">Type Evenement</li>
             </ol>
           </div><!-- /.col -->
@@ -26,7 +26,7 @@
         <div class="card-tools">
         </div>
       </div>
-      <form action="typeeventcreate" method="post" enctype="multipart/form-data">
+      <form action="{{route('creation/type/evenement')}}" method="post" enctype="multipart/form-data">
   @csrf
   <div><label>Type d'evenement</label>
       <input type="text" name="Type_evenement" class="form-control" placeholder="Type d'evenement">

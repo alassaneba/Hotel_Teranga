@@ -13,7 +13,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="admin">Tableau de bord</a></li>
+              <li class="breadcrumb-item"><a href="{{route('admin')}}">Tableau de bord</a></li>
               <li class="breadcrumb-item active">Temoignages</li>
             </ol>
           </div><!-- /.col -->
@@ -26,7 +26,7 @@
         <div class="card-tools">
         </div>
       </div>
-        <form action="temoignagecreate" method="post">
+        <form action="{{route('creation/temoignage')}}" method="post">
     @csrf
             <div><label>Nom_complet</label>
                <input type="text" name="Nom_complet" class="form-control">

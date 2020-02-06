@@ -14,7 +14,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="admin">Tableau de bord</a></li>
+              <li class="breadcrumb-item"><a href="{{route('admin')}}">Tableau de bord</a></li>
               <li class="breadcrumb-item active">Reservation Chambre</li>
             </ol>
           </div><!-- /.col -->

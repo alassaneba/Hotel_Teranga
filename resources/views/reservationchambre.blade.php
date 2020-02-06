@@ -50,7 +50,7 @@
         <spam><p>Pour faire une reservation de chambre veuillez renseignez tous les champs</p></spam>
     </div>
     <div class="container border">
-    <form action="reservationchambre" method="post" name="form1">
+    <form action="{{route('reservation/chambre')}}" method="post" name="form1">
         @csrf
         <div><label>Date d'arriver</label>
             <input type="date" name="Date_arriver" id="Date_arriver"class="form-control">

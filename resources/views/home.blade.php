@@ -8,6 +8,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,700&display=swap" rel="stylesheet">
+      <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"  rel="stylesheet">
     <link rel="stylesheet" href="{{asset('app-assets/css/open-iconic-bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/owl.carousel.min.css')}}">
@@ -20,7 +21,7 @@
     <link rel="stylesheet" href="{{asset('app-assets/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/style.css')}}">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
 
 </head>
 
@@ -28,26 +29,26 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-        <a class="navbar-brand" href="home">Hotel<span>Teranga</span></a>
+        <a class="navbar-brand" href="{{route('home')}}">Hotel<span>Teranga</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
         </button>
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a href="home" class="nav-link">Accueil</a></li>
+                <li class="nav-item active"><a href="{{route('home')}}" class="nav-link">Accueil</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Reservation</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="reservationchambre">Chambre</a>
-                        <a class="dropdown-item" href="reservationevenement">Evenement</a>
+                        <a class="dropdown-item" href="{{route('reservation/chambre')}}">Chambre</a>
+                        <a class="dropdown-item" href="{{route('reservation/evenement')}}">Evenement</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="a-propos" class="nav-link">A propos</a></li>
-                <li class="nav-item"><a href="services" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
-                @can('admin')<li class="nav-item"><a href="/admin/">Back Office</a></li>@endcan
+                <li class="nav-item"><a href="{{route('a-propos')}}" class="nav-link">A propos</a></li>
+                <li class="nav-item"><a href="{{route('services')}}" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
+                @can('admin')<li class="nav-item"><a href="{{route('admin')}}">Back Office</a></li>@endcan
                 @guest
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Se connecter') }}</a>
@@ -80,7 +81,7 @@
             <span class="subheading">Bienvenu chez Hotel Teranga</span>
             <h1>Un sejour agreable vous est offert chez nous !</h1>
             <h2 class="mb-5">Nous sommes une chaine d'hotel present au Senegal</h2>
-            <p><a href="contact" class="btn-custom py-3 pr-2">Contactez-Nous</a></p>
+            <p><a href="{{route('contact')}}" class="btn-custom py-3 pr-2">Contactez-Nous</a></p>
         </div>
     </div>
     <div class="third about-img js-fullheight">
@@ -160,7 +161,7 @@
                         <span><img src="{{asset('app-assets/images/Sleep.png')}}"></span>
                     </div>
                     <div class="media-body">
-                        <h3 class="heading text-center"><a href="reservationchambre">Hebergement</a></h3>
+                        <h3 class="heading text-center"><a href="{{route('reservation/chambre')}}">Hebergement</a></h3>
                         <p style="text-align:justify;">Nous disposons des chambres propres modernes adaptees a vos besoins.</p>
                     </div>
                 </div>
@@ -171,7 +172,7 @@
                         <span> <image src="{{asset('app-assets/images/conf1.png')}}"></span>
                     </div>
                     <div class="media-body">
-                        <h3 class="heading text-center"><a href="reservationevenement">Evenementiel</a></h3>
+                        <h3 class="heading text-center"><a href="{{route('reservation/evenement')}}">Evenementiel</a></h3>
                         <p style="text-align:justify;">Nous disposons des salles modernes et des espaces adaptes a vos besoins.</p>
                     </div>
                 </div>
@@ -182,7 +183,7 @@
                         <span><image src="{{asset('app-assets/images/resto1.png')}}"></span>
                     </div>
                     <div class="media-body">
-                        <h3 class="heading text-center"><a href="services">Restauration</a></h3>
+                        <h3 class="heading text-center"><a href="{{route('services')}}">Restauration</a></h3>
                         <p style="text-align:justify;"> Un menu avec une alimentation saine et varies pour vous donner le gout de nos plats appetissants.</p>
                     </div>
                 </div>
@@ -193,7 +194,7 @@
                         <span class="flaticon-fashion"></span>
                     </div>
                     <div class="media-body">
-                        <h3 class="heading text-center"><a href="services">Pressing</a></h3>
+                        <h3 class="heading text-center"><a href="{{route('services')}}">Pressing</a></h3>
                         <p style="text-align:justify;">Un service de lavage rapide professionnelle equiper de machine moderne pour vous servir.</p>
                     </div>
                 </div>
@@ -225,7 +226,7 @@
                                 </ul>
                             </div>
                             <div class="text w-100 mb-3">
-                                <h2><a href="reservationchambre">Chambre<br>{{$bedroom->Type_chambre}}</a></h2>
+                                <h2><a href="{{route('reservation/chambre')}}">Chambre<br>{{$bedroom->Type_chambre}}</a></h2>
                             </div>
                         </div>
                     </div>
@@ -248,7 +249,7 @@
             @foreach($rooms as $room)
             <div class="col-md-4 ftco-animate">
                 <div class="blog-entry">
-                    <a href="#" class="block-20" style="background-image: url('{{$room->Image}}');"></a>
+                    <a href="{{route('reservation/evenement')}}" class="block-20" style="background-image: url('{{$room->Image}}');"></a>
                     <div class="text py-4">
                         <div class="meta mb-3">
                             <div><a>{{$room->Salles}}</a></div>
@@ -263,15 +264,15 @@
               @endforeach
             <div class="col-md-4 ftco-animate">
                 <div class="blog-entry" data-aos-delay="200">
-                    <a href="#" class="block-20" style="background-image: url('{{asset('app-assets/images/Equipe.jpg')}}');">
+                    <a href="{{route('a-propos')}}" class="block-20" style="background-image: url('{{asset('app-assets/images/Equipe.jpg')}}');">
                     </a>
                     <div class="text py-4">
                         <div class="meta mb-3">
-                          <div><a href="#">Notre mission</a></div>
-                          <div><a href="#"> vous satisfaire</a></div>
+                          <div><a href="{{route('a-propos')}}">Notre mission</a></div>
+                          <div><a href="{{route('a-propos')}}"> vous satisfaire</a></div>
                         </div>
                         <div class="desc">
-                            <h3 style="text-align:justify;" class="heading"><a href="#">Une equipe d'homme de metier serviable pour vous satisfaire nuit et jours a votre service 24h/24 - 7j/7 durant toute l'annee.</a></h3>
+                            <h3 style="text-align:justify;" class="heading"><a>Une equipe d'homme de metier serviable pour vous satisfaire nuit et jours a votre service 24h/24 - 7j/7 durant toute l'annee.</a></h3>
                         </div>
                     </div>
                 </div>
@@ -418,7 +419,7 @@
         </button>
       </div>
       <div class="modal-body row">
-        <form class="col" action="/temoignagecreate" method="post">
+        <form class="col" action="{{route('creation/temoignage')}}" method="post">
             @csrf
           <div class="form-group">
             <label class="form-control-label">Nom complet</label>
@@ -455,6 +456,7 @@
                         <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                         <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
                         <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="icon-whatsapp"></span></a></li>
                     </ul>
                 </div>
             </div>
@@ -462,10 +464,10 @@
                 <div class="ftco-footer-widget mb-4 ml-md-4">
                     <h2 class="ftco-heading-2">SERVICES</h2>
                     <ul class="list-unstyled">
-                        <li><a href="reservationchambre">Reserver une chambre</a></li>
-                        <li><a href="reservationevenement">Reserver un evenement</a></li>
-                        <li><a href="services">Restauration</a></li>
-                        <li><a href="services">Pressing</a></li>
+                        <li><a href="{{route('reservation/chambre')}}">Reserver une chambre</a></li>
+                        <li><a href="{{route('reservation/evenement')}}">Reserver un evenement</a></li>
+                        <li><a href="{{route('services')}}">Restauration</a></li>
+                        <li><a href="{{route('services')}}">Pressing</a></li>
                     </ul>
                 </div>
             </div>

@@ -13,7 +13,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="admin">Tableau de bord</a></li>
+              <li class="breadcrumb-item"><a href="{{route('admin')}}">Tableau de bord</a></li>
               <li class="breadcrumb-item active">Besoins des Clients</li>
             </ol>
           </div><!-- /.col -->
@@ -26,7 +26,7 @@
     <div class="card-tools">
     </div>
   </div>
-    <form action="besoinclientcreate" method="post" >
+    <form action="{{route('creation/besoin/client')}}" method="post" >
     @csrf
             <div><label>Nom Complet</label>
               <input type="text" name="Nom_complet" class="form-control">

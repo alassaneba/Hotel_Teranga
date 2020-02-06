@@ -13,7 +13,7 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="admin">Tableau de bord</a></li>
+            <li class="breadcrumb-item"><a href="{{route('admin')}}">Tableau de bord</a></li>
             <li class="breadcrumb-item active">Besoins des Clients</li>
           </ol>
         </div><!-- /.col -->
@@ -41,11 +41,11 @@
                 <table class="table table-head-fixed">
                   <thead>
                     <tr>
-                     <th>Nom Complet</th>
-                     <th>Numero Chambre</th>
-                     <th>Description Besoin</th>
-                     <th>Prix a Payer</th>
-                     <th>Agent Conserner</th>
+                     <th>Nom_Complet</th>
+                     <th>N° Chambre</th>
+                     <th>Besoin</th>
+                     <th>Prix</th>
+                     <th>Agent conserné</th>
                      <th>Statut</th>
                      <th>User</th>
                      <th>Editer</th>

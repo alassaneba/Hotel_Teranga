@@ -31,10 +31,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/admin" class="nav-link">Home</a>
+        <a href="{{route('admin')}}" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/home" class="nav-link">Site Web</a>
+        <a href="{{route('home')}}" class="nav-link">Site Web</a>
       </li>
     </ul>
 
@@ -87,7 +87,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/admin" class="brand-link">
+    <a href="{{route('admin')}}" class="brand-link">
       <img src="{{asset('admin-assets/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">TABLEAU DE BORD</span>
@@ -118,13 +118,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/reservationbedroom" class="nav-link">
+                <a href="{{route('reservation/bedroom')}}" class="nav-link">
                   <i class="fas fa-fw fa-list"></i>
                   <p>Liste Reservation</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/resbedroomcreate" class="nav-link">
+                <a href="{{route('creation/reservation/bedroom')}}" class="nav-link">
                   <i class="far fa-calendar-alt"></i>
                   <p>Formulaire Reservation</p>
                 </a>
@@ -147,13 +147,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/reservationevent" class="nav-link">
+                <a href="{{route('reservation/event')}}" class="nav-link">
                   <i class="fas fa-fw fa-list"></i>
                   <p>Liste Evenement</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/reseventcreate" class="nav-link">
+                <a href="{{route('creation/reservation/event')}}" class="nav-link">
                   <i class="far fa-calendar-alt"></i>
                   <p>Formulaire Evenement</p>
                 </a>
@@ -176,13 +176,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/contactmessage" class="nav-link">
+                <a href="{{route('contact/message')}}" class="nav-link">
                   <i class="fas fa-fw fa-list"></i>
                   <p>Liste Contact / Message</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/temoignage" class="nav-link">
+                <a href="{{route('temoignage')}}" class="nav-link">
                   <i class="far fa-calendar-alt"></i>
                   <p>Temoignage</p>
                 </a>
@@ -205,13 +205,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/besoinclient" class="nav-link">
+                <a href="{{route('besoin/client')}}" class="nav-link">
                   <i class="fas fa-fw fa-list"></i>
                   <p>Liste des Besoins</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/besoinclientcreate" class="nav-link">
+                <a href="{{route('creation/besoin/client')}}" class="nav-link">
                   <i class="far fa-calendar-alt"></i>
                   <p>Formulaire Besoins Clients</p>
                 </a>
@@ -234,13 +234,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/bedroom" class="nav-link">
+                <a href="{{route('chambre')}}" class="nav-link">
                   <i class="fas fa-fw fa-list"></i>
                   <p>Liste Type de Chambre</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/bedroomcreate" class="nav-link">
+                <a href="{{route('creation/chambre')}}" class="nav-link">
                   <i class="far fa-calendar-alt"></i>
                   <p>Creation Type de Chambre</p>
                 </a>
@@ -261,13 +261,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="/disposal" class="nav-link">
+                    <a href="{{route('disposition/salle')}}" class="nav-link">
                       <i class="fas fa-fw fa-list"></i>
                       <p>Liste Type Dispositon</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="/disposalcreate" class="nav-link">
+                    <a href="{{route('creation/disposition/salle')}}" class="nav-link">
                       <i class="far fa-calendar-alt"></i>
                       <p>Creation Type Disposition</p>
                     </a>
@@ -288,13 +288,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </a>
                     <ul class="nav nav-treeview">
                       <li class="nav-item">
-                        <a href="/room" class="nav-link">
+                        <a href="{{route('salle')}}" class="nav-link">
                           <i class="fas fa-fw fa-list"></i>
                           <p>Liste Espace et Salle</p>
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a href="/roomcreate" class="nav-link">
+                        <a href="{{route('creation/salle')}}" class="nav-link">
                           <i class="far fa-calendar-alt"></i>
                           <p>Creation Espace et Salle</p>
                         </a>
@@ -315,13 +315,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </a>
                         <ul class="nav nav-treeview">
                           <li class="nav-item">
-                            <a href="/typeevent" class="nav-link">
+                            <a href="{{route('type/evenement')}}" class="nav-link">
                               <i class="fas fa-fw fa-list"></i>
                               <p>Liste Type Evenement</p>
                             </a>
                           </li>
                           <li class="nav-item">
-                            <a href="/typeeventcreate" class="nav-link">
+                            <a href="{{route('creation/type/evenement')}}" class="nav-link">
                               <i class="far fa-calendar-alt"></i>
                               <p>Creation Type Evenement</p>
                             </a>

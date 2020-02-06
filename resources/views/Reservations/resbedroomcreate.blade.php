@@ -13,7 +13,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="admin">Tableau de bord</a></li>
+              <li class="breadcrumb-item"><a href="{{route('admin')}}">Tableau de bord</a></li>
               <li class="breadcrumb-item active">Reservation Chambre</li>
             </ol>
           </div><!-- /.col -->
@@ -26,7 +26,7 @@
         <div class="card-tools">
         </div>
       </div>
-    <form action="resbedroomcreate" method="post" name="form1">
+    <form action="{{route('creation/reservation/bedroom')}}" method="post" name="form1">
         @csrf
         <div><label>Date d'arriver</label>
             <input type="date" name="Date_arriver" id="Date_arriver"class="form-control">

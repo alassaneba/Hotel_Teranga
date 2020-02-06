@@ -11,7 +11,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="admin">Tableau de bord</a></li>
+              <li class="breadcrumb-item"><a href="{{route('admin')}}">Tableau de bord</a></li>
               <li class="breadcrumb-item active">Acceuil</li>
             </ol>
           </div><!-- /.col -->
@@ -27,7 +27,7 @@
                 </div>
                 <div class="mr-5">{{$resbedroom_count}} Reservation Chambre</div>
             </div>
-              <a class="card-footer text-white clearfix small z-1" href="{{route('admin/reservationbedrom')}}">
+              <a class="card-footer text-white clearfix small z-1" href="{{route('reservation/bedroom')}}">
                 <span class="float-left">Liste des reservations de chambre</span>
                 <span class="float-right"><i class="fas fa-angle-right"></i></span>
               </a>
@@ -41,7 +41,7 @@
                             </div>
                             <div class="mr-5">{{$resevent_count}} Reservation Evenement</div>
                         </div>
-                        <a class="card-footer text-white clearfix small z-1" href="reservationevent">
+                        <a class="card-footer text-white clearfix small z-1" href="{{route('reservation/event')}}">
                             <span class="float-left">Liste reservations d'evenement</span>
                             <span class="float-right"><i class="fas fa-angle-right"></i></span>
                         </a>
