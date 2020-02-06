@@ -57,8 +57,7 @@
     <div class="container">
         <div class="row slider-text justify-content-center align-items-center">
             <div class="col-md-7 col-sm-12 text-center ftco-animate">
-                <h1 class="mb-3 mt-5 bread">A propos de Nous</h1>
-                <!-- <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>About Me</span></p> -->
+                <h1 class="mb-3 mt-5 bread">A propos de nous</h1>
             </div>
         </div>
     </div>
