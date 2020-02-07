@@ -20,6 +20,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{asset('admin-assets/dist/css/todolist.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  @yield('css')
 </head>
 <body class="hold-transition sidebar-mini" >
 <div class="wrapper">
@@ -31,7 +32,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{route('admin')}}" class="nav-link">Home</a>
+        <a href="{{route('home')}}" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{route('accueil')}}" class="nav-link">Site Web</a>
@@ -66,7 +67,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             @else
         <li class="nav-item dropdown">
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->name }} <span class="caret"></span>
+                  {{ Auth::user()->role }} {{ Auth::user()->name }} <span class="caret"></span>
             </a>
          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="{{ route('logout') }}"
@@ -87,7 +88,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{route('admin')}}" class="brand-link">
+    <a href="{{route('home')}}" class="brand-link">
       <img src="{{asset('admin-assets/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">TABLEAU DE BORD</span>
@@ -97,9 +98,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class=""><label class="brand-text weight-light breadcrumb">HotelTeranga / Responsable</label>
+        <div class=""><label class="brand-text weight-light breadcrumb">HotelTeranga / Admin</label>
           <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-              {{ Auth::user()->name }} <span class="caret"></span>
+                {{ Auth::user()->role }} {{ Auth::user()->name }} <span class="caret"></span>
           </a>
         </div>
       </div>

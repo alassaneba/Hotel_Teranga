@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.superadmin')
 
 @section('content')
 
@@ -11,7 +11,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{route('admin')}}">Tableau de bord</a></li>
+              <li class="breadcrumb-item"><a href="{{route('home')}}">Tableau de bord / Superadmin</a></li>
               <li class="breadcrumb-item active">Acceuil</li>
             </ol>
           </div><!-- /.col -->
@@ -127,6 +127,20 @@
                         </div>
                         <a class="card-footer text-white clearfix small z-1" href="/typeevent">
                             <span class="float-left">Liste des types d'evenement</span>
+                            <span class="float-right"><i class="fas fa-angle-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-4 mb-3">
+                    <div class="card text-white bg-navy o-hidden h-100">
+                        <div class="card-body">
+                            <div class="card-body-icon">
+                                <i class="fas fa-fw fa-list"></i>
+                            </div>
+                            <div class="mr-5">{{$service_count}} Services hotel</div>
+                        </div>
+                        <a class="card-footer text-white clearfix small z-1" href="{{route('hotel/services')}}">
+                            <span class="float-left">Liste des services hotel</span>
                             <span class="float-right"><i class="fas fa-angle-right"></i></span>
                         </a>
                     </div>

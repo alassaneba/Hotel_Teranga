@@ -113,5 +113,5 @@ Route::post('typeeventcreate','TypeEventController@store')->middleware('auth');
 Route::delete('typeeventedit/{id}', 'TypeEventController@destroy')->middleware('auth');
 
 Auth::routes();
-Route::get('/admin', 'BackofficeController@index')->name('admin');
+
 Route::resource('/admin/users', 'Admin\UsersController');

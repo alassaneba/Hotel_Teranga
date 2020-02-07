@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-
+use \Auth;
 
 class BedroomController extends Controller
 {
@@ -19,7 +19,14 @@ class BedroomController extends Controller
     public function index()
     {
         $bedroom = \App\Bedroom::orderBy('created_at','DESC')->get();
-        return view('Bedrooms.bedroom', compact('bedroom'));
+        $user = Auth::User()->role;
+        if($user=='Superadmin')
+         return view('Bedrooms.bedroom',compact('bedroom'));
+        if($user=='Admin')
+         return view('Bedrooms.bedroomadm',compact('bedroom'));
+        if($user=='Moderator')
+         return view('Bedrooms.bedroommod',compact('bedroom'));
+
     }
 
     /**
@@ -29,7 +36,11 @@ class BedroomController extends Controller
      */
     public function create()
     {
-        return  view('Bedrooms.bedroomcreate');
+      $user = Auth::User()->role;
+      if($user=='Superadmin')
+       return view('Bedrooms.bedroomcreate');
+      if($user=='Admin')
+       return view('Bedrooms.bedroomcreateadm');
     }
 
     /**
@@ -83,11 +94,16 @@ class BedroomController extends Controller
      */
     public function edit($id)
     {
-        $this->authorize('admin');
+        $this->authorize('Superadmin');
+        $this->authorize('Admin');
         $bedroomedit= \App\Bedroom::find($id);
         $Type_chambre = \App\Bedroom::pluck('Type_chambre','id');
+        $user = Auth::User()->role;
+        if($user=='Superadmin')
+         return view('Bedrooms.bedroomedit', compact('bedroomedit','Type_chambre'));
+        if($user=='Admin')
+         return view('Bedrooms.bedroomeditadm', compact('bedroomedit','Type_chambre'));
 
-        return view('Bedrooms.bedroomedit', compact('bedroomedit','Type_chambre'));
     }
 
     /**
@@ -129,6 +145,8 @@ class BedroomController extends Controller
      */
     public function destroy($id)
     {
+      $this->authorize('Superadmin');
+      $this->authorize('Admin');
         $bedroom = Bedroom::find($id);
         if($bedroom)
             $bedroom->delete();

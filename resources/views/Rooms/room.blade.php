@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.superadmin')
 @section('content')
     @if(session('success'))
         <div class="alert alert-success">{{session('success')}}</div>
@@ -12,7 +12,7 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="{{route('admin')}}">Tableau de bord</a></li>
+            <li class="breadcrumb-item"><a href="{{route('home')}}">Tableau de bord / Superadmin</a></li>
             <li class="breadcrumb-item active">Espaces et Salles</li>
           </ol>
         </div><!-- /.col -->

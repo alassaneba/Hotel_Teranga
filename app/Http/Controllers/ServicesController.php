@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use \Auth;
 
 class ServicesController extends Controller
 {
@@ -27,7 +28,11 @@ class ServicesController extends Controller
      */
     public function create()
     {
-        return  view('Services/servicescreate');
+
+      $user = Auth::User()->role;
+      if($user=='Superadmin')
+       return view('Services/servicescreate');
+
     }
 
     /**
@@ -77,11 +82,11 @@ class ServicesController extends Controller
      */
     public function edit($id)
     {
-      $this->authorize('admin');
       $servicesedit= \App\Services::find($id);
       $Service = \App\Services::pluck('Service','id');
-
-      return view('Services/servicesedit', compact('servicesedit','Service'));
+      $user = Auth::User()->role;
+      if($user=='Superadmin')
+       return view('Services/servicesedit', compact('servicesedit','Service'));
     }
 
     /**
@@ -121,7 +126,7 @@ class ServicesController extends Controller
      */
     public function destroy($id)
     {
-      $this->authorize('Admin');
+    $this->authorize('Superadmin');
       $service = Services::find($id);
       if($service)
           $service->delete();
@@ -134,7 +139,10 @@ class ServicesController extends Controller
         return $file;
 }
 public function Hotelservices (){
+
     $service = \App\Services::orderBy('created_at','DESC')->get();
-  return view('Services/hotelservices', compact('service'));
+    $user = Auth::User()->role;
+    if($user=='Superadmin')
+     return view('Services/hotelservices', compact('service'));
 }
 }

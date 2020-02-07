@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ReservationEvent;
 use Illuminate\Http\Request;
+use \Auth;
 
 class ReservationEventController extends Controller
 {
@@ -15,7 +16,14 @@ class ReservationEventController extends Controller
     public function index()
     {
         $resevationevents= \App\ReservationEvent::orderBy('created_at','DESC')->get();
-        return view('/Reservations/reservationevent', compact('resevationevents'));
+        $user = Auth::User()->role;
+        if($user=='Superadmin')
+         return view('/Reservations/reservationevent',compact('resevationevents'));
+        if($user=='Admin')
+         return view('/Reservations/reservationeventadm',compact('resevationevents'));
+        if($user=='Moderator')
+         return view('/Reservations/reservationeventmod',compact('resevationevents'));
+
     }
 
     /**
@@ -28,7 +36,14 @@ class ReservationEventController extends Controller
         $typeevenememt = \App\TypeEvent::pluck('Type_evenement','id');
         $salles = \App\Room::pluck('Salles','id');
         $disposition = \App\DisposalRoom::pluck('Disposition','id');
-        return view('/Reservations/reseventcreate', compact('typeevenememt', 'salles', 'disposition'));
+        $user = Auth::User()->role;
+        if($user=='Superadmin')
+         return view('/Reservations/reseventcreate', compact('typeevenememt', 'salles', 'disposition'));
+        if($user=='Admin')
+         return view('/Reservations/reseventcreateadm', compact('typeevenememt', 'salles', 'disposition'));
+        if($user=='Moderator')
+         return view('/Reservations/reseventcreatemod', compact('typeevenememt', 'salles', 'disposition'));
+
 
     }
 
@@ -105,13 +120,18 @@ class ReservationEventController extends Controller
      */
     public function edit($id)
     {
-        $this->authorize('admin');
         $reseventedit= \App\ReservationEvent::find($id);
         $typeevenememt = \App\TypeEvent::pluck('Type_evenement','id');
         $salles = \App\Room::pluck('Salles','id');
         $disposition = \App\DisposalRoom::pluck('Disposition','id');
         $reservationevents = \App\ReservationEvent::orderBy('created_at','DESC')->first();
-        return view('/Reservations/reseventedit', compact('reseventedit','typeevenememt','reservationevents','salles', 'disposition'));
+        $user = Auth::User()->role;
+        if($user=='Superadmin')
+         return view('/Reservations/reseventedit', compact('reseventedit','typeevenememt','reservationevents','salles', 'disposition'));
+        if($user=='Admin')
+         return view('/Reservations/reseventeditadm', compact('reseventedit','typeevenememt','reservationevents','salles', 'disposition'));
+        if($user=='Moderator')
+         return view('/Reservations/reseventeditmod', compact('reseventedit','typeevenememt','reservationevents','salles', 'disposition'));
     }
 
     /**
@@ -167,6 +187,8 @@ class ReservationEventController extends Controller
      */
     public function destroy($id)
     {
+      $this->authorize('Superadmin');
+      $this->authorize('Admin');
         $reservationevents = ReservationEvent::find($id);
         if($reservationevents)
             $reservationevents->delete();

@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.superadmin')
 
 @section('content')
     @if(session('success'))
@@ -13,7 +13,7 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="{{route('admin')}}">Tableau de bord</a></li>
+            <li class="breadcrumb-item"><a href="{{route('home')}}">Tableau de bord / Superadmin</a></li>
             <li class="breadcrumb-item active">Services Hotel</li>
           </ol>
         </div><!-- /.col -->
@@ -25,7 +25,6 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Tableau des services de l'hotel</h3>
-
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
                     <input type="text" name="table_search" class="form-control float-right" placeholder="Search">

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use \Auth;
 
 class RoomController extends Controller
 {
@@ -18,7 +19,11 @@ class RoomController extends Controller
     public function index()
     {
       $room = \App\Room::orderBy('created_at','DESC')->get();
-      return view('Rooms/room', compact('room'));
+      $user = Auth::User()->role;
+      if($user=='Superadmin')
+       return view('Rooms/room',compact('room'));
+      if($user=='Admin')
+       return view('Rooms/roomadm',compact('room'));
     }
 
     /**
@@ -28,7 +33,12 @@ class RoomController extends Controller
      */
     public function create()
     {
-        return view ('Rooms/roomcreate');
+      $user = Auth::User()->role;
+      if($user=='Superadmin')
+       return view('Rooms/roomcreate');
+      if($user=='Admin')
+       return view('Rooms/roomcreateadm');
+
     }
 
     /**
@@ -79,11 +89,15 @@ class RoomController extends Controller
      */
     public function edit($id)
     {
-      $this->authorize('admin');
+
       $roomedit= \App\Room::find($id);
       $Salles = \App\Room::pluck('Salles','id');
+      $user = Auth::User()->role;
+      if($user=='Superadmin')
+       return view('Rooms/roomedit', compact('roomedit','Salles'));
+      if($user=='Admin')
+       return view('Rooms/roomeditadm', compact('roomedit','Salles'));
 
-      return view('Rooms/roomedit', compact('roomedit','Salles'));
     }
 
     /**
@@ -124,6 +138,8 @@ class RoomController extends Controller
      */
     public function destroy($id)
     {
+    $this->authorize('Superadmin');
+    $this->authorize('Admin');
       $room = Room::find($id);
       if($room)
       $room->delete();

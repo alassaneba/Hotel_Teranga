@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use \Auth;
 
 class BesoinClientController extends Controller
 {
@@ -18,7 +19,14 @@ class BesoinClientController extends Controller
     public function index()
     {
       $besoinclient = \App\BesoinClient::orderBy('created_at','DESC')->get();
-    return view('Autres/besoinclient', compact('besoinclient'));
+      $user = Auth::User()->role;
+      if($user=='Superadmin')
+       return view('Autres/besoinclient',compact('besoinclient'));
+      if($user=='Admin')
+       return view('Autres/besoinclientadm',compact('besoinclient'));
+      if($user=='Moderator')
+       return view('Autres/besoinclientmod',compact('besoinclient'));
+
     }
 
     /**
@@ -29,7 +37,13 @@ class BesoinClientController extends Controller
     public function create()
     {
       $besoinclient = \App\BesoinClient::orderBy('created_at','DESC')->get();
-        return  view('Autres/besoinclientcreate');
+      $user = Auth::User()->role;
+      if($user=='Superadmin')
+       return view('Autres/besoinclientcreate');
+      if($user=='Admin')
+       return view('Autres/besoinclientcreateadm');
+      if($user=='Moderator')
+       return view('Autres/besoinclientcreatemod');
     }
 
     /**
@@ -79,10 +93,17 @@ class BesoinClientController extends Controller
      */
     public function edit($id)
     {
-    $this->authorize('admin');
+
     $besoinclientedit= \App\BesoinClient::find($id);
     $besoinclient = \App\BesoinClient::orderBy('created_at','DESC')->get();
-    return view('Autres.besoinclientedit', compact('besoinclientedit','besoinclient'));
+    $user = Auth::User()->role;
+    if($user=='Superadmin')
+     return view('Autres.besoinclientedit', compact('besoinclientedit','besoinclient'));
+    if($user=='Admin')
+     return view('Autres.besoinclienteditadm', compact('besoinclientedit','besoinclient'));
+    if($user=='Moderator')
+     return view('Autres.besoinclienteditmod', compact('besoinclientedit','besoinclient'));
+    
     }
 
     /**
@@ -115,6 +136,8 @@ class BesoinClientController extends Controller
      */
     public function destroy($id)
     {
+      $this->authorize('Superadmin');
+      $this->authorize('Admin');
       $besoinclient = BesoinClient::find($id);
    if($besoinclient)
        $besoinclient->delete();

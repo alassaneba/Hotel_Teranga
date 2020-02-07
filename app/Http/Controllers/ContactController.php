@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use \Auth;
 
 class ContactController extends Controller
 {
@@ -75,9 +76,15 @@ class ContactController extends Controller
      */
     public function edit($id)
     {
-        $this->authorize('admin');
+
         $contactedit= \App\Contact::find($id);
-        return view('Contacts/contactedit', compact('contactedit'));
+        $user = Auth::User()->role;
+        if($user=='Superadmin')
+         return view('Contacts/contactedit',compact('contactedit'));
+        if($user=='Admin')
+         return view('Contacts/contacteditadm',compact('contactedit'));
+        if($user=='Moderator')
+         return view('Contacts/contacteditmod',compact('contactedit'));
     }
 
     /**
@@ -109,6 +116,8 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
+      $this->authorize('Superadmin');
+      $this->authorize('Admin');
         $contact= \App\Contact::find($id);
       if($contact)
           $contact->delete();
@@ -117,6 +126,12 @@ class ContactController extends Controller
     }
     public function Message (){
         $contact = \App\Contact::orderBy('created_at','DESC')->get();
-      return view('Contacts/contactmessage', compact('contact'));
+        $user = Auth::User()->role;
+        if($user=='Superadmin')
+         return view('Contacts/contactmessage',compact('contact'));
+        if($user=='Admin')
+         return view('Contacts/contactmessageadm',compact('contact'));
+        if($user=='Moderator')
+         return view('Contacts/contactmessagemod',compact('contact'));
     }
 }

@@ -7,13 +7,11 @@ use App\Bedroom;
 use App\Room;
 use App\Temoignage;
 use \App\Services;
-
 use App\ReservationBedroom;
 use App\ReservationEvent;
 use App\Contact;
 use App\BesoinClient;
 use App\DisposalRoom;
-
 use App\TypeEvent;
 use \Auth;
 class HomeController extends Controller
@@ -43,13 +41,14 @@ class HomeController extends Controller
       $disposal_count = DisposalRoom::all()->count();
       $room_count = Room::all()->count();
       $typeevent_count = TypeEvent::all()->count();
+      $service_count = Services::all()->count();
       $user = Auth::User()->role;
+      if($user=='Superadmin')
+       return view('Users/superadmin',compact('bedroom_count', 'resbedroom_count', 'resevent_count', 'contact_count', 'besoinclient_count','disposal_count','room_count','typeevent_count','service_count'));
       if($user=='Admin')
-       return view('admin',compact('bedroom_count', 'resbedroom_count', 'resevent_count', 'contact_count', 'besoinclient_count','disposal_count','room_count','typeevent_count'));
+       return view('Users/admin',compact('bedroom_count', 'resbedroom_count', 'resevent_count', 'contact_count', 'besoinclient_count','disposal_count','room_count','typeevent_count'));
       if($user=='Moderator')
-       return view('moderator');
-       if($user=='Superadmin')
-        return view('superadmin');
+       return view('Users/moderator',compact( 'resbedroom_count', 'resevent_count', 'contact_count', 'besoinclient_count'));
 
     }
 public function accueil(){

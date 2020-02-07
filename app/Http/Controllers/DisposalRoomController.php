@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use \Auth;
 
 class DisposalRoomController extends Controller
 {
@@ -18,7 +19,11 @@ class DisposalRoomController extends Controller
     public function index()
     {
       $disposal = \App\DisposalRoom::orderBy('created_at','DESC')->get();
-      return view('Disposals/disposal', compact('disposal'));
+      $user = Auth::User()->role;
+      if($user=='Superadmin')
+       return view('Disposals/disposal',compact('disposal'));
+      if($user=='Admin')
+       return view('Disposals/disposaladm',compact('disposal'));
     }
 
     /**
@@ -28,7 +33,13 @@ class DisposalRoomController extends Controller
      */
     public function create()
     {
-        return view('Disposals/disposalcreate');
+
+      $user = Auth::User()->role;
+      if($user=='Superadmin')
+       return view('Disposals/disposalcreate');
+      if($user=='Admin')
+       return view('Disposals/disposalcreateadm');
+
     }
 
     /**
@@ -95,6 +106,8 @@ class DisposalRoomController extends Controller
      */
     public function destroy($id)
     {
+    $this->authorize('Superadmin');
+    $this->authorize('Admin');
       $disposal = DisposalRoom::find($id);
       if($disposal)
       $disposal->delete();

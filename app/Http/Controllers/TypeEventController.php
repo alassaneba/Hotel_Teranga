@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\TypeEvent;
 use Illuminate\Http\Request;
+use \Auth;
 
 class TypeEventController extends Controller
 {
@@ -15,7 +16,12 @@ class TypeEventController extends Controller
     public function index()
     {
       $typeevent = \App\TypeEvent::orderBy('created_at','DESC')->get();
-      return view('Types/typeevent', compact('typeevent'));
+      $user = Auth::User()->role;
+      if($user=='Superadmin')
+       return view('Types/typeevent',compact('typeevent'));
+      if($user=='Admin')
+       return view('Types/typeeventadm',compact('typeevent'));
+
     }
 
     /**
@@ -25,7 +31,12 @@ class TypeEventController extends Controller
      */
     public function create()
     {
-          return view('Types/typeeventcreate');
+      $user = Auth::User()->role;
+      if($user=='Superadmin')
+       return view('Types/typeeventcreate');
+      if($user=='Admin')
+       return view('Types/typeeventcreateadm');
+
     }
 
     /**
@@ -89,6 +100,8 @@ class TypeEventController extends Controller
      */
     public function destroy($id)
     {
+    $this->authorize('Superadmin');
+    $this->authorize('Admin');
       $typeevent = TypeEvent::find($id);
       if($typeevent)
       $typeevent->delete();

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Temoignage;
 use Illuminate\Http\Request;
-
+use \Auth;
 
 class TemoignageController extends Controller
 {
@@ -15,8 +15,14 @@ class TemoignageController extends Controller
      */
     public function index()
     {
+
       $temoignage = \App\Temoignage::orderBy('created_at','DESC')->get();
-        return view('Temoignages/temoignage', compact('temoignage'));
+      $user = Auth::User()->role;
+      if($user=='Superadmin')
+       return view('Temoignages/temoignage',compact('temoignage'));
+      if($user=='Admin')
+       return view('Temoignages/temoignageadm',compact('temoignage'));
+
     }
 
     /**
@@ -72,9 +78,14 @@ class TemoignageController extends Controller
      */
     public function edit($id)
     {
-      $this->authorize('admin');
+  
       $temoignagedit= \App\Temoignage::find($id);
-      return view('Temoignages/temoignagedit', compact('temoignagedit'));
+      $user = Auth::User()->role;
+      if($user=='Superadmin')
+       return view('Temoignages/temoignagedit',compact('temoignagedit'));
+      if($user=='Admin')
+       return view('Temoignages/temoignageditadm',compact('temoignagedit'));
+
     }
 
     /**
@@ -105,6 +116,8 @@ class TemoignageController extends Controller
      */
     public function destroy($id)
     {
+    $this->authorize('Superadmin');
+    $this->authorize('Admin');
       $contact= \App\Contact::find($id);
     if($contact)
         $contact->delete();

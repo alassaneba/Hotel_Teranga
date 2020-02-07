@@ -29,14 +29,14 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-        <a class="navbar-brand" href="{{route('home')}}">Hotel<span>Teranga</span></a>
+        <a class="navbar-brand" href="{{route('accueil')}}">Hotel<span>Teranga</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
         </button>
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a href="{{route('home')}}" class="nav-link">Accueil</a></li>
+                <li class="nav-item active"><a href="{{route('accueil')}}" class="nav-link">Accueil</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Reservation</a>
@@ -48,7 +48,6 @@
                 <li class="nav-item"><a href="{{route('a-propos')}}" class="nav-link">A propos</a></li>
                 <li class="nav-item"><a href="{{route('services')}}" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
-                @can('admin')<li class="nav-item"><a href="{{route('admin')}}">Back Office</a></li>@endcan
                 @guest
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Se connecter') }}</a>

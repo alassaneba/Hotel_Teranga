@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ReservationBedroom;
 use Illuminate\Http\Request;
+use \Auth;
 
 class ReservationBedroomController extends Controller
 {
@@ -15,7 +16,14 @@ class ReservationBedroomController extends Controller
     public function index()
     {
         $reservationbedroom = \App\ReservationBedroom::orderBy('created_at','DESC')->get();
-        return view('/Reservations/reservationbedroom', compact('reservationbedroom'));
+        $user = Auth::User()->role;
+        if($user=='Superadmin')
+         return view('/Reservations/reservationbedroom',compact('reservationbedroom'));
+        if($user=='Admin')
+         return view('/Reservations/reservationbedroomadm',compact('reservationbedroom'));
+        if($user=='Moderator')
+         return view('/Reservations/reservationbedroommod',compact('reservationbedroom'));
+
     }
 
 
@@ -27,7 +35,14 @@ class ReservationBedroomController extends Controller
     public function create()
     {
         $bedrooms = \App\Bedroom::pluck('Type_chambre','id');
-        return  view('/Reservations/resbedroomcreate', compact('bedrooms'));
+        $user = Auth::User()->role;
+        if($user=='Superadmin')
+         return view('/Reservations/resbedroomcreate',compact('bedrooms'));
+        if($user=='Admin')
+         return view('/Reservations/resbedroomcreateadm',compact('bedrooms'));
+        if($user=='Moderator')
+         return view('/Reservations/resbedroomcreatemod',compact('bedrooms'));
+
     }
 
     /**
@@ -97,11 +112,16 @@ class ReservationBedroomController extends Controller
      */
     public function edit($id)
     {
-        $this->authorize('admin');
             $resbedroomedit= \App\ReservationBedroom::find($id);
             $bedrooms = \App\Bedroom::pluck('Type_chambre','id');
             $reservationbedroom = \App\ReservationBedroom::orderBy('created_at','DESC')->first();
-            return view('/Reservations/resbedroomedit', compact('resbedroomedit','bedrooms','reservationbedroom'));
+            $user = Auth::User()->role;
+            if($user=='Superadmin')
+             return view('/Reservations/resbedroomedit', compact('resbedroomedit','bedrooms','reservationbedroom'));
+            if($user=='Admin')
+             return view('/Reservations/resbedroomeditadm', compact('resbedroomedit','bedrooms','reservationbedroom'));
+            if($user=='Moderator')
+             return view('/Reservations/resbedroomeditmod', compact('resbedroomedit','bedrooms','reservationbedroom'));
 
     }
 
@@ -151,6 +171,8 @@ class ReservationBedroomController extends Controller
      */
     public function destroy($id)
     {
+      $this->authorize('Superadmin');
+      $this->authorize('Admin');
         $reservationbedroom = ReservationBedroom::find($id);
         if($reservationbedroom)
             $reservationbedroom->delete();
