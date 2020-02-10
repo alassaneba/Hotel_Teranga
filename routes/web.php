@@ -46,8 +46,8 @@ Route::delete('servicesedit/{id}','ServicesController@destroy')->middleware('aut
 Route::get('temoignage','TemoignageController@index')->name('temoignage')->middleware('auth');
 
 Route::get('temoignagecreate','TemoignageController@create')->name('creation/temoignage');
-Route::post('temoignagecreate','TemoignageController@create')->middleware('auth');
-Route::post('temoignagecreate','TemoignageController@store')->middleware('auth');
+Route::post('temoignagecreate','TemoignageController@create');
+Route::post('temoignagecreate','TemoignageController@store');
 Route::get('temoignagedit/{id}','TemoignageController@edit')->middleware('auth');
 Route::patch('/temoignageupdate/{id}','TemoignageController@update')->middleware('auth');
 Route::delete('temoignagedit/{id}','TemoignageController@destroy')->middleware('auth');

@@ -22,7 +22,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="{{route('home')}}"><b>Hotel</b>Teranga</a>
+    <a href="{{route('accueil')}}"><b>Hotel</b>Teranga</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">

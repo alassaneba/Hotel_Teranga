@@ -138,8 +138,6 @@ class RoomController extends Controller
      */
     public function destroy($id)
     {
-    $this->authorize('Superadmin');
-    $this->authorize('Admin');
       $room = Room::find($id);
       if($room)
       $room->delete();

@@ -1,4 +1,5 @@
 @extends('layouts.superadmin')
+@section('title', "Creation Services Hotel")
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)

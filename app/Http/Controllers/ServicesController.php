@@ -126,7 +126,7 @@ class ServicesController extends Controller
      */
     public function destroy($id)
     {
-    $this->authorize('Superadmin');
+  
       $service = Services::find($id);
       if($service)
           $service->delete();

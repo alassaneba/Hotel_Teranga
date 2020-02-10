@@ -106,8 +106,6 @@ class DisposalRoomController extends Controller
      */
     public function destroy($id)
     {
-    $this->authorize('Superadmin');
-    $this->authorize('Admin');
       $disposal = DisposalRoom::find($id);
       if($disposal)
       $disposal->delete();

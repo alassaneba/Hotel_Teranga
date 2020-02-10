@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-
+@section('title', "Liste Reservation Evenementiel")
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)

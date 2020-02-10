@@ -1,4 +1,5 @@
 @extends('layouts.superadmin')
+@section('title', "Edition Message/Contact")
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)

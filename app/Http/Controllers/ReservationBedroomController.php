@@ -171,8 +171,6 @@ class ReservationBedroomController extends Controller
      */
     public function destroy($id)
     {
-      $this->authorize('Superadmin');
-      $this->authorize('Admin');
         $reservationbedroom = ReservationBedroom::find($id);
         if($reservationbedroom)
             $reservationbedroom->delete();

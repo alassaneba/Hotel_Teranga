@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title', "Creation Temoignages")
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)

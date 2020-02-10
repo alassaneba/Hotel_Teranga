@@ -100,8 +100,6 @@ class TypeEventController extends Controller
      */
     public function destroy($id)
     {
-    $this->authorize('Superadmin');
-    $this->authorize('Admin');
       $typeevent = TypeEvent::find($id);
       if($typeevent)
       $typeevent->delete();

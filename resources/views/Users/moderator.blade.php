@@ -1,5 +1,5 @@
 @extends('layouts.moderator')
-
+@section('title', "Moderator")
 @section('content')
 
   <div class="container-fluid">

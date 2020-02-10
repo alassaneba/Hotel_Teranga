@@ -22,6 +22,8 @@ class TemoignageController extends Controller
        return view('Temoignages/temoignage',compact('temoignage'));
       if($user=='Admin')
        return view('Temoignages/temoignageadm',compact('temoignage'));
+      if($user=='Moderator')
+       return view('Temoignages/temoignagemod',compact('temoignage')); 
 
     }
 
@@ -78,7 +80,7 @@ class TemoignageController extends Controller
      */
     public function edit($id)
     {
-  
+
       $temoignagedit= \App\Temoignage::find($id);
       $user = Auth::User()->role;
       if($user=='Superadmin')
@@ -116,11 +118,9 @@ class TemoignageController extends Controller
      */
     public function destroy($id)
     {
-    $this->authorize('Superadmin');
-    $this->authorize('Admin');
-      $contact= \App\Contact::find($id);
-    if($contact)
-        $contact->delete();
+      $temoignage= \App\Temoignage::find($id);
+    if($temoignage)
+        $temoignage->delete();
     return redirect('/temoignage')->with(['success' => "Temoignage Supprimé"]);
     }
 }

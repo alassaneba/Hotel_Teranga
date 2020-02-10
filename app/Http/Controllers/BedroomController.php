@@ -145,8 +145,6 @@ class BedroomController extends Controller
      */
     public function destroy($id)
     {
-      $this->authorize('Superadmin');
-      $this->authorize('Admin');
         $bedroom = Bedroom::find($id);
         if($bedroom)
             $bedroom->delete();

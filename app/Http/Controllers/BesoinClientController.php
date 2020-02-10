@@ -103,7 +103,7 @@ class BesoinClientController extends Controller
      return view('Autres.besoinclienteditadm', compact('besoinclientedit','besoinclient'));
     if($user=='Moderator')
      return view('Autres.besoinclienteditmod', compact('besoinclientedit','besoinclient'));
-    
+
     }
 
     /**
@@ -136,8 +136,6 @@ class BesoinClientController extends Controller
      */
     public function destroy($id)
     {
-      $this->authorize('Superadmin');
-      $this->authorize('Admin');
       $besoinclient = BesoinClient::find($id);
    if($besoinclient)
        $besoinclient->delete();

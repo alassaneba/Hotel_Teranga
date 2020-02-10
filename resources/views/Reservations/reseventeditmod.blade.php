@@ -1,4 +1,5 @@
 @extends('layouts.moderator')
+@section('title', "Edition Reservation Evenementiel")
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)

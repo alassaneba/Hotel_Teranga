@@ -1,5 +1,5 @@
 @extends('layouts.moderator')
-
+@section('title', "Edition Reservation Chambre")
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)

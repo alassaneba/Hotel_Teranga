@@ -21,7 +21,7 @@
 <body class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
-    <a href="{{route('home')}}"><b>Hotel</b>Teranga</a>
+    <a href="{{route('accueil')}}"><b>Hotel</b>Teranga</a>
   </div>
 
   <div class="card">

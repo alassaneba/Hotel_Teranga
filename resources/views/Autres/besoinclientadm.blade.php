@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-
+@section('title', "Liste Besoins Clients")
 @section('content')
 @if(session('success'))
     <div class="alert alert-success">{{session('success')}}</div>

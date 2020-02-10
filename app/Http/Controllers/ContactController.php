@@ -116,8 +116,6 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-      $this->authorize('Superadmin');
-      $this->authorize('Admin');
         $contact= \App\Contact::find($id);
       if($contact)
           $contact->delete();

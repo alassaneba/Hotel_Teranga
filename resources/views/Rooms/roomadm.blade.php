@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title', "Liste Espaces/Salles")
 @section('content')
     @if(session('success'))
         <div class="alert alert-success">{{session('success')}}</div>

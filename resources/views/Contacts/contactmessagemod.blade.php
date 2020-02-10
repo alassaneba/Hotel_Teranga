@@ -1,5 +1,5 @@
 @extends('layouts.moderator')
-
+@section('title', " Liste Message/Contact")
 @section('content')
     @if(session('success'))
         <div class="alert alert-success">{{session('success')}}</div>

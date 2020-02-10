@@ -187,8 +187,6 @@ class ReservationEventController extends Controller
      */
     public function destroy($id)
     {
-      $this->authorize('Superadmin');
-      $this->authorize('Admin');
         $reservationevents = ReservationEvent::find($id);
         if($reservationevents)
             $reservationevents->delete();

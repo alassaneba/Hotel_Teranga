@@ -15,8 +15,9 @@ class AproposController extends Controller
     public function index()
     {
       $temoignages = \App\Temoignage::all();
-      return view('a-propos',compact('temoignages'));
-        
+      $services = \App\Services::all();
+      return view('a-propos',compact('temoignages','services'));
+
     }
 
     /**
