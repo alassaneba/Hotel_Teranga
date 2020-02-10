@@ -316,6 +316,9 @@
                     <option value="VI">Îles Vierges (U.S.)</option>
                 </select>
             </div>
+            <div><label>Identifiant</label>
+                <input type="text" name="Identifiant" class="form-control" placeholder="Numero Passeport ou Cni"  value="{{$resbedroomedit->Identifiant}}">
+            </div>
             <div><label>Email</label>
                 <input type="email" name="Email" class="form-control" placeholder="Email" value="{{$resbedroomedit->Email}}">
             </div>

@@ -27,6 +27,7 @@ class CreateReservationBedroomsTable extends Migration
             $table->string('Prenom');
             $table->string('Nom');
             $table->string('Nationalite');
+            $table->string('Identifiant')->nullable('true');
             $table->string('Email');
             $table->integer('Telephone');
             $table->integer('Montant_payer');

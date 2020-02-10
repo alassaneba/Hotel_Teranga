@@ -287,10 +287,11 @@
     </div>
 </section>
 
-<section class="ftco-section ftco-no-pb ftco-no-pt bg-light">
+<section style="margin-top: 3em;" class="ftco-section ftco-no-pb ftco-no-pt bg-light">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url({{asset('app-assets/images/unique5.jpg')}});">
+            @foreach($apropos as $apropo)
+            <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url({{$apropo->Image}})">
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -300,7 +301,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <iframe width="100%" height="500" src="https://www.youtube.com/embed/INYuGHqXvUI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="100%" height="500" src="{{$apropo->Lien_video}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
@@ -310,8 +311,7 @@
             </div>
             <div class="col-md-6 py-5 wrap-about pb-md-5 ftco-animate">
                 <div class="heading-section pt-md-5">
-                    <span class="subheading text-center">SENEGAL</span>
-                    <h2 class="mb-4 text-center">Geographie et climat</h2>
+                    <h1 class="mb-4 text-center">{{$apropo->Titre}}</h1>
                 </div>
                 <div class="pb-md-5">
                     <P style="text-align:justify;">Hotel Teranga est une chaine d'hotel 5 étoiles présent au Sénégal: Dakar, Thies, Saint-louis et Cap skiring.</P>
@@ -323,6 +323,7 @@
                     <p style="text-align:justify;">Les températures sont chaudes toute l'année, avec un temps caniculaire, venteux et humide pendant la saison des pluies (juin-oct).</p>
                 </div>
             </div>
+              @endforeach
         </div>
     </div>
 </section>

@@ -89,6 +89,7 @@ class ReservationEventController extends Controller
         $reseve-> Civilite = $request->input('Civilite');
         $reseve-> Prenom = $request->input('Prenom');
         $reseve-> Nom = $request->input('Nom');
+        $reseve-> Identifiant = $request->input('Identifiant');
         $reseve-> Societe = $request->input('Societe');
         $reseve-> Secteur_activite = $request->input('Secteur_activite');
         $reseve-> Email = $request->input('Email');
@@ -168,6 +169,7 @@ class ReservationEventController extends Controller
         $reservationevents-> Civilite = $request->input('Civilite');
         $reservationevents-> Prenom = $request->input('Prenom');
         $reservationevents-> Nom = $request->input('Nom');
+        $reservationevents-> Identifiant = $request->input('Identifiant');
         $reservationevents-> Societe = $request->input('Societe');
         $reservationevents-> Secteur_activite = $request->input('Secteur_activite');
         $reservationevents-> Email = $request->input('Email');
@@ -234,6 +236,7 @@ class ReservationEventController extends Controller
         $reseve-> Civilite = $request->input('Civilite');
         $reseve-> Prenom = $request->input('Prenom');
         $reseve-> Nom = $request->input('Nom');
+        $reseve-> Identifiant = $request->input('Identifiant');
         $reseve-> Societe = $request->input('Societe');
         $reseve-> Secteur_activite = $request->input('Secteur_activite');
         $reseve-> Email = $request->input('Email');

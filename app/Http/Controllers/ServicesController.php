@@ -126,11 +126,10 @@ class ServicesController extends Controller
      */
     public function destroy($id)
     {
-  
       $service = Services::find($id);
       if($service)
           $service->delete();
-      return redirect('/hotelservices')->with(['success' => "Chambre Supprimée"]);
+      return redirect('/hotelservices')->with(['success' => "Service Supprimée"]);
     }
     public function uploadImage(UploadedFile $uploadedFile, $folder = null, $disk = 'public', $filename = null){
         $name = !is_null($filename) ? $filename : str_random('25');

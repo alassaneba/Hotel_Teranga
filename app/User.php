@@ -55,6 +55,9 @@ class User extends Authenticatable
     public function Services () {
         return $this->hasMany('App\Services');
     }
+    public function Apropos () {
+        return $this->hasMany('App\Apropos');
+    }
     public function isSuperadmin(){
         return strtolower(@$this->role) === 'Superadmin'? true : false;
     }

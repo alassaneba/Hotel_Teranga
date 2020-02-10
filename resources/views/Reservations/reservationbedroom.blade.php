@@ -53,6 +53,7 @@
                       <th>Prenom</th>
                       <th>Nom </th>
                       <th>Nationalite</th>
+                      <th>Identifiant</th>
                       <th>Email</th>
                       <th>Telephone</th>
                       <th>Montant a payer</th>
@@ -77,6 +78,7 @@
                       <td>{{$reservations->Prenom}}</td>
                       <td>{{$reservations->Nom}} </td>
                       <td>{{$reservations->Nationalite}} </td>
+                      <td>{{$reservations->Identifiant}} </td>
                       <td>{{$reservations->Email}}</td>
                       <td>{{$reservations->Telephone}}</td>
                       <td>{{$reservations->Montant_payer}}</td>

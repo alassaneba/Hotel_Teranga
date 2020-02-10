@@ -83,6 +83,7 @@ class ReservationBedroomController extends Controller
         $resbed-> Prenom = $request->input('Prenom');
         $resbed-> Nom = $request->input('Nom');
         $resbed-> Nationalite = $request->input('Nationalite');
+        $resbed-> Identifiant = $request->input('Identifiant');
         $resbed-> Email = $request->input('Email');
         $resbed-> Telephone= $request->input('Telephone');
         $resbed-> Montant_payer= $request->input('Montant_payer');
@@ -152,6 +153,7 @@ class ReservationBedroomController extends Controller
                 $reservationbedroom->Prenom = $request->input('Prenom');
                 $reservationbedroom->Nom = $request->input('Nom');
                 $reservationbedroom->Nationalite = $request->input('Nationalite');
+                $reservationbedroom->Identifiant = $request->input('Identifiant');
                 $reservationbedroom->Email = $request->input('Email');
                 $reservationbedroom->Telephone = $request->input('Telephone');
                 $reservationbedroom->Montant_payer = $request->input('Montant_payer');
@@ -214,6 +216,7 @@ class ReservationBedroomController extends Controller
             $resbed-> Prenom = $request->input('Prenom');
             $resbed-> Nom = $request->input('Nom');
             $resbed-> Nationalite = $request->input('Nationalite');
+            $resbed-> Identifiant = $request->input('Identifiant');
             $resbed-> Email = $request->input('Email');
             $resbed-> Telephone= $request->input('Telephone');
             $resbed-> Montant_payer= $request->input('Montant_payer');

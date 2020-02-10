@@ -29,6 +29,7 @@ class CreateReservationEventsTable extends Migration
             $table->string('Civilite');
             $table->string('Prenom');
             $table->string('Nom');
+            $table->string('Identifiant')->nullable('true');
             $table->string('Societe')->nullable('true');
             $table->string('Secteur_activite')->nullable('true');
             $table->string('Email');
@@ -37,7 +38,6 @@ class CreateReservationEventsTable extends Migration
             $table->string('Statut')->nullable('true');
             $table->unsignedBigInteger('User_id')->nullable('true');
             $table->timestamps();
-
 
         });
     }

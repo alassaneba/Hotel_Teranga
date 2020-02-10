@@ -25,7 +25,7 @@
     @yield('css')
 </head>
 <body>
-    
+
 <div style="min-height:70vh;">
 
 @yield('content')

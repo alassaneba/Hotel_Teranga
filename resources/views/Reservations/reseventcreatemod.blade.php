@@ -106,6 +106,9 @@
         <div><label>Nom</label>
             <input type="text" name="Nom" class="form-control" placeholder="Nom">
         </div>
+        <div><label>Identifiant</label>
+            <input type="text" name="Identifiant" class="form-control" placeholder="Numero Passeport ou Cni">
+        </div>
         <div><label>Societe</label>
             <input type="text" name="Societe" class="form-control" placeholder="Societe">
         </div>

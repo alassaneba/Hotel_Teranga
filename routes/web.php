@@ -43,6 +43,15 @@ Route::get('servicesedit/{id}','ServicesController@edit')->middleware('auth');
 Route::patch('/hotelservicesupdate/{id}','ServicesController@update')->middleware('auth');
 Route::delete('servicesedit/{id}','ServicesController@destroy')->middleware('auth');
 
+Route::get('hotelapropos','AproposController@Hotelapropos')->name('hotel/apropos')->middleware('auth');
+
+Route::post('aproposcreate','AproposController@create')->middleware('auth');
+Route::get('aproposcreate','AproposController@create')->name('creation/hotel/apropos')->middleware('auth');
+Route::post('aproposcreate','AproposController@store')->middleware('auth');
+Route::get('aproposedit/{id}','AproposController@edit')->middleware('auth');
+Route::patch('/hotelaproposupdate/{id}','AproposController@update')->middleware('auth');
+Route::delete('aproposedit/{id}','AproposController@destroy')->middleware('auth');
+
 Route::get('temoignage','TemoignageController@index')->name('temoignage')->middleware('auth');
 
 Route::get('temoignagecreate','TemoignageController@create')->name('creation/temoignage');

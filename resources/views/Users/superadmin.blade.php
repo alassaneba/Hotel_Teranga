@@ -90,21 +90,7 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-sm-4 mb-3">
-                    <div class="card text-white bg-pink o-hidden h-100">
-                        <div class="card-body">
-                            <div class="card-body-icon">
-                                <i class="nav-icon fas fa-th"></i>
-                            </div>
-                            <div class="mr-5">{{$disposal_count}} Disposition Salles</div>
-                        </div>
-                        <a class="card-footer text-white clearfix small z-1" href="/disposal">
-                            <span class="float-left">Liste disposition salles</span>
-                            <span class="float-right"><i class="fas fa-angle-right"></i></span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-sm-4 mb-3">
-                    <div class="card text-white bg-olive o-hidden h-100">
+                    <div class="card text-white bg-primary o-hidden h-100">
                         <div class="card-body">
                             <div class="card-body-icon">
                                 <i class="fas fa-fw fa-list"></i>
@@ -118,7 +104,21 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-sm-4 mb-3">
-                    <div class="card text-white bg-navy o-hidden h-100">
+                    <div class="card text-white bg-primary o-hidden h-100">
+                        <div class="card-body">
+                            <div class="card-body-icon">
+                                <i class="nav-icon fas fa-fw fa-list"></i>
+                            </div>
+                            <div class="mr-5">{{$disposal_count}} Disposition Salles</div>
+                        </div>
+                        <a class="card-footer text-white clearfix small z-1" href="/disposal">
+                            <span class="float-left">Liste disposition salles</span>
+                            <span class="float-right"><i class="fas fa-angle-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-4 mb-3">
+                    <div class="card text-white bg-primary o-hidden h-100">
                         <div class="card-body">
                             <div class="card-body-icon">
                                 <i class="fas fa-fw fa-list"></i>
@@ -135,12 +135,26 @@
                     <div class="card text-white bg-navy o-hidden h-100">
                         <div class="card-body">
                             <div class="card-body-icon">
-                                <i class="fas fa-fw fa-list"></i>
+                                <i class="fas fa-th"></i>
                             </div>
                             <div class="mr-5">{{$service_count}} Services hotel</div>
                         </div>
                         <a class="card-footer text-white clearfix small z-1" href="{{route('hotel/services')}}">
                             <span class="float-left">Liste des services hotel</span>
+                            <span class="float-right"><i class="fas fa-angle-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-4 mb-3">
+                    <div class="card text-white bg-navy o-hidden h-100">
+                        <div class="card-body">
+                            <div class="card-body-icon">
+                                <i class="fas fa-th"></i>
+                            </div>
+                            <div class="mr-5">{{$apropo_count}} A-propos hotel</div>
+                        </div>
+                        <a class="card-footer text-white clearfix small z-1" href="{{route('hotel/services')}}">
+                            <span class="float-left">Liste des a-propos hotel</span>
                             <span class="float-right"><i class="fas fa-angle-right"></i></span>
                         </a>
                     </div>

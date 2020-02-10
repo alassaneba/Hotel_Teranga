@@ -226,7 +226,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link bg-blue">
+            <a href="#" class="nav-link bg-primary">
               <i class="fas fa-fw fa-list"></i>
               <p>
                 Type de Chambre
@@ -253,8 +253,35 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- Add icons to the links using the .nav-icon class
                    with font-awesome or any other icon font library -->
               <li class="nav-item has-treeview">
-                <a href="#" class="nav-link bg-pink">
-                  <i class="nav-icon fas fa-th"></i>
+                <a href="#" class="nav-link bg-primary">
+                  <i class="fas fa-fw fa-list"></i>
+                  <p>
+                    Espaces et Salles
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{route('salle')}}" class="nav-link">
+                      <i class="fas fa-fw fa-list"></i>
+                      <p>Liste Espace et Salle</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{route('creation/salle')}}" class="nav-link">
+                      <i class="far fa-calendar-alt"></i>
+                      <p>Creation Espace et Salle</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+          <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <!-- Add icons to the links using the .nav-icon class
+                   with font-awesome or any other icon font library -->
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link bg-primary">
+                  <i class="fas fa-fw fa-list"></i>
                   <p>
                     Disposition Salles
                     <i class="right fas fa-angle-left"></i>
@@ -275,39 +302,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </li>
                 </ul>
               </li>
-              <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                  <!-- Add icons to the links using the .nav-icon class
-                       with font-awesome or any other icon font library -->
-                  <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link bg-olive">
-                      <i class="fas fa-fw fa-list"></i>
-                      <p>
-                        Espaces et Salles
-                        <i class="right fas fa-angle-left"></i>
-                      </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                      <li class="nav-item">
-                        <a href="{{route('salle')}}" class="nav-link">
-                          <i class="fas fa-fw fa-list"></i>
-                          <p>Liste Espace et Salle</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="{{route('creation/salle')}}" class="nav-link">
-                          <i class="far fa-calendar-alt"></i>
-                          <p>Creation Espace et Salle</p>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
                   <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                       <!-- Add icons to the links using the .nav-icon class
                            with font-awesome or any other icon font library -->
                       <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link bg-navy">
+                        <a href="#" class="nav-link bg-primary">
                           <i class="fas fa-fw fa-list"></i>
                           <p>
                             Type Evenement
@@ -337,7 +337,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview">
             <a class="nav-link bg-navy">
-              <i class="fas fa-fw fa-list"></i>
+              <i class="fas fa-th"></i>
               <p>
                 Services hotel
                 <i class="right fas fa-angle-left"></i>
@@ -358,6 +358,35 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
             </ul>
           </li>
+</ul>
+</nav>
+<nav class="mt-2">
+  <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+    <!-- Add icons to the links using the .nav-icon class
+         with font-awesome or any other icon font library -->
+    <li class="nav-item has-treeview">
+      <a class="nav-link bg-navy">
+        <i class="fas fa-th"></i>
+        <p>
+          A-propos hotel
+          <i class="right fas fa-angle-left"></i>
+        </p>
+      </a>
+      <ul class="nav nav-treeview">
+        <li class="nav-item">
+          <a href="{{route('hotel/apropos')}}" class="nav-link">
+            <i class="fas fa-fw fa-list"></i>
+            <p>Liste Apropos hotel</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{route('creation/hotel/apropos')}}" class="nav-link">
+            <i class="far fa-calendar-alt"></i>
+            <p>Creation Apropos hotel</p>
+          </a>
+        </li>
+      </ul>
+    </li>
 </ul>
 </nav>
       <!-- /.sidebar-menu -->

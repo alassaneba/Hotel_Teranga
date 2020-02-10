@@ -57,6 +57,7 @@
                    <th>Civilite</th>
                    <th>Prenom</th>
                    <th>Nom </th>
+                   <th>Identifiant</th>
                    <th>Societe</th>
                    <th>Secteur activite</th>
                    <th>Email</th>
@@ -83,6 +84,7 @@
             <td>{{$reservationevent->Civilite}}</td>
             <td>{{$reservationevent->Prenom}}</td>
             <td>{{$reservationevent->Nom}} </td>
+            <td>{{$reservationevent->Identifiant}} </td>
             <td>{{$reservationevent->Societe}}</td>
             <td>{{$reservationevent->Secteur_activite}}</td>
             <td>{{$reservationevent->Email}}</td>
