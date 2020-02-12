@@ -94,8 +94,6 @@ class BedroomController extends Controller
      */
     public function edit($id)
     {
-        $this->authorize('Superadmin');
-        $this->authorize('Admin');
         $bedroomedit= \App\Bedroom::find($id);
         $Type_chambre = \App\Bedroom::pluck('Type_chambre','id');
         $user = Auth::User()->role;

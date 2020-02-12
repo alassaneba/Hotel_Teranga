@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use \App\Servicesupp;
 use \Auth;
 
 class ServicesController extends Controller
@@ -18,7 +19,8 @@ class ServicesController extends Controller
      */
     public function index()
     {    $services = \App\Services::all();
-        return view('services',compact('services'));
+         $servicesupps = \App\Servicesupp::all();
+        return view('services',compact('services','servicesupps'));
     }
 
     /**
@@ -135,8 +137,7 @@ class ServicesController extends Controller
         $name = !is_null($filename) ? $filename : str_random('25');
         $file = $uploadedFile->storeAs($folder, $name.'.'.$uploadedFile->getClientOriginalExtension(), $disk);
 
-        return $file;
-}
+        return $file; }
 public function Hotelservices (){
 
     $service = \App\Services::orderBy('created_at','DESC')->get();

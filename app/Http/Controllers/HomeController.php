@@ -14,6 +14,8 @@ use App\BesoinClient;
 use App\DisposalRoom;
 use App\TypeEvent;
 use App\Apropos;
+use \App\Servicesupp;
+use \App\User;
 use \Auth;
 class HomeController extends Controller
 {
@@ -42,11 +44,13 @@ class HomeController extends Controller
       $disposal_count = DisposalRoom::all()->count();
       $room_count = Room::all()->count();
       $typeevent_count = TypeEvent::all()->count();
+      $user_count = User::all()->count();
       $service_count = Services::all()->count();
       $apropo_count = Apropos::all()->count();
+      $servicesupp_count = Servicesupp::all()->count();
       $user = Auth::User()->role;
       if($user=='Superadmin')
-       return view('Users/superadmin',compact('bedroom_count', 'resbedroom_count', 'resevent_count', 'contact_count', 'besoinclient_count','disposal_count','room_count','typeevent_count','service_count','apropo_count'));
+       return view('Users/superadmin',compact('bedroom_count', 'resbedroom_count', 'resevent_count', 'contact_count', 'besoinclient_count','disposal_count','room_count','typeevent_count','user_count','service_count','apropo_count','servicesupp_count'));
       if($user=='Admin')
        return view('Users/admin',compact('bedroom_count', 'resbedroom_count', 'resevent_count', 'contact_count', 'besoinclient_count','disposal_count','room_count','typeevent_count'));
       if($user=='Moderator')
@@ -54,11 +58,13 @@ class HomeController extends Controller
 
     }
 public function accueil(){
+  $chambres = \App\Bedroom::all();
   $bedrooms = \App\Bedroom::all();
   $rooms = \App\Room::all();
   $temoignages = \App\Temoignage::all();
   $services = \App\Services::all();
   $apropos = \App\Apropos::all();
-    return view('home',compact('bedrooms','rooms','temoignages','services','apropos'));
+  $servicesupps = \App\Servicesupp::all();
+    return view('home',compact('chambres','bedrooms','rooms','temoignages','services','apropos','servicesupps'));
 }
 }

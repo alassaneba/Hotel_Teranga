@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Promotion;
 use Illuminate\Http\Request;
-use App\Temoignage;
-use App\Apropos;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use \Auth;
 
-class AproposController extends Controller
+class PromotionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,11 +18,14 @@ class AproposController extends Controller
      */
     public function index()
     {
-      $temoignages = \App\Temoignage::all();
-      $services = \App\Services::all();
-      $apropos = \App\Apropos::all();
-      return view('a-propos',compact('temoignages','services','apropos'));
-
+      $promotion = \App\Promotion::orderBy('created_at','DESC')->get();
+      $user = Auth::User()->role;
+      if($user=='Superadmin')
+       return view('Promotions/promotion', compact('promotion'));
+      if($user=='Admin')
+       return view('Promotions/promotionadm', compact('promotion'));
+      if($user=='Moderator')
+       return view('Promotions/promotionmod', compact('promotion'));
     }
 
     /**
@@ -35,7 +37,9 @@ class AproposController extends Controller
     {
       $user = Auth::User()->role;
       if($user=='Superadmin')
-       return view('Apropos/aproposcreate');
+       return view('Promotions/promotioncreate');
+      if($user=='Admin')
+       return view('Promotions/promotioncreateadm');
     }
 
     /**
@@ -50,29 +54,28 @@ class AproposController extends Controller
           'Titre' => 'required',
           'Description' => 'required',
           'Image' => 'required| image | mimes:jpeg,png,jpg,gif | max: 2048',
-          'Lien_video' => 'required',
+          'Valeur' => 'required',
           'User_id' => 'required | min:1 ',
       ]);
-      $apropo = new Apropos();
-      $apropo->Titre = $request->input('Titre');
-      $apropo->Description = $request->input('Description');
+      $promotion = new Promotion();
+      $promotion->Titre = $request->input('Titre');
+      $promotion->Description = $request->input('Description');
       if ($request->has('Image')) {
       $image = $request->file('Image');
       $image_name = Str::slug($request->input('Titre')) . '_' . time();
       $folder = '/uploads/images/';
-      $apropo-> Image = $folder . $image_name . '.' . $image->getClientOriginalExtension();
+      $promotion-> Image = $folder . $image_name . '.' . $image->getClientOriginalExtension();
       $this->uploadImage($image, $folder, 'public', $image_name);}
-      $apropo->Lien_video = $request->input('Lien_video');
-      $apropo->User_id = $request->input('User_id');
-      $apropo->save();
-          return redirect('/hotelapropos')->with(['success' => "Apropos enregistrée"]);
+      $promotion->Valeur = $request->input('Valeur');
+      $promotion->User_id = $request->input('User_id');
+      $promotion->save();
+          return redirect('/promotion')->with(['success' => "Promotion enregistrée"]);
     }
-
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Promotion  $promotion
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -83,69 +86,64 @@ class AproposController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Promotion  $promotion
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-      $aproposedit= \App\Apropos::find($id);
+      $promotionedit= \App\Promotion::find($id);
       $user = Auth::User()->role;
       if($user=='Superadmin')
-       return view('Apropos/aproposedit', compact('aproposedit'));
+       return view('Promotions/promotionedit', compact('promotionedit'));
+      if($user=='Admin')
+       return view('Promotions/promotioneditadm', compact('promotionedit'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Promotion  $promotion
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-      $apropo= \App\Apropos::find($id);
-      if($apropo){
-          $apropo->Titre = $request->input('Titre');
-          $apropo->Description = $request->input('Description');
+      $promotion= \App\Promotion::find($id);
+      if($promotion){
+          $promotion->Titre = $request->input('Titre');
+          $promotion->Description = $request->input('Description');
               if($request->has('Image')){
                   //On enregistre l'image dans une variable
                   $image = $request->file('Image');
-                  if(file_exists(public_path().$apropo->images))//On verifie si le fichier existe
-                      Storage::delete(asset($apropo->images));//On le supprime alors
+                  if(file_exists(public_path().$promotion->images))//On verifie si le fichier existe
+                      Storage::delete(asset($promotion->images));//On le supprime alors
                   //Nous enregistrerons nos fichiers dans /uploads/images dans public
                   $folder = '/uploads/images/';
                   $image_name = Str::slug($request->input('name')).'_'.time();
-                  $apropo->Image = $folder.$image_name.'.'.$image->getClientOriginalExtension();
+                  $promotion->Image = $folder.$image_name.'.'.$image->getClientOriginalExtension();
                   //Maintenant nous pouvons enregistrer l'image dans le dossier en utilisant la méthode uploadImage();
                   $this->uploadImage($image, $folder, 'public', $image_name); }
-          $apropo->Lien_video = $request->input('Lien_video');
-          $apropo->User_id = $request->input('User_id');
-          $apropo-> save(); }
-      return redirect('/hotelapropos')->with(['success' => "Apropos modifié"]);
+          $promotion->Valeur = $request->input('Valeur');
+          $promotion->User_id = $request->input('User_id');
+          $promotion-> save(); }
+      return redirect('/promotion')->with(['success' => "Promotion modifié"]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Promotion  $promotion
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-      $propo = Apropos::find($id);
-      if($propo)
-          $propo->delete();
-      return redirect('/hotelapropos')->with(['success' => "Apropos Supprimée"]);
+      $promotion = Promotion::find($id);
+      if($promotion)
+          $promotion->delete();
+      return redirect('/promotion')->with(['success' => "Promotion Supprimée"]);
     }
     public function uploadImage(UploadedFile $uploadedFile, $folder = null, $disk = 'public', $filename = null){
         $name = !is_null($filename) ? $filename : str_random('25');
         $file = $uploadedFile->storeAs($folder, $name.'.'.$uploadedFile->getClientOriginalExtension(), $disk);
         return $file;}
-    public function Hotelapropos (){
-
-    $apropo = \App\Apropos::orderBy('created_at','DESC')->get();
-    $user = Auth::User()->role;
-    if($user=='Superadmin')
-     return view('Apropos/hotelapropos', compact('apropo'));
-}
 }

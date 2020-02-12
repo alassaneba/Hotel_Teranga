@@ -43,6 +43,15 @@ Route::get('servicesedit/{id}','ServicesController@edit')->middleware('auth');
 Route::patch('/hotelservicesupdate/{id}','ServicesController@update')->middleware('auth');
 Route::delete('servicesedit/{id}','ServicesController@destroy')->middleware('auth');
 
+Route::get('hotelservicesupp','ServicesuppController@index')->name('hotel/servicesupp')->middleware('auth');
+
+Route::post('servicesuppcreate','ServicesuppController@create')->middleware('auth');
+Route::get('servicesuppcreate','ServicesuppController@create')->name('creation/hotel/servicesupp')->middleware('auth');
+Route::post('servicesuppcreate','ServicesuppController@store')->middleware('auth');
+Route::get('servicesuppedit/{id}','ServicesuppController@edit')->middleware('auth');
+Route::patch('/hotelservicesuppupdate/{id}','ServicesuppController@update')->middleware('auth');
+Route::delete('servicesuppedit/{id}','ServicesuppController@destroy')->middleware('auth');
+
 Route::get('hotelapropos','AproposController@Hotelapropos')->name('hotel/apropos')->middleware('auth');
 
 Route::post('aproposcreate','AproposController@create')->middleware('auth');
@@ -51,6 +60,15 @@ Route::post('aproposcreate','AproposController@store')->middleware('auth');
 Route::get('aproposedit/{id}','AproposController@edit')->middleware('auth');
 Route::patch('/hotelaproposupdate/{id}','AproposController@update')->middleware('auth');
 Route::delete('aproposedit/{id}','AproposController@destroy')->middleware('auth');
+
+Route::get('promotion','PromotionController@index')->name('hotel/promotion')->middleware('auth');
+
+Route::post('promotioncreate','PromotionController@create')->middleware('auth');
+Route::get('promotioncreate','PromotionController@create')->name('creation/hotel/promotion')->middleware('auth');
+Route::post('promotioncreate','PromotionController@store')->middleware('auth');
+Route::get('promotionedit/{id}','PromotionController@edit')->middleware('auth');
+Route::patch('/promotionupdate/{id}','PromotionController@update')->middleware('auth');
+Route::delete('promotionedit/{id}','PromotionController@destroy')->middleware('auth');
 
 Route::get('temoignage','TemoignageController@index')->name('temoignage')->middleware('auth');
 

@@ -1,7 +1,7 @@
 @extends('layout')
 @section('title', "Resultat Recherche")
 @section('css')
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 @endsection
 @section('content')
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -124,7 +124,7 @@
                              <h3 class="heading"><a>Description:<br>Une connecxion internet haut debit, une piscine un bard lunch et un restaurant a votre disposition.</a></h3>
                          </div>
                          <div class="text-center">
-                             <a href="{{route('home')}}"><span class="btn btn-primary py-2 px-5">Retourner au page d'acceuil</span></a>
+                             <a href="{{route('accueil')}}"><span class="btn btn-primary py-2 px-5">Retourner au page d'acceuil</span></a>
                          </div>
             </div>
         @endforeach

@@ -58,6 +58,12 @@ class User extends Authenticatable
     public function Apropos () {
         return $this->hasMany('App\Apropos');
     }
+    public function Servicesupp () {
+        return $this->hasMany('App\Servicesupp');
+    }
+    public function Promotion () {
+        return $this->hasMany('App\Promotion');
+    }
     public function isSuperadmin(){
         return strtolower(@$this->role) === 'Superadmin'? true : false;
     }

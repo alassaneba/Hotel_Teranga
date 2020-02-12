@@ -331,6 +331,35 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       </li>
         </ul>
       </nav>
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item has-treeview">
+            <a class="nav-link bg-navy">
+              <i class="fas fa-th"></i>
+              <p>
+                Promotion hotel
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('hotel/promotion')}}" class="nav-link">
+                  <i class="fas fa-fw fa-list"></i>
+                  <p>Liste promotion hotel</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('creation/hotel/promotion')}}" class="nav-link">
+                  <i class="far fa-calendar-alt"></i>
+                  <p>Creation promotion hotel</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+      </ul>
+      </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->

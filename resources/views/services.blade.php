@@ -62,7 +62,7 @@
     </div>
 </section>
 
-<section class="ftco-section ftco-services">
+<section class="ftco-section ftco-services" >
     <div class="container">
         <div class="row">
           @foreach($services as $service)
@@ -83,7 +83,7 @@
 </section>
 
 <section>
-<div class="container">
+<div class="container"  style="margin: 4%;">
     <div class="row justify-content-center mb-5">
         <div class="col-md-7 heading-section ftco-animate text-center">
             <h1 class="mb-4">HEBERGEMENT</h1>
@@ -111,15 +111,15 @@
 </div>
 </section>
 
-<section class="ftco-section testimony-section">
-    <div class="container">
+<section >
+    <div class="container"  style="margin: 4%;">
         <div class="row justify-content-center mb-5">
             <div class="col-md-7 heading-section ftco-animate text-center">
                 <h2 class="mb-4">EVENEMENTIEL</h2>
                 <p>Nous disposons des salles modernes et des espaces adaptes a vos besoins.</p>
             </div>
         </div>
-        <div class="ftco-section ftco-no-pb ftco-no-pt bg-light">
+        <div class="ftco-section ftco-no-pb ftco-no-pt bg-light" style="margin-bottom: 0;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url({{asset('app-assets/images/Terasse.jpg')}});"></div>
@@ -140,61 +140,29 @@
     </div>
 </section>
 
-<section>
-<div class="container">
-    <div class="row justify-content-center mb-5">
-        <div class="col-md-7 heading-section ftco-animate text-center">
-            <h1 class="mb-4">RESTAURATION</h1>
-            <p>Un menu avec une alimentation saine et varies pour vous donner le gout de nos plats appetissants.</p>
-        </div>
-    </div>
-</div>
-<div class="ftco-section ftco-no-pb ftco-no-pt bg-light">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url({{asset('app-assets/images/resto1.jpg')}});"></div>
-            <div class="col-md-6 py-5 wrap-about pb-md-5 ftco-animate">
-                <div class="heading-section pt-md-5">
-                    <span class="subheading text-center">RESTAURATION</span>
-                    <h1 class="mb-4 text-center">Geographie et climat</h1>
-                </div>
-                <div class="pb-md-5" style="text-align:justify;">
-                    <P>Hotel Teranga est une chaine d'hotel 5 étoiles présent au Sénégal: Dakar, Thies, Saint-louis et Cap skiring.</P>
-                    <p>Le Sénégal est un pays situé sur la côte ouest de l'Afrique et doté d'un héritage colonial français et de nombreuses attractions naturelles.<br></P>
-                    <p>Dakar, la capitale, comprend le quartier historique de la Médina et le célèbre musée Théodore Monod, exposant des œuvres d'art africain. Elle est également réputée pour sa vie nocturne, centrée sur la musique mbalax, originaire du Sénégal.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</section>
-
-<section class="ftco-section testimony-section">
-    <div class="container">
-        <div class="row justify-content-center mb-5">
+<section >
+    <div class="container" style="margin: 4%;">
+        @foreach($servicesupps as $servicesupp)
+        <div class="row justify-content-center mb-5" style="margin: 4%;">
             <div class="col-md-7 heading-section ftco-animate text-center">
-                <h2 class="mb-4">PRESSING</h2>
-                <p>Un service de lavage rapide, professionnelle, equiper de machine ultra moderne pour vous satisfaire.</p>
+                <h1 class="mb-4">{{$servicesupp->Servicesupp}}</h1>
+                <p>{{$servicesupp->Slogan}}</p>
             </div>
         </div>
         <div class="ftco-section ftco-no-pb ftco-no-pt bg-light">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url({{asset('app-assets/images/pressing.jpg')}});"></div>
+                    <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url({{$servicesupp->Image}});"></div>
                     <div class="col-md-6 py-5 wrap-about pb-md-5 ftco-animate">
                         <div class="heading-section pt-md-5">
-                            <span class="subheading text-center">PRESSING</span>
-                            <h1 class="mb-4 text-center">Geographie et climat</h1>
+                            <h2 class="mb-4 text-center">{{$servicesupp->Servicesupp}}</h2>
                         </div>
-                        <div class="pb-md-5" style="text-align:justify;">
-                            <P>Hotel Teranga est une chaine d'hotel 5 étoiles présent au Sénégal: Dakar, Thies, Saint-louis et Cap skiring.</P>
-                            <p>Le Sénégal est un pays situé sur la côte ouest de l'Afrique et doté d'un héritage colonial français et de nombreuses attractions naturelles.<br></P>
-                            <p>Dakar, la capitale, comprend le quartier historique de la Médina et le célèbre musée Théodore Monod, exposant des œuvres d'art africain. Elle est également réputée pour sa vie nocturne, centrée sur la musique mbalax, originaire du Sénégal.</p>
-                        </div>
+                        <div class="pb-md-5" style="text-align:justify;">{{$servicesupp->Description}}</div>
                     </div>
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
 </section>
 

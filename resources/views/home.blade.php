@@ -155,7 +155,7 @@
     <div class="container">
         <div class="row justify-content-center mb-5">
             <div class="col-md-7 heading-section ftco-animate text-center">
-                <span class="subheading">Catégories recommandées</span>
+                <span class="subheading">HEBERGEMENT</span>
                 <h2 class="mb-4">Chambres</h2>
                 <p>Voici une liste des meilleurs chambres disponible de notre catalogue.</p>
             </div>
@@ -188,7 +188,7 @@
     <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
             <div class="col-md-7 heading-section ftco-animate text-center">
-                <span class="subheading">Evenementiel</span>
+                <span class="subheading">EVENEMENTIEL</span>
                 <h2 class="mb-4">Salles et Espaces</h2>
                 <p>Nous disposons des salles modernes et des espaces adaptes a vos besoins.</p>
             </div>
@@ -224,17 +224,17 @@
             </div>
         </div>
         <div class="row">
-            @foreach($rooms as $room)
+            @foreach($servicesupps as $servicesupp)
             <div class="col-md-4 ftco-animate">
                 <div class="blog-entry">
-                    <a href="{{route('reservation/evenement')}}" class="block-20" style="background-image: url('{{$room->Image}}');"></a>
+                    <a href="{{route('reservation/evenement')}}" class="block-20" style="background-image: url('{{$servicesupp->Image}}');"></a>
                     <div class="text py-4">
                         <div class="meta mb-3">
-                            <div><a>{{$room->Salles}}</a></div>
-                            <div><a>Etat: {{$room->Statut}}</a></div>
+                            <div><a>{{$servicesupp->Servicesupp}}</a></div>
+                            <div><a>Etat: Disponible</a></div>
                         </div>
                         <div class="desc">
-                            <h3 style="text-align:justify;" class="heading"><a>{{$room->Description}}</a></h3>
+                            <h3 style="text-align:justify;" class="heading"><a>{{$servicesupp->Description}}</a></h3>
                         </div>
                     </div>
                 </div>
