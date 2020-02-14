@@ -345,13 +345,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('hotel/servicesupp')}}" class="nav-link">
+                <a href="{{route('utilisateur.index')}}" class="nav-link">
                   <i class="fas fa-fw fa-list"></i>
                   <p>Liste des utilisateurs hotel</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('creation/hotel/servicesupp')}}" class="nav-link">
+                <a href="{{route('utilisateur.create')}}" class="nav-link">
                   <i class="far fa-calendar-alt"></i>
                   <p>Creation utilisateur hotel</p>
                 </a>

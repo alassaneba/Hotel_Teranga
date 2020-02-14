@@ -141,4 +141,9 @@ Route::delete('typeeventedit/{id}', 'TypeEventController@destroy')->middleware('
 
 Auth::routes();
 
-Route::resource('/admin/users', 'Admin\UsersController');
+//Route::resource('/users', 'Admin/UsersController');
+//Route::get('/users', 'Admin/UsersController');
+
+Route::resource('/utilisateur','Admin\UsersController');
+Route::get("/utilisateur/edit/{id}","Admin\UsersController@edit")->name('utilisateur.edit');
+Route::patch("/utilisateur/edit/{id}","Admin\UsersController@update")->name('utilisateur.update');

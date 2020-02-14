@@ -90,10 +90,8 @@
                 </div>
             </div>
         @endforeach
-        @foreach($chambres as $chambre)
             <div class="col-md-6 ftco-animate">
-
-<div class="text-center"><h2>Les differents type de chambre</h2></div>
+               <div class="text-center"><h2>Les differents type de chambre</h2></div>
                          <div id="" class="carousel slide" data-ride="carousel">
                              <ol class="carousel-indicators">
                                    @foreach($bedrooms as $bedroom)
@@ -106,7 +104,7 @@
                                      <img src="{{$bedroom->Image}}" class="block-20">
                                      <div class="carousel-caption d-none d-md-block">
                                      <h5>Chambre {{$bedroom->Type_chambre}}</h5>
-                                     <p>Prix/nuite = {{$chambre->Prix_nuite}} Fr cfa</p>
+                                     <p>Prix/nuite = {{$bedroom->Prix_nuite}} Fr cfa</p>
                                      </div>
                                  </div>
                                  @endforeach
@@ -127,7 +125,6 @@
                              <a href="{{route('accueil')}}"><span class="btn btn-primary py-2 px-5">Retourner au page d'acceuil</span></a>
                          </div>
             </div>
-        @endforeach
         </div>
     </div>
 </section>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -15,7 +17,9 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+      $users=\App\User::all();
+
+     return view('Utilisateurs/utilisateur',compact('users'));
     }
 
     /**
@@ -25,7 +29,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        return view('Utilisateurs/utilisateurcreate');
     }
 
     /**
@@ -36,7 +40,15 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $Users = new User();
+      $Users->role=$request->input('role');
+      $Users->name =$request->input('name');
+      $Users->email =$request->input('email');
+      $Users->password = Hash::make($request->input('password'));
+
+      $Users->save();
+
+      return redirect('utilisateur.index');
     }
 
     /**
@@ -56,9 +68,10 @@ class UsersController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
-        //
+      $Users = \App\User::find($id);//on recupere le produit
+     return view('Utilisateurs/utilisateuredit', compact('Users'));
     }
 
     /**
@@ -68,9 +81,19 @@ class UsersController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
-        //
+      $Users = \App\User::find($id);
+        if($Users){
+         $Users->update([
+         'role'=> $request->input('role'),
+         'name' => $request->input('name'),
+         'email' => $request->input('email'),
+         'password'=> $request->input('password'),
+     ]);
+
+  }
+  return redirect()->route('utilisateur.index');
     }
 
     /**
@@ -79,8 +102,11 @@ class UsersController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        //
+      $Users= \App\User::find($id);
+     if($Users)
+     $Users->delete();
+     return redirect()->route('utilisateur.index');
     }
 }
