@@ -37,17 +37,17 @@
                 </div>
               </div>
               <!-- /.card-header -->
-              <div class="card-body table-responsive p-0" style="height: 375px;">
+              <div class="card-body table-responsive p-0" style="height: 100%;">
                 <table class="table table-head-fixed">
                   <thead>
                     <tr>
-                     <th>Nom_Complet</th>
-                     <th>N° Chambre</th>
+                     <th>Nom</th>
+                     <th>Chambre</th>
                      <th>Besoin</th>
                      <th>Prix</th>
-                     <th>Agent conserné</th>
+                     <th>Agent</th>
                      <th>Statut</th>
-                     <th>User</th>
+                     <th>User_id</th>
                      <th>Editer</th>
                     </tr>
                   </thead>

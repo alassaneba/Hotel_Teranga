@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
+
 class UsersController extends Controller
 {
     /**
@@ -18,7 +19,8 @@ class UsersController extends Controller
     public function index()
     {
       $users=\App\User::all();
-
+      $user = Auth::User()->role;
+      if($user=='Superadmin')
      return view('Utilisateurs/utilisateur',compact('users'));
     }
 
@@ -29,6 +31,8 @@ class UsersController extends Controller
      */
     public function create()
     {
+      $user = Auth::User()->role;
+      if($user=='Superadmin')
         return view('Utilisateurs/utilisateurcreate');
     }
 
@@ -48,7 +52,7 @@ class UsersController extends Controller
 
       $Users->save();
 
-      return redirect('utilisateur.index');
+      return redirect('/utilisateur');
     }
 
     /**
@@ -71,7 +75,9 @@ class UsersController extends Controller
     public function edit($id)
     {
       $Users = \App\User::find($id);//on recupere le produit
-     return view('Utilisateurs/utilisateuredit', compact('Users'));
+      $user = Auth::User()->role;
+      if($user=='Superadmin')
+       return view('Utilisateurs/utilisateuredit', compact('Users'));
     }
 
     /**

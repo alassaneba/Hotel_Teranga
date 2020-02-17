@@ -159,9 +159,11 @@
         <div><label>Telephone</label>
             <input type="text" name="Telephone" class="form-control" placeholder="Telephone">
         </div>
-        <div>
+        <br>
+        <div class="text-center">
             <button class="btn btn-primary">Reserver</button>
         </div>
+        <br>
     </form>
     </div>
 @endsection

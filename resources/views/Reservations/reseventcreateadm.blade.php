@@ -132,17 +132,16 @@
                 <option value="Indisponible"><span class="badge badge-danger">Annuler</span></option>
             </select>
         </div>
-        <div><label>Id User</label>
-            <select type="number" name="User_id" class="form-control">
-                <option></option>
-                <option value="1">Admin</option>
-                <option value="2">Moderator 1</option>
-                <option value="3">Moderator 2</option>
-            </select>
+        <div><label>Responsable</label>
+          <select type="text" name="User_id"  class="form-control" readonly>
+          <option value="{{ Auth::user()->id }}" >{{ Auth::user()->name }}</option>
+          </select>
         </div>
-        <div>
+          <br>
+        <div class="text-center">
             <button class="btn btn-primary">Reserver</button>
         </div>
+          <br>
     </form>
     </div>
 @endsection

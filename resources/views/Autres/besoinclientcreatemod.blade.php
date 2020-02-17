@@ -53,15 +53,15 @@
                 </select>
             </div>
             <div><label>Responsable</label>
-              <select type="text" name="User_id" class="form-control">
-                  <option value="1">Admin</option>
-                  <option value="2">Moderator 1</option>
-                  <option value="3">Moderator 2</option>
+              <select type="text" name="User_id"  class="form-control" readonly>
+              <option value="{{ Auth::user()->id }}" >{{ Auth::user()->name }}</option>
               </select>
             </div>
-            <div>
+              <br>
+            <div class="text-center">
                 <button class="btn btn-primary">Enregistrer</button>
             </div>
+              <br>
         </form>
     </div>
 @endsection

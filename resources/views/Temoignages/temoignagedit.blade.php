@@ -43,15 +43,15 @@
                 <textarea name="Message" cols="30" rows="7" class="form-control" value="{{$temoignagedit->Message}}">{{$temoignagedit->Message}}</textarea>
             </div>
             <div><label>Responsable</label>
-              <select type="number" name="User_id" class="form-control" value="{{$temoignagedit->User_id}}">
-                  <option value="1" {{$temoignagedit->User_id==="1"?'selected="selected"':''}}>Admin</option>
-                  <option value="2" {{$temoignagedit->User_id==="2"?'selected="selected"':''}}>Moderator 1</option>
-                  <option value="3" {{$temoignagedit->User_id==="3"?'selected="selected"':''}}>Moderator 2</option>
+              <select type="text" name="User_id"  class="form-control" readonly>
+              <option value="{{ Auth::user()->id }}" >{{ Auth::user()->name }}</option>
               </select>
             </div>
-            <div>
+              <br>
+            <div class="text-center">
                 <button class="btn btn-primary">Modifier</button>
             </div>
+              <br>
         </form>
     </div>
 @endsection

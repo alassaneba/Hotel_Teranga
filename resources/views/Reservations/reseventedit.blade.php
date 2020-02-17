@@ -134,15 +134,15 @@
                 </select>
             </div>
             <div><label>Responsable</label>
-                <select type="number" name="User_id" class="form-control" placeholder="Id User" value="{{$reseventedit->User_id}}">
-                  <option value="1" {{$reseventedit->User_id==="Admin"?'selected="selected"':''}}>Admin</option>
-                  <option value="2" {{$reseventedit->User_id==="Moderator1"?'selected="selected"':''}}>Moderator1</option>
-                  <option value="3" {{$reseventedit->User_id==="Moderator2"?'selected="selected"':''}}>Moderator2</option>
-                </select>
+              <select type="text" name="User_id"  class="form-control" readonly>
+              <option value="{{ Auth::user()->id }}" >{{ Auth::user()->name }}</option>
+              </select>
             </div>
-            <div>
+              <br>
+            <div class="text-center">
                 <button class="btn btn-primary">Modifier</button>
             </div>
+              <br>
         </form>
     </div>
 @endsection

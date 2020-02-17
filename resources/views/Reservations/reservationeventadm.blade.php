@@ -39,31 +39,32 @@
               </div>
             </div>
             <!-- /.card-header -->
-            <div class="card-body table-responsive p-0" style="height: 375px;">
+            <div class="card-body table-responsive p-0" style="height: 100%;">
               <table class="table table-head-fixed">
                 <thead>
                  <tr>
-                   <th>Nom evenement</th>
-                   <th>Type evenement</th>
-                   <th>Date debut</th>
-                   <th>Date fin</th>
+                   <th>Nom</th>
+                   <th>Evenement</th>
+                   <th>Debut</th>
+                   <th>Fin</th>
                    <th>Duree</th>
                    <th>Salles</th>
                    <th>Disposition</th>
-                   <th>Nombre participant</th>
+                   <th>Participant</th>
                    <th>Restauration</th>
                    <th>Equipement</th>
-                   <th>Autres informations</th>
+                   <th>Informations</th>
                    <th>Civilite</th>
                    <th>Prenom</th>
                    <th>Nom </th>
                    <th>Identifiant</th>
                    <th>Societe</th>
-                   <th>Secteur activite</th>
+                   <th>Secteur</th>
                    <th>Email</th>
                    <th>Telephone</th>
-                   <th>Montant_payer</th>
+                   <th>Montant</th>
                    <th>Statut</th>
+                   <th>User_id</th>
                    <th>Editer</th>
                    <th>Supprimer</th>
                </tr>

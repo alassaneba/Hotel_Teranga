@@ -90,44 +90,47 @@
                 </div>
             </div>
         @endforeach
-            <div class="col-md-6 ftco-animate">
-               <div class="text-center"><h2>Les differents type de chambre</h2></div>
-                         <div id="" class="carousel slide" data-ride="carousel">
-                             <ol class="carousel-indicators">
-                                   @foreach($bedrooms as $bedroom)
-                                    <li data-target="#" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
-                                   @endforeach
-                             </ol>
-                             <div class="carousel-inner">
-                                   @foreach($bedrooms as $bedroom)
-                                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                     <img src="{{$bedroom->Image}}" class="block-20">
-                                     <div class="carousel-caption d-none d-md-block">
-                                     <h5>Chambre {{$bedroom->Type_chambre}}</h5>
-                                     <p>Prix/nuite = {{$bedroom->Prix_nuite}} Fr cfa</p>
-                                     </div>
+        <div class="col-md-6 ftco-animate">
+           <div class="text-center"><h2>Les differents type de chambre</h2></div>
+                     <div id="" class="carousel slide" data-ride="carousel">
+                         <ol class="carousel-indicators">
+                               @foreach($bedrooms as $bedroom)
+                                <li data-target="#" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
+                               @endforeach
+                         </ol>
+                         <div class="carousel-inner">
+                               @foreach($bedrooms as $bedroom)
+                             <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                                 <img src="{{$bedroom->Image}}" class="block-20">
+                                 <div class="carousel-caption d-none d-md-block">
+                                 <h5>Chambre {{$bedroom->Type_chambre}}</h5>
+                                 <p>Prix/nuite = {{$bedroom->Prix_nuite}} Fr cfa</p>
                                  </div>
-                                 @endforeach
                              </div>
-                             <a class="carousel-control-prev" role="button" data-slide="prev">
-                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                             <span class="sr-only">Previous</span>
-                             </a>
-                             <a class="carousel-control-next"  role="button" data-slide="next">
-                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                             <span class="sr-only">Next</span>
-                             </a>
+                             @endforeach
                          </div>
-                         <div class="desc">
-                             <h3 class="heading"><a>Description:<br>Une connecxion internet haut debit, une piscine un bard lunch et un restaurant a votre disposition.</a></h3>
-                         </div>
-                         <div class="text-center">
-                             <a href="{{route('accueil')}}"><span class="btn btn-primary py-2 px-5">Retourner au page d'acceuil</span></a>
-                         </div>
-            </div>
+                         <a class="carousel-control-prev" role="button" data-slide="prev">
+                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                         <span class="sr-only">Previous</span>
+                         </a>
+                         <a class="carousel-control-next"  role="button" data-slide="next">
+                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                         <span class="sr-only">Next</span>
+                         </a>
+                     </div>
+                     <div class="desc">
+                         <h3 class="heading"><a>Description:<br>Une connecxion internet haut debit, une piscine un bard lunch et un restaurant a votre disposition.</a></h3>
+                     </div>
+                     <div class="text-center">
+                         <a href="{{route('accueil')}}"><span class="btn btn-primary py-2 px-5">Retourner au page d'acceuil</span></a>
+                     </div>
+                  </div>
         </div>
     </div>
 </section>
+
+
+
 @endsection
   @section('js')
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

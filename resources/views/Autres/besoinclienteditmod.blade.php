@@ -54,15 +54,15 @@
                 </select>
             </div>
             <div><label>Responsable</label>
-              <select type="text" name="User_id" class="form-control">
-                  <option value="1" {{$besoinclientedit->User_id==="Admin"?'selected="selected"':''}}>Admin</option>
-                  <option value="2" {{$besoinclientedit->User_id==="Moderator1"?'selected="selected"':''}}>Moderator1</option>
-                  <option value="3" {{$besoinclientedit->User_id==="Moderator2"?'selected="selected"':''}}>Moderator2</option>
+              <select type="text" name="User_id"  class="form-control" readonly>
+              <option value="{{ Auth::user()->id }}" >{{ Auth::user()->name }}</option>
               </select>
             </div>
-            <div>
+              <br>
+            <div class="text-center">
                 <button class="btn btn-primary">Modifier</button>
             </div>
+              <br>
         </form>
     </div>
 @endsection

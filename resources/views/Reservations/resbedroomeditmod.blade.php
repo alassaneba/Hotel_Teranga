@@ -338,16 +338,15 @@
                 </select>
             </div>
             <div><label>Responsable</label>
-                <select type="number" name="User_id" class="form-control" placeholder="Id User">
-                    <option></option>
-                    <option value="1" {{$resbedroomedit->User_id==="1"?'selected="selected"':''}}>Admin</option>
-                    <option value="2" {{$resbedroomedit->User_id==="2"?'selected="selected"':''}}>Moderator 1</option>
-                    <option value="3" {{$resbedroomedit->User_id==="3"?'selected="selected"':''}}>Moderator 2</option>
-                </select>
+              <select type="text" name="User_id"  class="form-control" readonly>
+              <option value="{{ Auth::user()->id }}" >{{ Auth::user()->name }}</option>
+              </select>
             </div>
-            <div>
+              <br>
+            <div class="text-center">
                 <button class="btn btn-primary">Modifier</button>
             </div>
+              <br>
         </form>
     </div>
 

@@ -37,18 +37,18 @@
                 </div>
               </div>
               <!-- /.card-header -->
-              <div class="card-body table-responsive p-0" style="height: 375px;">
+              <div class="card-body table-responsive p-0" style="height: 100%;">
                 <table class="table table-head-fixed">
                   <thead>
                     <tr>
-                      <th>Date arriver</th>
-                      <th>Heure arriver</th>
-                      <th>Date depart</th>
-                      <th>Nombre chambre</th>
-                      <th>Nombre adulte</th>
-                      <th>Nombre enfant</th>
-                      <th>Type chambre</th>
-                      <th>Numero chambre</th>
+                      <th>Arriver</th>
+                      <th>Heure</th>
+                      <th>Depart</th>
+                      <th>Chambre</th>
+                      <th>Adulte</th>
+                      <th>Enfant</th>
+                      <th>Chambre</th>
+                      <th>Numero</th>
                       <th>Civilite</th>
                       <th>Prenom</th>
                       <th>Nom </th>
@@ -56,7 +56,7 @@
                       <th>Identifiant</th>
                       <th>Email</th>
                       <th>Telephone</th>
-                      <th>Montant a payer</th>
+                      <th>Montant</th>
                       <th>Statut</th>
                       <th>User_id</th>
                       <th>Editer</th>

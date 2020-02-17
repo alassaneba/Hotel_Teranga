@@ -35,9 +35,11 @@
   <div><label>ReservationEvent_id</label>
       <input type="number" name="ReservationEvent_id" class="form-control" placeholder="ReservationEvent_id">
   </div>
-  <div>
+    <br>
+  <div class="text-center">
       <button class="btn btn-primary">Enregistrer</button>
   </div>
+    <br>
 </form>
 </div>
 @endsection

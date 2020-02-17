@@ -45,11 +45,15 @@
                 </div>
             </div>
             <div><label>Responsable</label>
-                <input type="number" name="User_id" class="form-control" value="{{$servicesedit->User_id}}">
+              <select type="text" name="User_id"  class="form-control" readonly>
+              <option value="{{ Auth::user()->id }}" >{{ Auth::user()->name }}</option>
+              </select>
             </div>
-            <div>
+              <br>
+            <div class="text-center">
                 <button class="btn btn-primary">Modifier</button>
             </div>
+              <br>
         </form>
     </div>
 @endsection

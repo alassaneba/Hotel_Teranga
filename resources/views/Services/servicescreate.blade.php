@@ -39,11 +39,15 @@
                 <input type="file" name="Image" class="form-control">
             </div>
             <div><label>Responsable</label>
-                <input type="number" name="User_id" class="form-control">
+              <select type="text" name="User_id"  class="form-control" readonly>
+              <option value="{{ Auth::user()->id }}" >{{ Auth::user()->name }}</option>
+              </select>
             </div>
-            <div>
+              <br>
+            <div class="text-center">
                 <button class="btn btn-primary">Enregistrer</button>
             </div>
+              <br>
         </form>
     </div>
 @endsection

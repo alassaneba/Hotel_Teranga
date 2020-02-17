@@ -48,11 +48,15 @@
               <input type="text" name="Valeur" class="form-control" value="{{$promotionedit->Valeur}}">
             </div>
             <div><label>Responsable</label>
-                <input type="number" name="User_id" class="form-control" value="{{$promotionedit->User_id}}">
+              <select type="text" name="User_id"  class="form-control" readonly>
+              <option value="{{ Auth::user()->id }}" >{{ Auth::user()->name }}</option>
+              </select>
             </div>
-            <div>
+              <br>
+            <div class="text-center">
                 <button class="btn btn-primary">Modifier</button>
             </div>
+              <br>
         </form>
     </div>
 @endsection

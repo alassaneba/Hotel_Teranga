@@ -56,9 +56,11 @@
             <div><label>ReservationBedroom_id</label>
                 <input type="number" name="ReservationBedroom_id" class="form-control" placeholder="ReservationBedroom_id" value="{{$bedroomedit->ReservationBedroom_id}}">
             </div>
-            <div>
+              <br>
+            <div class="text-center">
                 <button class="btn btn-primary">Modifier</button>
             </div>
+              <br>
         </form>
     </div>
 @endsection

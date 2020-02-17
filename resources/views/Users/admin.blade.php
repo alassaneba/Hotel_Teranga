@@ -55,7 +55,7 @@
                             </div>
                             <div class="mr-5">{{$contact_count}} Message</div>
                         </div>
-                        <a class="card-footer text-white clearfix small z-1" href="#">
+                        <a class="card-footer text-white clearfix small z-1" href="{{route('contact/message')}}">
                             <span class="float-left">Liste des messages</span>
                             <span class="float-right"><i class="fas fa-angle-right"></i></span>
                         </a>
@@ -69,7 +69,7 @@
                           </div>
                           <div class="mr-5">{{$besoinclient_count}} Besoins Clients</div>
                       </div>
-                        <a class="card-footer text-white clearfix small z-1" href="besoinclient">
+                        <a class="card-footer text-white clearfix small z-1" href="{{route('besoin/client')}}">
                           <span class="float-left">Liste des besoins des client</span>
                           <span class="float-right"><i class="fas fa-angle-right"></i></span>
                         </a>
@@ -83,7 +83,7 @@
                             </div>
                             <div class="mr-5">{{$bedroom_count}} Type de Chambre</div>
                         </div>
-                        <a class="card-footer text-white clearfix small z-1" href="bedroom">
+                        <a class="card-footer text-white clearfix small z-1" href="{{route('chambre')}}">
                             <span class="float-left">Liste des types de chambre</span>
                             <span class="float-right"><i class="fas fa-angle-right"></i></span>
                         </a>
@@ -97,7 +97,7 @@
                             </div>
                             <div class="mr-5">{{$disposal_count}} Disposition Salles</div>
                         </div>
-                        <a class="card-footer text-white clearfix small z-1" href="/disposal">
+                        <a class="card-footer text-white clearfix small z-1" href="{{route('disposition/salle')}}">
                             <span class="float-left">Liste disposition salles</span>
                             <span class="float-right"><i class="fas fa-angle-right"></i></span>
                         </a>
@@ -111,7 +111,7 @@
                             </div>
                             <div class="mr-5">{{$room_count}} Espaces et Salles</div>
                         </div>
-                        <a class="card-footer text-white clearfix small z-1" href="/room">
+                        <a class="card-footer text-white clearfix small z-1" href="{{route('salle')}}">
                             <span class="float-left">Liste des espaces et salles</span>
                             <span class="float-right"><i class="fas fa-angle-right"></i></span>
                         </a>
@@ -125,7 +125,7 @@
                             </div>
                             <div class="mr-5">{{$typeevent_count}} Type Evenement</div>
                         </div>
-                        <a class="card-footer text-white clearfix small z-1" href="/typeevent">
+                        <a class="card-footer text-white clearfix small z-1" href="{{route('type/evenement')}}">
                             <span class="float-left">Liste des types d'evenement</span>
                             <span class="float-right"><i class="fas fa-angle-right"></i></span>
                         </a>

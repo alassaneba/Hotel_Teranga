@@ -405,9 +405,11 @@
         <div><label>Montant a payer</label>
          <input type="text" id="Montant_payer" name="Montant_payer" value="0" class="form-control" readonly />
         </div>
-        <div>
+        <br>
+        <div class="text-center">
             <button class="btn btn-primary">Reserver</button>
         </div>
+        <br>
     </form>
   </div>
   @endsection

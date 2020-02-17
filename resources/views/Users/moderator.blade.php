@@ -55,7 +55,7 @@
                             </div>
                             <div class="mr-5">{{$contact_count}} Message</div>
                         </div>
-                        <a class="card-footer text-white clearfix small z-1" href="#">
+                        <a class="card-footer text-white clearfix small z-1" href="{{route('contact/message')}}">
                             <span class="float-left">Liste des messages</span>
                             <span class="float-right"><i class="fas fa-angle-right"></i></span>
                         </a>
@@ -69,7 +69,7 @@
                           </div>
                           <div class="mr-5">{{$besoinclient_count}} Besoins Clients</div>
                       </div>
-                        <a class="card-footer text-white clearfix small z-1" href="besoinclient">
+                        <a class="card-footer text-white clearfix small z-1" href="{{route('besoin/client')}}">
                           <span class="float-left">Liste des besoins des client</span>
                           <span class="float-right"><i class="fas fa-angle-right"></i></span>
                         </a>

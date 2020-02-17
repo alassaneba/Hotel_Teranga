@@ -36,7 +36,7 @@
                 </div>
               </div>
               <!-- /.card-header -->
-              <div class="card-body table-responsive p-0" style="height: 375px;">
+              <div class="card-body table-responsive p-0" style="height: 100%;">
                 <table class="table table-head-fixed">
                   <thead>
                     <tr>

@@ -158,9 +158,11 @@
           </div>
           <div class="form-group">
             <label  class="form-control-label">Temoignage</label>
-            <textarea name="Message" cols="30" rows="3" class="form-control" placeholder="Votre temoignage"></textarea>
+            <textarea name="Message" cols="30" rows="3" class="form-control"></textarea>
           </div>
+          <div class="text-center">
           <button type="submit" class="btn btn-primary pull-right">Envoyer</button>
+          </div>
         </form>
       </div>
     </div>
