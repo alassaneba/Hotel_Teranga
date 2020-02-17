@@ -139,7 +139,7 @@ Route::post('typeeventcreate','TypeEventController@create')->middleware('auth');
 Route::post('typeeventcreate','TypeEventController@store')->middleware('auth');
 Route::delete('typeeventedit/{id}','TypeEventController@destroy')->middleware('auth');
 
-Auth::routes(['register'=>false]);
+Auth::routes();
 
 Route::resource('/utilisateur','Admin\UsersController');
 Route::get("/utilisateur/edit/{id}","Admin\UsersController@edit")->name('utilisateur.edit');
