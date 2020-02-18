@@ -65,6 +65,6 @@ public function accueil(){
   $services = \App\Services::all();
   $apropos = \App\Apropos::all();
   $servicesupps = \App\Servicesupp::all();
-    return view('home',compact('chambres','bedrooms','rooms','temoignages','services','apropos','servicesupps'));
+    return view('accueil',compact('chambres','bedrooms','rooms','temoignages','services','apropos','servicesupps'));
 }
 }

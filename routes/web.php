@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'HomeController@accueil')->name('accueil');
-Route::get('/home','HomeController@index')->name('home');
+Route::get('/Backoffice','HomeController@index')->name('Backoffice');
 
 Route::get('reservationchambre','ReservationBedroomController@clreservationchambre')->name('reservation/chambre');
 Route::post('reservationchambre','ReservationBedroomController@updatefrontoffice');

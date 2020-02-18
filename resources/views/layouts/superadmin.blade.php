@@ -32,10 +32,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{route('home')}}" class="nav-link">Home</a>
+        <a href="{{route('Backoffice')}}" class="nav-link">Acceuil</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{route('accueil')}}" class="nav-link">Site Web</a>
+        <a href="{{route('accueil')}}" class="nav-link">Site</a>
       </li>
     </ul>
 
@@ -88,7 +88,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{route('home')}}" class="brand-link">
+    <a href="{{route('Backoffice')}}" class="brand-link">
       <img src="{{asset('admin-assets/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">TABLEAU DE BORD</span>
@@ -98,10 +98,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class=""><label class="brand-text weight-light breadcrumb">HotelTeranga / Superadmin</label>
-          <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->role }} {{ Auth::user()->name }} <span class="caret"></span>
-          </a>
+        <div class="text-center"><label class="brand-text weight-light breadcrumb">Hotel Teranga / {{ Auth::user()->role }}</label>
+          <li class="nav-item">
+              <a>{{ Auth::user()->name }} <span class="caret"></span></a><br>
+              <a href="{{ route('logout') }}"
+                 onclick="event.preventDefault();
+                 document.getElementById('logout-form').submit();">
+                 {{ __('Déconnexion') }}
+               </a>
+               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+               @csrf
+               </form>
+          </li>
         </div>
       </div>
       <!-- Sidebar Menu -->
@@ -253,7 +261,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- Add icons to the links using the .nav-icon class
                    with font-awesome or any other icon font library -->
               <li class="nav-item has-treeview">
-                <a href="#" class="nav-link bg-primary">
+                <a href="#" class="nav-link bg-olive">
                   <i class="fas fa-fw fa-list"></i>
                   <p>
                     Espaces et Salles
@@ -280,7 +288,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- Add icons to the links using the .nav-icon class
                    with font-awesome or any other icon font library -->
               <li class="nav-item has-treeview">
-                <a href="#" class="nav-link bg-primary">
+                <a href="#" class="nav-link bg-pink">
                   <i class="fas fa-fw fa-list"></i>
                   <p>
                     Disposition Salles
@@ -307,7 +315,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <!-- Add icons to the links using the .nav-icon class
                            with font-awesome or any other icon font library -->
                       <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link bg-primary">
+                        <a href="#" class="nav-link bg-black">
                           <i class="fas fa-fw fa-list"></i>
                           <p>
                             Type Evenement
