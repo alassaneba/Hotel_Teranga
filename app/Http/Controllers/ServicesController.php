@@ -145,4 +145,8 @@ public function Hotelservices (){
     if($user=='Superadmin')
      return view('Services/hotelservices', compact('service'));
 }
+public function Termsetcondition()
+{
+   return view('term&condition');
+}
 }

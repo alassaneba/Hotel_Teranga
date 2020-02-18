@@ -74,7 +74,7 @@
                 <h3 class="mb-4 mb-lg-0 align-text-center">Chercher une chambre</h3>
             </div>
             <div class="col-lg-10">
-                <form action="{{route('recherche')}}" method="get" class="consult-form">
+                <form action="{{route('recherche')}}" method="get" name="form2" class="consult-form">
                     <div class="d-lg-flex align-items-md-end">
                         <div class="form-group mb-3 mb-lg-0 mr-4">
                             <div class="form-field">

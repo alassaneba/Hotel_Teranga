@@ -22,6 +22,8 @@ Route::get('a-propos','AproposController@index')->name('a-propos');
 Route::get('services','ServicesController@index')->name('services');
 Route::get('contact','ContactController@index')->name('contact');
 Route::post('contact','ContactController@store');
+Route::get('term&condition','ServicesController@Termsetcondition')->name('term&condition');
+Route::get('faq','AproposController@Faq')->name('faq');
 Route::get('recherche','BedroomController@recherche')->name('recherche');
 Route::post('bedroomajax', 'BedroomController@bedroomajax')->name('bedroomajax');
 

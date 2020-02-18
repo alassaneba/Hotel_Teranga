@@ -63,10 +63,10 @@
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">LIENS</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#ccr">Catégories recommandées</a></li>
-                        <li><a href="#tcvv">Evenementiel</a></li>
-                        <li><a href="#">Terms &amp; Conditions</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="{{route('accueil')}}#ccr">Hebergement</a></li>
+                        <li><a href="{{route('accueil')}}#tcvv">Evenementiel</a></li>
+                        <li><a href="{{route('term&condition')}}">Terms &amp; Conditions</a></li>
+                        <li><a href="{{route('faq')}}">FAQ</a></li>
                     </ul>
                 </div>
             </div>

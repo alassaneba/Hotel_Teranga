@@ -148,4 +148,8 @@ class AproposController extends Controller
     if($user=='Superadmin')
      return view('Apropos/hotelapropos', compact('apropo'));
 }
+public function Faq()
+{
+   return view('faq');
+}
 }
