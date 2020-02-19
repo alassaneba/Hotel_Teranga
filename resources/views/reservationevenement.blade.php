@@ -71,21 +71,21 @@
     <form action="{{route('reservation/evenement')}}" method="post" >
         @csrf
         <div><label>Nom de l'evenement</label>
-                <input type="text" name="Nom_evenement" class="form-control" placeholder="Nom de l'evenement">
+                <input type="text" name="Nom_evenement" class="form-control">
         </div>
         <div><label>Type d'evenement</label>
             <select name="Type_evenement" id="Type_evenement" class="form-control">
-                <option value=""></option>
+                <option></option>
                 @foreach($typeevenememt as $id => $value)
                     <option value="{{$value}}">{{$value}}</option>
                 @endforeach
             </select>
         </div>
         <div><label>Date debut</label>
-            <input type="date" name="Date_debut" class="form-control" placeholder="Date début">
+            <input type="date" name="Date_debut" id="Date_debut" class="form-control" placeholder="Date début">
         </div>
         <div><label>Date fin</label>
-            <input type="date" name="Date_fin" class="form-control" placeholder="Date fin">
+            <input type="date" name="Date_fin" id="Date_fin" class="form-control" placeholder="Date fin">
         </div>
         <div><label>Duree de l'evenement</label>
             <select type="text" name="Duree" class="form-control">
@@ -168,5 +168,8 @@
     </div>
 @endsection
 @section('js')
-
+<script type="text/javascript">
+document.getElementById('Date_debut').valueAsDate = new Date();
+document.getElementById('Date_fin').valueAsDate = new Date();
+</script>
 @endsection

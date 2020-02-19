@@ -109,7 +109,7 @@
                             <div class="form-field">
                                 <div class="select-wrap text-center">
                                     <form> Adulte
-                                        <input type="number" name="Nombre_adulte" id="nbradult" min="1" class="btn btn-light py-3 px-4"> </form>
+                                        <input type="number" name="Nombre_adulte" id="nbradult" min="1" value="1" class="btn btn-light py-3 px-4"> </form>
                                 </div>
                             </div>
                         </div>
@@ -117,7 +117,7 @@
                             <div class="form-field">
                                 <div class="select-wrap text-center">
                                     Enfant
-                                    <input type="number" name="Nombre_enfant" id="nbrenfant" min="0" class="btn btn-light py-3 px-4">
+                                    <input type="number" name="Nombre_enfant" id="nbrenfant" min="0" value="0" class="btn btn-light py-3 px-4">
                                 </div>
                             </div>
                         </div>
@@ -402,6 +402,19 @@
 </section>
 @endsection
 @section('js')
+<script type="text/javascript">
+document.getElementById('da').valueAsDate = new Date();
+var d1 = new Date();
+var y1= d1.getFullYear();
+var m1 = d1.getMonth()+1;
+if(m1<10)
+    m1="0"+m1;
+var dt1 = d1.getDate()+1;
+if(dt1<10)
+dt1 = "0"+dt1;
+var d2 = y1+"-"+m1+"-"+dt1;
+document.getElementById('dd').value=d2;
+</script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.0/umd/popper.min.js"></script>
 @endsection

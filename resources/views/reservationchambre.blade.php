@@ -110,7 +110,7 @@
         <div><label>Date depart</label>
             <input type="date" name="Date_depart" id="Date_depart" class="form-control" onchange="return calculer()">
         </div><label>Nombre de jour</label>
-         <input type="text" name="jour" id="jour" value="0" class="form-control" readonly />
+         <input type="text" name="jour" id="jour" value="1" class="form-control" readonly />
         <div><label>Nombre de chambre</label>
             <input type="number" name="Nombre_chambre" id="Nombre_chambre" class="form-control">
         </div>
@@ -414,6 +414,19 @@
   </div>
   @endsection
   @section('js')
+  <script type="text/javascript">
+  document.getElementById('Date_arriver').valueAsDate = new Date();
+  var d1 = new Date();
+  var y1= d1.getFullYear();
+  var m1 = d1.getMonth()+1;
+  if(m1<10)
+      m1="0"+m1;
+  var dt1 = d1.getDate()+1;
+  if(dt1<10)
+  dt1 = "0"+dt1;
+  var d2 = y1+"-"+m1+"-"+dt1;
+  document.getElementById('Date_depart').value=d2;
+  </script>
   <script type="text/javascript">
   function calculer()
   {

@@ -261,7 +261,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- Add icons to the links using the .nav-icon class
                    with font-awesome or any other icon font library -->
               <li class="nav-item has-treeview">
-                <a href="#" class="nav-link bg-olive">
+                <a href="#" class="nav-link bg-pink">
                   <i class="fas fa-fw fa-list"></i>
                   <p>
                     Espaces et Salles
@@ -288,7 +288,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- Add icons to the links using the .nav-icon class
                    with font-awesome or any other icon font library -->
               <li class="nav-item has-treeview">
-                <a href="#" class="nav-link bg-pink">
+                <a href="#" class="nav-link bg-olive">
                   <i class="fas fa-fw fa-list"></i>
                   <p>
                     Disposition Salles
