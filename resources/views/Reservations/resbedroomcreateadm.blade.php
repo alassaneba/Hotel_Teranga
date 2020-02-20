@@ -30,7 +30,7 @@
     <form action="{{route('creation/reservation/bedroom')}}" method="post" name="form1">
         @csrf
         <div><label>Date d'arriver</label>
-            <input type="date" name="Date_arriver" id="Date_arriver"class="form-control">
+            <input type="date" name="Date_arriver" min="<?php echo date('Y-m-d'); ?>" id="Date_arriver"class="form-control">
         </div>
         <div><label>Heure d'arriver</label>
             <input type="time" name="Heure_arriver" class="form-control">

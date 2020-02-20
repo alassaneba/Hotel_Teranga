@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="{{asset('app-assets/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('app-assets/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('app-assets/css/lay.css')}}">
     @yield('css')
 </head>
 <body>
