@@ -49,7 +49,7 @@
                     </tr>
                   </thead>
         @foreach($servicesupp as $servicesupps)
-            <tbody>
+            <tbody class="text-center">
                 <tr>
                     <td>{{$servicesupps->Servicesupp}}</td>
                     <td>{{$servicesupps->Slogan}}</td>

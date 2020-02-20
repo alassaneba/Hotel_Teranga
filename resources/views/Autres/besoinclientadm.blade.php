@@ -53,7 +53,7 @@
                     </tr>
                   </thead>
         @foreach($besoinclient as $besoinclients)
-            <tbody>
+            <tbody class="text-center">
                 <tr>
                     <td>{{$besoinclients->Nom_complet}}</td>
                     <td>{{$besoinclients->Numero_chambre}}</td>

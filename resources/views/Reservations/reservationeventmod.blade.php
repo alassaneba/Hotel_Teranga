@@ -69,7 +69,7 @@
                </tr>
               </thead>
     @foreach($resevationevents as $reservationevent)
-    <tbody>
+    <tbody class="text-center">
         <tr>
             <td>{{$reservationevent->Nom_evenement}}</td>
             <td>{{$reservationevent->Type_evenement}}</td>

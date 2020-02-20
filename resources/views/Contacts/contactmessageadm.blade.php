@@ -52,7 +52,7 @@
                     </tr>
                   </thead>
                   @foreach($contact as $contacts)
-                      <tbody>
+                      <tbody class="text-center">
                           <tr>
                               <td>{{$contacts->Nom_complet}}</td>
                               <td>{{$contacts->Email}}</td>

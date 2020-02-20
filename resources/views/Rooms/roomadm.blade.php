@@ -50,7 +50,7 @@
                     </tr>
                   </thead>
         @foreach($room as $rooms)
-            <tbody>
+            <tbody class="text-center">
                 <tr>
                     <td>{{$rooms->Salles}}</td>
                     <td><textarea cols="60" rows="3" class="form-control" readonly>{{$rooms->Description}}</textarea></td>

@@ -48,7 +48,7 @@
                     </tr>
                   </thead>
                   @foreach($temoignage as $temoignages)
-                      <tbody>
+                      <tbody class="text-center">
                           <tr>
                               <td>{{$temoignages->Nom_complet}}</td>
                               <td>{{$temoignages->Email}}</td>

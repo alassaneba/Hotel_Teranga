@@ -80,7 +80,7 @@
                             <div class="form-field">
                                 <div class="select-wrap text-center">
                                     Date d'arriver
-                                    <input type="date" name="Date_arriver" id="da" class="btn btn-light py-3 px-4">
+                                    <input type="date" name="Date_arriver" id="da" min="<?php echo date('Y-m-d'); ?>" class="btn btn-light py-3 px-4">
                                 </div>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                             <div class="form-field">
                                 <div class="select-wrap text-center">
                                     Date depart
-                                    <input type="date" name="Date_depart" id="dd" class="btn btn-light py-3 px-4">
+                                    <input type="date" name="Date_depart" id="dd" min="<?php echo date('Y-m-d'); ?>"  class="btn btn-light py-3 px-4">
                                 </div>
                             </div>
                         </div>

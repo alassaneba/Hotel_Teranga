@@ -64,7 +64,7 @@
                     </tr>
                   </thead>
                   @foreach($reservationbedroom as $reservations)
-                  <tbody>
+                  <tbody class="text-center">
                     <tr>
                       <td>{{$reservations->Date_arriver}}</td>
                       <td>{{$reservations->Heure_arriver}}</td>

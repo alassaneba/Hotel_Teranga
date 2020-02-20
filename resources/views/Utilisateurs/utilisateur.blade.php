@@ -50,7 +50,7 @@
                     </tr>
                   </thead>
         @foreach($users as $user)
-            <tbody>
+            <tbody class="text-center">
                 <tr>
                     <td>{{$user->id}}</td>
                     <td>{{$user->role}}</td>

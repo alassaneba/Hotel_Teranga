@@ -49,7 +49,7 @@
                     </tr>
                   </thead>
         @foreach($apropo as $apropos)
-            <tbody>
+            <tbody class="text-center">
                 <tr>
                     <td>{{$apropos->Titre}}</td>
                     <td><textarea cols="45" rows="3" class="form-control" readonly>{{$apropos->Description}}</textarea></td>

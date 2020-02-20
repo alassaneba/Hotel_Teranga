@@ -47,7 +47,7 @@
                     </tr>
                   </thead>
             @foreach($typeevent as $typeevents)
-            <tbody>
+            <tbody class="text-center">
                 <tr>
                     <td>{{$typeevents->id}}</td>
                     <td>{{$typeevents->Type_evenement}}</td>

@@ -47,7 +47,7 @@
                     </tr>
                   </thead>
             @foreach($disposal as $disposals)
-            <tbody>
+            <tbody class="text-center">
                 <tr>
                     <td>{{$disposals->id}}</td>
                     <td>{{$disposals->Disposition}}</td>

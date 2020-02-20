@@ -48,7 +48,7 @@
                     </tr>
                   </thead>
         @foreach($service as $services)
-            <tbody>
+            <tbody class="text-center">
                 <tr>
                     <td>{{$services->Service}}</td>
                     <td><textarea cols="45" rows="3" class="form-control" readonly>{{$services->Description}}</textarea></td>
