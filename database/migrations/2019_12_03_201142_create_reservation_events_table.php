@@ -16,12 +16,9 @@ class CreateReservationEventsTable extends Migration
         Schema::create('reservation_events', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('Nom_evenement');
-            $table->string('Type_evenement');
             $table->date('Date_debut');
             $table->date('Date_fin');
             $table->string('Duree');
-            $table->string('Salles');
-            $table->string('Disposition');
             $table->integer('Nombre_participant');
             $table->string('Restauration');
             $table->string('Equipement')->nullable('true');
@@ -36,7 +33,10 @@ class CreateReservationEventsTable extends Migration
             $table->integer('Telephone');
             $table->integer('Montant_payer')->nullable('true');
             $table->string('Statut')->nullable('true');
-            $table->unsignedBigInteger('User_id')->nullable('true');
+            $table->unsignedBigInteger('room_id');
+            $table->unsignedBigInteger('type_event_id');
+            $table->unsignedBigInteger('disposal_room_id');
+            $table->unsignedBigInteger('user_id')->nullable('true');
             $table->timestamps();
 
         });

@@ -55,7 +55,7 @@ class PromotionController extends Controller
           'Description' => 'required',
           'Image' => 'required| image | mimes:jpeg,png,jpg,gif | max: 2048',
           'Valeur' => 'required',
-          'User_id' => 'required | min:1 ',
+          'user_id' => 'required | min:1 ',
       ]);
       $promotion = new Promotion();
       $promotion->Titre = $request->input('Titre');
@@ -67,7 +67,7 @@ class PromotionController extends Controller
       $promotion-> Image = $folder . $image_name . '.' . $image->getClientOriginalExtension();
       $this->uploadImage($image, $folder, 'public', $image_name);}
       $promotion->Valeur = $request->input('Valeur');
-      $promotion->User_id = $request->input('User_id');
+      $promotion->user_id = $request->input('user_id');
       $promotion->save();
           return redirect('/promotion')->with(['success' => "Promotion enregistrée"]);
     }
@@ -124,7 +124,7 @@ class PromotionController extends Controller
                   //Maintenant nous pouvons enregistrer l'image dans le dossier en utilisant la méthode uploadImage();
                   $this->uploadImage($image, $folder, 'public', $image_name); }
           $promotion->Valeur = $request->input('Valeur');
-          $promotion->User_id = $request->input('User_id');
+          $promotion->user_id = $request->input('user_id');
           $promotion-> save(); }
       return redirect('/promotion')->with(['success' => "Promotion modifié"]);
     }

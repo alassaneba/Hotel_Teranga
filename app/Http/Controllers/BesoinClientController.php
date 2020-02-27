@@ -69,7 +69,7 @@ class BesoinClientController extends Controller
     $besoinclient->Montant_payer = $request->input('Montant_payer');
     $besoinclient->Agent_conserner = $request->input('Agent_conserner');
     $besoinclient->Statut = $request->input('Statut');
-    $besoinclient->User_id = $request->input('User_id');
+    $besoinclient->user_id = $request->input('user_id');
     $besoinclient-> save();
     return redirect('besoinclient')->with(['success' => "Demande besoin client enregistré"]);
     }
@@ -123,7 +123,7 @@ class BesoinClientController extends Controller
         $besoinclient->Montant_payer = $request->input('Montant_payer');
         $besoinclient->Agent_conserner = $request->input('Agent_conserner');
         $besoinclient->Statut = $request->input('Statut');
-        $besoinclient->User_id = $request->input('User_id');
+        $besoinclient->user_id = $request->input('user_id');
         $besoinclient-> save();}
         return redirect('besoinclient')->with(['success' => "Demande besoin client modifié"]);
     }

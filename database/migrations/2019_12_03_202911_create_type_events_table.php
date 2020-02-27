@@ -16,7 +16,6 @@ class CreateTypeEventsTable extends Migration
         Schema::create('type_events', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('Type_evenement');
-            $table->unsignedBigInteger('ReservationEvent_id');
             $table->timestamps();
 
         });

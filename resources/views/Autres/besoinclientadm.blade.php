@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 @section('title', "Liste Besoins Clients")
+@section('css')
+
+@endsection
 @section('content')
 @if(session('success'))
     <div class="alert alert-success">{{session('success')}}</div>
@@ -39,7 +42,7 @@
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0" style="height: 100%;">
                 <table class="table table-head-fixed">
-                  <thead>
+                  <thead class="text-center">
                     <tr>
                      <th>Nom</th>
                      <th>Chambre</th>
@@ -47,7 +50,7 @@
                      <th>Prix</th>
                      <th>Agent</th>
                      <th>Statut</th>
-                     <th>User_id</th>
+                     <th>Responsable</th>
                      <th>Editer</th>
                      <th>Supprimer</th>
                     </tr>
@@ -61,7 +64,7 @@
                     <td>{{$besoinclients->Montant_payer}}</td>
                     <td>{{$besoinclients->Agent_conserner}}</td>
                     <td>{{$besoinclients->Statut}}</td>
-                    <td>{{$besoinclients->User_id}}</td>
+                    <td>{{$besoinclients->user->name ?? '' }}</td>
                     <td> <p class="btn btn-outline-secondary"><a href="besoinclientedit/{{$besoinclients->id}}">Editer</a></p></td>
                     <td><form action="besoinclientedit/{{$besoinclients->id}}" method="post" onsubmit="return confirm('Voulez-vous supprimer ?')">
                         @csrf
@@ -78,4 +81,7 @@
       </div>
       </div>
 </section>
+@endsection
+@section('js')
+
 @endsection

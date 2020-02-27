@@ -1,5 +1,8 @@
 @extends('layouts.admin')
-@section('title', "Edition Temoignages")
+@section('title', "Edition Temoignage")
+@section('css')
+
+@endsection
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)
@@ -15,7 +18,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route('Backoffice')}}">Tableau de bord</a></li>
-              <li class="breadcrumb-item active">Temoignages</li>
+              <li class="breadcrumb-item active">Temoignage</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -40,10 +43,10 @@
                <input type="text" name="Profession" class="form-control" value="{{$temoignagedit->Profession}}">
             </div>
             <div><label>Message</label>
-                <textarea name="Message" cols="30" rows="7" class="form-control" value="{{$temoignagedit->Message}}">{{$temoignagedit->Message}}</textarea>
+                <textarea name="Message" cols="30" rows="5" class="form-control" value="{{$temoignagedit->Message}}">{{$temoignagedit->Message}}</textarea>
             </div>
             <div><label>Responsable</label>
-              <select type="text" name="User_id"  class="form-control" readonly>
+              <select type="text" name="user_id"  class="form-control" readonly>
               <option value="{{ Auth::user()->id }}" >{{ Auth::user()->name }}</option>
               </select>
             </div>
@@ -54,4 +57,7 @@
               <br>
         </form>
     </div>
+@endsection
+@section('js')
+
 @endsection

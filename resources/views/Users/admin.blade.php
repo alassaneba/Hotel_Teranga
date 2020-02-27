@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 @section('title', "Admin")
+@section('css')
+
+@endsection
 @section('content')
 
   <div class="container-fluid">
@@ -144,4 +147,7 @@
         <ul>
         </ul>
       </section>
+@endsection
+@section('js')
+
 @endsection

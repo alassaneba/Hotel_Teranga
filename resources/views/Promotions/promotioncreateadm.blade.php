@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 @section('title', "Creation Promotion Hotel")
+@section('css')
+
+@endsection
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)
@@ -42,7 +45,7 @@
                 <input name="Valeur" id="Valeur" class="form-control">
             </div>
             <div><label>Responsable</label>
-              <select type="text" name="User_id"  class="form-control" readonly>
+              <select type="text" name="user_id"  class="form-control" readonly>
               <option value="{{ Auth::user()->id }}" >{{ Auth::user()->name }}</option>
               </select>
             </div>
@@ -53,4 +56,7 @@
               <br>
         </form>
     </div>
+@endsection
+@section('js')
+
 @endsection

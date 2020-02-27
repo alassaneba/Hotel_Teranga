@@ -16,10 +16,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{asset('app-assets/css/icomoon.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('admin-assets/dist/css/adminlte.min.css')}}">
-  <!-- todolist -->
-  <link rel="stylesheet" href="{{asset('admin-assets/dist/css/todolist.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- todolist -->
+  <link rel="stylesheet" href="{{asset('admin-assets/dist/css/todolist.css')}}">
   @yield('css')
 </head>
 <body class="hold-transition sidebar-mini" >

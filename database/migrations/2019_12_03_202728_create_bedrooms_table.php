@@ -20,7 +20,6 @@ class CreateBedroomsTable extends Migration
             $table->string('Image');
             $table->integer('Prix_nuite');
             $table->string('Statut');
-            $table->unsignedBigInteger('ReservationBedroom_id');
             $table->timestamps();
         });
     }

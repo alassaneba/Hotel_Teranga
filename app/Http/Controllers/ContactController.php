@@ -52,7 +52,7 @@ class ContactController extends Controller
         $contact->Objet = $request->input('Objet');
         $contact->Message = $request->input('Message');
         $contact->Statut = $request->input('Statut');
-        $contact->User_id = $request->input('User_id');
+        $contact->user_id = $request->input('user_id');
         $contact->save();
         return redirect('contact')->with(['success' => "Votre message nous est bien parvenu, merci !"]);
     }
@@ -103,7 +103,7 @@ class ContactController extends Controller
           $contact->Objet = $request->input('Objet');
           $contact->Message = $request->input('Message');
           $contact->Statut = $request->input('Statut');
-          $contact->User_id = $request->input('User_id');
+          $contact->user_id = $request->input('user_id');
           $contact-> save(); }
             return redirect('contactmessage')->with(['success' => "Message modifié"]);
     }

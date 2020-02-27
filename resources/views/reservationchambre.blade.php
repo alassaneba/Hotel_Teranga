@@ -35,6 +35,11 @@
 </style>
 @endsection
 @section('content')
+@if($errors->any())
+    @foreach($errors->all() as $error)
+        <div class="alert alert-danger">{{$error}}</div>
+    @endforeach
+@endif
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand" href="{{route('accueil')}}">Hotel<span>Teranga</span></a>
@@ -82,21 +87,22 @@
     </div>
 </nav>
 <!-- END nav -->
-    <section class="hero-wrap hero-wrap-2" style="background-image:url({{asset('app-assets/images/renai.jpg')}});">
+    <section class="hero-wrap d-flex js-fullheight" style="background:url({{asset('app-assets/images/renai.jpg')}});height: 639px;background-position: top;background-size: cover;">
         <div class="overlay"></div>
-        <div class="container">
-            <div class="row slider-text justify-content-center align-items-center">
-                <div class="col-md-0 col-sm-0 d-flex text-center ftco-animate">
-                    <h1 class="mb-3 mt-5 bread">Reservation de chambre</h1>
-                </div>
+        <div class="forth js-fullheight d-flex align-items-center">
+            <div class="text text-center">
+                <h1>Reservation de chambre</h1>
             </div>
         </div>
+        <div class="third about-img js-fullheight">
+        </div>
     </section>
+    <br>
     @if(session('success'))
         <div class="alert alert-success">{{session('success')}}</div>
     @endif
     <div class=" container border">
-        <spam><p>Pour faire une reservation de chambre veuillez renseignez tous les champs</p></spam>
+        <spam><p class="text-center">Pour faire une reservation de chambre veuillez renseignez tous les champs</p></spam>
     </div>
     <div class="container border">
     <form action="{{route('reservation/chambre')}}" method="post" name="form1">
@@ -121,10 +127,10 @@
             <input type="number" name="Nombre_enfant" class="form-control">
         </div>
         <div><label>Type de chambre</label>
-         <select name="Type_chambre" id="Type_chambre" class="form-control">
+         <select name="bedroom_id" id="Type_chambre" class="form-control">
                 <option></option>
-            @foreach($bedrooms as $id => $value)
-                <option value="{{$value}}">{{$value}}</option>
+            @foreach($bedrooms as $key => $value)
+                <option value="{{$key}}">{{$value}}</option>
             @endforeach
           </select>
          </div>
@@ -147,10 +153,10 @@
             </select>
         </div>
         <div><label>Prenom</label>
-            <input type="text" name="Prenom" class="form-control" placeholder="Prenom">
+            <input type="text" name="Prenom" class="form-control">
         </div>
         <div><label>Nom</label>
-            <input type="text" name="Nom" class="form-control" placeholder="Nom">
+            <input type="text" name="Nom" class="form-control">
         </div>
         <div><label>Nationalite</label>
             <select type="text" name="Nationalite" class="form-control">
@@ -397,13 +403,13 @@
             </select>
         </div>
         <div><label>Email</label>
-            <input type="email" name="Email" class="form-control" placeholder="Email">
+            <input type="email" name="Email" class="form-control">
         </div>
         <div><label>Telephone</label>
-            <input type="text" name="Telephone" class="form-control" placeholder="Telephone">
+            <input type="text" name="Telephone" class="form-control">
         </div>
         <div><label>Montant a payer</label>
-         <input type="text" id="Montant_payer" name="Montant_payer" value="0" class="form-control" readonly />
+         <input type="number" id="Montant_payer" name="Montant_payer" value="0" class="form-control" readonly />
         </div>
         <br>
         <div class="text-center">
@@ -411,7 +417,7 @@
         </div>
         <br>
     </form>
-  </div>
+  </div><br>
   @endsection
   @section('js')
   <script type="text/javascript">

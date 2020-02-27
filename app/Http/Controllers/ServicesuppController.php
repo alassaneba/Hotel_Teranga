@@ -50,7 +50,7 @@ class ServicesuppController extends Controller
           'Slogan' => 'required',
           'Description' => 'required',
           'Image' => 'required| image | mimes:jpeg,png,jpg,gif | max: 2048',
-          'User_id' => 'required | min:1 ',
+          'user_id' => 'required | min:1 ',
       ]);
       $servicesupp = new Servicesupp();
       $servicesupp->Servicesupp = $request->input('Servicesupp');
@@ -62,7 +62,7 @@ class ServicesuppController extends Controller
       $folder = '/uploads/images/';
       $servicesupp-> Image = $folder . $image_name . '.' . $image->getClientOriginalExtension();
       $this->uploadImage($image, $folder, 'public', $image_name);}
-      $servicesupp->User_id = $request->input('User_id');
+      $servicesupp->user_id = $request->input('user_id');
       $servicesupp->save();
           return redirect('/hotelservicesupp')->with(['success' => "Servicesupp enregistrée"]);
     }
@@ -117,7 +117,7 @@ class ServicesuppController extends Controller
                   $servicesupp->Image = $folder.$image_name.'.'.$image->getClientOriginalExtension();
                   //Maintenant nous pouvons enregistrer l'image dans le dossier en utilisant la méthode uploadImage();
                   $this->uploadImage($image, $folder, 'public', $image_name); }
-          $servicesupp->User_id = $request->input('User_id');
+          $servicesupp->user_id = $request->input('user_id');
           $servicesupp-> save(); }
       return redirect('/hotelservicesupp')->with(['success' => "Servicesupp modifié"]);
     }

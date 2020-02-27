@@ -49,11 +49,10 @@ class TypeEventController extends Controller
     {
       $data = $request->validate([
           'Type_evenement' => 'required',
-          'ReservationEvent_id' => 'required | min:1 ',
+
       ]);
       $type = new TypeEvent();
       $type->Type_evenement = $request->input('Type_evenement');
-      $type->ReservationEvent_id = $request->input('ReservationEvent_id');
       $type->save();
       return redirect('typeevent')->with(['success' => "Type d'evenement enregistrée"]);
     }

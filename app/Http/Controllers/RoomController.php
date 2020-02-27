@@ -53,7 +53,7 @@ class RoomController extends Controller
           'Salles' => 'required',
           'Description' => 'required',
           'Image' => 'required| image | mimes:jpeg,png,jpg,gif | max: 2048',
-          'ReservationEvent_id' => 'required | min:1 ',
+
       ]);
       $roo = new Room();
       $roo->Salles = $request->input('Salles');
@@ -65,7 +65,6 @@ class RoomController extends Controller
       $roo-> Image = $folder . $image_name . '.' . $image->getClientOriginalExtension();
       $this->uploadImage($image, $folder, 'public', $image_name);}
       $roo->Statut = $request->input('Statut');
-      $roo->ReservationEvent_id = $request->input('ReservationEvent_id');
       $roo->save();
       return redirect('/room')->with(['success' => "Salles ou Espaces enregistrée"]);
     }
@@ -125,7 +124,7 @@ class RoomController extends Controller
                   //Maintenant nous pouvons enregistrer l'image dans le dossier en utilisant la méthode uploadImage();
                   $this->uploadImage($image, $folder, 'public', $image_name); }
           $room-> Statut = $request->input('Statut');
-          $room-> ReservationEvent_id = $request->input('ReservationEvent_id');
+
           $room-> save(); }
       return redirect('room')->with(['success' => "Salles ou Espaces modifiés"]);
     }

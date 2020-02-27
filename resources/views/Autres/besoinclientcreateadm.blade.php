@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 @section('title', "Creation Besoins Clients")
+@section('css')
+
+@endsection
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)
@@ -36,7 +39,7 @@
                 <input type="text" name="Numero_chambre" class="form-control">
             </div>
             <div><label>Description du besoin</label>
-                <textarea name="Description_besoin" cols="30" rows="7" class="form-control"></textarea>
+                <textarea name="Description_besoin" cols="30" rows="4" class="form-control"></textarea>
             </div>
             <div><label>Montant a payer</label>
                 <input type="number" name="Montant_payer" class="form-control">
@@ -53,7 +56,7 @@
                 </select>
             </div>
             <div><label>Responsable</label>
-              <select type="text" name="User_id"  class="form-control" readonly>
+              <select type="text" name="user_id"  class="form-control" readonly>
               <option value="{{ Auth::user()->id }}" >{{ Auth::user()->name }}</option>
               </select>
             </div>
@@ -64,4 +67,7 @@
               <br>
         </form>
     </div>
+@endsection
+@section('js')
+
 @endsection

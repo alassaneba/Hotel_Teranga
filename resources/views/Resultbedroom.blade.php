@@ -51,16 +51,17 @@
     </div>
 </nav>
 <!-- END nav -->
-<section class="hero-wrap hero-wrap-2" style="background-image:url({{asset('app-assets/images/renai.jpg')}});">
+<section class="hero-wrap d-flex js-fullheight" style="background:url({{asset('app-assets/images/renai.jpg')}});height: 639px;background-position: top;background-size: cover;">
     <div class="overlay"></div>
-    <div class="container">
-        <div class="row slider-text justify-content-center align-items-center">
-            <div class="col-md-7 col-sm-12 text-center ftco-animate">
-                <h1 class="mb-3 mt-5 bread">Resultat de la recherche</h1>
-            </div>
+    <div class="forth js-fullheight d-flex align-items-center">
+        <div class="text text-center">
+            <h1>Resultat de la recherche</h1>
         </div>
     </div>
+    <div class="third about-img js-fullheight">
+    </div>
 </section>
+
 <section class="ftco-section">
     <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
@@ -79,6 +80,8 @@
                         <div class="meta mb-3">
                             <div><a>Prix/nuite = {{$chambre->Prix_nuite}} Fr cfa</a></div>
                             <div><a>Etat: {{$chambre->Statut}}</a></div>
+                            <div class="info w-100" style="color: white;"> <i class="icon-bath"></i> <i class="icon-wifi"></i> <i class="icon-tv"></i> <i class="icon-glass"></i> <i class="icon-coffee"></i></div>
+                            </div>
                         </div>
                         <div class="desc">
                             <h3 class="heading"><a>Description:<br>{{$chambre->Description}}</a></h3>
@@ -88,7 +91,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         @endforeach
         <div class="col-md-6 ftco-animate">
            <div class="text-center"><h2>Les differents type de chambre</h2></div>
@@ -125,6 +127,7 @@
                          <a href="{{route('accueil')}}"><span class="btn btn-primary py-2 px-5">Retourner au page d'acceuil</span></a>
                      </div>
                   </div>
+              </div>
         </div>
     </div>
 </section>

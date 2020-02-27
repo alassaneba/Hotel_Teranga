@@ -56,7 +56,7 @@ class BedroomController extends Controller
             'Description' => 'required',
             'Image' => 'required| image | mimes:jpeg,png,jpg,gif | max: 2048',
             'Prix_nuite' => 'required | numeric',
-            'ReservationBedroom_id' => 'required | min:1 ',
+
         ]);
         $bed = new Bedroom();
         $bed->Type_chambre = $request->input('Type_chambre');
@@ -69,7 +69,6 @@ class BedroomController extends Controller
         $this->uploadImage($image, $folder, 'public', $image_name);}
         $bed->Prix_nuite = $request->input('Prix_nuite');
         $bed->Statut = $request->input('Statut');
-        $bed->ReservationBedroom_id = $request->input('ReservationBedroom_id');
         $bed->save();
             return redirect('bedroom')->with(['success' => "Chambre enregistrée"]);
 
@@ -130,7 +129,6 @@ class BedroomController extends Controller
                     $this->uploadImage($image, $folder, 'public', $image_name); }
             $bedroom-> Prix_nuite= $request->input('Prix_nuite');
             $bedroom-> Statut= $request->input('Statut');
-            $bedroom-> ReservationBedroom_id = $request->input('ReservationBedroom_id');
             $bedroom-> save(); }
         return redirect('bedroom')->with(['success' => "Chambre modifiée"]);
     }
@@ -168,7 +166,7 @@ class BedroomController extends Controller
       if($request->ajax()){
                 return response()->json([
                       'prix' => $chambre->Prix_nuite,
-                      'description' => $chambre->Description
+                      'description' => $chambre->Description,
                   ]);
             }
 

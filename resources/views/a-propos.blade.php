@@ -51,14 +51,14 @@
     </div>
 </nav>
 <!-- END nav -->
-<section class="hero-wrap hero-wrap-2" style="background-image:url({{asset('app-assets/images/renai.jpg')}});">
+<section class="hero-wrap d-flex js-fullheight" style="background:url({{asset('app-assets/images/renai.jpg')}});height: 639px;background-position: top;background-size: cover;">
     <div class="overlay"></div>
-    <div class="container">
-        <div class="row slider-text justify-content-center align-items-center">
-            <div class="col-md-7 col-sm-12 text-center ftco-animate">
-                <h1 class="mb-3 mt-5 bread">A propos de nous</h1>
-            </div>
+    <div class="forth js-fullheight d-flex align-items-center">
+        <div class="text text-center">
+            <h1>A propos de nous</h1>
         </div>
+    </div>
+    <div class="third about-img js-fullheight">
     </div>
 </section>
 @if(session('success'))

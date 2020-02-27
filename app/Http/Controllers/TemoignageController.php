@@ -23,7 +23,7 @@ class TemoignageController extends Controller
       if($user=='Admin')
        return view('Temoignages/temoignageadm',compact('temoignage'));
       if($user=='Moderator')
-       return view('Temoignages/temoignagemod',compact('temoignage')); 
+       return view('Temoignages/temoignagemod',compact('temoignage'));
 
     }
 
@@ -56,7 +56,7 @@ class TemoignageController extends Controller
       $temoignage->Email = $request->input('Email');
       $temoignage->Profession = $request->input('Profession');
       $temoignage->Message = $request->input('Message');
-      $temoignage->User_id = $request->input('User_id');
+      $temoignage->user_id = $request->input('user_id');
       $temoignage->save();
        return redirect()->back()->with(['success' => "Votre Temoignage nous est bien parvenu, merci !"]);
     }
@@ -105,7 +105,7 @@ class TemoignageController extends Controller
         $temoignage->Email = $request->input('Email');
         $temoignage->Profession = $request->input('Profession');
         $temoignage->Message = $request->input('Message');
-        $temoignage->User_id = $request->input('User_id');
+        $temoignage->user_id = $request->input('user_id');
         $temoignage->save(); }
         return redirect('temoignagecreate')->with(['success' => "Temoignage modifié"]);
     }

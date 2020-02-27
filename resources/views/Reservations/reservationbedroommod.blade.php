@@ -1,5 +1,8 @@
 @extends('layouts.moderator')
 @section('title', "Liste Reservation Chambre")
+@section('css')
+
+@endsection
 @section('content')
     @if(session('success'))
         <div class="alert alert-success">{{session('success')}}</div>
@@ -39,7 +42,7 @@
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0" style="height: 100%;">
                 <table class="table table-head-fixed">
-                  <thead>
+                  <thead class="text-center">
                     <tr>
                       <th>Arriver</th>
                       <th>Heure</th>
@@ -58,7 +61,7 @@
                       <th>Telephone</th>
                       <th>Montant</th>
                       <th>Statut</th>
-                      <th>User_id</th>
+                      <th>Responsable</th>
                       <th>Editer</th>
                     </tr>
                   </thead>
@@ -71,7 +74,7 @@
                       <td>{{$reservations->Nombre_chambre}}</td>
                       <td>{{$reservations->Nombre_adulte}}</td>
                       <td>{{$reservations->Nombre_enfant}}</td>
-                      <td>{{$reservations->Type_chambre}}</td>
+                      <td>{{$reservations->bedroom->Type_chambre ?? '' }}</td>
                       <td>{{$reservations->Numero_chambre}}</td>
                       <td>{{$reservations->Civilite}}</td>
                       <td>{{$reservations->Prenom}}</td>
@@ -82,7 +85,7 @@
                       <td>{{$reservations->Telephone}}</td>
                       <td>{{$reservations->Montant_payer}}</td>
                       <td>{{$reservations->Statut}}</td>
-                      <td>{{$reservations->User_id}}</td>
+                      <td>{{$reservations->user->name ?? '' }}</td>
                       <td> <p class="btn btn-outline-secondary"><a href="resbedroomedit/{{$reservations->id}}">Editer</a></p></td>
                     </tr>
                   </tbody>

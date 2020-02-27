@@ -1,5 +1,8 @@
 @extends('layouts.moderator')
 @section('title', " Liste Message/Contact")
+@section('css')
+
+@endsection
 @section('content')
     @if(session('success'))
         <div class="alert alert-success">{{session('success')}}</div>
@@ -39,14 +42,14 @@
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0" style="height: 100%;">
                 <table class="table table-head-fixed">
-                  <thead>
+                  <thead class="text-center">
                     <tr>
                      <th>Nom_complet</th>
                      <th>Email</th>
                      <th>Objet</th>
                      <th>Message</th>
                      <th>Statut</th>
-                     <th>User</th>
+                     <th>Responsable</th>
                      <th>Editer</th>
                     </tr>
                   </thead>
@@ -58,7 +61,7 @@
                               <td>{{$contacts->Objet}}</td>
                               <td><textarea cols="45" rows="3" class="form-control" readonly>{{$contacts->Message}}</textarea></td>
                               <td>{{$contacts->Statut}}</td>
-                              <td>{{$contacts->User_id}}</td>
+                              <td>{{$contacts->user->name ?? '' }}</td>
                               <td> <p class="btn btn-outline-secondary"><a href="contactedit/{{$contacts->id}}">Editer</a></p></td>
                           </tr>
                         </tbody>
@@ -70,4 +73,7 @@
       </div>
       </div>
 </section>
+@endsection
+@section('js')
+
 @endsection

@@ -49,7 +49,7 @@ class ServicesController extends Controller
           'Service' => 'required',
           'Description' => 'required',
           'Image' => 'required| image | mimes:jpeg,png,jpg,gif | max: 2048',
-          'User_id' => 'required | min:1 ',
+          'user_id' => 'required | min:1 ',
       ]);
       $service = new Services();
       $service->Service = $request->input('Service');
@@ -60,7 +60,7 @@ class ServicesController extends Controller
       $folder = '/uploads/images/';
       $service-> Image = $folder . $image_name . '.' . $image->getClientOriginalExtension();
       $this->uploadImage($image, $folder, 'public', $image_name);}
-      $service->User_id = $request->input('User_id');
+      $service->user_id = $request->input('user_id');
       $service->save();
           return redirect('/hotelservices')->with(['success' => "Service enregistrée"]);
     }
@@ -115,7 +115,7 @@ class ServicesController extends Controller
                   $service->Image = $folder.$image_name.'.'.$image->getClientOriginalExtension();
                   //Maintenant nous pouvons enregistrer l'image dans le dossier en utilisant la méthode uploadImage();
                   $this->uploadImage($image, $folder, 'public', $image_name); }
-          $service->User_id = $request->input('User_id');
+          $service->user_id = $request->input('user_id');
           $service-> save(); }
       return redirect('/hotelservices')->with(['success' => "Service modifié"]);
     }

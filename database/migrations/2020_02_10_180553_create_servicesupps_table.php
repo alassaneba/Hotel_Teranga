@@ -19,7 +19,7 @@ class CreateServicesuppsTable extends Migration
             $table->string('Slogan');
             $table->text('Description');
             $table->string('Image');
-            $table->unsignedBigInteger('User_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }

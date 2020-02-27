@@ -1,5 +1,8 @@
 @extends('layouts.superadmin')
 @section('title', "Superadmin")
+@section('css')
+
+@endsection
 @section('content')
 
   <div class="container-fluid">
@@ -200,4 +203,7 @@
         <ul>
         </ul>
       </section>
+@endsection
+@section('js')
+
 @endsection

@@ -19,7 +19,7 @@ class CreateAproposTable extends Migration
             $table->text('Description');
             $table->string('Image');
             $table->text('Lien_video');
-            $table->unsignedBigInteger('User_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }

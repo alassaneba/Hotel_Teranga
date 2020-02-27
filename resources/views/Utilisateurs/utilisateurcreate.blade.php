@@ -1,5 +1,8 @@
 @extends('layouts.superadmin')
 @section('title', "Creation Utilisateur Hotel")
+@section('css')
+
+@endsection
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)
@@ -27,10 +30,7 @@
         <div class="card-tools">
         </div>
       </div>
-
     </div>
-
-
         <div class="card">
           <div class="card-body register-card-body">
             <p class="login-box-msg">Enregistrer un nouveau gestionnaire</p>
@@ -106,4 +106,7 @@
             </form>
           <!-- /.form-box -->
 </div>
+@endsection
+@section('js')
+
 @endsection

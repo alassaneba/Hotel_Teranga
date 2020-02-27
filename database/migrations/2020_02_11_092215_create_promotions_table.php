@@ -19,7 +19,7 @@ class CreatePromotionsTable extends Migration
             $table->text('Description');
             $table->string('Image');
             $table->text('Valeur');
-            $table->unsignedBigInteger('User_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }

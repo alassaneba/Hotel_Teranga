@@ -1,5 +1,8 @@
 @extends('layouts.superadmin')
 @section('title', "Liste Utilisateur Hotel")
+@section('css')
+
+@endsection
 @section('content')
 @if(session('success'))
     <div class="alert alert-success">{{session('success')}}</div>
@@ -39,7 +42,7 @@
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0" style="height: 100%;">
                 <table class="table table-head-fixed">
-                  <thead>
+                  <thead class="text-center">
                     <tr>
                      <th>Id</th>
                      <th>Role</th>
@@ -72,4 +75,7 @@
       </div>
       </div>
 </section>
+@endsection
+@section('js')
+
 @endsection

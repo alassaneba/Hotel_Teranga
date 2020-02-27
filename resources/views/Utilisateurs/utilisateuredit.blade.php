@@ -1,5 +1,8 @@
 @extends('layouts.superadmin')
 @section('title', "Edition Utilisateur Hotel")
+@section('css')
+
+@endsection
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)
@@ -100,4 +103,7 @@
             </form>
           <!-- /.form-box -->
 </div>
+@endsection
+@section('js')
+
 @endsection

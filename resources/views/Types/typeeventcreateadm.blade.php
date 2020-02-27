@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 @section('title', "Creation Type Evenement")
+@section('css')
+
+@endsection
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)
@@ -30,10 +33,7 @@
       <form action="{{route('creation/type/evenement')}}" method="post" enctype="multipart/form-data">
   @csrf
   <div><label>Type d'evenement</label>
-      <input type="text" name="Type_evenement" class="form-control" placeholder="Type d'evenement">
-  </div>
-  <div><label>ReservationEvent_id</label>
-      <input type="number" name="ReservationEvent_id" class="form-control" placeholder="ReservationEvent_id">
+      <input type="text" name="Type_evenement" class="form-control">
   </div>
     <br>
   <div class="text-center">
@@ -42,4 +42,7 @@
     <br>
 </form>
 </div>
+@endsection
+@section('js')
+
 @endsection

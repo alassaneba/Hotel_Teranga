@@ -21,7 +21,7 @@ class CreateBesoinClientsTable extends Migration
           $table->integer('Montant_payer');
           $table->string('Agent_conserner');
           $table->string('Statut');
-          $table->unsignedBigInteger('User_id');
+          $table->unsignedBigInteger('user_id');
           $table->timestamps();
         });
     }

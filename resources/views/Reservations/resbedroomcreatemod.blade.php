@@ -1,5 +1,8 @@
 @extends('layouts.moderator')
 @section('title', "Creation Reservation Chambre")
+@section('css')
+
+@endsection
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)
@@ -30,7 +33,7 @@
     <form action="{{route('creation/reservation/bedroom')}}" method="post" name="form1">
         @csrf
         <div><label>Date d'arriver</label>
-            <input type="date" name="Date_arriver" min="<?php echo date('Y-m-d'); ?>" id="Date_arriver"class="form-control">
+            <input type="date" name="Date_arriver" min="<?php echo date('Y-m-d'); ?>" id="Date_arriver" class="form-control">
         </div>
         <div><label>Heure d'arriver</label>
             <input type="time" name="Heure_arriver" class="form-control">
@@ -49,10 +52,10 @@
             <input type="number" name="Nombre_enfant" class="form-control">
         </div>
         <div><label>Type de chambre</label>
-         <select name="Type_chambre" id="Type_chambre" onChange='Choix(this.form)' class="form-control">
+         <select name="bedroom_id" id="Type_chambre" onChange='Choix(this.form)' class="form-control">
                 <option></option>
-            @foreach($bedrooms as $id => $value)
-                <option value="{{$value}}">{{$value}}</option>
+            @foreach($bedrooms as $key => $value)
+                <option value="{{$key}}">{{$value}}</option>
             @endforeach
          </select>
         </div>
@@ -76,10 +79,10 @@
             </select>
         </div>
         <div><label>Prenom</label>
-            <input type="text" name="Prenom" class="form-control" placeholder="Prenom">
+            <input type="text" name="Prenom" class="form-control">
         </div>
         <div><label>Nom</label>
-            <input type="text" name="Nom" class="form-control" placeholder="Nom">
+            <input type="text" name="Nom" class="form-control">
         </div>
         <div><label>Nationalite</label>
             <select type="text" name="Nationalite" class="form-control">
@@ -329,10 +332,10 @@
             <input type="text" name="Identifiant" class="form-control" placeholder="Numero Passeport ou Cni">
         </div>
         <div><label>Email</label>
-            <input type="email" name="Email" class="form-control" placeholder="Email">
+            <input type="email" name="Email" class="form-control">
         </div>
         <div><label>Telephone</label>
-            <input type="text" name="Telephone" class="form-control" placeholder="Telephone">
+            <input type="text" name="Telephone" class="form-control">
         </div>
         <div><label>Montant a payer</label>
          <input type="text" id="Montant_payer" name="Montant_payer" value="0" class="form-control" readonly />
@@ -346,7 +349,7 @@
             </select>
         </div>
         <div><label>Responsable</label>
-          <select type="text" name="User_id"  class="form-control" readonly>
+          <select type="text" name="user_id"  class="form-control" readonly>
           <option value="{{ Auth::user()->id }}" >{{ Auth::user()->name }}</option>
           </select>
         </div>

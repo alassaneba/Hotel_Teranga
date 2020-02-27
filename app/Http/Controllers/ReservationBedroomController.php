@@ -60,15 +60,14 @@ class ReservationBedroomController extends Controller
              'Nombre_chambre'=>'required|numeric',
              'Nombre_adulte'=>'required|min:1|numeric',
              'Nombre_enfant'=>'required|nullable|numeric',
-             'Type_chambre'=>'required',
              'Civilite'=>'required',
              'Prenom'=>'required|min:3',
              'Nom'=>'required|min:2',
              'Nationalite'=>'required|min:2',
              'Email'=>'required|email',
              'Telephone'=>'required|min:9|numeric|',
-             'Montant_payer'=>'required|min:4|numeric',
-             'User_id'=>'min:1|numeric',
+             'Montant_payer'=>'required|min:0|numeric',
+             'user_id'=>'min:1|numeric',
         ]);
         $resbed = new ReservationBedroom();
         $resbed-> Date_arriver = $request->input('Date_arriver');
@@ -77,7 +76,6 @@ class ReservationBedroomController extends Controller
         $resbed-> Nombre_chambre = $request->input('Nombre_chambre');
         $resbed-> Nombre_adulte = $request->input('Nombre_adulte');
         $resbed-> Nombre_enfant = $request->input('Nombre_enfant');
-        $resbed-> Type_chambre = $request->input('Type_chambre');
         $resbed-> Numero_chambre = $request->input('Numero_chambre');
         $resbed-> Civilite = $request->input('Civilite');
         $resbed-> Prenom = $request->input('Prenom');
@@ -88,7 +86,8 @@ class ReservationBedroomController extends Controller
         $resbed-> Telephone= $request->input('Telephone');
         $resbed-> Montant_payer= $request->input('Montant_payer');
         $resbed-> Statut = $request->input('Statut');
-        $resbed-> User_id = $request->input('User_id');
+        $resbed-> bedroom_id = $request->input('bedroom_id');
+        $resbed-> user_id = $request->input('user_id');
         $resbed-> save();
 
         return redirect('/reservationbedroom')->with(['success' => "Reservation chambre enregistrée"]);
@@ -115,14 +114,15 @@ class ReservationBedroomController extends Controller
     {
             $resbedroomedit= \App\ReservationBedroom::find($id);
             $bedrooms = \App\Bedroom::pluck('Type_chambre','id');
+            $typechambre = \App\Bedroom::find($resbedroomedit->bedroom_id)->Type_chambre;
             $reservationbedroom = \App\ReservationBedroom::orderBy('created_at','DESC')->first();
             $user = Auth::User()->role;
             if($user=='Superadmin')
-             return view('/Reservations/resbedroomedit', compact('resbedroomedit','bedrooms','reservationbedroom'));
+             return view('/Reservations/resbedroomedit', compact('resbedroomedit','bedrooms','typechambre','reservationbedroom'));
             if($user=='Admin')
-             return view('/Reservations/resbedroomeditadm', compact('resbedroomedit','bedrooms','reservationbedroom'));
+             return view('/Reservations/resbedroomeditadm', compact('resbedroomedit','bedrooms','typechambre','reservationbedroom'));
             if($user=='Moderator')
-             return view('/Reservations/resbedroomeditmod', compact('resbedroomedit','bedrooms','reservationbedroom'));
+             return view('/Reservations/resbedroomeditmod', compact('resbedroomedit','bedrooms','typechambre','reservationbedroom'));
 
     }
 
@@ -143,22 +143,18 @@ class ReservationBedroomController extends Controller
             $reservationbedroom->Nombre_chambre = $request->input('Nombre_chambre');
             $reservationbedroom->Nombre_adulte = $request->input('Nombre_adulte');
             $reservationbedroom->Nombre_enfant = $request->input('Nombre_enfant');
-
-            if ($reservationbedroom) {
-                $reservationbedroom->update([
-                    'Type_chambre' => $request->input('Type_chambre'),
-                ]); }
-                $reservationbedroom->Numero_chambre = $request->input('Numero_chambre');
-                $reservationbedroom->Civilite = $request->input('Civilite');
-                $reservationbedroom->Prenom = $request->input('Prenom');
-                $reservationbedroom->Nom = $request->input('Nom');
-                $reservationbedroom->Nationalite = $request->input('Nationalite');
-                $reservationbedroom->Identifiant = $request->input('Identifiant');
-                $reservationbedroom->Email = $request->input('Email');
-                $reservationbedroom->Telephone = $request->input('Telephone');
+            $reservationbedroom->Numero_chambre = $request->input('Numero_chambre');
+            $reservationbedroom->Civilite = $request->input('Civilite');
+            $reservationbedroom->Prenom = $request->input('Prenom');
+            $reservationbedroom->Nom = $request->input('Nom');
+            $reservationbedroom->Nationalite = $request->input('Nationalite');
+            $reservationbedroom->Identifiant = $request->input('Identifiant');
+            $reservationbedroom->Email = $request->input('Email');
+            $reservationbedroom->Telephone = $request->input('Telephone');
                 $reservationbedroom->Montant_payer = $request->input('Montant_payer');
                 $reservationbedroom->Statut = $request->input('Statut');
-                $reservationbedroom->User_id = $request->input('User_id');
+                $reservationbedroom->bedroom_id = $request->input('bedroom_id');
+                $reservationbedroom->user_id = $request->input('user_id');
                 $reservationbedroom->save();
             }
             return redirect('/reservationbedroom')->with(['success' => "Reservation chambre modifiée"]);
@@ -193,15 +189,14 @@ class ReservationBedroomController extends Controller
                  'Nombre_chambre'=>'required|numeric',
                  'Nombre_adulte'=>'required|min:1|numeric',
                  'Nombre_enfant'=>'required|nullable|numeric',
-                 'Type_chambre'=>'required',
                  'Civilite'=>'required',
                  'Prenom'=>'required|min:3',
                  'Nom'=>'required|min:2',
                  'Nationalite'=>'required|min:2',
                  'Email'=>'required|email',
                  'Telephone'=>'required|min:9|numeric|',
-                 'Montant_payer'=>'required|min:4|numeric',
-                 'User_id'=>'min:1|numeric',
+                 'Montant_payer'=>'required|min:0|numeric',
+                 'user_id'=>'min:1|numeric',
             ]);
             $resbed = new ReservationBedroom();
             $resbed-> Date_arriver = $request->input('Date_arriver');
@@ -210,7 +205,6 @@ class ReservationBedroomController extends Controller
             $resbed-> Nombre_chambre = $request->input('Nombre_chambre');
             $resbed-> Nombre_adulte = $request->input('Nombre_adulte');
             $resbed-> Nombre_enfant = $request->input('Nombre_enfant');
-            $resbed-> Type_chambre = $request->input('Type_chambre');
             $resbed-> Numero_chambre = $request->input('Numero_chambre');
             $resbed-> Civilite = $request->input('Civilite');
             $resbed-> Prenom = $request->input('Prenom');
@@ -221,7 +215,8 @@ class ReservationBedroomController extends Controller
             $resbed-> Telephone= $request->input('Telephone');
             $resbed-> Montant_payer= $request->input('Montant_payer');
             $resbed-> Statut= $request->input('Statut');
-            $resbed-> User_id = $request->input('User_id');
+            $resbed-> bedroom_id = $request->input('bedroom_id');
+            $resbed-> user_id = $request->input('user_id');
             $resbed-> save();
 
               return redirect()->back()->with(['success' => "Votre reservation de chambre est enregistrée. Nous vous contacterons sous peu pour la confirmation."]);

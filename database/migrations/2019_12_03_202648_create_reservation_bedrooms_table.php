@@ -21,7 +21,6 @@ class CreateReservationBedroomsTable extends Migration
             $table->integer('Nombre_chambre');
             $table->integer('Nombre_adulte');
             $table->integer('Nombre_enfant');
-            $table->string('Type_chambre');
             $table->string('Numero_chambre')->nullable('true');
             $table->string('Civilite');
             $table->string('Prenom');
@@ -32,7 +31,8 @@ class CreateReservationBedroomsTable extends Migration
             $table->integer('Telephone');
             $table->integer('Montant_payer');
             $table->string('Statut')->nullable('true');
-            $table->unsignedBigInteger('User_id')->nullable('true');
+            $table->unsignedBigInteger('bedroom_id');
+            $table->unsignedBigInteger('user_id')->nullable('true');
             $table->timestamps();
 
         });

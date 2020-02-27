@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 @section('title', "Edition Type Chambre")
+@section('css')
+
+@endsection
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)
@@ -31,10 +34,10 @@
             @csrf
             @method('patch')
             <div><label>Type de chambre</label>
-              <input type="text" name="Type_chambre" class="form-control" placeholder="Type de chambre" value="{{$bedroomedit->Type_chambre}}">
+              <input type="text" name="Type_chambre" class="form-control" value="{{$bedroomedit->Type_chambre}}">
             </div>
             <div><label>Description de la chambre</label>
-                <textarea type="text" name="Description" class="form-control" placeholder="Description">{{$bedroomedit->Description}}</textarea>
+                <textarea type="text" name="Description" class="form-control">{{$bedroomedit->Description}}</textarea>
             </div>
             <div><label>Image de la chambre</label>
                 <div class="row">
@@ -45,16 +48,13 @@
                 </div>
             </div>
             <div><label>Prix/nuite</label>
-                <input type="number" name="Prix_nuite" class="form-control" placeholder="Prix/nuite" value="{{$bedroomedit->Prix_nuite}}">
+                <input type="number" name="Prix_nuite" class="form-control" value="{{$bedroomedit->Prix_nuite}}">
             </div>
             <div><label>Statut</label>
                 <select type="text" name="Statut" class="form-control" value="{{$bedroomedit->Statut}}">
                     <option value="Disponible" {{$bedroomedit->Statut==="Disponible"?'selected="selected"':''}}>Disponible</option>
                     <option value="Indisponible" {{$bedroomedit->Statut==="Indisponible"?'selected="selected"':''}}>Indisponible</option>
                 </select>
-            </div>
-            <div><label>ReservationBedroom_id</label>
-                <input type="number" name="ReservationBedroom_id" class="form-control" placeholder="ReservationBedroom_id" value="{{$bedroomedit->ReservationBedroom_id}}">
             </div>
               <br>
             <div class="text-center">
@@ -63,4 +63,7 @@
               <br>
         </form>
     </div>
+@endsection
+@section('js')
+
 @endsection

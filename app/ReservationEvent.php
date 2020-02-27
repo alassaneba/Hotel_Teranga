@@ -11,12 +11,12 @@ class ReservationEvent extends Model
         return $this->belongsTo('App\User');
     }
     public function TypeEvent (){
-        return $this->hasMany('App\TypeEvent');
+        return $this->belongsTo('App\TypeEvent');
     }
     public function Room (){
-        return $this->hasMany('App\Room');
+        return $this->belongsTo('App\Room');
     }
     public function DisposalRoom (){
-        return $this->hasMany('App\DisposalRoom');
+        return $this->belongsTo('App\DisposalRoom');
     }
-}
+  }

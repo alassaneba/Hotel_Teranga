@@ -175,6 +175,7 @@
                             </div>
                             <div class="text w-100 mb-3">
                                 <h2><a href="{{route('reservation/chambre')}}">Chambre<br>{{$bedroom->Type_chambre}}</a></h2>
+                                <span class="info w-100 mb-4" style="color: white;"> <i class="icon-bath"></i> <i class="icon-wifi"></i> <i class="icon-tv"></i> <i class="icon-glass"></i> <i class="icon-coffee"></i> </span>
                             </div>
                         </div>
                     </div>
@@ -227,7 +228,7 @@
             @foreach($servicesupps as $servicesupp)
             <div class="col-md-4 ftco-animate">
                 <div class="blog-entry">
-                    <a href="{{route('reservation/evenement')}}" class="block-20" style="background-image: url('{{$servicesupp->Image}}');"></a>
+                    <a href="{{route('services')}}" class="block-20" style="background-image: url('{{$servicesupp->Image}}');"></a>
                     <div class="text py-4">
                         <div class="meta mb-3">
                             <div><a>{{$servicesupp->Servicesupp}}</a></div>
@@ -259,7 +260,7 @@
     </div>
 </section>
 
-<section class="ftco-section ftco-no-pt">
+<section style="margin-top:5px;" class="ftco-section ftco-no-pt">
     <div class="container">
         <div class="row no-gutters">
             <div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url({{asset('app-assets/images/deluxe3.jpg')}});">
@@ -287,7 +288,7 @@
     </div>
 </section>
 
-<section style="margin-top: 3em;" class="ftco-section ftco-no-pb ftco-no-pt bg-light">
+<section style="margin-top: 0em;" class="ftco-section ftco-no-pb ftco-no-pt bg-light">
     <div class="container">
         <div class="row">
             @foreach($apropos as $apropo)

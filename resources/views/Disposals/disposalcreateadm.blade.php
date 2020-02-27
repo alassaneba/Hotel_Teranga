@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 @section('title', "Creation Disposition Salle/Espace")
+@section('css')
+
+@endsection
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)
@@ -15,7 +18,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route('Backoffice')}}">Tableau de bord</a></li>
-              <li class="breadcrumb-item active">Disposition Salles</li>
+              <li class="breadcrumb-item active">Disposition Salle</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -30,10 +33,7 @@
       <form action="{{route('creation/disposition/salle')}}" method="post" enctype="multipart/form-data">
   @csrf
   <div><label>Disposition de Salle</label>
-      <input type="text" name="Disposition" class="form-control" placeholder="Disposition de salle">
-  </div>
-  <div><label>ReservationEvent_id</label>
-      <input type="number" name="ReservationEvent_id" class="form-control" placeholder="ReservationEvent_id">
+      <input type="text" name="Disposition" class="form-control">
   </div>
     <br>
   <div class="text-center">
@@ -42,4 +42,7 @@
     <br>
 </form>
 </div>
+@endsection
+@section('js')
+
 @endsection

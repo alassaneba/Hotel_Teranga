@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class DisposalRoom extends Model
 {
-    public function ReservationEvent (){
-        return $this->belongsTo('App\ReservationEvent');
-    }
+  public function ReservationEvents (){
+      return $this->hasMany('App\ReservationEvent');
+  }
+
 }

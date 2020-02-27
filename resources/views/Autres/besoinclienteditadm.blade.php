@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 @section('title', "Edition Besoins Clients")
+@section('css')
+
+@endsection
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)
@@ -37,7 +40,7 @@
                 <input type="text" name="Numero_chambre" class="form-control" value="{{$besoinclientedit->Numero_chambre}}">
             </div>
             <div><label>Description du besoin</label>
-                <textarea name="Description_besoin" cols="30" rows="7" class="form-control">{{$besoinclientedit->Description_besoin}}</textarea>
+                <textarea name="Description_besoin" cols="30" rows="4" class="form-control">{{$besoinclientedit->Description_besoin}}</textarea>
             </div>
             <div><label>Montant a payer</label>
                 <input type="number" name="Montant_payer" class="form-control" value="{{$besoinclientedit->Montant_payer}}">
@@ -54,7 +57,7 @@
                 </select>
             </div>
             <div><label>Responsable</label>
-              <select type="text" name="User_id"  class="form-control" readonly>
+              <select type="text" name="user_id"  class="form-control" readonly>
               <option value="{{ Auth::user()->id }}" >{{ Auth::user()->name }}</option>
               </select>
             </div>
@@ -65,4 +68,7 @@
               <br>
         </form>
     </div>
+@endsection
+@section('js')
+
 @endsection

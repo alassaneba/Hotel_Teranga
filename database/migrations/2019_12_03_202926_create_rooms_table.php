@@ -19,7 +19,6 @@ class CreateRoomsTable extends Migration
             $table->text('Description');
             $table->string('Image');
             $table->string('Statut');
-            $table->unsignedBigInteger('ReservationEvent_id');
             $table->timestamps();
 
         });

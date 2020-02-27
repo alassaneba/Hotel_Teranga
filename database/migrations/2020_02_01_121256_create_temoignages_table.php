@@ -19,7 +19,7 @@ class CreateTemoignagesTable extends Migration
             $table->string('Email');
             $table->string('Profession')->nullable('true');
             $table->longText('Message');
-            $table->unsignedBigInteger('User_id')->nullable('true');
+            $table->unsignedBigInteger('user_id')->nullable('true');
             $table->timestamps();
         });
     }

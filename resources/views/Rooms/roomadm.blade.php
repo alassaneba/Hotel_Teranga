@@ -1,5 +1,8 @@
 @extends('layouts.admin')
-@section('title', "Liste Espaces/Salles")
+@section('title', "Liste Espace/Salle")
+@section('css')
+
+@endsection
 @section('content')
     @if(session('success'))
         <div class="alert alert-success">{{session('success')}}</div>
@@ -14,7 +17,7 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{route('Backoffice')}}">Tableau de bord</a></li>
-            <li class="breadcrumb-item active">Espaces et Salles</li>
+            <li class="breadcrumb-item active">Espace et Salle</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -24,7 +27,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Tableau des Espaces et Salles</h3>
+                <h3 class="card-title">Tableau des Espace et Salle</h3>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -39,9 +42,9 @@
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0" style="height: 100%;">
                 <table class="table table-head-fixed">
-                  <thead>
+                  <thead class="text-center">
                     <tr>
-                     <th>Espaces/Salles</th>
+                     <th>Espace/Salle</th>
                      <th>Description</th>
                      <th>Image</th>
                      <th>Statut</th>
@@ -72,4 +75,7 @@
       </div>
       </div>
 </section>
+@endsection
+@section('js')
+
 @endsection

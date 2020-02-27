@@ -1,6 +1,11 @@
 @extends('layout')
 @section('title', "Reservation Evenementiel")
 @section('content')
+@if($errors->any())
+    @foreach($errors->all() as $error)
+        <div class="alert alert-danger">{{$error}}</div>
+    @endforeach
+@endif
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand" href="{{route('accueil')}}">Hotel<span>Teranga</span></a>
@@ -48,23 +53,23 @@
     </div>
 </nav>
 <!-- END nav -->
-    <section class="hero-wrap hero-wrap-2" style="background-image:url({{asset('app-assets/images/renai.jpg')}});">
+    <section class="hero-wrap d-flex js-fullheight" style="background:url({{asset('app-assets/images/renai.jpg')}});height: 639px;background-position: top;background-size: cover;">
         <div class="overlay"></div>
-        <div class="container">
-            <div class="row slider-text justify-content-center align-items-center">
-                <div class="col-md-0 col-sm-0 d-flex text-center ftco-animate">
-                    <h1 class="mb-3 mt-5 bread">Reservation d'evenement</h1>
-                </div>
+        <div class="forth js-fullheight d-flex align-items-center">
+            <div class="text text-center">
+                <h1>Reservation d'evenement</h1>
             </div>
+        </div>
+        <div class="third about-img js-fullheight">
         </div>
     </section>
 
     @if(session('success'))
         <div class="alert alert-success">{{session('success')}}</div>
     @endif
-
+    <br>
     <div class=" container border">
-        <spam><p>Pour faire une reservation d'evenement veuillez renseignez tous les champs</p></spam>
+        <spam><p class="text-center">Pour faire une reservation d'evenement veuillez renseignez les champs</p></spam>
     </div>
 
     <div class="container border">
@@ -74,18 +79,18 @@
                 <input type="text" name="Nom_evenement" class="form-control">
         </div>
         <div><label>Type d'evenement</label>
-            <select name="Type_evenement" id="Type_evenement" class="form-control">
+            <select name="type_event_id" id="Type_evenement" class="form-control">
                 <option></option>
-                @foreach($typeevenememt as $id => $value)
-                    <option value="{{$value}}">{{$value}}</option>
+                @foreach($typeevenememt as $key => $value)
+                    <option value="{{$key}}">{{$value}}</option>
                 @endforeach
             </select>
         </div>
         <div><label>Date debut</label>
-            <input type="date" name="Date_debut" id="Date_debut" min="<?php echo date('Y-m-d'); ?>" class="form-control" placeholder="Date début">
+            <input type="date" name="Date_debut" id="Date_debut" min="<?php echo date('Y-m-d'); ?>" class="form-control">
         </div>
         <div><label>Date fin</label>
-            <input type="date" name="Date_fin" id="Date_fin" min="<?php echo date('Y-m-d'); ?>" class="form-control" placeholder="Date fin">
+            <input type="date" name="Date_fin" id="Date_fin" min="<?php echo date('Y-m-d'); ?>" class="form-control">
         </div>
         <div><label>Duree de l'evenement</label>
             <select type="text" name="Duree" class="form-control">
@@ -97,29 +102,29 @@
             </select>
         </div>
         <div><label>Salle de l'evenement</label>
-            <select name="Salles" id="Salles" class="form-control">
-                <option value=""></option>
-                @foreach($salles as $id => $value)
-                    <option value="{{$value}}">{{$value}}</option>
+            <select name="room_id" id="Salles" class="form-control">
+                <option></option>
+                @foreach($salles as $key => $value)
+                    <option value="{{$key}}">{{$value}}</option>
                 @endforeach
             </select>
         </div>
         <div><label>Disposition de la salle</label>
-            <select name="Disposition" id="Disposition" class="form-control">
-                <option value=""></option>
-                @foreach($disposition as $id => $value)
-                    <option value="{{$value}}">{{$value}}</option>
+            <select name="disposal_room_id" id="Disposition" class="form-control">
+                <option></option>
+                @foreach($disposition as $key => $value)
+                    <option value="{{$key}}">{{$value}}</option>
                 @endforeach
             </select>
         </div>
         <div><label>Nombre de participant</label>
-            <input type="number" name="Nombre_participant" class="form-control" placeholder="Nombre de participant">
+            <input type="number" name="Nombre_participant" class="form-control">
         </div>
         <div><label>Restauration</label>
-            <select type="text" name="Restauration" class="form-control" placeholder="Restauration">
+            <select type="text" name="Restauration" class="form-control">
                 <option></option>
-                <option value="NON">Non</option>
-                <option value=OUI>Oui</option>
+                <option value="Non">Non</option>
+                <option value="Oui">Oui</option>
             </select>
         </div>
         <div><label>Equipement</label>
@@ -127,11 +132,11 @@
                 <li><input type="checkbox" name="Equipement1" value="Video-projecteur">Video-projecteur</li>
                 <li><input type="checkbox" name="Equipement2" value="Internet">Internet</li>
                 <li><input type="checkbox" name="Equipement3" value="Sonorisation">Sonorisation</li>
-                <li><input type="checkbox" name="Equipement4" value="Autres">Autres</li>
+                <li><input type="checkbox" name="Equipement4" value="Autres">Autres a signaler</li>
             </ul>
         </div>
-        <div><label>Autres informations supplementaires</label>
-            <textarea name="Autres_informations" id="" cols="30" rows="4" class="form-control" placeholder="Autres informations supplementaires"></textarea>
+        <div><label>Autres informations supplementaires a signaler</label>
+            <textarea name="Autres_informations" id="Autres_informations" cols="30" rows="3" class="form-control"></textarea>
         </div>
         <div><label>Civilite</label>
             <select type="text" name="Civilite" class="form-control">
@@ -142,22 +147,22 @@
             </select>
         </div>
         <div><label>Prenom</label>
-            <input type="text" name="Prenom" class="form-control" placeholder="Prenom">
+            <input type="text" name="Prenom" class="form-control">
         </div>
         <div><label>Nom</label>
-            <input type="text" name="Nom" class="form-control" placeholder="Nom">
+            <input type="text" name="Nom" class="form-control">
         </div>
         <div><label>Societe</label>
-            <input type="text" name="Societe" class="form-control" placeholder="Societe">
+            <input type="text" name="Societe" class="form-control">
         </div>
         <div><label>Secteur d'activite</label>
-            <input type="text" name="Secteur_activite" class="form-control" placeholder="Secteur d'activité">
+            <input type="text" name="Secteur_activite" class="form-control">
         </div>
         <div><label>Email</label>
-            <input type="email" name="Email" class="form-control" placeholder="Email">
+            <input type="email" name="Email" class="form-control">
         </div>
         <div><label>Telephone</label>
-            <input type="text" name="Telephone" class="form-control" placeholder="Telephone">
+            <input type="text" name="Telephone" class="form-control">
         </div>
         <br>
         <div class="text-center">
@@ -165,7 +170,7 @@
         </div>
         <br>
     </form>
-    </div>
+  </div><br>
 @endsection
 @section('js')
 <script type="text/javascript">

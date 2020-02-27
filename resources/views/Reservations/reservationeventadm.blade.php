@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 @section('title', "Liste Reservation Evenementiel")
+@section('css')
+
+@endsection
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)
@@ -41,7 +44,7 @@
             <!-- /.card-header -->
             <div class="card-body table-responsive p-0" style="height: 100%;">
               <table class="table table-head-fixed">
-                <thead>
+                <thead class="text-center">
                  <tr>
                    <th>Nom</th>
                    <th>Evenement</th>
@@ -64,7 +67,7 @@
                    <th>Telephone</th>
                    <th>Montant</th>
                    <th>Statut</th>
-                   <th>User_id</th>
+                   <th>Responsable</th>
                    <th>Editer</th>
                    <th>Supprimer</th>
                </tr>
@@ -73,12 +76,12 @@
     <tbody class="text-center">
         <tr>
             <td>{{$reservationevent->Nom_evenement}}</td>
-            <td>{{$reservationevent->Type_evenement}}</td>
+            <td>{{$reservationevent->typeevent->Type_evenement ?? ''}}</td>
             <td>{{$reservationevent->Date_debut}}</td>
             <td>{{$reservationevent->Date_fin}}</td>
             <td>{{$reservationevent->Duree}}</td>
-            <td>{{$reservationevent->Salles}}</td>
-            <td>{{$reservationevent->Disposition}}</td>
+            <td>{{$reservationevent->room->Salles ?? ''}}</td>
+            <td>{{$reservationevent->disposalroom->Disposition ?? ''}}</td>
             <td>{{$reservationevent->Nombre_participant}}</td>
             <td>{{$reservationevent->Restauration}}</td>
             <td>{{str_replace("|"," ", $reservationevent->Equipement)}}</td>
@@ -93,7 +96,7 @@
             <td>{{$reservationevent->Telephone}}</td>
             <td>{{$reservationevent->Montant_payer}}</td>
             <td>{{$reservationevent->Statut}}</td>
-            <td>{{$reservationevent->User}}</td>
+            <td>{{$reservationevent->user->name ?? '' }}</td>
             <td> <p class="btn btn-outline-secondary"><a href="reseventedit/{{$reservationevent->id}}">Editer</a></p></td>
             <td><form action="reseventedit/{{$reservationevent->id}}" method="post" onsubmit="return confirm('Voulez-vous supprimer ?')">
                     @csrf

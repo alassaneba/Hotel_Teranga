@@ -20,7 +20,7 @@ class Contact extends Migration
             $table->string('Objet');
             $table->longText('Message');
             $table->string('Statut')->nullable('true');
-            $table->unsignedBigInteger('User_id')->nullable('true');
+            $table->unsignedBigInteger('user_id')->nullable('true');
             $table->timestamps();
         });
     }

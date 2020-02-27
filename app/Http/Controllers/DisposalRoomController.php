@@ -52,11 +52,11 @@ class DisposalRoomController extends Controller
     {
       $data = $request->validate([
           'Disposition' => 'required',
-          'ReservationEvent_id' => 'required | min:1 ',
+
       ]);
       $dispo = new DisposalRoom();
       $dispo->Disposition = $request->input('Disposition');
-      $dispo->ReservationEvent_id = $request->input('ReservationEvent_id');
+
       $dispo->save();
       return redirect('disposal')->with(['success' => "Dispositin salle enregistrée"]);
 

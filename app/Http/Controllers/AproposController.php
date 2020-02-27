@@ -51,7 +51,7 @@ class AproposController extends Controller
           'Description' => 'required',
           'Image' => 'required| image | mimes:jpeg,png,jpg,gif | max: 2048',
           'Lien_video' => 'required',
-          'User_id' => 'required | min:1 ',
+          'user_id' => 'required | min:1 ',
       ]);
       $apropo = new Apropos();
       $apropo->Titre = $request->input('Titre');
@@ -63,7 +63,7 @@ class AproposController extends Controller
       $apropo-> Image = $folder . $image_name . '.' . $image->getClientOriginalExtension();
       $this->uploadImage($image, $folder, 'public', $image_name);}
       $apropo->Lien_video = $request->input('Lien_video');
-      $apropo->User_id = $request->input('User_id');
+      $apropo->user_id = $request->input('user_id');
       $apropo->save();
           return redirect('/hotelapropos')->with(['success' => "Apropos enregistrée"]);
     }
@@ -119,7 +119,7 @@ class AproposController extends Controller
                   //Maintenant nous pouvons enregistrer l'image dans le dossier en utilisant la méthode uploadImage();
                   $this->uploadImage($image, $folder, 'public', $image_name); }
           $apropo->Lien_video = $request->input('Lien_video');
-          $apropo->User_id = $request->input('User_id');
+          $apropo->user_id = $request->input('user_id');
           $apropo-> save(); }
       return redirect('/hotelapropos')->with(['success' => "Apropos modifié"]);
     }

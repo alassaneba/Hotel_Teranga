@@ -1,5 +1,8 @@
 @extends('layouts.superadmin')
-@section('title', "Creation Services Hotel")
+@section('title', "Creation Service Hotel")
+@section('css')
+
+@endsection
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)
@@ -15,7 +18,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route('Backoffice')}}">Tableau de bord</a></li>
-              <li class="breadcrumb-item active">Services Hotel</li>
+              <li class="breadcrumb-item active">Service Hotel</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -33,13 +36,13 @@
                 <input type="text" name="Service" class="form-control">
             </div>
             <div><label>Description du service</label>
-                <textarea name="Description" id="Description" cols="30" rows="7" class="form-control"></textarea>
+                <textarea name="Description" id="Description" cols="30" rows="5" class="form-control"></textarea>
             </div>
             <div><label>Image</label>
                 <input type="file" name="Image" class="form-control">
             </div>
             <div><label>Responsable</label>
-              <select type="text" name="User_id"  class="form-control" readonly>
+              <select type="text" name="user_id"  class="form-control" readonly>
               <option value="{{ Auth::user()->id }}" >{{ Auth::user()->name }}</option>
               </select>
             </div>
@@ -50,4 +53,7 @@
               <br>
         </form>
     </div>
+@endsection
+@section('js')
+
 @endsection

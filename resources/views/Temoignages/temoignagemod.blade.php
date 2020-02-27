@@ -1,5 +1,8 @@
 @extends('layouts.moderator')
-@section('title', "Liste Temoignages")
+@section('title', "Liste Temoignage")
+@section('css')
+
+@endsection
 @section('content')
     @if(session('success'))
         <div class="alert alert-success">{{session('success')}}</div>
@@ -14,7 +17,7 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{route('Backoffice')}}">Tableau de bord</a></li>
-            <li class="breadcrumb-item active">Temoignages</li>
+            <li class="breadcrumb-item active">Temoignage</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -39,7 +42,7 @@
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0" style="height: 100%;">
                 <table class="table table-head-fixed">
-                  <thead>
+                  <thead class="text-center">
                     <tr>
                      <th>Nom_complet</th>
                      <th>Email</th>
@@ -64,4 +67,7 @@
       </div>
       </div>
 </section>
+@endsection
+@section('js')
+
 @endsection

@@ -57,12 +57,9 @@ class ReservationEventController extends Controller
     {
         $data = $request->validate([
             'Nom_evenement'=>'required',
-            'Type_evenement'=>'required',
             'Date_debut'=>'required',
             'Date_fin'=>'required',
             'Duree'=>'required',
-            'Salles'=>'required',
-            'Disposition'=>'required',
             'Nombre_participant'=>'required|min:1|numeric',
             'Restauration'=>'required',
             'Civilite'=>'required',
@@ -72,16 +69,13 @@ class ReservationEventController extends Controller
             'Secteur_activite'=>'required|min:3',
             'Email'=>'required|email',
             'Telephone'=>'required|min:9|numeric|',
-            'User_id'=>'min:1|numeric',
+            'user_id'=>'min:1|numeric',
         ]);
         $reseve = new \App\ReservationEvent();
         $reseve-> Nom_evenement = $request->input('Nom_evenement');
-        $reseve-> Type_evenement = $request->input('Type_evenement');
         $reseve-> Date_debut = $request->input('Date_debut');
         $reseve-> Date_fin = $request->input('Date_fin');
         $reseve-> Duree = $request->input('Duree');
-        $reseve-> Salles = $request->input('Salles');
-        $reseve-> Disposition = $request->input('Disposition');
         $reseve-> Nombre_participant = $request->input('Nombre_participant');
         $reseve-> Restauration = $request->input('Restauration');
         $reseve-> Equipement = $request->input('Equipement1').'|'. $request->input('Equipement2').'|'. $request->input('Equipement3').'|'. $request->input('Equipement4');
@@ -96,7 +90,10 @@ class ReservationEventController extends Controller
         $reseve-> Telephone= $request->input('Telephone');
         $reseve-> Montant_payer= $request->input('Montant_payer');
         $reseve-> Statut= $request->input('Statut');
-        $reseve-> User_id = $request->input('User_id');
+        $reseve-> room_id = $request->input('room_id');
+        $reseve-> type_event_id = $request->input('type_event_id');
+        $reseve-> disposal_room_id = $request->input('disposal_room_id');
+        $reseve-> user_id = $request->input('user_id');
         $reseve-> save();
 
         return redirect('/reservationevent')->with(['success' => "Reservation evenement enregistré"]);
@@ -123,16 +120,19 @@ class ReservationEventController extends Controller
     {
         $reseventedit= \App\ReservationEvent::find($id);
         $typeevenememt = \App\TypeEvent::pluck('Type_evenement','id');
+        $typeevent = \App\TypeEvent::find($reseventedit->type_event_id)->Type_evenement;
         $salles = \App\Room::pluck('Salles','id');
+        $room = \App\Room::find($reseventedit->room_id)->Salles;
         $disposition = \App\DisposalRoom::pluck('Disposition','id');
+        $disposalroom = \App\DisposalRoom::find($reseventedit->disposal_room_id)->Disposition;
         $reservationevents = \App\ReservationEvent::orderBy('created_at','DESC')->first();
         $user = Auth::User()->role;
         if($user=='Superadmin')
-         return view('/Reservations/reseventedit', compact('reseventedit','typeevenememt','reservationevents','salles', 'disposition'));
+         return view('/Reservations/reseventedit', compact('reseventedit','typeevenememt','typeevent','room','disposalroom','reservationevents','salles', 'disposition'));
         if($user=='Admin')
-         return view('/Reservations/reseventeditadm', compact('reseventedit','typeevenememt','reservationevents','salles', 'disposition'));
+         return view('/Reservations/reseventeditadm', compact('reseventedit','typeevenememt','typeevent','reservationevents','salles', 'disposition'));
         if($user=='Moderator')
-         return view('/Reservations/reseventeditmod', compact('reseventedit','typeevenememt','reservationevents','salles', 'disposition'));
+         return view('/Reservations/reseventeditmod', compact('reseventedit','typeevenememt','typeevent','reservationevents','salles', 'disposition'));
     }
 
     /**
@@ -147,21 +147,9 @@ class ReservationEventController extends Controller
         $reservationevents= \App\ReservationEvent::find($id);
         if($reservationevents){
         $reservationevents-> Nom_evenement = $request->input('Nom_evenement');
-            if ($reservationevents) {
-                $reservationevents->update([
-                    'Type_evenement' => $request->input('Type_evenement'),
-                ]); }
         $reservationevents-> Date_debut = $request->input('Date_debut');
         $reservationevents-> Date_fin = $request->input('Date_fin');
         $reservationevents-> Duree = $request->input('Duree');
-            if ($reservationevents) {
-                $reservationevents->update([
-                    'Salles' => $request->input('Salles'),
-                ]); }
-            if ($reservationevents) {
-                $reservationevents->update([
-                    'Disposition' => $request->input('Disposition'),
-                ]); }
         $reservationevents-> Nombre_participant = $request->input('Nombre_participant');
         $reservationevents-> Restauration = $request->input('Restauration');
         $reservationevents-> Equipement = $request->input('Equipement1').'|'. $request->input('Equipement2').'|'. $request->input('Equipement3').'|'. $request->input('Equipement4');
@@ -176,7 +164,10 @@ class ReservationEventController extends Controller
         $reservationevents-> Telephone= $request->input('Telephone');
         $reservationevents-> Montant_payer= $request->input('Montant_payer');
         $reservationevents-> Statut= $request->input('Statut');
-        $reservationevents-> User_id = $request->input('User_id');
+        $reservationevents-> room_id = $request->input('room_id');
+        $reservationevents-> type_event_id = $request->input('type_event_id');
+        $reservationevents-> disposal_room_id = $request->input('disposal_room_id');
+        $reservationevents-> user_id = $request->input('user_id');
         $reservationevents-> save(); }
         return redirect('/reservationevent')->with(['success' => "Reservation evenement modifiée"]);
     }
@@ -204,12 +195,10 @@ class ReservationEventController extends Controller
     public function updatefrontoffice(Request $request){
         $data = $request->validate([
             'Nom_evenement'=>'required',
-            'Type_evenement'=>'required',
+
             'Date_debut'=>'required',
             'Date_fin'=>'required',
             'Duree'=>'required',
-            'Salles'=>'required',
-            'Disposition'=>'required',
             'Nombre_participant'=>'required|min:1|numeric',
             'Restauration'=>'required',
             'Civilite'=>'required',
@@ -219,16 +208,13 @@ class ReservationEventController extends Controller
             'Secteur_activite'=>'required|min:3',
             'Email'=>'required|email',
             'Telephone'=>'required|min:9|numeric|',
-            'User_id'=>'min:1|numeric',
+            'user_id'=>'min:1|numeric',
         ]);
         $reseve = new \App\ReservationEvent();
         $reseve-> Nom_evenement = $request->input('Nom_evenement');
-        $reseve-> Type_evenement = $request->input('Type_evenement');
         $reseve-> Date_debut = $request->input('Date_debut');
         $reseve-> Date_fin = $request->input('Date_fin');
         $reseve-> Duree = $request->input('Duree');
-        $reseve-> Salles = $request->input('Salles');
-        $reseve-> Disposition = $request->input('Disposition');
         $reseve-> Nombre_participant = $request->input('Nombre_participant');
         $reseve-> Restauration = $request->input('Restauration');
         $reseve-> Equipement = $request->input('Equipement1').'|'. $request->input('Equipement2').'|'. $request->input('Equipement3').'|'. $request->input('Equipement4');
@@ -243,7 +229,10 @@ class ReservationEventController extends Controller
         $reseve-> Telephone= $request->input('Telephone');
         $reseve-> Montant_payer= $request->input('Montant_payer');
         $reseve-> Statut= $request->input('Statut');
-        $reseve-> User_id = $request->input('User_id');
+        $reseve-> room_id = $request->input('room_id');
+        $reseve-> type_event_id = $request->input('type_event_id');
+        $reseve-> disposal_room_id = $request->input('disposal_room_id');
+        $reseve-> user_id = $request->input('user_id');
         $reseve-> save();
 
         return redirect()->back()->with(['success' => "Votre reservation d'evenement est enregistré"]);

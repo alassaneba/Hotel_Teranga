@@ -1,5 +1,8 @@
 @extends('layouts.superadmin')
 @section('title', "Edition Promotion Hotel")
+@section('css')
+
+@endsection
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)
@@ -48,7 +51,7 @@
               <input type="text" name="Valeur" class="form-control" value="{{$promotionedit->Valeur}}">
             </div>
             <div><label>Responsable</label>
-              <select type="text" name="User_id"  class="form-control" readonly>
+              <select type="text" name="user_id"  class="form-control" readonly>
               <option value="{{ Auth::user()->id }}" >{{ Auth::user()->name }}</option>
               </select>
             </div>
@@ -59,4 +62,7 @@
               <br>
         </form>
     </div>
+@endsection
+@section('js')
+
 @endsection
