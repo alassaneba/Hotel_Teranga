@@ -3,7 +3,7 @@
 @section('content')
 @if($errors->any())
     @foreach($errors->all() as $error)
-        <div class="alert alert-danger">{{$error}}</div>
+        <div class="text-center alert alert-danger">{{$error}}</div>
     @endforeach
 @endif
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -63,9 +63,8 @@
         <div class="third about-img js-fullheight">
         </div>
     </section>
-
     @if(session('success'))
-        <div class="alert alert-success">{{session('success')}}</div>
+        <div class="text-center alert alert-success">{{session('success')}}</div>
     @endif
     <br>
     <div class=" container border">
@@ -105,7 +104,8 @@
             <select name="room_id" id="Salles" class="form-control">
                 <option></option>
                 @foreach($salles as $key => $value)
-                    <option value="{{$key}}">{{$value}}</option>
+                  @continue ($value->Statut == 'Indisponible')
+                    <option value="{{$value->id}}">{{$value->Salles}}</option>
                 @endforeach
             </select>
         </div>

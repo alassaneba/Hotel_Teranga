@@ -5,7 +5,7 @@
 @endsection
 @section('content')
 @if(session('success'))
-    <div class="alert alert-success">{{session('success')}}</div>
+    <div class="text-center alert alert-success">{{session('success')}}</div>
 @endif
 <div class="content-header">
       <div class="container-fluid">

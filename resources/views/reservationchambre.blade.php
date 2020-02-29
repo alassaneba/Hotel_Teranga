@@ -97,10 +97,10 @@
         <div class="third about-img js-fullheight">
         </div>
     </section>
-    <br>
     @if(session('success'))
-        <div class="alert alert-success">{{session('success')}}</div>
+        <div class="text-center alert alert-success">{{session('success')}}</div>
     @endif
+    <br>
     <div class=" container border">
         <spam><p class="text-center">Pour faire une reservation de chambre veuillez renseignez tous les champs</p></spam>
     </div>
@@ -130,7 +130,8 @@
          <select name="bedroom_id" id="Type_chambre" class="form-control">
                 <option></option>
             @foreach($bedrooms as $key => $value)
-                <option value="{{$key}}">{{$value}}</option>
+              @continue ($value->Statut == 'Indisponible')
+                <option value="{{$value->id}}">{{$value->Type_chambre}}</option>
             @endforeach
           </select>
          </div>

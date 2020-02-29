@@ -65,7 +65,7 @@
     </div>
 </section>
 @if(session('success'))
-    <div class="alert alert-success">{{session('success')}}</div>
+    <div class="text-center alert alert-success">{{session('success')}}</div>
 @endif
 <section id="cuc" class="ftco-consult bg-primary align-text-center">
     <div class="container-fluid px-md-4">
@@ -99,6 +99,7 @@
                                     <select id="selection" name="Type_chambre" class="btn btn-light py-3 px-4">
                                       <option></option>
                                   @foreach($bedrooms as $value)
+                                    @continue ($value->Statut == 'Indisponible')
                                       <option value="{{$value->Type_chambre}}">{{$value->Type_chambre}}</option>
                                   @endforeach
                                     </select>
@@ -164,6 +165,7 @@
     <div class="container-fluid px-md-0">
             <div class="row no-gutters">
             @foreach($bedrooms as $bedroom)
+              @continue ($bedroom->Statut == 'Indisponible')
                 <div class="col-md-4">
                     <div class="model img d-flex align-items-end" style="background-image: url('{{$bedroom->Image}}');">
                         <div class="desc w-100 px-4">
@@ -196,6 +198,7 @@
         </div>
         <div class="row">
             @foreach($rooms as $room)
+             @continue ($room->Statut == 'Indisponible')
             <div class="col-md-4 ftco-animate">
                 <div class="blog-entry">
                     <a href="{{route('reservation/evenement')}}" class="block-20" style="background-image: url('{{$room->Image}}');"></a>

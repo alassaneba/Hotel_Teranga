@@ -14,11 +14,11 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert(
             [
                 [
-                    'name'              => 'Bandea_devapp',
-                    'email'             => 'alassaneba@gmail.com',
+                    'name'              => 'Bandea-tech',
+                    'email'             => 'alassaneba9559@gmail.com',
                     'email_verified_at' => now(),
-                    'password'          => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-                    'role'             => 'Superadmin',
+                    'password'          => Hash::make('Test1357912'),
+                    'role'              => 'Superadmin',
                     'remember_token'    => Str::random(10),
                 ],
             ]

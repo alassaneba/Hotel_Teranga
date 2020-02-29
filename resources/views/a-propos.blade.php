@@ -62,7 +62,7 @@
     </div>
 </section>
 @if(session('success'))
-    <div class="alert alert-success">{{session('success')}}</div>
+    <div class="text-center alert alert-success">{{session('success')}}</div>
 @endif
 <section style="margin-top: 3em;" class="ftco-section ftco-no-pb ftco-no-pt bg-light">
     <div class="container">

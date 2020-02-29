@@ -6,7 +6,7 @@
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)
-            <div class="alert alert-danger">{{$error}}</div>
+            <div class="text-center alert alert-danger">{{$error}}</div>
         @endforeach
     @endif
     <div class="content-header">
@@ -63,15 +63,15 @@
                 </select>
             </div>
             <div><label>Salle de l'evenement</label>
-                <select name="room_id" id="Salles" class="form-control" value="{{$reseventedit->room_id}}">
-                  @foreach ($salles as $key => $value)
-                    @if ($value==$room )
-                      <option value="{{ $key }}" selected >{{ $value }}</option>
-                    @else
-                      <option value="{{ $key }}" >{{ $value }}</option>
-                    @endif
-                   @endforeach
-                </select>
+              <select name="room_id" id="Salles" class="form-control" value="{{$reseventedit->room_id}}">
+                @foreach ($salles as $key => $value)
+                  @if ($value==$room )
+                    <option value="{{ $key }}" selected >{{ $value }}</option>
+                  @else
+                    <option value="{{ $key }}" >{{ $value }}</option>
+                  @endif
+                 @endforeach
+              </select>
             </div>
             <div><label>Disposition de la salle</label>
                 <select name="disposal_room_id" id="Disposition" class="form-control" value="{{$reseventedit->disposalroom_id}}">

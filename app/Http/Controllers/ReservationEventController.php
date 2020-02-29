@@ -34,7 +34,7 @@ class ReservationEventController extends Controller
     public function create()
     {
         $typeevenememt = \App\TypeEvent::pluck('Type_evenement','id');
-        $salles = \App\Room::pluck('Salles','id');
+        $salles = \App\Room::all();
         $disposition = \App\DisposalRoom::pluck('Disposition','id');
         $user = Auth::User()->role;
         if($user=='Superadmin')
@@ -187,7 +187,7 @@ class ReservationEventController extends Controller
     }
     public function clreservationevenement(){
         $typeevenememt = \App\TypeEvent::pluck('Type_evenement','id');
-        $salles = \App\Room::pluck('Salles','id');
+        $salles = \App\Room::all();
         $disposition = \App\DisposalRoom::pluck('Disposition','id');
         $reservationevents = \App\ReservationEvent::orderBy('created_at','DESC')->first();
         return view('/reservationevenement', compact('typeevenememt','reservationevents','salles', 'disposition'));

@@ -34,7 +34,8 @@ class ReservationBedroomController extends Controller
      */
     public function create()
     {
-        $bedrooms = \App\Bedroom::pluck('Type_chambre','id');
+
+        $bedrooms = \App\Bedroom::all();
         $user = Auth::User()->role;
         if($user=='Superadmin')
          return view('/Reservations/resbedroomcreate',compact('bedrooms'));
@@ -175,7 +176,7 @@ class ReservationBedroomController extends Controller
         return redirect('/reservationbedroom')->with(['success' => "Reservation chambre Supprimé"]);
     }
     public function clreservationchambre(){
-      $bedrooms = \App\Bedroom::pluck('Type_chambre','id');
+      $bedrooms = \App\Bedroom::all();
       $reservationbedroom = \App\ReservationBedroom::orderBy('created_at','DESC')->first();
       return view('/reservationchambre', compact('bedrooms','reservationbedroom'));
     }

@@ -62,7 +62,7 @@
     </div>
 </section>
 @if(session('success'))
-    <div class="alert alert-success">{{session('success')}}</div>
+    <div class="text-center alert alert-success">{{session('success')}}</div>
 @endif
 <section class="ftco-section contact-section">
     <div class="container">

@@ -6,7 +6,7 @@
 @section('content')
     @if($errors->any())
         @foreach($errors->all() as $error)
-            <div class="alert alert-danger">{{$error}}</div>
+            <div class="text-center alert alert-danger">{{$error}}</div>
         @endforeach
     @endif
     <div class="content-header">
@@ -53,10 +53,11 @@
         </div>
         <div><label>Type de chambre</label>
          <select name="bedroom_id" id="Type_chambre" onChange='Choix(this.form)' class="form-control">
-                <option></option>
-            @foreach($bedrooms as $key => $value)
-                <option value="{{$key}}">{{$value}}</option>
-            @endforeach
+              <option></option>
+          @foreach($bedrooms as $key => $value)
+           @continue ($value->Statut == 'Indisponible')
+           <option value="{{$value->id}}">{{$value->Type_chambre}}</option>
+          @endforeach
          </select>
         </div>
         <div><label>Description</label>
