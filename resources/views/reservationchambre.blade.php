@@ -452,6 +452,7 @@
     function(){
       $('#infos').modal('show');
       let typeChambre=$(this).val();
+
       $.ajax({
                 method: "POST",
                 url: "{{route('bedroomajax') }}",

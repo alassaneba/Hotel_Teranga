@@ -7,6 +7,7 @@
 @if(session('success'))
     <div class="text-center alert alert-success">{{session('success')}}</div>
 @endif
+<section>
 <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -22,7 +23,6 @@
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
 </div>
-<section class="table table-striped" >
   <div class="row">
         <div class="col-12">
           <div class="card">
@@ -41,7 +41,7 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body table-responsive p-0" style="height: 100%;">
-              <table class="table table-head-fixed">
+              <table class="table table-bordered table-head-fixed-bordered">
                 <thead class="text-center">
                  <tr>
                    <th>Nom</th>

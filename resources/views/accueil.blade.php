@@ -188,7 +188,7 @@
 </section>
 
 <section id="tcvv" class="ftco-section">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row justify-content-center mb-5 pb-3">
             <div class="col-md-7 heading-section ftco-animate text-center">
                 <span class="subheading">EVENEMENTIEL</span>
@@ -219,7 +219,7 @@
 </section>
 
 <section class="ftco-section">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row justify-content-center mb-5 pb-3">
             <div class="col-md-7 heading-section ftco-animate text-center">
                 <span class="subheading">Autres Services</span>
@@ -347,13 +347,13 @@
                   @foreach($temoignages as $temoignage)
                     <div class="item">
                         <div class="testimony-wrap p-4 pb-5 text-center">
-                            <div>
+                            <div style="background:#cd866c;">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
                             </div>
                             <div class="text">
-                                <p class="mb-5 pl-4 line">{{$temoignage->Message}}</p>
+                                <p class="mb-5 pl-4">{{$temoignage->Message}}</p>
                                 <p class="name">{{$temoignage->Nom_complet}}</p>
                                 <span class="position">{{$temoignage->Profession}}</span>
                             </div>

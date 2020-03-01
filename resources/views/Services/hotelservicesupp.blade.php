@@ -40,7 +40,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0" style="height: 100%;">
-                <table class="table table-head-fixed">
+                <table class="table table-bordered table-head-fixed-bordered">
                   <thead class="text-center">
                     <tr>
                      <th>Service-supp</th>

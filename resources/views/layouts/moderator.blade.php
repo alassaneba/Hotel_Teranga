@@ -121,7 +121,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a href="#" class="nav-link bg-green">
               <i class="fas fa-fw fa-bed"></i>
               <p>
-                Reservation Chambre
+                Hébergement
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -129,13 +129,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <li class="nav-item">
                 <a href="{{route('reservation/bedroom')}}" class="nav-link">
                   <i class="fas fa-fw fa-list"></i>
-                  <p>Liste Reservation</p>
+                  <p>Liste Réservation</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('creation/reservation/bedroom')}}" class="nav-link">
                   <i class="far fa-calendar-alt"></i>
-                  <p>Formulaire Reservation</p>
+                  <p>Formulaire Réservation</p>
                 </a>
               </li>
             </ul>
@@ -150,7 +150,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a href="#" class="nav-link bg-yellow">
               <i class="far fa-calendar-alt"></i>
               <p>
-                Reservation Evenement
+                Evènementiel
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -158,13 +158,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <li class="nav-item">
                 <a href="{{route('reservation/event')}}" class="nav-link">
                   <i class="fas fa-fw fa-list"></i>
-                  <p>Liste Evenement</p>
+                  <p>Liste Réservation</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('creation/reservation/event')}}" class="nav-link">
                   <i class="far fa-calendar-alt"></i>
-                  <p>Formulaire Evenement</p>
+                  <p>Formulaire Réservation</p>
                 </a>
               </li>
             </ul>
@@ -255,7 +255,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <footer class="main-footer mb-0 ml-0" style="width:95%; margin-bottom: 0px;" >
  <div class="row">
      <div class="col-md-10 text-right">
-         <p>  Copyright &copy;<script>document.write(new Date().getFullYear());</script> TOUS DROITS RESERVES| Site web crée avec <i class="icon-heart" aria-hidden="true"></i> par Al Assane BA chez <a href="https://galimatech.com" target="_blank">Galima Tech</a></p>
+         <p>  Copyright &copy;<script>document.write(new Date().getFullYear());</script> TOUS DROITS RESERVES| Site web crée avec <i class="icon-heart" aria-hidden="true"></i> par <a href="https://alassaneba.webflow.io" target="_blank">Al Assane BA</a></p>
      </div>
  </div>
  </footer>

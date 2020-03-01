@@ -110,21 +110,21 @@
             <div class="col-md-12">
                 <div class="carousel-testimony owl-carousel">
                   @foreach($temoignages as $temoignage)
-                    <div class="item">
-                        <div class="testimony-wrap p-4 pb-5 text-center">
-                            <div>
-                    <span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                            </div>
-                            <div class="text">
-                                <p class="mb-5 pl-4 line">{{$temoignage->Message}}</p>
-                                <p class="name">{{$temoignage->Nom_complet}}</p>
-                                <span class="position">{{$temoignage->Profession}}</span>
-                            </div>
-                        </div>
-                    </div>
-                      @endforeach
+                  <div class="item">
+                      <div class="testimony-wrap p-4 pb-5 text-center">
+                          <div style="background:#cd866c;">
+                  <span class="quote d-flex align-items-center justify-content-center">
+                    <i class="icon-quote-left"></i>
+                  </span>
+                          </div>
+                          <div class="text">
+                              <p class="mb-5 pl-4">{{$temoignage->Message}}</p>
+                              <p class="name">{{$temoignage->Nom_complet}}</p>
+                              <span class="position">{{$temoignage->Profession}}</span>
+                          </div>
+                      </div>
+                  </div>
+                  @endforeach
                 </div>
             </div>
         </div>

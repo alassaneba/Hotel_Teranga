@@ -85,7 +85,7 @@
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
-             <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> TOUS DROITS RESERVES | Ce site web est cree avec <i class="icon-heart" aria-hidden="true"></i> par Al Assane BA avec <a href="https://galimatech.com" target="_blank">Galima Tech</a></p>
+             <p>  Copyright &copy;<script>document.write(new Date().getFullYear());</script> TOUS DROITS RESERVES| Site web crée avec <i class="icon-heart" aria-hidden="true"></i> par <a href="https://alassaneba.webflow.io" target="_blank">Al Assane BA</a></p>
             </div>
         </div>
     </div>

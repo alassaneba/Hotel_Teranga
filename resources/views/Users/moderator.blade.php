@@ -28,10 +28,10 @@
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-bed"></i>
                 </div>
-                <div class="mr-5">{{$resbedroom_count}} Reservation Chambre</div>
+                <div class="mr-5">{{$resbedroom_count}} Hébergement</div>
             </div>
               <a class="card-footer text-white clearfix small z-1" href="{{route('reservation/bedroom')}}">
-                <span class="float-left">Liste des reservations de chambre</span>
+                <span class="float-left">Liste des réservations de chambre</span>
                 <span class="float-right"><i class="fas fa-angle-right"></i></span>
               </a>
         </div>
@@ -42,10 +42,10 @@
                             <div class="card-body-icon">
                                 <i class="far fa-calendar-alt"></i>
                             </div>
-                            <div class="mr-5">{{$resevent_count}} Reservation Evenement</div>
+                            <div class="mr-5">{{$resevent_count}} Evènementiel</div>
                         </div>
                         <a class="card-footer text-white clearfix small z-1" href="{{route('reservation/event')}}">
-                            <span class="float-left">Liste reservations d'evenement</span>
+                            <span class="float-left">Liste réservations d'évènement</span>
                             <span class="float-right"><i class="fas fa-angle-right"></i></span>
                         </a>
                     </div>
