@@ -70,7 +70,7 @@ class BedroomController extends Controller
         $bed->Prix_nuite = $request->input('Prix_nuite');
         $bed->Statut = $request->input('Statut');
         $bed->save();
-            return redirect('bedroom')->with(['success' => "Chambre enregistrée"]);
+            return redirect('bedroom')->with(['success' => "Type de chambre enregistré"]);
 
     }
 
@@ -130,7 +130,7 @@ class BedroomController extends Controller
             $bedroom-> Prix_nuite= $request->input('Prix_nuite');
             $bedroom-> Statut= $request->input('Statut');
             $bedroom-> save(); }
-        return redirect('bedroom')->with(['success' => "Chambre modifiée"]);
+        return redirect('bedroom')->with(['success' => "Type chambre modifié"]);
     }
 
     /**
@@ -144,7 +144,7 @@ class BedroomController extends Controller
         $bedroom = Bedroom::find($id);
         if($bedroom)
             $bedroom->delete();
-        return redirect('/bedroom')->with(['success' => "Chambre Supprimée"]);
+        return redirect('/bedroom')->with(['success' => "Type chambre Supprimé"]);
 
 }
 
@@ -161,14 +161,13 @@ class BedroomController extends Controller
       return view('Resultbedroom',compact('chambres','bedrooms'));
     }
     public function bedroomajax(Request $request){
-      $type_chambre = $request->input('Type_chambre');
-      $chambre = \App\Bedroom::where('Type_chambre',$type_chambre)->first();
-      if($request->ajax()){
-                return response()->json([
-                      'prix' => $chambre->Prix_nuite,
-                      'description' => $chambre->Description,
-                  ]);
-            }
+      $type_chambre = (int)$request->input('Type_chambre');
+      $chambre = \App\Bedroom::where('id',$type_chambre)->first();
+
+      return response()->json([
+            'prix' => $chambre->Prix_nuite,
+            'description' => $chambre->Description,
+        ]);
 
     }
 }

@@ -152,11 +152,11 @@ class ReservationBedroomController extends Controller
             $reservationbedroom->Identifiant = $request->input('Identifiant');
             $reservationbedroom->Email = $request->input('Email');
             $reservationbedroom->Telephone = $request->input('Telephone');
-                $reservationbedroom->Montant_payer = $request->input('Montant_payer');
-                $reservationbedroom->Statut = $request->input('Statut');
-                $reservationbedroom->bedroom_id = $request->input('bedroom_id');
-                $reservationbedroom->user_id = $request->input('user_id');
-                $reservationbedroom->save();
+            $reservationbedroom->Montant_payer = $request->input('Montant_payer');
+            $reservationbedroom->Statut = $request->input('Statut');
+            $reservationbedroom->bedroom_id = $request->input('bedroom_id');
+            $reservationbedroom->user_id = $request->input('user_id');
+            $reservationbedroom->save();
             }
             return redirect('/reservationbedroom')->with(['success' => "Reservation chambre modifiée"]);
         }

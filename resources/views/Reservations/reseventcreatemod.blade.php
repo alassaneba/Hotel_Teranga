@@ -125,7 +125,7 @@
         <div><label>Telephone</label>
             <input type="text" name="Telephone" class="form-control">
         </div>
-        <div><label>Montant payer</label>
+        <div><label>Montant payer (CFA)</label>
             <input type="number" name="Montant_payer" class="form-control">
         </div>
         <div><label>Statut</label>

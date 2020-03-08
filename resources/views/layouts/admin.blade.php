@@ -256,39 +256,43 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
             </ul>
           </li>
-          <nav class="mt-2">
+        </ul>
+      </nav>
+      <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
               <!-- Add icons to the links using the .nav-icon class
                    with font-awesome or any other icon font library -->
               <li class="nav-item has-treeview">
                 <a href="#" class="nav-link bg-pink">
-                  <i class="nav-icon fas fa-th"></i>
+                  <i class="nav-icon fas fa-fw fa-list"></i>
                   <p>
-                    Disposition Salles
+                    Chambres
                     <i class="right fas fa-angle-left"></i>
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="{{route('disposition/salle')}}" class="nav-link">
+                    <a href="{{route('chambres')}}" class="nav-link">
                       <i class="fas fa-fw fa-list"></i>
-                      <p>Liste Type Dispositon</p>
+                      <p>Liste des Chambres</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{route('creation/disposition/salle')}}" class="nav-link">
+                    <a href="{{route('creation/chambres')}}" class="nav-link">
                       <i class="far fa-calendar-alt"></i>
-                      <p>Creation Type Disposition</p>
+                      <p>Creation Chambre</p>
                     </a>
                   </li>
                 </ul>
               </li>
-              <nav class="mt-2">
+            </ul>
+          </nav>
+          <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                   <!-- Add icons to the links using the .nav-icon class
                        with font-awesome or any other icon font library -->
                   <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link bg-olive">
+                    <a href="#" class="nav-link bg-cyan" >
                       <i class="fas fa-fw fa-list"></i>
                       <p>
                         Espaces et Salles
@@ -310,6 +314,37 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       </li>
                     </ul>
                   </li>
+                </ul>
+              </nav>
+              <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                      <!-- Add icons to the links using the .nav-icon class
+                           with font-awesome or any other icon font library -->
+                      <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link bg-olive">
+                          <i class="nav-icon fas fa-th"></i>
+                          <p>
+                            Disposition Salles
+                            <i class="right fas fa-angle-left"></i>
+                          </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                          <li class="nav-item">
+                            <a href="{{route('disposition/salle')}}" class="nav-link">
+                              <i class="fas fa-fw fa-list"></i>
+                              <p>Liste Type Dispositon</p>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="{{route('creation/disposition/salle')}}" class="nav-link">
+                              <i class="far fa-calendar-alt"></i>
+                              <p>Creation Type Disposition</p>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </nav>
                   <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                       <!-- Add icons to the links using the .nav-icon class
@@ -366,7 +401,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
             </ul>
           </li>
-      </ul>
+       </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>

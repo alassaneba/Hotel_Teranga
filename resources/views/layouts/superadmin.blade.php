@@ -256,33 +256,66 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
             </ul>
           </li>
-          <nav class="mt-2">
+        </ul>
+        </nav>
+        <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
               <!-- Add icons to the links using the .nav-icon class
                    with font-awesome or any other icon font library -->
               <li class="nav-item has-treeview">
                 <a href="#" class="nav-link bg-pink">
-                  <i class="fas fa-fw fa-list"></i>
+                  <i class="nav-icon fas fa-fw fa-list"></i>
                   <p>
-                    Espaces et Salles
+                    Chambres
                     <i class="right fas fa-angle-left"></i>
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="{{route('salle')}}" class="nav-link">
+                    <a href="{{route('chambres')}}" class="nav-link">
                       <i class="fas fa-fw fa-list"></i>
-                      <p>Liste Espace et Salle</p>
+                      <p>Liste des Chambres</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{route('creation/salle')}}" class="nav-link">
+                    <a href="{{route('creation/chambres')}}" class="nav-link">
                       <i class="far fa-calendar-alt"></i>
-                      <p>Creation Espace et Salle</p>
+                      <p>Creation Chambre</p>
                     </a>
                   </li>
                 </ul>
               </li>
+            </ul>
+          </nav>
+          <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                  <!-- Add icons to the links using the .nav-icon class
+                       with font-awesome or any other icon font library -->
+                  <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link bg-cyan" >
+                      <i class="fas fa-fw fa-list"></i>
+                      <p>
+                        Espaces et Salles
+                        <i class="right fas fa-angle-left"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="{{route('salle')}}" class="nav-link">
+                          <i class="fas fa-fw fa-list"></i>
+                          <p>Liste Espace et Salle</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="{{route('creation/salle')}}" class="nav-link">
+                          <i class="far fa-calendar-alt"></i>
+                          <p>Creation Espace et Salle</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+          </nav>
           <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
               <!-- Add icons to the links using the .nav-icon class
@@ -310,6 +343,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </li>
                 </ul>
               </li>
+            </ul>
+            </nav>
                   <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                       <!-- Add icons to the links using the .nav-icon class
@@ -338,35 +373,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </ul>
                       </li>
         </ul>
-      </nav>
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview">
-            <a class="nav-link bg-navy">
-              <i class="fas fa-th"></i>
-              <p>
-                Utilisateurs hotel
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{route('utilisateur.index')}}" class="nav-link">
-                  <i class="fas fa-fw fa-list"></i>
-                  <p>Liste des utilisateurs hotel</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{route('utilisateur.create')}}" class="nav-link">
-                  <i class="far fa-calendar-alt"></i>
-                  <p>Creation utilisateur hotel</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-      </ul>
       </nav>
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -478,6 +484,35 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <a href="{{route('creation/hotel/promotion')}}" class="nav-link">
             <i class="far fa-calendar-alt"></i>
             <p>Creation promotion hotel</p>
+          </a>
+        </li>
+      </ul>
+    </li>
+</ul>
+</nav>
+<nav class="mt-2">
+  <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+    <!-- Add icons to the links using the .nav-icon class
+         with font-awesome or any other icon font library -->
+    <li class="nav-item has-treeview">
+      <a class="nav-link bg-navy">
+        <i class="fas fa-th"></i>
+        <p>
+          Utilisateurs hotel
+          <i class="right fas fa-angle-left"></i>
+        </p>
+      </a>
+      <ul class="nav nav-treeview">
+        <li class="nav-item">
+          <a href="{{route('utilisateur.index')}}" class="nav-link">
+            <i class="fas fa-fw fa-list"></i>
+            <p>Liste des utilisateurs hotel</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{route('utilisateur.create')}}" class="nav-link">
+            <i class="far fa-calendar-alt"></i>
+            <p>Creation utilisateur hotel</p>
           </a>
         </li>
       </ul>

@@ -335,7 +335,7 @@
         <div><label>Telephone</label>
             <input type="text" name="Telephone" class="form-control">
         </div>
-        <div><label>Montant a payer</label>
+        <div><label>Montant a payer (CFA)</label>
          <input type="text" id="Montant_payer" name="Montant_payer" value="0" class="form-control" readonly />
         </div>
         <div><label>Statut</label>

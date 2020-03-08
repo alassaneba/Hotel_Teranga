@@ -35,11 +35,6 @@
 </style>
 @endsection
 @section('content')
-@if($errors->any())
-    @foreach($errors->all() as $error)
-        <div class="alert alert-danger">{{$error}}</div>
-    @endforeach
-@endif
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand" href="{{route('accueil')}}">Hotel<span>Teranga</span></a>
@@ -97,6 +92,11 @@
         <div class="third about-img js-fullheight">
         </div>
     </section>
+    @if($errors->any())
+        @foreach($errors->all() as $error)
+            <div class="text-center alert alert-danger">{{$error}}</div>
+        @endforeach
+    @endif
     @if(session('success'))
         <div class="text-center alert alert-success">{{session('success')}}</div>
     @endif
@@ -407,9 +407,9 @@
             <input type="email" name="Email" class="form-control">
         </div>
         <div><label>Telephone</label>
-            <input type="text" name="Telephone" class="form-control">
+            <input type="number" name="Telephone" class="form-control" pattern="(+[0-9]+{18})">
         </div>
-        <div><label>Montant a payer</label>
+        <div><label>Montant a payer (CFA)</label>
          <input type="number" id="Montant_payer" name="Montant_payer" value="0" class="form-control" readonly />
         </div>
         <br>

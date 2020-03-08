@@ -10,4 +10,8 @@ class Bedroom extends Model
     public function ReservationBedrooms (){
         return $this->hasMany('App\ReservationBedroom');
     }
+
+    public function Chambres (){
+      return $this->hasMany(Chambre::class);
+    }
 }

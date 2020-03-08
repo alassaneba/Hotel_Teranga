@@ -332,7 +332,7 @@
             <div><label>Telephone</label>
                 <input type="text" name="Telephone" class="form-control" value="{{$resbedroomedit->Telephone}}">
             </div>
-            <div><label>Montant a payer</label>
+            <div><label>Montant a payer (CFA)</label>
                 <input type="text" name="Montant_payer" class="form-control" value="{{$resbedroomedit->Montant_payer}}">
             </div>
             <div><label>Statut</label>

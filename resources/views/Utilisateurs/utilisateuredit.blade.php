@@ -96,7 +96,7 @@
               </div>
                 <!-- /.col -->
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Enregister</button>
+                  <button type="submit" class="btn btn-primary">Modifier</button>
                 </div>
                 <!-- /.col -->
               </div>

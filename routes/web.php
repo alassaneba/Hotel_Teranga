@@ -109,6 +109,15 @@ Route::get('bedroomedit/{id}','BedroomController@edit')->middleware('auth');
 Route::patch('/bedroomupdate/{id}','BedroomController@update')->middleware('auth');
 Route::delete('bedroomedit/{id}', 'BedroomController@destroy')->middleware('auth');
 
+Route::get('chambre','ChambreController@index')->name('chambres')->middleware('auth');
+
+Route::get('chambrecreate','ChambreController@create')->name('creation/chambres')->middleware('auth');
+Route::post('chambrecreate','ChambreController@create')->middleware('auth');
+Route::post('chambrecreate','ChambreController@store')->middleware('auth');
+Route::get('chambreedit/{id}','ChambreController@edit')->middleware('auth');
+Route::patch('/chambreupdate/{id}','ChambreController@update')->middleware('auth');
+Route::delete('chambreedit/{id}', 'ChambreController@destroy')->middleware('auth');
+
 Route::get('reservationevent','ReservationEventController@index')->name('reservation/event')->middleware('auth');
 
 Route::get('reseventcreate','ReservationEventController@create')->name('creation/reservation/event')->middleware('auth');

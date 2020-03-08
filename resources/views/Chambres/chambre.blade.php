@@ -1,12 +1,12 @@
 @extends('layouts.superadmin')
-@section('title', "Liste Utilisateur Hotel")
+@section('title', "Liste Chambre")
 @section('css')
 
 @endsection
 @section('content')
-@if(session('success'))
-    <div class="text-center alert alert-success">{{session('success')}}</div>
-@endif
+    @if(session('success'))
+        <div class="text-center alert alert-success">{{session('success')}}</div>
+    @endif
 <section>
   <div class="content-header">
     <div class="container-fluid">
@@ -17,17 +17,17 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{route('Backoffice')}}">Tableau de bord</a></li>
-            <li class="breadcrumb-item active">Utilisateurs Hotel</li>
+            <li class="breadcrumb-item active">Chambre</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
   </div>
-    <div class="row">
+  <div class="row">
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Tableau des utilisateurs hotel</h3>
+                <h3 class="card-title">Tableau des chambres</h3>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -44,22 +44,21 @@
                 <table class="table table-bordered table-head-fixed-bordered">
                   <thead class="text-center">
                     <tr>
-                     <th>Role</th>
+                     <th>Code</th>
                      <th>Nom</th>
-                     <th>Email</th>
+                     <th>Type de chambre</th>
                      <th>Editer</th>
                      <th>Supprimer</th>
                     </tr>
                   </thead>
-        @foreach($users as $user)
-         @continue ($user->name == 'Bandea-tech')
+        @foreach($chambre as $chambres)
             <tbody class="text-center">
                 <tr>
-                    <td>{{$user->role}}</td>
-                    <td>{{$user->name}}</td>
-                    <td>{{$user->email}}</td>
-                    <td> <p class="btn btn-outline-secondary"><a href="{{route('utilisateur.update',['id'=>$user->id])}}">Editer</a></p></td>
-                    <td><form action="utilisateur/{{$user->id}}" method="post" onsubmit="return confirm('Voulez-vous supprimer ?')">
+                    <td>{{$chambres->code}}</td>
+                    <td>{{$chambres->nom}}</td>
+                    <td>{{$chambres->bedroom->Type_chambre ?? '' }}</td>
+                    <td> <p class="btn btn-outline-secondary"><a href="chambreedit/{{$chambres->id}}">Editer</a></p></td>
+                    <td><form action="chambreedit/{{$chambres->id}}" method="post" onsubmit="return confirm('Voulez-vous supprimer ?')">
                         @csrf
                         @method('delete')
                         <input type="submit" class="btn btn-danger" name="delete" value="Supprimer">

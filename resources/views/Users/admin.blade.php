@@ -14,7 +14,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{route('Backoffice')}}">Tableau de bord / Admin</a></li>
+              <li class="breadcrumb-item"><a href="{{route('Backoffice')}}">Tableau de bord</a></li>
               <li class="breadcrumb-item active">Acceuil</li>
             </ol>
           </div><!-- /.col -->
@@ -96,18 +96,18 @@
                     <div class="card text-white bg-pink o-hidden h-100">
                         <div class="card-body">
                             <div class="card-body-icon">
-                                <i class="nav-icon fas fa-th"></i>
+                                <i class="fas fa-fw fa-list"></i>
                             </div>
-                            <div class="mr-5">{{$disposal_count}} Disposition Salles</div>
+                            <div class="mr-5">{{$chambre_count}} Chambre</div>
                         </div>
-                        <a class="card-footer text-white clearfix small z-1" href="{{route('disposition/salle')}}">
-                            <span class="float-left">Liste disposition salles</span>
+                        <a class="card-footer text-white clearfix small z-1" href="{{route('chambres')}}">
+                            <span class="float-left">Liste des chambres</span>
                             <span class="float-right"><i class="fas fa-angle-right"></i></span>
                         </a>
                     </div>
                 </div>
                 <div class="col-xl-3 col-sm-4 mb-3">
-                    <div class="card text-white bg-olive o-hidden h-100">
+                    <div class="card text-white bg-cyan o-hidden h-100">
                         <div class="card-body">
                             <div class="card-body-icon">
                                 <i class="fas fa-fw fa-list"></i>
@@ -116,6 +116,20 @@
                         </div>
                         <a class="card-footer text-white clearfix small z-1" href="{{route('salle')}}">
                             <span class="float-left">Liste des espaces et salles</span>
+                            <span class="float-right"><i class="fas fa-angle-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-4 mb-3">
+                    <div class="card text-white bg-olive o-hidden h-100">
+                        <div class="card-body">
+                            <div class="card-body-icon">
+                                <i class="nav-icon fas fa-th"></i>
+                            </div>
+                            <div class="mr-5">{{$disposal_count}} Disposition Salles</div>
+                        </div>
+                        <a class="card-footer text-white clearfix small z-1" href="{{route('disposition/salle')}}">
+                            <span class="float-left">Liste disposition salles</span>
                             <span class="float-right"><i class="fas fa-angle-right"></i></span>
                         </a>
                     </div>

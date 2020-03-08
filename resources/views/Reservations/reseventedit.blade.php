@@ -134,7 +134,7 @@
             <div><label>Telephone</label>
                 <input type="text" name="Telephone" class="form-control" value="{{$reseventedit->Telephone}}">
             </div>
-            <div><label>Montant payer</label>
+            <div><label>Montant payer (CFA)</label>
                 <input type="number" name="Montant_payer" class="form-control" value="{{$reseventedit->Montant_payer}}">
             </div>
             <div><label>Statut</label>
