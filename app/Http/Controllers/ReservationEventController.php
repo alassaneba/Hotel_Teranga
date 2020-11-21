@@ -130,9 +130,9 @@ class ReservationEventController extends Controller
         if($user=='Superadmin')
          return view('/Reservations/reseventedit', compact('reseventedit','typeevenememt','typeevent','room','disposalroom','reservationevents','salles', 'disposition'));
         if($user=='Admin')
-         return view('/Reservations/reseventeditadm', compact('reseventedit','typeevenememt','typeevent','reservationevents','salles', 'disposition'));
+         return view('/Reservations/reseventeditadm', compact('reseventedit','typeevenememt','typeevent','room','disposalroom','reservationevents','salles', 'disposition'));
         if($user=='Moderator')
-         return view('/Reservations/reseventeditmod', compact('reseventedit','typeevenememt','typeevent','reservationevents','salles', 'disposition'));
+         return view('/Reservations/reseventeditmod', compact('reseventedit','typeevenememt','typeevent','room','disposalroom','reservationevents','salles', 'disposition'));
     }
 
     /**
